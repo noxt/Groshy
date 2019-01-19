@@ -4,6 +4,13 @@
 //
 
 import UIKit
+import Unicore
+
+
+typealias AppCore = Core<AppFeature.State>
+
+
+let core = AppCore(state: .initial, reducer: AppFeature.reduce)
 
 
 @UIApplicationMain
