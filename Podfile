@@ -7,6 +7,8 @@ target 'Groshy' do
 
   pod 'Unicore', '~> 1.0'
   pod 'Moya', '~> 12.0'
+  pod 'KeychainAccess', '~> 3.1'
+  pod 'Result', '~> 4.1'
 
 
   target 'GroshyTests' do

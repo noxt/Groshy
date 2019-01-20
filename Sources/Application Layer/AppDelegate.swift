@@ -18,4 +18,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+
+        return true
+    }
+
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        core.dispatch(AppFeature.Action.WillEnterForeground())
+    }
+
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        core.dispatch(AppFeature.Action.DidEnterBackground())
+    }
+
+}
+
+
+extension UIApplicationDelegate {
+    static var current: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
 }

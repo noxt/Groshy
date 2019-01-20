@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.8.1)
+  - KeychainAccess (3.1.2)
   - Moya (12.0.1):
     - Moya/Core (= 12.0.1)
   - Moya/Core (12.0.1):
@@ -9,22 +10,26 @@ PODS:
   - Unicore (1.0.2)
 
 DEPENDENCIES:
+  - KeychainAccess (~> 3.1)
   - Moya (~> 12.0)
+  - Result (~> 4.1)
   - Unicore (~> 1.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - KeychainAccess
     - Moya
     - Result
     - Unicore
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   Unicore: 391e0c89bd9ff787fd348b51be0315f8bf66a043
 
-PODFILE CHECKSUM: ae9e3822f698bd3780793f101d33e89a3e158a48
+PODFILE CHECKSUM: 2c8939d51b4a6d0f5318ee12c1d4e0ce891a3cca
 
 COCOAPODS: 1.5.3
