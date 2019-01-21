@@ -8,4 +8,6 @@ import Foundation
 
 protocol RepositoryProviderProtocol {
 
+    var accountsRepository: AccountsRepositoryProtocol { get }
+
 }

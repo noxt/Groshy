@@ -6,6 +6,9 @@
 import Foundation
 
 
-struct Account: Codable {
+struct Account: Codable, Equatable {
+    
+    let id: UUID
+    let title: String
     
 }

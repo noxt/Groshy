@@ -8,8 +8,13 @@ import Foundation
 
 class RepositoryProvider: RepositoryProviderProtocol {
 
-    init(serviceProvider: ServiceProviderProtocol = ServiceProvider()) {
+    let accountsRepository: AccountsRepositoryProtocol
 
+
+    init(serviceProvider: ServiceProviderProtocol = ServiceProvider()) {
+        accountsRepository = AccountsRepository(
+            storageService: serviceProvider.securityStorageService
+        )
     }
 
 }

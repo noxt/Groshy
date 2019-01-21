@@ -7,5 +7,5 @@ import Foundation
 
 
 enum StorageServiceKey: String {
-    case account
+    case accounts
 }
