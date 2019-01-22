@@ -9,8 +9,6 @@ import Foundation
 protocol Connector: class {
 
     associatedtype PropsType
-
-    init(repositories: RepositoryProviderProtocol)
     
     func connect<T: Component>(to component: T) where T.PropsType == PropsType
     func mapToProps(state: AppFeature.State) -> PropsType

@@ -21,7 +21,10 @@ class BaseConnector<PropsType>: Connector {
 
     func connect<T: Component>(to component: T) where T.PropsType == PropsType {
         component.props = mapToProps(state: .initial)
-        core.observe(on: .main) { (state) in
+        core.observe(on: .main) { [weak self] (state) in
+            guard let self = self else {
+                return
+            }
             component.props = self.mapToProps(state: state)
         }.dispose(on: disposer)
     }

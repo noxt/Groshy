@@ -9,12 +9,13 @@ import UIKit
 class BaseViewController<ComponentType: Component, ConnectorType: Connector>: UIViewController
     where ComponentType: UIView, ComponentType.PropsType == ConnectorType.PropsType {
 
-    var component: ComponentType!
-    var connector: ConnectorType!
+    let component: ComponentType!
+    let connector: ConnectorType!
 
 
     init(connector: ConnectorType) {
         self.connector = connector
+        self.component = ComponentType.instantiateFromNib()
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -24,8 +25,7 @@ class BaseViewController<ComponentType: Component, ConnectorType: Connector>: UI
 
 
     override func loadView() {
-        component = ComponentType.instantiateFromNib()
-        self.view = component
+        view = component
     }
 
     override func viewDidLoad() {
