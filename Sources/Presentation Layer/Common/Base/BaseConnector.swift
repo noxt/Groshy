@@ -7,7 +7,8 @@ import Foundation
 import Unicore
 
 
-class BaseConnector<PropsType>: Connector {
+class BaseConnector<PropsType>: Connector
+    where PropsType: Equatable {
 
     private let disposer = Disposer()
 

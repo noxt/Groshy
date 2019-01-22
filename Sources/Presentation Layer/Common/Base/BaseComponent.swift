@@ -7,10 +7,13 @@ import UIKit
 
 
 class BaseComponent<PropsType, ConnectorType>: UIView, Component
-    where ConnectorType: Connector, ConnectorType.PropsType == PropsType {
+    where PropsType: Equatable, ConnectorType: Connector, ConnectorType.PropsType == PropsType {
 
     var props: PropsType! {
         didSet {
+            guard props != oldValue else {
+                return
+            }
             updateUI()
         }
     }

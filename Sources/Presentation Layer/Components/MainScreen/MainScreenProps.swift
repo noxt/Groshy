@@ -18,3 +18,15 @@ struct MainScreenProps {
     let createAccountCommand: PlainCommand
 
 }
+
+
+// MARK: - Equatable
+
+extension MainScreenProps: Equatable {
+
+    static func == (lhs: MainScreenProps, rhs: MainScreenProps) -> Bool {
+        return lhs.currentAccountTitle == rhs.currentAccountTitle
+            && lhs.counterTitle == rhs.counterTitle
+    }
+
+}
