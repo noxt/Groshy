@@ -9,6 +9,7 @@ import UIKit
 final class MainScreenComponent: BaseComponent<MainScreenProps, MainScreenConnector> {
     
     @IBOutlet weak var accountTitleLabel: UILabel!
+    @IBOutlet weak var accountsCounterLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
 
 
@@ -21,6 +22,7 @@ final class MainScreenComponent: BaseComponent<MainScreenProps, MainScreenConnec
 
     override func updateUI() {
         accountTitleLabel.text = props.currentAccountTitle
+        accountsCounterLabel.text = props.counterTitle
     }
 
 

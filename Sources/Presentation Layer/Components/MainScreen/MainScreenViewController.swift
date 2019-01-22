@@ -4,40 +4,14 @@
 //
 
 import UIKit
+import Unicore
 
 
-class MainScreenViewController: UIViewController {
-
-    lazy var component = MainScreenComponent.instantiateFromNib()
-    var connector: MainScreenConnector!
-
-
-    fileprivate struct Constants {
-        struct Filenames {
-            static let Nib: String = "MainScreenComponent"
-        }
-    }
-
-
-    init(connector: MainScreenConnector) {
-        self.connector = connector
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-
-    override func loadView() {
-        component = MainScreenComponent.instantiateFromNib()
-        self.view = component
-    }
+final class MainScreenViewController: BaseViewController<MainScreenComponent, MainScreenConnector> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        connector.connect(to: component)
+        component.props.onViewDidLoad.execute()
     }
 
 }

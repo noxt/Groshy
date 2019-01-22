@@ -16,15 +16,18 @@ let core = AppCore(state: .initial, reducer: AppFeature.reduce)
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    private let repositories = RepositoryProvider()
+
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
 
-        let repositories = RepositoryProvider()
+//        cleanDB()
 
         let mainScene = MainScreenScene.makeScene(with: repositories)
 
+        window = UIWindow()
         window?.rootViewController = mainScene.viewController
         window?.makeKeyAndVisible()
 
@@ -37,6 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         core.dispatch(AppFeature.Action.DidEnterBackground())
+    }
+
+    private func cleanDB() {
+        try? KeychainStorageService().deleteValue(forKey: .accounts)
     }
 
 }

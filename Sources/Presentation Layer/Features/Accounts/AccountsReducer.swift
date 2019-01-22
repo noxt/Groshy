@@ -21,6 +21,14 @@ extension AccountsFeature {
                 error: nil
             )
 
+        case let payload as Action.AccountsListLoaded:
+            return State(
+                currentAccount: old.currentAccount,
+                list: payload.list,
+                isLoading: false,
+                error: nil
+            )
+
         case is Action.StartLoading:
             return State(
                 currentAccount: old.currentAccount,

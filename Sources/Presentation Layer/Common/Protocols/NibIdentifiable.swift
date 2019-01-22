@@ -8,6 +8,7 @@ import UIKit
 
 protocol NibIdentifiable {
     static var nibIdentifier: String { get }
+    static func instantiateFromNib() -> Self
 }
 
 

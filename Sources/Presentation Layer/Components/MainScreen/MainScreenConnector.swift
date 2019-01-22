@@ -15,8 +15,10 @@ final class MainScreenConnector: BaseConnector<MainScreenProps> {
         return MainScreenProps(
             // Input
             currentAccountTitle: currentAccountTitle(accountState.currentAccount),
+            counterTitle: counterTitle(accountState.list.count),
 
             // Output
+            onViewDidLoad: onViewDidLoad(),
             createAccountCommand: createAccountCommand()
         )
     }
@@ -27,6 +29,29 @@ final class MainScreenConnector: BaseConnector<MainScreenProps> {
         }
 
         return "[\(account.id)]\n\(account.title)"
+    }
+
+    private func counterTitle(_ count: Int) -> String {
+        return "Accounts in DB: \(count)"
+    }
+
+
+    private func onViewDidLoad() -> PlainCommand {
+        return PlainCommand {
+            core.dispatch(AccountsFeature.Action.StartLoading())
+
+            do {
+                let accounts = try self.repositories.accountsRepository.loadAccounts()
+
+                core.dispatch(AccountsFeature.Action.AccountsListLoaded(list: accounts))
+
+                if let currentAccount = accounts.last {
+                    core.dispatch(AccountsFeature.Action.SelectCurrentAccount(account: currentAccount))
+                }
+            } catch let e {
+                core.dispatch(AccountsFeature.Action.Error(message: e.localizedDescription))
+            }
+        }
     }
 
     private func createAccountCommand() -> PlainCommand {
@@ -40,6 +65,8 @@ final class MainScreenConnector: BaseConnector<MainScreenProps> {
 
             do {
                 try self.repositories.accountsRepository.create(account: newAccount)
+                let accounts = try self.repositories.accountsRepository.loadAccounts()
+                core.dispatch(AccountsFeature.Action.AccountsListLoaded(list: accounts))
                 core.dispatch(AccountsFeature.Action.SelectCurrentAccount(account: newAccount))
             } catch let e {
                 core.dispatch(AccountsFeature.Action.Error(message: e.localizedDescription))

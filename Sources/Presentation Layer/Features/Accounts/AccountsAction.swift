@@ -19,6 +19,10 @@ extension AccountsFeature {
 
         }
 
+        struct AccountsListLoaded: Unicore.Action {
+            let list: [Account]
+        }
+
         struct Error: Unicore.Action {
             let message: String
         }

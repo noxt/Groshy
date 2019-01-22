@@ -11,8 +11,10 @@ struct MainScreenProps {
 
     // Input
     let currentAccountTitle: String?
+    let counterTitle: String?
 
     // Output
+    let onViewDidLoad: PlainCommand
     let createAccountCommand: PlainCommand
 
 }
