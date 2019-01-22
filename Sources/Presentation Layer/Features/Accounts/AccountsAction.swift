@@ -11,29 +11,16 @@ extension AccountsFeature {
     
     struct Action {
 
-        struct CreateAccount: Unicore.Action {
+        struct SelectCurrentAccount: Unicore.Action {
             let account: Account
-        }
-
-        struct EditAccount: Unicore.Action {
-            let account: Account
-        }
-
-        struct DeleteAccount: Unicore.Action {
-            let account: Account
-        }
-
-        struct UpdateAccount: Unicore.Action {
-            let account: Account
-            let list: [Account]
         }
 
         struct StartLoading: Unicore.Action {
 
         }
 
-        struct Failure: Unicore.Action {
-            let error: String
+        struct Error: Unicore.Action {
+            let message: String
         }
 
     }

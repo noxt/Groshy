@@ -13,10 +13,10 @@ extension AccountsFeature {
 
         switch action {
 
-        case let payload as Action.UpdateAccount:
+        case let payload as Action.SelectCurrentAccount:
             return State(
                 currentAccount: payload.account,
-                list: payload.list,
+                list: old.list,
                 isLoading: false,
                 error: nil
             )
@@ -29,12 +29,12 @@ extension AccountsFeature {
                 error: nil
             )
 
-        case let payload as Action.Failure:
+        case let payload as Action.Error:
             return State(
                 currentAccount: old.currentAccount,
                 list: old.list,
                 isLoading: false,
-                error: payload.error
+                error: payload.message
             )
 
         default:

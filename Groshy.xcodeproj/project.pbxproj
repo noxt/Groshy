@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		0F5F156400EF92E8088D4F3A /* Pods_GroshyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F91E71E98CF0F647F159C96 /* Pods_GroshyUITests.framework */; };
+		1943B00621F66D3C0054119C /* MainScreenConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B00521F66D3C0054119C /* MainScreenConnector.swift */; };
+		1943B00821F66D4C0054119C /* MainScreenProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B00721F66D4C0054119C /* MainScreenProps.swift */; };
+		1943B00A21F66D630054119C /* MainScreenComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B00921F66D630054119C /* MainScreenComponent.swift */; };
+		1943B00C21F66D890054119C /* MainScreenComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1943B00B21F66D890054119C /* MainScreenComponent.xib */; };
+		1943B00E21F66F830054119C /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B00D21F66F830054119C /* MainScreenViewController.swift */; };
+		1943B01021F66FDC0054119C /* MainScreenScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B00F21F66FDC0054119C /* MainScreenScene.swift */; };
+		1943B01221F67ED30054119C /* Connector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B01121F67ED30054119C /* Connector.swift */; };
+		1943B01521F67F100054119C /* BaseConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B01421F67F100054119C /* BaseConnector.swift */; };
+		1943B01721F67FDB0054119C /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B01621F67FDB0054119C /* Component.swift */; };
+		1943B01921F680C60054119C /* BaseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B01821F680C60054119C /* BaseComponent.swift */; };
+		1943B01B21F68D9C0054119C /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B01A21F68D9C0054119C /* Scene.swift */; };
 		19A1B18821F3837C0090F760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B18721F3837C0090F760 /* AppDelegate.swift */; };
 		19A1B18A21F3837C0090F760 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B18921F3837C0090F760 /* ViewController.swift */; };
 		19A1B18D21F3837D0090F760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A1B18B21F3837C0090F760 /* Main.storyboard */; };
@@ -62,6 +73,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1943B00521F66D3C0054119C /* MainScreenConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenConnector.swift; sourceTree = "<group>"; };
+		1943B00721F66D4C0054119C /* MainScreenProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenProps.swift; sourceTree = "<group>"; };
+		1943B00921F66D630054119C /* MainScreenComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenComponent.swift; sourceTree = "<group>"; };
+		1943B00B21F66D890054119C /* MainScreenComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainScreenComponent.xib; sourceTree = "<group>"; };
+		1943B00D21F66F830054119C /* MainScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
+		1943B00F21F66FDC0054119C /* MainScreenScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenScene.swift; sourceTree = "<group>"; };
+		1943B01121F67ED30054119C /* Connector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connector.swift; sourceTree = "<group>"; };
+		1943B01421F67F100054119C /* BaseConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseConnector.swift; sourceTree = "<group>"; };
+		1943B01621F67FDB0054119C /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
+		1943B01821F680C60054119C /* BaseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseComponent.swift; sourceTree = "<group>"; };
+		1943B01A21F68D9C0054119C /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		19A1B18421F3837C0090F760 /* Groshy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Groshy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A1B18721F3837C0090F760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19A1B18921F3837C0090F760 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +161,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1943B00421F66C370054119C /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				1943B00921F66D630054119C /* MainScreenComponent.swift */,
+				1943B00B21F66D890054119C /* MainScreenComponent.xib */,
+				1943B00521F66D3C0054119C /* MainScreenConnector.swift */,
+				1943B00721F66D4C0054119C /* MainScreenProps.swift */,
+				1943B00F21F66FDC0054119C /* MainScreenScene.swift */,
+				1943B00D21F66F830054119C /* MainScreenViewController.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		1943B01321F67F050054119C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				1943B01421F67F100054119C /* BaseConnector.swift */,
+				1943B01821F680C60054119C /* BaseComponent.swift */,
+				1943B01A21F68D9C0054119C /* Scene.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		19A1B17B21F3837C0090F760 = {
 			isa = PBXGroup;
 			children = (
@@ -225,7 +270,7 @@
 			children = (
 				19A1B1BD21F384D70090F760 /* Common */,
 				19A1B1BE21F384DC0090F760 /* Features */,
-				19A1B1D321F3A8A30090F760 /* Scenes */,
+				19A1B1D321F3A8A30090F760 /* Components */,
 				19A1B18B21F3837C0090F760 /* Main.storyboard */,
 				19A1B18921F3837C0090F760 /* ViewController.swift */,
 			);
@@ -269,6 +314,7 @@
 		19A1B1BD21F384D70090F760 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1943B01321F67F050054119C /* Base */,
 				19A1B1D821F3B48F0090F760 /* Protocols */,
 			);
 			path = Common;
@@ -313,16 +359,19 @@
 			path = Accounts;
 			sourceTree = "<group>";
 		};
-		19A1B1D321F3A8A30090F760 /* Scenes */ = {
+		19A1B1D321F3A8A30090F760 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1943B00421F66C370054119C /* MainScreen */,
 			);
-			path = Scenes;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		19A1B1D821F3B48F0090F760 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				1943B01621F67FDB0054119C /* Component.swift */,
+				1943B01121F67ED30054119C /* Connector.swift */,
 				19A1B1D621F3B3080090F760 /* NibIdentifiable.swift */,
 			);
 			path = Protocols;
@@ -556,6 +605,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1943B00C21F66D890054119C /* MainScreenComponent.xib in Resources */,
 				19A1B19221F3837E0090F760 /* LaunchScreen.storyboard in Resources */,
 				19A1B18F21F3837D0090F760 /* Assets.xcassets in Resources */,
 				19A1B18D21F3837D0090F760 /* Main.storyboard in Resources */,
@@ -669,14 +719,21 @@
 				19A1B1D021F398910090F760 /* AppFeature.swift in Sources */,
 				19A1B1DB21F3B4D30090F760 /* RepositoryProvider.swift in Sources */,
 				19A1B1F421F4D8B90090F760 /* AccountsRepositoryError.swift in Sources */,
+				1943B01221F67ED30054119C /* Connector.swift in Sources */,
 				19A1B1C221F3860E0090F760 /* AppState.swift in Sources */,
 				19A1B1ED21F3B6200090F760 /* StorageServiceProtocol.swift in Sources */,
 				19A1B1F221F4CF8A0090F760 /* AccountsRepository.swift in Sources */,
+				1943B01521F67F100054119C /* BaseConnector.swift in Sources */,
 				19A1B1EA21F3B6200090F760 /* UserPreferencesStorageService.swift in Sources */,
+				1943B01921F680C60054119C /* BaseComponent.swift in Sources */,
+				1943B01B21F68D9C0054119C /* Scene.swift in Sources */,
 				19A1B1EB21F3B6200090F760 /* StorageServiceKey.swift in Sources */,
 				19A1B1D521F3B1740090F760 /* AppAction.swift in Sources */,
+				1943B01021F66FDC0054119C /* MainScreenScene.swift in Sources */,
+				1943B00E21F66F830054119C /* MainScreenViewController.swift in Sources */,
 				19A1B1C821F3895C0090F760 /* AccountsState.swift in Sources */,
 				19A1B1C621F3894E0090F760 /* Account.swift in Sources */,
+				1943B00621F66D3C0054119C /* MainScreenConnector.swift in Sources */,
 				19A1B1E221F3B5E10090F760 /* ServiceProviderProtocol.swift in Sources */,
 				19A1B1E021F3B5A90090F760 /* ServiceProvider.swift in Sources */,
 				19A1B1D221F3991D0090F760 /* AppReducer.swift in Sources */,
@@ -688,8 +745,11 @@
 				19A1B1E921F3B6200090F760 /* KeychainStorageService.swift in Sources */,
 				19A1B1EC21F3B6200090F760 /* StorageServiceError.swift in Sources */,
 				19A1B1CC21F395B20090F760 /* AccountsReducer.swift in Sources */,
+				1943B00821F66D4C0054119C /* MainScreenProps.swift in Sources */,
 				19A1B1DD21F3B4F70090F760 /* RepositoryProviderProtocol.swift in Sources */,
+				1943B01721F67FDB0054119C /* Component.swift in Sources */,
 				19A1B1CA21F389D60090F760 /* AccountsAction.swift in Sources */,
+				1943B00A21F66D630054119C /* MainScreenComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
