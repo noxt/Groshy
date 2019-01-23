@@ -18,8 +18,8 @@ final class MainScreenConnector: BaseConnector<MainScreenProps> {
             counterTitle: counterTitle(accountState.list.count),
 
             // Output
-            onViewDidLoad: onViewDidLoad(),
-            createAccountCommand: createAccountCommand()
+            loadAccountsListCommand: AccountsFeature.Commands.loadAccountsList(repositories),
+            createAccountCommand: AccountsFeature.Commands.createAccount(repositories)
         )
     }
 
@@ -33,45 +33,6 @@ final class MainScreenConnector: BaseConnector<MainScreenProps> {
 
     private func counterTitle(_ count: Int) -> String {
         return "Accounts in DB: \(count)"
-    }
-
-
-    private func onViewDidLoad() -> PlainCommand {
-        return PlainCommand {
-            core.dispatch(AccountsFeature.Action.StartLoading())
-
-            do {
-                let accounts = try self.repositories.accountsRepository.loadAccounts()
-
-                core.dispatch(AccountsFeature.Action.AccountsListLoaded(list: accounts))
-
-                if let currentAccount = accounts.last {
-                    core.dispatch(AccountsFeature.Action.SelectCurrentAccount(account: currentAccount))
-                }
-            } catch let e {
-                core.dispatch(AccountsFeature.Action.Error(message: e.localizedDescription))
-            }
-        }
-    }
-
-    private func createAccountCommand() -> PlainCommand {
-        return PlainCommand {
-            let newAccount = Account(
-                id: UUID(),
-                title: "New Account"
-            )
-
-            core.dispatch(AccountsFeature.Action.StartLoading())
-
-            do {
-                try self.repositories.accountsRepository.create(account: newAccount)
-                let accounts = try self.repositories.accountsRepository.loadAccounts()
-                core.dispatch(AccountsFeature.Action.AccountsListLoaded(list: accounts))
-                core.dispatch(AccountsFeature.Action.SelectCurrentAccount(account: newAccount))
-            } catch let e {
-                core.dispatch(AccountsFeature.Action.Error(message: e.localizedDescription))
-            }
-        }
     }
 
 }

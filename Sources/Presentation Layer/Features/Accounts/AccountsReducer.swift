@@ -13,7 +13,7 @@ extension AccountsFeature {
 
         switch action {
 
-        case let payload as Action.SelectCurrentAccount:
+        case let payload as Actions.SelectCurrentAccount:
             return State(
                 currentAccount: payload.account,
                 list: old.list,
@@ -21,7 +21,7 @@ extension AccountsFeature {
                 error: nil
             )
 
-        case let payload as Action.AccountsListLoaded:
+        case let payload as Actions.AccountsListLoaded:
             return State(
                 currentAccount: old.currentAccount,
                 list: payload.list,
@@ -29,7 +29,7 @@ extension AccountsFeature {
                 error: nil
             )
 
-        case is Action.StartLoading:
+        case is Actions.StartLoading:
             return State(
                 currentAccount: old.currentAccount,
                 list: old.list,
@@ -37,7 +37,7 @@ extension AccountsFeature {
                 error: nil
             )
 
-        case let payload as Action.Error:
+        case let payload as Actions.Error:
             return State(
                 currentAccount: old.currentAccount,
                 list: old.list,

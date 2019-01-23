@@ -20,6 +20,7 @@
 		1943B01921F680C60054119C /* BaseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B01821F680C60054119C /* BaseComponent.swift */; };
 		1943B01B21F68D9C0054119C /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B01A21F68D9C0054119C /* Scene.swift */; };
 		1943B01D21F709830054119C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B01C21F709830054119C /* BaseViewController.swift */; };
+		1943B01F21F857FA0054119C /* AccountsCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B01E21F857FA0054119C /* AccountsCommands.swift */; };
 		19A1B18821F3837C0090F760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B18721F3837C0090F760 /* AppDelegate.swift */; };
 		19A1B18F21F3837D0090F760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19A1B18E21F3837D0090F760 /* Assets.xcassets */; };
 		19A1B19221F3837E0090F760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A1B19021F3837E0090F760 /* LaunchScreen.storyboard */; };
@@ -27,7 +28,7 @@
 		19A1B1C221F3860E0090F760 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B1C121F3860E0090F760 /* AppState.swift */; };
 		19A1B1C621F3894E0090F760 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B1C521F3894E0090F760 /* Account.swift */; };
 		19A1B1C821F3895C0090F760 /* AccountsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B1C721F3895C0090F760 /* AccountsState.swift */; };
-		19A1B1CA21F389D60090F760 /* AccountsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B1C921F389D60090F760 /* AccountsAction.swift */; };
+		19A1B1CA21F389D60090F760 /* AccountsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B1C921F389D60090F760 /* AccountsActions.swift */; };
 		19A1B1CC21F395B20090F760 /* AccountsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B1CB21F395B20090F760 /* AccountsReducer.swift */; };
 		19A1B1CE21F395F10090F760 /* AccountsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B1CD21F395F10090F760 /* AccountsFeature.swift */; };
 		19A1B1D021F398910090F760 /* AppFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B1CF21F398910090F760 /* AppFeature.swift */; };
@@ -84,6 +85,7 @@
 		1943B01821F680C60054119C /* BaseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseComponent.swift; sourceTree = "<group>"; };
 		1943B01A21F68D9C0054119C /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		1943B01C21F709830054119C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		1943B01E21F857FA0054119C /* AccountsCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsCommands.swift; sourceTree = "<group>"; };
 		19A1B18421F3837C0090F760 /* Groshy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Groshy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A1B18721F3837C0090F760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19A1B18E21F3837D0090F760 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,7 +99,7 @@
 		19A1B1C121F3860E0090F760 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		19A1B1C521F3894E0090F760 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		19A1B1C721F3895C0090F760 /* AccountsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsState.swift; sourceTree = "<group>"; };
-		19A1B1C921F389D60090F760 /* AccountsAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsAction.swift; sourceTree = "<group>"; };
+		19A1B1C921F389D60090F760 /* AccountsActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsActions.swift; sourceTree = "<group>"; };
 		19A1B1CB21F395B20090F760 /* AccountsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsReducer.swift; sourceTree = "<group>"; };
 		19A1B1CD21F395F10090F760 /* AccountsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsFeature.swift; sourceTree = "<group>"; };
 		19A1B1CF21F398910090F760 /* AppFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFeature.swift; sourceTree = "<group>"; };
@@ -348,7 +350,8 @@
 		19A1B1C421F389200090F760 /* Accounts */ = {
 			isa = PBXGroup;
 			children = (
-				19A1B1C921F389D60090F760 /* AccountsAction.swift */,
+				19A1B1C921F389D60090F760 /* AccountsActions.swift */,
+				1943B01E21F857FA0054119C /* AccountsCommands.swift */,
 				19A1B1CD21F395F10090F760 /* AccountsFeature.swift */,
 				19A1B1CB21F395B20090F760 /* AccountsReducer.swift */,
 				19A1B1C721F3895C0090F760 /* AccountsState.swift */,
@@ -719,6 +722,7 @@
 				19A1B1C221F3860E0090F760 /* AppState.swift in Sources */,
 				1943B01D21F709830054119C /* BaseViewController.swift in Sources */,
 				19A1B1ED21F3B6200090F760 /* StorageServiceProtocol.swift in Sources */,
+				1943B01F21F857FA0054119C /* AccountsCommands.swift in Sources */,
 				19A1B1F221F4CF8A0090F760 /* AccountsRepository.swift in Sources */,
 				1943B01521F67F100054119C /* BaseConnector.swift in Sources */,
 				19A1B1EA21F3B6200090F760 /* UserPreferencesStorageService.swift in Sources */,
@@ -744,7 +748,7 @@
 				1943B00821F66D4C0054119C /* MainScreenProps.swift in Sources */,
 				19A1B1DD21F3B4F70090F760 /* RepositoryProviderProtocol.swift in Sources */,
 				1943B01721F67FDB0054119C /* Component.swift in Sources */,
-				19A1B1CA21F389D60090F760 /* AccountsAction.swift in Sources */,
+				19A1B1CA21F389D60090F760 /* AccountsActions.swift in Sources */,
 				1943B00A21F66D630054119C /* MainScreenComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

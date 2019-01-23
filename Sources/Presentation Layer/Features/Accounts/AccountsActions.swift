@@ -9,21 +9,21 @@ import Unicore
 
 extension AccountsFeature {
     
-    struct Action {
+    struct Actions {
 
-        struct SelectCurrentAccount: Unicore.Action {
+        struct SelectCurrentAccount: Action {
             let account: Account
         }
 
-        struct StartLoading: Unicore.Action {
+        struct StartLoading: Action {
 
         }
 
-        struct AccountsListLoaded: Unicore.Action {
+        struct AccountsListLoaded: Action {
             let list: [Account]
         }
 
-        struct Error: Unicore.Action {
+        struct Error: Action {
             let message: String
         }
 

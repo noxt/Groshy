@@ -11,7 +11,7 @@ final class MainScreenViewController: BaseViewController<MainScreenComponent, Ma
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        component.props.onViewDidLoad.execute()
+        component.props.loadAccountsListCommand.execute()
     }
 
 }

@@ -27,7 +27,12 @@ final class MainScreenComponent: BaseComponent<MainScreenProps, MainScreenConnec
 
 
     @IBAction func addNewAccount() {
-        props.createAccountCommand.execute()
+        let newAccount = Account(
+            id: UUID(),
+            title: "New Account created at \(Date())"
+        )
+
+        props.createAccountCommand.execute(with: newAccount)
     }
 
 }

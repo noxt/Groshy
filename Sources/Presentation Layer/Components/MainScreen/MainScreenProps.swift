@@ -14,8 +14,8 @@ struct MainScreenProps {
     let counterTitle: String?
 
     // Output
-    let onViewDidLoad: PlainCommand
-    let createAccountCommand: PlainCommand
+    let loadAccountsListCommand: PlainCommand
+    let createAccountCommand: Command<Account>
 
 }
 
