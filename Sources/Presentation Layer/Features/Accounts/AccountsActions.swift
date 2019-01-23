@@ -11,16 +11,16 @@ extension AccountsFeature {
     
     struct Actions {
 
-        struct SelectCurrentAccount: Action {
-            let account: Account
+        struct CurrentAccountSelected: Action {
+            let accountID: Account.ID
         }
 
-        struct StartLoading: Action {
+        struct LoadingStarted: Action {
 
         }
 
-        struct AccountsListLoaded: Action {
-            let list: [Account]
+        struct AccountsLoaded: Action {
+            let accounts: [Account]
         }
 
         struct Error: Action {

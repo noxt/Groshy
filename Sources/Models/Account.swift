@@ -7,8 +7,10 @@ import Foundation
 
 
 struct Account: Codable, Equatable {
+
+    typealias ID = UUID
     
-    let id: UUID
+    let id: ID
     var title: String
     
 }

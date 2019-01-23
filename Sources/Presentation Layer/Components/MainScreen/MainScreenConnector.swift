@@ -12,10 +12,17 @@ final class MainScreenConnector: BaseConnector<MainScreenProps> {
     override func mapToProps(state: AppFeature.State) -> MainScreenProps {
         let accountState = state.accountsState
 
+        let currentAccount: Account?
+        if let id = accountState.currentAccountID {
+            currentAccount = accountState.accounts[id]
+        } else {
+            currentAccount = nil
+        }
+
         return MainScreenProps(
             // Input
-            currentAccountTitle: currentAccountTitle(accountState.currentAccount),
-            counterTitle: counterTitle(accountState.list.count),
+            currentAccountTitle: currentAccountTitle(currentAccount),
+            counterTitle: counterTitle(accountState.accounts.count),
 
             // Output
             loadAccountsListCommand: AccountsFeature.Commands.loadAccountsList(repositories),

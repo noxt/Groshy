@@ -13,34 +13,39 @@ extension AccountsFeature {
 
         switch action {
 
-        case let payload as Actions.SelectCurrentAccount:
+        case let payload as Actions.CurrentAccountSelected:
             return State(
-                currentAccount: payload.account,
-                list: old.list,
+                currentAccountID: payload.accountID,
+                accounts: old.accounts,
                 isLoading: false,
                 error: nil
             )
 
-        case let payload as Actions.AccountsListLoaded:
+        case let payload as Actions.AccountsLoaded:
+            var accounts: [Account.ID: Account] = [:]
+            for account in payload.accounts {
+                accounts[account.id] = account
+            }
+
             return State(
-                currentAccount: old.currentAccount,
-                list: payload.list,
+                currentAccountID: old.currentAccountID,
+                accounts: accounts,
                 isLoading: false,
                 error: nil
             )
 
-        case is Actions.StartLoading:
+        case is Actions.LoadingStarted:
             return State(
-                currentAccount: old.currentAccount,
-                list: old.list,
+                currentAccountID: old.currentAccountID,
+                accounts: old.accounts,
                 isLoading: true,
                 error: nil
             )
 
         case let payload as Actions.Error:
             return State(
-                currentAccount: old.currentAccount,
-                list: old.list,
+                currentAccountID: old.currentAccountID,
+                accounts: old.accounts,
                 isLoading: false,
                 error: payload.message
             )

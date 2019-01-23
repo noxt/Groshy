@@ -10,15 +10,15 @@ extension AccountsFeature {
 
     struct State: Codable {
 
-        let currentAccount: Account?
-        let list: [Account]
+        let currentAccountID: Account.ID?
+        let accounts: [Account.ID : Account]
         let isLoading: Bool
         let error: String?
 
 
         static let initial = State(
-            currentAccount: nil,
-            list: [],
+            currentAccountID: nil,
+            accounts: [:],
             isLoading: false,
             error: nil
         )
