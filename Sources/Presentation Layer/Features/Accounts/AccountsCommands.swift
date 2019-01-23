@@ -17,8 +17,7 @@ extension AccountsFeature {
 
                 do {
                     let accounts = try repositories.accountsRepository.loadAccounts()
-
-                    core.dispatch(Actions.AccountsLoaded(accounts: accounts))
+                    core.dispatch(Actions.AccountsUpdated(accounts: normalize(accounts: accounts)))
 
                     if let currentAccount = accounts.last {
                         core.dispatch(Actions.CurrentAccountSelected(accountID: currentAccount.id))
@@ -36,12 +35,20 @@ extension AccountsFeature {
                 do {
                     try repositories.accountsRepository.create(account: newAccount)
                     let accounts = try repositories.accountsRepository.loadAccounts()
-                    core.dispatch(Actions.AccountsLoaded(accounts: accounts))
+                    core.dispatch(Actions.AccountsUpdated(accounts: normalize(accounts: accounts)))
                     core.dispatch(Actions.CurrentAccountSelected(accountID: newAccount.id))
                 } catch let e {
                     core.dispatch(Actions.Error(message: e.localizedDescription))
                 }
             }
+        }
+
+        private static func normalize(accounts: [Account]) -> [Account.ID: Account] {
+            var accountsDict: [Account.ID: Account] = [:]
+            for account in accounts {
+                accountsDict[account.id] = account
+            }
+            return accountsDict
         }
 
     }

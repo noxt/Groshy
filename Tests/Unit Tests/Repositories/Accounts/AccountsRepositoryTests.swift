@@ -7,7 +7,7 @@ import XCTest
 @testable import Groshy
 
 
-class AccountsRepositoryTests: BaseUnitTests {
+class AccountsRepositoryTests: BaseRepositoryTests {
 
     func test__LoadAccounts__Success() {
         let accounts = [

@@ -21,6 +21,8 @@
 		1943B01B21F68D9C0054119C /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B01A21F68D9C0054119C /* Scene.swift */; };
 		1943B01D21F709830054119C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B01C21F709830054119C /* BaseViewController.swift */; };
 		1943B01F21F857FA0054119C /* AccountsCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B01E21F857FA0054119C /* AccountsCommands.swift */; };
+		1943B02521F8C19E0054119C /* AccountsReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B02421F8C19E0054119C /* AccountsReducerTests.swift */; };
+		1943B02721F8EEAA0054119C /* BaseReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B02621F8EEAA0054119C /* BaseReducerTests.swift */; };
 		19A1B18821F3837C0090F760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B18721F3837C0090F760 /* AppDelegate.swift */; };
 		19A1B18F21F3837D0090F760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19A1B18E21F3837D0090F760 /* Assets.xcassets */; };
 		19A1B19221F3837E0090F760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A1B19021F3837E0090F760 /* LaunchScreen.storyboard */; };
@@ -50,7 +52,7 @@
 		19A1B1F721F4DBDC0090F760 /* AccountsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B1F621F4DBDC0090F760 /* AccountsRepositoryTests.swift */; };
 		19A1B1FD21F4DCC30090F760 /* MockServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B1FC21F4DCC30090F760 /* MockServiceProvider.swift */; };
 		19A1B1FF21F4DD230090F760 /* MockStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B1FE21F4DD230090F760 /* MockStorageService.swift */; };
-		19A1B20421F4E1350090F760 /* BaseUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B20321F4E1350090F760 /* BaseUnitTests.swift */; };
+		19A1B20421F4E1350090F760 /* BaseRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B20321F4E1350090F760 /* BaseRepositoryTests.swift */; };
 		4522FF75E83E63105C8715E5 /* Pods_Groshy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCFE9A34AC7BEF732228E37F /* Pods_Groshy.framework */; };
 		A2275B6857F2855A42DA91C0 /* Pods_GroshyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E636AA3A772C8C69D136450B /* Pods_GroshyTests.framework */; };
 /* End PBXBuildFile section */
@@ -86,6 +88,8 @@
 		1943B01A21F68D9C0054119C /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		1943B01C21F709830054119C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1943B01E21F857FA0054119C /* AccountsCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsCommands.swift; sourceTree = "<group>"; };
+		1943B02421F8C19E0054119C /* AccountsReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsReducerTests.swift; sourceTree = "<group>"; };
+		1943B02621F8EEAA0054119C /* BaseReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseReducerTests.swift; sourceTree = "<group>"; };
 		19A1B18421F3837C0090F760 /* Groshy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Groshy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A1B18721F3837C0090F760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19A1B18E21F3837D0090F760 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,7 +125,7 @@
 		19A1B1F621F4DBDC0090F760 /* AccountsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsRepositoryTests.swift; sourceTree = "<group>"; };
 		19A1B1FC21F4DCC30090F760 /* MockServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockServiceProvider.swift; sourceTree = "<group>"; };
 		19A1B1FE21F4DD230090F760 /* MockStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStorageService.swift; sourceTree = "<group>"; };
-		19A1B20321F4E1350090F760 /* BaseUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUnitTests.swift; sourceTree = "<group>"; };
+		19A1B20321F4E1350090F760 /* BaseRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepositoryTests.swift; sourceTree = "<group>"; };
 		816DF7E53140969F2A2A7654 /* Pods-Groshy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Groshy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Groshy/Pods-Groshy.debug.xcconfig"; sourceTree = "<group>"; };
 		884E6ED1DE1C85D9FA2C1A82 /* Pods-GroshyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroshyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroshyUITests/Pods-GroshyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8C424832E1D666D694D8562B /* Pods-GroshyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroshyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GroshyUITests/Pods-GroshyUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -185,6 +189,22 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		1943B02221F8C1610054119C /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				1943B02321F8C1820054119C /* Accounts */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		1943B02321F8C1820054119C /* Accounts */ = {
+			isa = PBXGroup;
+			children = (
+				1943B02421F8C19E0054119C /* AccountsReducerTests.swift */,
+			);
+			path = Accounts;
+			sourceTree = "<group>";
+		};
 		19A1B17B21F3837C0090F760 = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				19A1B20221F4E1200090F760 /* Common */,
+				1943B02221F8C1610054119C /* Features */,
 				19A1B1F821F4DC7D0090F760 /* Mocks */,
 				19A1B1F521F4DBBB0090F760 /* Repositories */,
 				19A1B19E21F3837E0090F760 /* Info.plist */,
@@ -461,7 +482,8 @@
 		19A1B20221F4E1200090F760 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				19A1B20321F4E1350090F760 /* BaseUnitTests.swift */,
+				19A1B20321F4E1350090F760 /* BaseRepositoryTests.swift */,
+				1943B02621F8EEAA0054119C /* BaseReducerTests.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -758,8 +780,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				19A1B1FD21F4DCC30090F760 /* MockServiceProvider.swift in Sources */,
-				19A1B20421F4E1350090F760 /* BaseUnitTests.swift in Sources */,
+				19A1B20421F4E1350090F760 /* BaseRepositoryTests.swift in Sources */,
 				19A1B1F721F4DBDC0090F760 /* AccountsRepositoryTests.swift in Sources */,
+				1943B02721F8EEAA0054119C /* BaseReducerTests.swift in Sources */,
+				1943B02521F8C19E0054119C /* AccountsReducerTests.swift in Sources */,
 				19A1B1FF21F4DD230090F760 /* MockStorageService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

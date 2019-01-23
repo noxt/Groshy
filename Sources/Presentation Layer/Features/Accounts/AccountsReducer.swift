@@ -9,7 +9,7 @@ import Unicore
 
 extension AccountsFeature {
 
-    static func reduce(_ old: State, with action: Unicore.Action) -> State {
+    static func reduce(_ old: State, with action: Action) -> State {
 
         switch action {
 
@@ -21,15 +21,10 @@ extension AccountsFeature {
                 error: nil
             )
 
-        case let payload as Actions.AccountsLoaded:
-            var accounts: [Account.ID: Account] = [:]
-            for account in payload.accounts {
-                accounts[account.id] = account
-            }
-
+        case let payload as Actions.AccountsUpdated:
             return State(
                 currentAccountID: old.currentAccountID,
-                accounts: accounts,
+                accounts: payload.accounts,
                 isLoading: false,
                 error: nil
             )

@@ -7,7 +7,7 @@ import XCTest
 @testable import Groshy
 
 
-class BaseUnitTests: XCTestCase {
+class BaseRepositoryTests: XCTestCase {
 
     var repositories: RepositoryProviderProtocol!
     var services: MockServiceProvider!

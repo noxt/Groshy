@@ -19,8 +19,8 @@ extension AccountsFeature {
 
         }
 
-        struct AccountsLoaded: Action {
-            let accounts: [Account]
+        struct AccountsUpdated: Action {
+            let accounts: [Account.ID: Account]
         }
 
         struct Error: Action {
