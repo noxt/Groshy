@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainScene = MainScreenScene.makeScene(with: repositories)
 
         window = UIWindow()
-        window?.rootViewController = mainScene.viewController
+        window?.rootViewController = UINavigationController(rootViewController: mainScene.viewController)
         window?.makeKeyAndVisible()
 
         return true

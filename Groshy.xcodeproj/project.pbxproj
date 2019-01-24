@@ -23,6 +23,15 @@
 		1943B01F21F857FA0054119C /* AccountsCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B01E21F857FA0054119C /* AccountsCommands.swift */; };
 		1943B02521F8C19E0054119C /* AccountsReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B02421F8C19E0054119C /* AccountsReducerTests.swift */; };
 		1943B02721F8EEAA0054119C /* BaseReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B02621F8EEAA0054119C /* BaseReducerTests.swift */; };
+		1943B03121F9EDE20054119C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B02F21F9EDD90054119C /* Category.swift */; };
+		1943B03521F9EED50054119C /* CategoryIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B03321F9EE5D0054119C /* CategoryIcon.swift */; };
+		1943B03721F9F46E0054119C /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B03621F9F46E0054119C /* Transaction.swift */; };
+		1943B03921FA075F0054119C /* KeyboardScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B03821FA075F0054119C /* KeyboardScene.swift */; };
+		1943B03B21FA076D0054119C /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B03A21FA076D0054119C /* KeyboardViewController.swift */; };
+		1943B03D21FA07750054119C /* KeyboardProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B03C21FA07750054119C /* KeyboardProps.swift */; };
+		1943B03F21FA077D0054119C /* KeyboardConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B03E21FA077D0054119C /* KeyboardConnector.swift */; };
+		1943B04121FA07890054119C /* KeyboardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B04021FA07890054119C /* KeyboardComponent.swift */; };
+		1943B04321FA07930054119C /* KeyboardComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1943B04221FA07930054119C /* KeyboardComponent.xib */; };
 		19A1B18821F3837C0090F760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B18721F3837C0090F760 /* AppDelegate.swift */; };
 		19A1B18F21F3837D0090F760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19A1B18E21F3837D0090F760 /* Assets.xcassets */; };
 		19A1B19221F3837E0090F760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A1B19021F3837E0090F760 /* LaunchScreen.storyboard */; };
@@ -90,6 +99,15 @@
 		1943B01E21F857FA0054119C /* AccountsCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsCommands.swift; sourceTree = "<group>"; };
 		1943B02421F8C19E0054119C /* AccountsReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsReducerTests.swift; sourceTree = "<group>"; };
 		1943B02621F8EEAA0054119C /* BaseReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseReducerTests.swift; sourceTree = "<group>"; };
+		1943B02F21F9EDD90054119C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		1943B03321F9EE5D0054119C /* CategoryIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIcon.swift; sourceTree = "<group>"; };
+		1943B03621F9F46E0054119C /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		1943B03821FA075F0054119C /* KeyboardScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardScene.swift; sourceTree = "<group>"; };
+		1943B03A21FA076D0054119C /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		1943B03C21FA07750054119C /* KeyboardProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardProps.swift; sourceTree = "<group>"; };
+		1943B03E21FA077D0054119C /* KeyboardConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardConnector.swift; sourceTree = "<group>"; };
+		1943B04021FA07890054119C /* KeyboardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardComponent.swift; sourceTree = "<group>"; };
+		1943B04221FA07930054119C /* KeyboardComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardComponent.xib; sourceTree = "<group>"; };
 		19A1B18421F3837C0090F760 /* Groshy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Groshy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A1B18721F3837C0090F760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19A1B18E21F3837D0090F760 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -168,6 +186,9 @@
 		1943B00421F66C370054119C /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				1943B02921F9C4BE0054119C /* AccountSelector */,
+				1943B02B21F9C4F30054119C /* Categories */,
+				1943B02A21F9C4DA0054119C /* Keyboard */,
 				1943B00921F66D630054119C /* MainScreenComponent.swift */,
 				1943B00B21F66D890054119C /* MainScreenComponent.xib */,
 				1943B00521F66D3C0054119C /* MainScreenConnector.swift */,
@@ -203,6 +224,47 @@
 				1943B02421F8C19E0054119C /* AccountsReducerTests.swift */,
 			);
 			path = Accounts;
+			sourceTree = "<group>";
+		};
+		1943B02921F9C4BE0054119C /* AccountSelector */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AccountSelector;
+			sourceTree = "<group>";
+		};
+		1943B02A21F9C4DA0054119C /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1943B04021FA07890054119C /* KeyboardComponent.swift */,
+				1943B04221FA07930054119C /* KeyboardComponent.xib */,
+				1943B03E21FA077D0054119C /* KeyboardConnector.swift */,
+				1943B03C21FA07750054119C /* KeyboardProps.swift */,
+				1943B03821FA075F0054119C /* KeyboardScene.swift */,
+				1943B03A21FA076D0054119C /* KeyboardViewController.swift */,
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
+		1943B02B21F9C4F30054119C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		1943B02C21F9E94D0054119C /* AccountsScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AccountsScreen;
+			sourceTree = "<group>";
+		};
+		1943B02D21F9E9560054119C /* StatisticsScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StatisticsScreen;
 			sourceTree = "<group>";
 		};
 		19A1B17B21F3837C0090F760 = {
@@ -353,6 +415,9 @@
 			isa = PBXGroup;
 			children = (
 				19A1B1C521F3894E0090F760 /* Account.swift */,
+				1943B02F21F9EDD90054119C /* Category.swift */,
+				1943B03321F9EE5D0054119C /* CategoryIcon.swift */,
+				1943B03621F9F46E0054119C /* Transaction.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -383,6 +448,8 @@
 		19A1B1D321F3A8A30090F760 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1943B02C21F9E94D0054119C /* AccountsScreen */,
+				1943B02D21F9E9560054119C /* StatisticsScreen */,
 				1943B00421F66C370054119C /* MainScreen */,
 			);
 			path = Components;
@@ -629,6 +696,7 @@
 			files = (
 				1943B00C21F66D890054119C /* MainScreenComponent.xib in Resources */,
 				19A1B19221F3837E0090F760 /* LaunchScreen.storyboard in Resources */,
+				1943B04321FA07930054119C /* KeyboardComponent.xib in Resources */,
 				19A1B18F21F3837D0090F760 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -743,6 +811,8 @@
 				1943B01221F67ED30054119C /* Connector.swift in Sources */,
 				19A1B1C221F3860E0090F760 /* AppState.swift in Sources */,
 				1943B01D21F709830054119C /* BaseViewController.swift in Sources */,
+				1943B04121FA07890054119C /* KeyboardComponent.swift in Sources */,
+				1943B03F21FA077D0054119C /* KeyboardConnector.swift in Sources */,
 				19A1B1ED21F3B6200090F760 /* StorageServiceProtocol.swift in Sources */,
 				1943B01F21F857FA0054119C /* AccountsCommands.swift in Sources */,
 				19A1B1F221F4CF8A0090F760 /* AccountsRepository.swift in Sources */,
@@ -760,17 +830,23 @@
 				19A1B1E221F3B5E10090F760 /* ServiceProviderProtocol.swift in Sources */,
 				19A1B1E021F3B5A90090F760 /* ServiceProvider.swift in Sources */,
 				19A1B1D221F3991D0090F760 /* AppReducer.swift in Sources */,
+				1943B03921FA075F0054119C /* KeyboardScene.swift in Sources */,
+				1943B03121F9EDE20054119C /* Category.swift in Sources */,
 				19A1B1F021F4CF700090F760 /* AccountsRepositoryProtocol.swift in Sources */,
+				1943B03521F9EED50054119C /* CategoryIcon.swift in Sources */,
 				19A1B1CE21F395F10090F760 /* AccountsFeature.swift in Sources */,
 				19A1B18821F3837C0090F760 /* AppDelegate.swift in Sources */,
 				19A1B1D721F3B3080090F760 /* NibIdentifiable.swift in Sources */,
 				19A1B1E921F3B6200090F760 /* KeychainStorageService.swift in Sources */,
+				1943B03B21FA076D0054119C /* KeyboardViewController.swift in Sources */,
+				1943B03721F9F46E0054119C /* Transaction.swift in Sources */,
 				19A1B1EC21F3B6200090F760 /* StorageServiceError.swift in Sources */,
 				19A1B1CC21F395B20090F760 /* AccountsReducer.swift in Sources */,
 				1943B00821F66D4C0054119C /* MainScreenProps.swift in Sources */,
 				19A1B1DD21F3B4F70090F760 /* RepositoryProviderProtocol.swift in Sources */,
 				1943B01721F67FDB0054119C /* Component.swift in Sources */,
 				19A1B1CA21F389D60090F760 /* AccountsActions.swift in Sources */,
+				1943B03D21FA07750054119C /* KeyboardProps.swift in Sources */,
 				1943B00A21F66D630054119C /* MainScreenComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
