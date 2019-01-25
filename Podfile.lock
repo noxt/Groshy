@@ -6,12 +6,16 @@ PODS:
   - Moya/Core (12.0.1):
     - Alamofire (~> 4.1)
     - Result (~> 4.0)
+  - Nimble (7.3.2)
+  - Quick (1.3.2)
   - Result (4.1.0)
   - Unicore (1.0.2)
 
 DEPENDENCIES:
   - KeychainAccess (~> 3.1)
   - Moya (~> 12.0)
+  - Nimble (~> 7.3)
+  - Quick (~> 1.3)
   - Result (~> 4.1)
   - Unicore (~> 1.0)
 
@@ -20,6 +24,8 @@ SPEC REPOS:
     - Alamofire
     - KeychainAccess
     - Moya
+    - Nimble
+    - Quick
     - Result
     - Unicore
 
@@ -27,9 +33,11 @@ SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  Nimble: 5e94a8cacb355943c6c87198035dc4adbb0f10e4
+  Quick: 2623cb30d7a7f41ca62f684f679586558f483d46
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   Unicore: 391e0c89bd9ff787fd348b51be0315f8bf66a043
 
-PODFILE CHECKSUM: 2c8939d51b4a6d0f5318ee12c1d4e0ce891a3cca
+PODFILE CHECKSUM: ce666a9c753a421f957e0cdf10f58d83dba736a2
 
 COCOAPODS: 1.5.3

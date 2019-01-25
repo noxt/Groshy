@@ -13,7 +13,9 @@ target 'Groshy' do
 
   target 'GroshyTests' do
     inherit! :search_paths
-    # Pods for testing
+
+    pod 'Quick', '~> 1.3'
+    pod 'Nimble', '~> 7.3'
   end
 
   target 'GroshyUITests' do

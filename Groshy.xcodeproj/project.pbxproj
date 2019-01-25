@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0F5F156400EF92E8088D4F3A /* Pods_GroshyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F91E71E98CF0F647F159C96 /* Pods_GroshyUITests.framework */; };
+		1940F4B321FB03F50063DB54 /* TransactionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4B221FB03F50063DB54 /* TransactionFeature.swift */; };
+		1940F4B521FB04290063DB54 /* TransactionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4B421FB04290063DB54 /* TransactionState.swift */; };
+		1940F4B821FB0C9D0063DB54 /* KeyboardFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4B721FB0C9D0063DB54 /* KeyboardFeature.swift */; };
+		1940F4BA21FB0CB60063DB54 /* KeyboardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4B921FB0CB60063DB54 /* KeyboardState.swift */; };
+		1940F4BC21FB0E4D0063DB54 /* KeyboardActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4BB21FB0E4D0063DB54 /* KeyboardActions.swift */; };
+		1940F4BE21FB0E5C0063DB54 /* KeyboardCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4BD21FB0E5C0063DB54 /* KeyboardCommands.swift */; };
+		1940F4C021FB1D8E0063DB54 /* KeyboardReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4BF21FB1D8E0063DB54 /* KeyboardReducer.swift */; };
 		1943B00621F66D3C0054119C /* MainScreenConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B00521F66D3C0054119C /* MainScreenConnector.swift */; };
 		1943B00821F66D4C0054119C /* MainScreenProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B00721F66D4C0054119C /* MainScreenProps.swift */; };
 		1943B00A21F66D630054119C /* MainScreenComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B00921F66D630054119C /* MainScreenComponent.swift */; };
@@ -84,6 +91,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1940F4B221FB03F50063DB54 /* TransactionFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFeature.swift; sourceTree = "<group>"; };
+		1940F4B421FB04290063DB54 /* TransactionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionState.swift; sourceTree = "<group>"; };
+		1940F4B721FB0C9D0063DB54 /* KeyboardFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardFeature.swift; sourceTree = "<group>"; };
+		1940F4B921FB0CB60063DB54 /* KeyboardState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardState.swift; sourceTree = "<group>"; };
+		1940F4BB21FB0E4D0063DB54 /* KeyboardActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardActions.swift; sourceTree = "<group>"; };
+		1940F4BD21FB0E5C0063DB54 /* KeyboardCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardCommands.swift; sourceTree = "<group>"; };
+		1940F4BF21FB1D8E0063DB54 /* KeyboardReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardReducer.swift; sourceTree = "<group>"; };
 		1943B00521F66D3C0054119C /* MainScreenConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenConnector.swift; sourceTree = "<group>"; };
 		1943B00721F66D4C0054119C /* MainScreenProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenProps.swift; sourceTree = "<group>"; };
 		1943B00921F66D630054119C /* MainScreenComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenComponent.swift; sourceTree = "<group>"; };
@@ -183,6 +197,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1940F4B121FB02B70063DB54 /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				1940F4B221FB03F50063DB54 /* TransactionFeature.swift */,
+				1940F4B421FB04290063DB54 /* TransactionState.swift */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
+		1940F4B621FB0C640063DB54 /* Keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1940F4BB21FB0E4D0063DB54 /* KeyboardActions.swift */,
+				1940F4BD21FB0E5C0063DB54 /* KeyboardCommands.swift */,
+				1940F4B721FB0C9D0063DB54 /* KeyboardFeature.swift */,
+				1940F4BF21FB1D8E0063DB54 /* KeyboardReducer.swift */,
+				1940F4B921FB0CB60063DB54 /* KeyboardState.swift */,
+			);
+			path = Keyboard;
+			sourceTree = "<group>";
+		};
 		1943B00421F66C370054119C /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,8 +440,10 @@
 		19A1B1BE21F384DC0090F760 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				19A1B1C021F385FF0090F760 /* App */,
 				19A1B1C421F389200090F760 /* Accounts */,
+				19A1B1C021F385FF0090F760 /* App */,
+				1940F4B621FB0C640063DB54 /* Keyboard */,
+				1940F4B121FB02B70063DB54 /* Transaction */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -616,6 +653,7 @@
 				19A1B19421F3837E0090F760 /* Sources */,
 				19A1B19521F3837E0090F760 /* Frameworks */,
 				19A1B19621F3837E0090F760 /* Resources */,
+				5923C3558830F10F667546B0 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -736,6 +774,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5923C3558830F10F667546B0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GroshyTests/Pods-GroshyTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GroshyTests/Pods-GroshyTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7EF9DEDAE7B8C8DB3B56F844 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -807,15 +865,18 @@
 			files = (
 				19A1B1D021F398910090F760 /* AppFeature.swift in Sources */,
 				19A1B1DB21F3B4D30090F760 /* RepositoryProvider.swift in Sources */,
+				1940F4BC21FB0E4D0063DB54 /* KeyboardActions.swift in Sources */,
 				19A1B1F421F4D8B90090F760 /* AccountsRepositoryError.swift in Sources */,
 				1943B01221F67ED30054119C /* Connector.swift in Sources */,
 				19A1B1C221F3860E0090F760 /* AppState.swift in Sources */,
+				1940F4BA21FB0CB60063DB54 /* KeyboardState.swift in Sources */,
 				1943B01D21F709830054119C /* BaseViewController.swift in Sources */,
 				1943B04121FA07890054119C /* KeyboardComponent.swift in Sources */,
 				1943B03F21FA077D0054119C /* KeyboardConnector.swift in Sources */,
 				19A1B1ED21F3B6200090F760 /* StorageServiceProtocol.swift in Sources */,
 				1943B01F21F857FA0054119C /* AccountsCommands.swift in Sources */,
 				19A1B1F221F4CF8A0090F760 /* AccountsRepository.swift in Sources */,
+				1940F4B821FB0C9D0063DB54 /* KeyboardFeature.swift in Sources */,
 				1943B01521F67F100054119C /* BaseConnector.swift in Sources */,
 				19A1B1EA21F3B6200090F760 /* UserPreferencesStorageService.swift in Sources */,
 				1943B01921F680C60054119C /* BaseComponent.swift in Sources */,
@@ -834,6 +895,7 @@
 				1943B03121F9EDE20054119C /* Category.swift in Sources */,
 				19A1B1F021F4CF700090F760 /* AccountsRepositoryProtocol.swift in Sources */,
 				1943B03521F9EED50054119C /* CategoryIcon.swift in Sources */,
+				1940F4B521FB04290063DB54 /* TransactionState.swift in Sources */,
 				19A1B1CE21F395F10090F760 /* AccountsFeature.swift in Sources */,
 				19A1B18821F3837C0090F760 /* AppDelegate.swift in Sources */,
 				19A1B1D721F3B3080090F760 /* NibIdentifiable.swift in Sources */,
@@ -841,11 +903,14 @@
 				1943B03B21FA076D0054119C /* KeyboardViewController.swift in Sources */,
 				1943B03721F9F46E0054119C /* Transaction.swift in Sources */,
 				19A1B1EC21F3B6200090F760 /* StorageServiceError.swift in Sources */,
+				1940F4BE21FB0E5C0063DB54 /* KeyboardCommands.swift in Sources */,
 				19A1B1CC21F395B20090F760 /* AccountsReducer.swift in Sources */,
 				1943B00821F66D4C0054119C /* MainScreenProps.swift in Sources */,
 				19A1B1DD21F3B4F70090F760 /* RepositoryProviderProtocol.swift in Sources */,
 				1943B01721F67FDB0054119C /* Component.swift in Sources */,
+				1940F4C021FB1D8E0063DB54 /* KeyboardReducer.swift in Sources */,
 				19A1B1CA21F389D60090F760 /* AccountsActions.swift in Sources */,
+				1940F4B321FB03F50063DB54 /* TransactionFeature.swift in Sources */,
 				1943B03D21FA07750054119C /* KeyboardProps.swift in Sources */,
 				1943B00A21F66D630054119C /* MainScreenComponent.swift in Sources */,
 			);
@@ -1059,7 +1124,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 94E87EB12D3F19ED61B109DB /* Pods-GroshyTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Tests/Unit Tests/Info.plist";
@@ -1080,7 +1145,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F954A2FD261D4B52D234C9EF /* Pods-GroshyTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Tests/Unit Tests/Info.plist";
