@@ -13,10 +13,11 @@ final class KeyboardConnector: BaseConnector<KeyboardProps> {
         let keyboardState = state.keyboardState
 
         return KeyboardProps(
-            addDigit: KeyboardFeature.Commands.addDigit(currentValue: keyboardState.currentValue),
-            addOperation: KeyboardFeature.Commands.addOperation(currentValue: keyboardState.currentValue),
-            addComma: KeyboardFeature.Commands.addComma(currentValue: keyboardState.currentValue),
-            removeLastSymbol: KeyboardFeature.Commands.removeLastSymbol(currentValue: keyboardState.currentValue)
+            // Output
+            addDigitCommand: KeyboardFeature.Commands.addDigit(currentValue: keyboardState.currentValue),
+            addOperationCommand: KeyboardFeature.Commands.addOperation(currentValue: keyboardState.currentValue),
+            addCommaCommand: KeyboardFeature.Commands.addComma(currentValue: keyboardState.currentValue),
+            removeLastSymbolCommand: KeyboardFeature.Commands.removeLastSymbol(currentValue: keyboardState.currentValue)
         )
     }
 

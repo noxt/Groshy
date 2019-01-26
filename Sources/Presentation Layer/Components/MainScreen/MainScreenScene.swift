@@ -11,6 +11,8 @@ struct MainScreenScene: SceneProtocol {
     static func makeScene(with repositories: RepositoryProviderProtocol) -> Scene<MainScreenConnector> {
         let connector = MainScreenConnector(repositories: repositories)
         let viewController = MainScreenViewController(connector: connector)
+        viewController.keyboardScene = KeyboardScene.makeScene(with: repositories)
+
         return Scene(connector, viewController)
     }
 

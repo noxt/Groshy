@@ -15,6 +15,8 @@
 		1940F4BC21FB0E4D0063DB54 /* KeyboardActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4BB21FB0E4D0063DB54 /* KeyboardActions.swift */; };
 		1940F4BE21FB0E5C0063DB54 /* KeyboardCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4BD21FB0E5C0063DB54 /* KeyboardCommands.swift */; };
 		1940F4C021FB1D8E0063DB54 /* KeyboardReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4BF21FB1D8E0063DB54 /* KeyboardReducer.swift */; };
+		1940F4C221FC890A0063DB54 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4C121FC890A0063DB54 /* Colors.swift */; };
+		1940F4C521FC8AB50063DB54 /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4C421FC8AB50063DB54 /* UIColor+RGB.swift */; };
 		1943B00621F66D3C0054119C /* MainScreenConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B00521F66D3C0054119C /* MainScreenConnector.swift */; };
 		1943B00821F66D4C0054119C /* MainScreenProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B00721F66D4C0054119C /* MainScreenProps.swift */; };
 		1943B00A21F66D630054119C /* MainScreenComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B00921F66D630054119C /* MainScreenComponent.swift */; };
@@ -98,6 +100,8 @@
 		1940F4BB21FB0E4D0063DB54 /* KeyboardActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardActions.swift; sourceTree = "<group>"; };
 		1940F4BD21FB0E5C0063DB54 /* KeyboardCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardCommands.swift; sourceTree = "<group>"; };
 		1940F4BF21FB1D8E0063DB54 /* KeyboardReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardReducer.swift; sourceTree = "<group>"; };
+		1940F4C121FC890A0063DB54 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		1940F4C421FC8AB50063DB54 /* UIColor+RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB.swift"; sourceTree = "<group>"; };
 		1943B00521F66D3C0054119C /* MainScreenConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenConnector.swift; sourceTree = "<group>"; };
 		1943B00721F66D4C0054119C /* MainScreenProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenProps.swift; sourceTree = "<group>"; };
 		1943B00921F66D630054119C /* MainScreenComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenComponent.swift; sourceTree = "<group>"; };
@@ -216,6 +220,14 @@
 				1940F4B921FB0CB60063DB54 /* KeyboardState.swift */,
 			);
 			path = Keyboard;
+			sourceTree = "<group>";
+		};
+		1940F4C321FC8A9D0063DB54 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1940F4C421FC8AB50063DB54 /* UIColor+RGB.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		1943B00421F66C370054119C /* MainScreen */ = {
@@ -397,8 +409,10 @@
 		19A1B1B921F384400090F760 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				19A1B19021F3837E0090F760 /* LaunchScreen.storyboard */,
+				1940F4C321FC8A9D0063DB54 /* Extensions */,
 				19A1B18E21F3837D0090F760 /* Assets.xcassets */,
+				1940F4C121FC890A0063DB54 /* Colors.swift */,
+				19A1B19021F3837E0090F760 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -805,6 +819,7 @@
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Unicore/Unicore.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -813,6 +828,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Unicore.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -872,6 +888,7 @@
 				1940F4BA21FB0CB60063DB54 /* KeyboardState.swift in Sources */,
 				1943B01D21F709830054119C /* BaseViewController.swift in Sources */,
 				1943B04121FA07890054119C /* KeyboardComponent.swift in Sources */,
+				1940F4C521FC8AB50063DB54 /* UIColor+RGB.swift in Sources */,
 				1943B03F21FA077D0054119C /* KeyboardConnector.swift in Sources */,
 				19A1B1ED21F3B6200090F760 /* StorageServiceProtocol.swift in Sources */,
 				1943B01F21F857FA0054119C /* AccountsCommands.swift in Sources */,
@@ -900,6 +917,7 @@
 				19A1B18821F3837C0090F760 /* AppDelegate.swift in Sources */,
 				19A1B1D721F3B3080090F760 /* NibIdentifiable.swift in Sources */,
 				19A1B1E921F3B6200090F760 /* KeychainStorageService.swift in Sources */,
+				1940F4C221FC890A0063DB54 /* Colors.swift in Sources */,
 				1943B03B21FA076D0054119C /* KeyboardViewController.swift in Sources */,
 				1943B03721F9F46E0054119C /* Transaction.swift in Sources */,
 				19A1B1EC21F3B6200090F760 /* StorageServiceError.swift in Sources */,

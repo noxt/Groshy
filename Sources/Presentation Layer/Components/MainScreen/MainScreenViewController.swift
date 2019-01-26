@@ -9,9 +9,10 @@ import Unicore
 
 final class MainScreenViewController: BaseViewController<MainScreenComponent, MainScreenConnector> {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        component.props.loadAccountsListCommand.execute()
+    var keyboardScene: Scene<KeyboardConnector>! {
+        didSet {
+            component.keyboardView = keyboardScene.viewController.view
+        }
     }
 
 }

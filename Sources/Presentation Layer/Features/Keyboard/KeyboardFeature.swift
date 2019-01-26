@@ -10,11 +10,11 @@ struct KeyboardFeature {
 
     typealias Digit = Int
 
-    enum Operation: String {
+    enum Operation: String, CaseIterable {
         case plus = "+"
-        case minus = "-"
-        case multiplication = "*"
-        case division = "/"
+        case minus = "–"
+        case multiplication = "×"
+        case division = "÷"
     }
     
 }

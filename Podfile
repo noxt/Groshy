@@ -9,6 +9,7 @@ target 'Groshy' do
   pod 'Moya', '~> 12.0'
   pod 'KeychainAccess', '~> 3.1'
   pod 'Result', '~> 4.1'
+  pod 'SnapKit', '~> 4.0'
 
 
   target 'GroshyTests' do

@@ -9,14 +9,6 @@ import Unicore
 
 struct MainScreenProps {
 
-    // Input
-    let currentAccountTitle: String?
-    let counterTitle: String?
-
-    // Output
-    let loadAccountsListCommand: PlainCommand
-    let createAccountCommand: Command<Account>
-
 }
 
 
@@ -25,8 +17,7 @@ struct MainScreenProps {
 extension MainScreenProps: Equatable {
 
     static func == (lhs: MainScreenProps, rhs: MainScreenProps) -> Bool {
-        return lhs.currentAccountTitle == rhs.currentAccountTitle
-            && lhs.counterTitle == rhs.counterTitle
+        return true
     }
 
 }

@@ -10,10 +10,10 @@ import Unicore
 struct KeyboardProps {
 
     // Output
-    let addDigit: Command<KeyboardFeature.Digit>
-    let addOperation: Command<KeyboardFeature.Operation>
-    let addComma: PlainCommand
-    let removeLastSymbol: PlainCommand
+    let addDigitCommand: Command<KeyboardFeature.Digit>
+    let addOperationCommand: Command<KeyboardFeature.Operation>
+    let addCommaCommand: PlainCommand
+    let removeLastSymbolCommand: PlainCommand
 
 }
 

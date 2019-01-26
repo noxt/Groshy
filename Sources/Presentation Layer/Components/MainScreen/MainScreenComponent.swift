@@ -4,35 +4,40 @@
 //
 
 import UIKit
+import SnapKit
 
 
 final class MainScreenComponent: BaseComponent<MainScreenProps, MainScreenConnector> {
-    
-    @IBOutlet weak var accountTitleLabel: UILabel!
-    @IBOutlet weak var accountsCounterLabel: UILabel!
-    @IBOutlet weak var addButton: UIButton!
+
+    private struct Constants {
+        static let cornerRadius: CGFloat = 4
+    }
+
+
+    var keyboardView: UIView! {
+        didSet {
+            oldValue?.removeFromSuperview()
+            keyboardContainer.addSubview(keyboardView)
+            keyboardView.snp.makeConstraints { (make) in
+                make.edges.equalTo(keyboardContainer)
+            }
+        }
+    }
+
+    @IBOutlet weak var keyboardContainer: UIView!
+    @IBOutlet weak var applyButton: UIButton! {
+        didSet {
+            applyButton.layer.cornerRadius = Constants.cornerRadius
+            applyButton.backgroundColor = Colors.blue
+            applyButton.setTitleColor(Colors.white, for: .normal)
+        }
+    }
 
 
     override func setup() {
         super.setup()
 
-        addButton.tintColor = .red
-        backgroundColor = .yellow
-    }
-
-    override func updateUI() {
-        accountTitleLabel.text = props.currentAccountTitle
-        accountsCounterLabel.text = props.counterTitle
-    }
-
-
-    @IBAction func addNewAccount() {
-        let newAccount = Account(
-            id: UUID(),
-            title: "New Account created at \(Date())"
-        )
-
-        props.createAccountCommand.execute(with: newAccount)
+        backgroundColor = Colors.darkWhite
     }
 
 }

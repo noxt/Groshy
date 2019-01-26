@@ -16,44 +16,34 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6k2-Mt-con">
-                    <rect key="frame" x="172.5" y="391" width="30" height="30"/>
-                    <state key="normal" title="Add"/>
-                    <connections>
-                        <action selector="addNewAccount" destination="iN0-l3-epB" eventType="touchUpInside" id="zSJ-E0-KHI"/>
-                    </connections>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsg-ju-54O">
+                    <rect key="frame" x="16" y="607" width="343" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="vb1-kH-vxH"/>
+                    </constraints>
+                    <state key="normal" title="Зачислить"/>
                 </button>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="K4v-tD-zIZ">
-                    <rect key="frame" x="20" y="316" width="335" height="55"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0XP-lA-HCr">
-                            <rect key="frame" x="0.0" y="0.0" width="335" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0F-v4-X23">
-                            <rect key="frame" x="0.0" y="34.5" width="335" height="20.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jJd-gU-A4X">
+                    <rect key="frame" x="6" y="397" width="363" height="194"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="194" id="5Tz-Do-k7Y"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="K4v-tD-zIZ" secondAttribute="trailing" constant="20" id="8S4-fa-eBu"/>
-                <constraint firstItem="K4v-tD-zIZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Ll1-Vf-1yA"/>
-                <constraint firstItem="6k2-Mt-con" firstAttribute="top" secondItem="K4v-tD-zIZ" secondAttribute="bottom" constant="20" id="OAw-r4-JUm"/>
-                <constraint firstItem="K4v-tD-zIZ" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="aHq-UV-sQ7"/>
-                <constraint firstItem="6k2-Mt-con" firstAttribute="centerX" secondItem="K4v-tD-zIZ" secondAttribute="centerX" id="lhS-ga-Oxh"/>
+                <constraint firstItem="vsg-ju-54O" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="DK8-AJ-T6e"/>
+                <constraint firstItem="vsg-ju-54O" firstAttribute="top" secondItem="jJd-gU-A4X" secondAttribute="bottom" constant="16" id="aa4-0R-2h5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vsg-ju-54O" secondAttribute="bottom" constant="16" id="bGB-6m-NFL"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vsg-ju-54O" secondAttribute="trailing" constant="16" id="dsB-gm-qWe"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jJd-gU-A4X" secondAttribute="trailing" constant="6" id="jvk-wJ-XiY"/>
+                <constraint firstItem="jJd-gU-A4X" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="6" id="xdm-OF-Afz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
-                <outlet property="accountTitleLabel" destination="0XP-lA-HCr" id="QI0-Pe-K62"/>
-                <outlet property="accountsCounterLabel" destination="T0F-v4-X23" id="DLu-EO-h5j"/>
-                <outlet property="addButton" destination="6k2-Mt-con" id="cW7-t3-8EO"/>
+                <outlet property="applyButton" destination="vsg-ju-54O" id="F0C-Ez-Y6S"/>
+                <outlet property="keyboardContainer" destination="jJd-gU-A4X" id="rVS-4J-PG6"/>
             </connections>
         </view>
     </objects>
