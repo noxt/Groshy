@@ -30,6 +30,7 @@ final class MainScreenComponent: BaseComponent<MainScreenProps, MainScreenConnec
             applyButton.layer.cornerRadius = Constants.cornerRadius
             applyButton.backgroundColor = Colors.blue
             applyButton.setTitleColor(Colors.white, for: .normal)
+            applyButton.titleLabel?.font = Fonts.Rubik.Medium(size: 17)
         }
     }
 

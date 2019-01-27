@@ -41,6 +41,7 @@ final class KeyboardComponent: BaseComponent<KeyboardProps, KeyboardConnector> {
     private func setup(button: UIButton) {
         button.layer.cornerRadius = Constants.cornerRadius
         button.backgroundColor = Colors.white
+        button.titleLabel?.font = Fonts.Rubik.Regular(size: 25)
     }
 
 
