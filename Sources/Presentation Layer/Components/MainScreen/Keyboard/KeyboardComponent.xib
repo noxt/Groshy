@@ -152,10 +152,10 @@
                                         <action selector="commaDidPressed" destination="iN0-l3-epB" eventType="touchUpInside" id="8xu-Rw-Bpd"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80D-T7-aLv">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80D-T7-aLv">
                                     <rect key="frame" x="176.5" y="0.0" width="82.5" height="44"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" title="Delete"/>
+                                    <state key="normal" image="delete-button"/>
                                     <connections>
                                         <action selector="removeDidPressed" destination="iN0-l3-epB" eventType="touchUpInside" id="7kO-RI-AND"/>
                                     </connections>
@@ -209,4 +209,7 @@
             <point key="canvasLocation" x="-111.2" y="29.23538230884558"/>
         </view>
     </objects>
+    <resources>
+        <image name="delete-button" width="23" height="18"/>
+    </resources>
 </document>

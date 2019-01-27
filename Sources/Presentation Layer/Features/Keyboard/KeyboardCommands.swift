@@ -13,7 +13,14 @@ extension KeyboardFeature {
 
         static func addDigit(currentValue: String) -> Command<Digit> {
             return Command<Digit> { digit in
-                let newValue = currentValue.appending(String(digit))
+                var newValue = currentValue
+
+                if newValue == "0" {
+                    newValue = String(digit)
+                } else {
+                    newValue.append(String(digit))
+                }
+
                 core.dispatch(Actions.CurrentValueUpdated(value: newValue))
             }
         }
@@ -26,17 +33,40 @@ extension KeyboardFeature {
 
         static func addComma(currentValue: String) -> PlainCommand {
             return PlainCommand {
-                let formatter = NumberFormatter()
-                let newValue = currentValue.appending(formatter.decimalSeparator)
+                guard let commaCharacter = NumberFormatter().decimalSeparator,
+                    currentValue.firstIndex(of: commaCharacter.first!) == nil else {
+                    return
+                }
+
+                var newValue = currentValue
+                if newValue.isEmpty {
+                    newValue.append("0")
+                }
+                newValue.append(commaCharacter)
                 core.dispatch(Actions.CurrentValueUpdated(value: newValue))
             }
         }
 
         static func removeLastSymbol(currentValue: String) -> PlainCommand {
             return PlainCommand {
-                var newValue = String(currentValue)
+                guard !currentValue.isEmpty else {
+                    return
+                }
+
+                var newValue = currentValue
                 newValue.removeLast()
+
+                if newValue.isEmpty {
+                    newValue = "0"
+                }
+
                 core.dispatch(Actions.CurrentValueUpdated(value: newValue))
+            }
+        }
+
+        static func removeAllCommand() -> PlainCommand {
+            return PlainCommand {
+                core.dispatch(Actions.CurrentValueUpdated(value: "0"))
             }
         }
 

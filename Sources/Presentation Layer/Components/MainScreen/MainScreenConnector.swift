@@ -10,7 +10,9 @@ import Unicore
 final class MainScreenConnector: BaseConnector<MainScreenProps> {
 
     override func mapToProps(state: AppFeature.State) -> MainScreenProps {
-        return MainScreenProps()
+        return MainScreenProps(
+            currentValue: state.keyboardState.currentValue
+        )
     }
 
 }

@@ -14,6 +14,7 @@ struct KeyboardProps {
     let addOperationCommand: Command<KeyboardFeature.Operation>
     let addCommaCommand: PlainCommand
     let removeLastSymbolCommand: PlainCommand
+    let removeAllCommand: PlainCommand
 
 }
 

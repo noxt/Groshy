@@ -17,7 +17,8 @@ final class KeyboardConnector: BaseConnector<KeyboardProps> {
             addDigitCommand: KeyboardFeature.Commands.addDigit(currentValue: keyboardState.currentValue),
             addOperationCommand: KeyboardFeature.Commands.addOperation(currentValue: keyboardState.currentValue),
             addCommaCommand: KeyboardFeature.Commands.addComma(currentValue: keyboardState.currentValue),
-            removeLastSymbolCommand: KeyboardFeature.Commands.removeLastSymbol(currentValue: keyboardState.currentValue)
+            removeLastSymbolCommand: KeyboardFeature.Commands.removeLastSymbol(currentValue: keyboardState.currentValue),
+            removeAllCommand: KeyboardFeature.Commands.removeAllCommand()
         )
     }
 

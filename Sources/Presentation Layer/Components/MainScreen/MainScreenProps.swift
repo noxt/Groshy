@@ -8,7 +8,7 @@ import Unicore
 
 
 struct MainScreenProps {
-
+    let currentValue: String
 }
 
 
@@ -17,7 +17,7 @@ struct MainScreenProps {
 extension MainScreenProps: Equatable {
 
     static func == (lhs: MainScreenProps, rhs: MainScreenProps) -> Bool {
-        return true
+        return lhs.currentValue == rhs.currentValue
     }
 
 }

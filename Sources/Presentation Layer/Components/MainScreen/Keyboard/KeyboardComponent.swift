@@ -21,27 +21,7 @@ final class KeyboardComponent: BaseComponent<KeyboardProps, KeyboardConnector> {
     override func setup() {
         super.setup()
 
-        for button in digitsButtons {
-            setup(button: button)
-            button.setTitleColor(Colors.darkGray, for: .normal)
-        }
-
-        for button in operationsButtons {
-            setup(button: button)
-            button.setTitleColor(Colors.gray, for: .normal)
-        }
-
-        setup(button: commaButton)
-        commaButton.setTitleColor(Colors.gray, for: .normal)
-
-        setup(button: removeButton)
-        removeButton.setTitleColor(Colors.gray, for: .normal)
-    }
-
-    private func setup(button: UIButton) {
-        button.layer.cornerRadius = Constants.cornerRadius
-        button.backgroundColor = Colors.white
-        button.titleLabel?.font = Fonts.Rubik.Regular(size: 25)
+        setupButtons()
     }
 
 
@@ -62,11 +42,50 @@ final class KeyboardComponent: BaseComponent<KeyboardProps, KeyboardConnector> {
         props.removeLastSymbolCommand.execute()
     }
 
+    @IBAction func removeAllDidPressed() {
+        props.removeAllCommand.execute()
+    }
+
     @IBAction func operationDidPressed(_ sender: UIButton) {
         guard let operation = KeyboardFeature.Operation(rawValue: sender.titleLabel?.text ?? "") else {
             return
         }
         props.addOperationCommand.execute(with: operation)
+    }
+
+}
+
+
+// MARK: - Buttons configuration
+
+extension KeyboardComponent {
+
+    private func setupButtons() {
+        for button in digitsButtons {
+            setup(button: button)
+            button.tintColor = Colors.darkGray
+        }
+
+        for button in operationsButtons {
+            setup(button: button)
+            button.tintColor = Colors.gray
+        }
+
+        setup(button: commaButton)
+        commaButton.tintColor = Colors.gray
+
+        setup(button: removeButton)
+        removeButton.setImage(Images.delete, for: .normal)
+        removeButton.tintColor = Colors.gray
+
+        let removeAllTap = UILongPressGestureRecognizer(target: self, action: #selector(removeAllDidPressed))
+        removeButton.addGestureRecognizer(removeAllTap)
+    }
+
+    private func setup(button: UIButton) {
+        button.layer.cornerRadius = Constants.cornerRadius
+        button.backgroundColor = Colors.white
+        button.titleLabel?.font = Fonts.Rubik.Regular(size: 25)
     }
 
 }

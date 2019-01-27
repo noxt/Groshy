@@ -24,6 +24,7 @@ final class MainScreenComponent: BaseComponent<MainScreenProps, MainScreenConnec
         }
     }
 
+    @IBOutlet weak var currentValueLabel: UILabel!
     @IBOutlet weak var keyboardContainer: UIView!
     @IBOutlet weak var applyButton: UIButton! {
         didSet {
@@ -39,6 +40,10 @@ final class MainScreenComponent: BaseComponent<MainScreenProps, MainScreenConnec
         super.setup()
 
         backgroundColor = Colors.darkWhite
+    }
+
+    override func updateUI() {
+        currentValueLabel.text = props.currentValue
     }
 
 }

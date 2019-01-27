@@ -26,9 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        cleanDB()
 
         let mainScene = MainScreenScene.makeScene(with: repositories)
+        let navigationController = UINavigationController(rootViewController: mainScene.viewController)
+
+        navigationController.navigationBar.isTranslucent = false
+        navigationController.navigationBar.backgroundColor = Colors.white
+        navigationController.navigationBar.tintColor = Colors.gray
 
         window = UIWindow()
-        window?.rootViewController = UINavigationController(rootViewController: mainScene.viewController)
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
 
         return true

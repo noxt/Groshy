@@ -30,19 +30,29 @@
                         <constraint firstAttribute="height" constant="194" id="5Tz-Do-k7Y"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIB-MB-2HL">
+                    <rect key="frame" x="16" y="360" width="343" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="jJd-gU-A4X" firstAttribute="top" secondItem="vIB-MB-2HL" secondAttribute="bottom" constant="16" id="3TR-vK-V0M"/>
                 <constraint firstItem="vsg-ju-54O" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="DK8-AJ-T6e"/>
+                <constraint firstItem="vIB-MB-2HL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="DZp-ud-IzN"/>
                 <constraint firstItem="vsg-ju-54O" firstAttribute="top" secondItem="jJd-gU-A4X" secondAttribute="bottom" constant="16" id="aa4-0R-2h5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vsg-ju-54O" secondAttribute="bottom" constant="16" id="bGB-6m-NFL"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vsg-ju-54O" secondAttribute="trailing" constant="16" id="dsB-gm-qWe"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jJd-gU-A4X" secondAttribute="trailing" constant="6" id="jvk-wJ-XiY"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vIB-MB-2HL" secondAttribute="trailing" constant="16" id="uW1-IO-aB2"/>
                 <constraint firstItem="jJd-gU-A4X" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="6" id="xdm-OF-Afz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="applyButton" destination="vsg-ju-54O" id="F0C-Ez-Y6S"/>
+                <outlet property="currentValueLabel" destination="vIB-MB-2HL" id="hYH-fh-hUY"/>
                 <outlet property="keyboardContainer" destination="jJd-gU-A4X" id="rVS-4J-PG6"/>
             </connections>
         </view>

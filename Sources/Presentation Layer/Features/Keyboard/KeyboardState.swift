@@ -16,7 +16,7 @@ extension KeyboardFeature {
 
         static let initial = State(
             expression: nil,
-            currentValue: ""
+            currentValue: "0"
         )
 
     }
