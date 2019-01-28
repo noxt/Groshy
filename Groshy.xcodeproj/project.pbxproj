@@ -30,8 +30,6 @@
 		1943B01B21F68D9C0054119C /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B01A21F68D9C0054119C /* Scene.swift */; };
 		1943B01D21F709830054119C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B01C21F709830054119C /* BaseViewController.swift */; };
 		1943B01F21F857FA0054119C /* AccountsCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B01E21F857FA0054119C /* AccountsCommands.swift */; };
-		1943B02521F8C19E0054119C /* AccountsReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B02421F8C19E0054119C /* AccountsReducerTests.swift */; };
-		1943B02721F8EEAA0054119C /* BaseReducerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B02621F8EEAA0054119C /* BaseReducerTests.swift */; };
 		1943B03121F9EDE20054119C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B02F21F9EDD90054119C /* Category.swift */; };
 		1943B03521F9EED50054119C /* CategoryIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B03321F9EE5D0054119C /* CategoryIcon.swift */; };
 		1943B03721F9F46E0054119C /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B03621F9F46E0054119C /* Transaction.swift */; };
@@ -57,6 +55,7 @@
 		1973908621FF46C800D892F4 /* AccountsRepository+CreateAccountSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973908521FF46C800D892F4 /* AccountsRepository+CreateAccountSpec.swift */; };
 		1973908821FF472B00D892F4 /* AccountsRepository+UpdateAccountSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973908721FF472B00D892F4 /* AccountsRepository+UpdateAccountSpec.swift */; };
 		1973908A21FF4E7900D892F4 /* AccountsRepository+DeleteAccountSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973908921FF4E7900D892F4 /* AccountsRepository+DeleteAccountSpec.swift */; };
+		1973908D21FF7C1A00D892F4 /* AccountsFeature_ReducerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973908B21FF7C0800D892F4 /* AccountsFeature_ReducerSpec.swift */; };
 		19A1B18821F3837C0090F760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B18721F3837C0090F760 /* AppDelegate.swift */; };
 		19A1B18F21F3837D0090F760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19A1B18E21F3837D0090F760 /* Assets.xcassets */; };
 		19A1B19221F3837E0090F760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A1B19021F3837E0090F760 /* LaunchScreen.storyboard */; };
@@ -129,8 +128,6 @@
 		1943B01A21F68D9C0054119C /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		1943B01C21F709830054119C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1943B01E21F857FA0054119C /* AccountsCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsCommands.swift; sourceTree = "<group>"; };
-		1943B02421F8C19E0054119C /* AccountsReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsReducerTests.swift; sourceTree = "<group>"; };
-		1943B02621F8EEAA0054119C /* BaseReducerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseReducerTests.swift; sourceTree = "<group>"; };
 		1943B02F21F9EDD90054119C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		1943B03321F9EE5D0054119C /* CategoryIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIcon.swift; sourceTree = "<group>"; };
 		1943B03621F9F46E0054119C /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
@@ -156,6 +153,7 @@
 		1973908521FF46C800D892F4 /* AccountsRepository+CreateAccountSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountsRepository+CreateAccountSpec.swift"; sourceTree = "<group>"; };
 		1973908721FF472B00D892F4 /* AccountsRepository+UpdateAccountSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountsRepository+UpdateAccountSpec.swift"; sourceTree = "<group>"; };
 		1973908921FF4E7900D892F4 /* AccountsRepository+DeleteAccountSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountsRepository+DeleteAccountSpec.swift"; sourceTree = "<group>"; };
+		1973908B21FF7C0800D892F4 /* AccountsFeature_ReducerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsFeature_ReducerSpec.swift; sourceTree = "<group>"; };
 		19A1B18421F3837C0090F760 /* Groshy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Groshy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A1B18721F3837C0090F760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19A1B18E21F3837D0090F760 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -296,7 +294,7 @@
 		1943B02321F8C1820054119C /* Accounts */ = {
 			isa = PBXGroup;
 			children = (
-				1943B02421F8C19E0054119C /* AccountsReducerTests.swift */,
+				1973908B21FF7C0800D892F4 /* AccountsFeature_ReducerSpec.swift */,
 			);
 			path = Accounts;
 			sourceTree = "<group>";
@@ -421,7 +419,6 @@
 		19A1B19B21F3837E0090F760 /* Unit Tests */ = {
 			isa = PBXGroup;
 			children = (
-				19A1B20221F4E1200090F760 /* Common */,
 				1943B02221F8C1610054119C /* Features */,
 				19A1B1F821F4DC7D0090F760 /* Mocks */,
 				19A1B1F521F4DBBB0090F760 /* Repositories */,
@@ -667,14 +664,6 @@
 				19A1B1FC21F4DCC30090F760 /* MockServiceProvider.swift */,
 			);
 			path = Provider;
-			sourceTree = "<group>";
-		};
-		19A1B20221F4E1200090F760 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				1943B02621F8EEAA0054119C /* BaseReducerTests.swift */,
-			);
-			path = Common;
 			sourceTree = "<group>";
 		};
 		19A1B20521F4E1FF0090F760 /* Accounts */ = {
@@ -1026,10 +1015,9 @@
 			files = (
 				19A1B1FD21F4DCC30090F760 /* MockServiceProvider.swift in Sources */,
 				1973908421FF033800D892F4 /* AccountsRepository+LoadAccountsSpec.swift in Sources */,
+				1973908D21FF7C1A00D892F4 /* AccountsFeature_ReducerSpec.swift in Sources */,
 				1973908A21FF4E7900D892F4 /* AccountsRepository+DeleteAccountSpec.swift in Sources */,
 				1973908621FF46C800D892F4 /* AccountsRepository+CreateAccountSpec.swift in Sources */,
-				1943B02721F8EEAA0054119C /* BaseReducerTests.swift in Sources */,
-				1943B02521F8C19E0054119C /* AccountsReducerTests.swift in Sources */,
 				19A1B1FF21F4DD230090F760 /* MockStorageService.swift in Sources */,
 				1973908821FF472B00D892F4 /* AccountsRepository+UpdateAccountSpec.swift in Sources */,
 			);
