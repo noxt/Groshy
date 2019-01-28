@@ -12,7 +12,7 @@ struct MainScreenScene: SceneProtocol {
         let connector = MainScreenConnector(repositories: repositories)
         let viewController = MainScreenViewController(connector: connector)
         viewController.keyboardScene = KeyboardScene.makeScene(with: repositories)
-
+        viewController.accountSelectorScene = AccountSelectorScene.makeScene(with: repositories)
         return Scene(connector, viewController)
     }
 

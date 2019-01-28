@@ -14,6 +14,7 @@ final class MainScreenViewController: BaseViewController<MainScreenComponent, Ma
             component.keyboardView = keyboardScene.viewController.view
         }
     }
+    var accountSelectorScene: Scene<AccountSelectorConnector>!
 
 
     override func viewDidAppear(_ animated: Bool) {
@@ -21,6 +22,7 @@ final class MainScreenViewController: BaseViewController<MainScreenComponent, Ma
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: Images.settings, style: .plain, target: nil, action: nil)
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: Images.statistics, style: .plain, target: nil, action: nil)
+        navigationItem.titleView = accountSelectorScene.viewController.view
     }
 
 }

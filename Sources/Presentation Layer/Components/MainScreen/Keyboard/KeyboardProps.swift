@@ -22,9 +22,7 @@ struct KeyboardProps {
 // MARK: - Equatable
 
 extension KeyboardProps: Equatable {
-
-    static func == (lhs: KeyboardProps, rhs: KeyboardProps) -> Bool {
+    static func ==(lhs: KeyboardProps, rhs: KeyboardProps) -> Bool {
         return true
     }
-
 }
