@@ -12,7 +12,7 @@ final class MainScreenConnector: BaseConnector<MainScreenProps> {
     override func mapToProps(state: AppFeature.State) -> MainScreenProps {
         return MainScreenProps(
             // Input
-            currentValue: state.keyboardState.currentValue
+            state: .idle(currentValue: state.keyboardState.currentValue)
         )
     }
 

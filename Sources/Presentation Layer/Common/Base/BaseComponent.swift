@@ -14,7 +14,7 @@ class BaseComponent<PropsType, ConnectorType>: UIView, Component
             guard props != oldValue else {
                 return
             }
-            updateUI()
+            render()
         }
     }
 
@@ -29,7 +29,7 @@ class BaseComponent<PropsType, ConnectorType>: UIView, Component
 
     }
 
-    func updateUI() {
+    func render() {
 
     }
     

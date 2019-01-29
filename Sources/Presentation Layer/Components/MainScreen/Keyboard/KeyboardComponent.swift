@@ -13,9 +13,9 @@ final class KeyboardComponent: BaseComponent<KeyboardProps, KeyboardConnector> {
     }
 
     @IBOutlet var digitsButtons: [UIButton]!
+    @IBOutlet var operationsButtons: [UIButton]!
     @IBOutlet weak var commaButton: UIButton!
     @IBOutlet weak var removeButton: UIButton!
-    @IBOutlet var operationsButtons: [UIButton]!
     
 
     override func setup() {

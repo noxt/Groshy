@@ -42,8 +42,11 @@ final class MainScreenComponent: BaseComponent<MainScreenProps, MainScreenConnec
         backgroundColor = Colors.darkWhite
     }
 
-    override func updateUI() {
-        currentValueLabel.text = props.currentValue
+    override func render() {
+        switch props.state {
+        case let .idle(currentValue: currentValue):
+            currentValueLabel.text = currentValue
+        }
     }
 
 }

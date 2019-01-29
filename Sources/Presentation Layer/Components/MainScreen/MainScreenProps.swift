@@ -8,8 +8,15 @@ import Unicore
 
 
 struct MainScreenProps {
+
+    enum State: Equatable {
+        case idle(currentValue: String)
+    }
+
+
     // Input
-    let currentValue: String
+    let state: State
+
 }
 
 
@@ -17,6 +24,6 @@ struct MainScreenProps {
 
 extension MainScreenProps: Equatable {
     static func ==(lhs: MainScreenProps, rhs: MainScreenProps) -> Bool {
-        return lhs.currentValue == rhs.currentValue
+        return lhs.state == rhs.state
     }
 }
