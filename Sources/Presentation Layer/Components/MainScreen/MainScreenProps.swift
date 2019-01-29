@@ -14,7 +14,6 @@ struct MainScreenProps {
     }
 
 
-    // Input
     let state: State
 
 }

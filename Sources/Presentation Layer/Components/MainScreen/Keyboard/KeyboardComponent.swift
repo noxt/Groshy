@@ -6,7 +6,7 @@
 import UIKit
 
 
-final class KeyboardComponent: BaseComponent<KeyboardProps, KeyboardConnector> {
+final class KeyboardComponent: BaseComponent<KeyboardProps> {
 
     private struct Constants {
         static let cornerRadius: CGFloat = 4
@@ -69,10 +69,12 @@ extension KeyboardComponent {
         for button in operationsButtons {
             setup(button: button)
             button.tintColor = Colors.gray
+            button.isHidden = true
         }
 
         setup(button: commaButton)
-        commaButton.tintColor = Colors.gray
+        commaButton.tintColor = Colors.darkGray
+        commaButton.setTitle(NumberFormatter().decimalSeparator, for: .normal)
 
         setup(button: removeButton)
         removeButton.setImage(Images.delete, for: .normal)

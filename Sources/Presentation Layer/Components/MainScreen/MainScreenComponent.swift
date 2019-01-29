@@ -7,7 +7,7 @@ import UIKit
 import SnapKit
 
 
-final class MainScreenComponent: BaseComponent<MainScreenProps, MainScreenConnector> {
+final class MainScreenComponent: BaseComponent<MainScreenProps> {
 
     private struct Constants {
         static let cornerRadius: CGFloat = 4

@@ -6,8 +6,7 @@
 import UIKit
 
 
-class BaseComponent<PropsType, ConnectorType>: UIView, Component
-    where PropsType: Equatable, ConnectorType: Connector, ConnectorType.PropsType == PropsType {
+class BaseComponent<PropsType: Equatable>: UIView, Component {
 
     var props: PropsType! {
         didSet {

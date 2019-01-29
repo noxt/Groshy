@@ -16,6 +16,11 @@ struct Scene<ConnectorType: Connector> {
         self.viewController = viewController
     }
 
+    
+    var view: UIView! {
+        return viewController.view
+    }
+
 }
 
 protocol SceneProtocol {

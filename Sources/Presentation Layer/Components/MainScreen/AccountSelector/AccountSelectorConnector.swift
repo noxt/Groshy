@@ -10,30 +10,27 @@ import Unicore
 final class AccountSelectorConnector: BaseConnector<AccountSelectorProps> {
 
     override func mapToProps(state: AppFeature.State) -> AccountSelectorProps {
+        return AccountSelectorProps(
+            state: mapToPropsState(state: state),
+            loadAccountsList: AccountsFeature.Commands.loadAccountsList(repositories)
+        )
+    }
+
+    private func mapToPropsState(state: AppFeature.State) -> AccountSelectorProps.State {
         let accountsState = state.accountsState
 
-        let state: AccountSelectorProps.State
-        if accountsState.isLoading {
-            state = .loading
-        } else {
-            var currentAccount: Account? = nil
-
-            if let id = accountsState.currentAccountID {
-                currentAccount = accountsState.accounts[id]
-            }
-
-            state = .idle(
-                title: currentAccount?.title ?? "",
-                amount: "1 953 BYN"
-            )
+        guard !accountsState.isLoading else {
+            return .loading
         }
 
-        return AccountSelectorProps(
-            // Input
-            state: state,
+        var currentAccount: Account? = nil
+        if let id = accountsState.currentAccountID {
+            currentAccount = accountsState.accounts[id]
+        }
 
-            // Output
-            loadAccountsList: AccountsFeature.Commands.loadAccountsList(repositories)
+        return .idle(
+            title: currentAccount?.title ?? "",
+            amount: "1 953 BYN"
         )
     }
 

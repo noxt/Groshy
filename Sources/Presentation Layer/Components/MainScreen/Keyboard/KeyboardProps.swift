@@ -8,14 +8,11 @@ import Unicore
 
 
 struct KeyboardProps {
-
-    // Output
     let addDigitCommand: Command<KeyboardFeature.Digit>
     let addOperationCommand: Command<KeyboardFeature.Operation>
     let addCommaCommand: PlainCommand
     let removeLastSymbolCommand: PlainCommand
     let removeAllCommand: PlainCommand
-
 }
 
 

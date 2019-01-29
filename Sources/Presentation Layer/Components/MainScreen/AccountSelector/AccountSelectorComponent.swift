@@ -6,7 +6,7 @@
 import UIKit
 
 
-final class AccountSelectorComponent: BaseComponent<AccountSelectorProps, AccountSelectorConnector> {
+final class AccountSelectorComponent: BaseComponent<AccountSelectorProps> {
     
     @IBOutlet weak var containerStackView: UIStackView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -37,7 +37,6 @@ final class AccountSelectorComponent: BaseComponent<AccountSelectorProps, Accoun
             activityIndicator.isHidden = false
             activityIndicator.startAnimating()
         }
-
     }
 
 }

@@ -14,8 +14,10 @@ class BaseViewController<ComponentType: Component, ConnectorType: Connector>: UI
 
 
     init(connector: ConnectorType) {
-        self.connector = connector
         self.component = ComponentType.instantiateFromNib()
+        self.connector = connector
+        connector.connect(to: component)
+
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -26,12 +28,6 @@ class BaseViewController<ComponentType: Component, ConnectorType: Connector>: UI
 
     override func loadView() {
         view = component
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        connector.connect(to: component)
     }
 
 }
