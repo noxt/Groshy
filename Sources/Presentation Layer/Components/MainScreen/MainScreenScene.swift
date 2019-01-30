@@ -6,14 +6,14 @@
 import Foundation
 
 
-struct MainScreenScene: SceneProtocol {
+struct MainScreenScene {
 
-    static func makeScene(with repositories: RepositoryProviderProtocol) -> Scene<MainScreenConnector> {
+    static func makeScene(with repositories: RepositoryProviderProtocol) -> Scene<MainScreenConnector, MainScreenComponent> {
         let connector = MainScreenConnector(repositories: repositories)
-        let viewController = MainScreenViewController(connector: connector)
-        viewController.keyboardScene = KeyboardScene.makeScene(with: repositories)
-        viewController.accountSelectorScene = AccountSelectorScene.makeScene(with: repositories)
-        return Scene(connector, viewController)
+        let component = MainScreenComponent(connector: connector)
+        component.keyboardScene = KeyboardScene.makeScene(with: repositories)
+        component.accountSelectorScene = AccountSelectorScene.makeScene(with: repositories)
+        return Scene(connector, component)
     }
 
 }

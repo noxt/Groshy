@@ -6,12 +6,12 @@
 import Foundation
 
 
-struct KeyboardScene: SceneProtocol {
+struct KeyboardScene {
 
-    static func makeScene(with repositories: RepositoryProviderProtocol) -> Scene<KeyboardConnector> {
+    static func makeScene(with repositories: RepositoryProviderProtocol) -> Scene<KeyboardConnector, KeyboardComponent> {
         let connector = KeyboardConnector(repositories: repositories)
-        let viewController = KeyboardViewController(connector: connector)
-        return Scene(connector, viewController)
+        let component = KeyboardComponent(connector: connector)
+        return Scene(connector, component)
     }
 
 }

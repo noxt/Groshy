@@ -6,12 +6,12 @@
 import Foundation
 
 
-struct AccountSelectorScene: SceneProtocol {
+struct AccountSelectorScene {
 
-    static func makeScene(with repositories: RepositoryProviderProtocol) -> Scene<AccountSelectorConnector> {
+    static func makeScene(with repositories: RepositoryProviderProtocol) -> Scene<AccountSelectorConnector, AccountSelectorComponent> {
         let connector = AccountSelectorConnector(repositories: repositories)
-        let viewController = AccountSelectorViewController(connector: connector)
-        return Scene(connector, viewController)
+        let component = AccountSelectorComponent(connector: connector)
+        return Scene(connector, component)
     }
 
 }

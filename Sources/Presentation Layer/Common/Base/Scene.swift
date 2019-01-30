@@ -6,25 +6,20 @@
 import UIKit
 
 
-struct Scene<ConnectorType: Connector> {
+struct Scene<ConnectorType: Connector, ComponentType: Component>
+    where ConnectorType.PropsType == ComponentType.PropsType, ComponentType: UIViewController {
 
     let connector: ConnectorType
-    let viewController: UIViewController
+    let component: ComponentType
 
-    init(_ connector: ConnectorType, _ viewController: UIViewController) {
+    init(_ connector: ConnectorType, _ component: ComponentType) {
         self.connector = connector
-        self.viewController = viewController
+        self.component = component
     }
 
     
     var view: UIView! {
-        return viewController.view
+        return component.view
     }
 
-}
-
-protocol SceneProtocol {
-    associatedtype ConnectorType: Connector
-
-    static func makeScene(with repositories: RepositoryProviderProtocol) -> Scene<ConnectorType>
 }
