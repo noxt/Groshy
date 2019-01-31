@@ -33,6 +33,8 @@ final class MainScreenComponent: UIViewController, Component {
     var accountSelectorScene: Scene<AccountSelectorConnector, AccountSelectorComponent>!
     var keyboardScene: Scene<KeyboardConnector, KeyboardComponent>!
 
+    @IBOutlet weak var categoriesTitleLabel: UILabel!
+    @IBOutlet weak var addCommentButton: UIButton!
     @IBOutlet weak var currentValueContainer: UIView!
     @IBOutlet weak var currentValueLabel: UILabel!
     @IBOutlet weak var keyboardContainer: UIView!
@@ -78,6 +80,11 @@ final class MainScreenComponent: UIViewController, Component {
 
     func setup() {
         view.backgroundColor = Colors.darkWhite
+
+        categoriesTitleLabel.textColor = Colors.black
+        categoriesTitleLabel.font = Fonts.Rubik.Regular(size: 17)
+
+        addCommentButton.tintColor = Colors.gray
 
         currentValueContainer.backgroundColor = Colors.white
         currentValueContainer.layer.cornerRadius = Constants.cornerRadius
