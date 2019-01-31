@@ -13,6 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainScreenComponent" customModule="Groshy" customModuleProvider="target">
             <connections>
                 <outlet property="applyButton" destination="vsg-ju-54O" id="q9S-ib-3CY"/>
+                <outlet property="calendarButton" destination="2AM-09-GVf" id="1bH-PF-N22"/>
+                <outlet property="currentValueContainer" destination="cqJ-th-Ywz" id="ivz-Sr-xYC"/>
                 <outlet property="currentValueLabel" destination="vIB-MB-2HL" id="lYQ-iO-yfh"/>
                 <outlet property="keyboardContainer" destination="jJd-gU-A4X" id="dCT-hH-l2Q"/>
                 <outlet property="view" destination="iN0-l3-epB" id="eCQ-Fa-Ohq"/>
@@ -37,26 +39,55 @@
                         <constraint firstAttribute="height" constant="194" id="5Tz-Do-k7Y"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vIB-MB-2HL">
-                    <rect key="frame" x="16" y="360" width="343" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqJ-th-Ywz">
+                    <rect key="frame" x="6" y="317" width="270" height="74"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vIB-MB-2HL">
+                            <rect key="frame" x="10" y="26.5" width="250" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="vIB-MB-2HL" firstAttribute="centerY" secondItem="cqJ-th-Ywz" secondAttribute="centerY" id="BCx-zm-lbm"/>
+                        <constraint firstItem="vIB-MB-2HL" firstAttribute="leading" secondItem="cqJ-th-Ywz" secondAttribute="leading" constant="10" id="nhp-3n-Ffl"/>
+                        <constraint firstAttribute="height" constant="74" id="uWG-iM-zvw"/>
+                        <constraint firstAttribute="trailing" secondItem="vIB-MB-2HL" secondAttribute="trailing" constant="10" id="yuQ-9a-TIr"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2AM-09-GVf">
+                    <rect key="frame" x="282" y="317" width="87" height="74"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="87" id="Ka1-Vu-HQw"/>
+                    </constraints>
+                    <state key="normal" title="Сегодня" image="calendar-button">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="jJd-gU-A4X" firstAttribute="top" secondItem="vIB-MB-2HL" secondAttribute="bottom" constant="16" id="3TR-vK-V0M"/>
                 <constraint firstItem="vsg-ju-54O" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="DK8-AJ-T6e"/>
-                <constraint firstItem="vIB-MB-2HL" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="DZp-ud-IzN"/>
+                <constraint firstItem="2AM-09-GVf" firstAttribute="height" secondItem="cqJ-th-Ywz" secondAttribute="height" id="IGF-i1-ttA"/>
+                <constraint firstItem="2AM-09-GVf" firstAttribute="top" secondItem="cqJ-th-Ywz" secondAttribute="top" id="K4S-rf-FI6"/>
+                <constraint firstItem="2AM-09-GVf" firstAttribute="leading" secondItem="cqJ-th-Ywz" secondAttribute="trailing" constant="6" id="UEB-qC-J8H"/>
+                <constraint firstItem="2AM-09-GVf" firstAttribute="trailing" secondItem="jJd-gU-A4X" secondAttribute="trailing" id="YVo-Ef-csU"/>
                 <constraint firstItem="vsg-ju-54O" firstAttribute="top" secondItem="jJd-gU-A4X" secondAttribute="bottom" constant="16" id="aa4-0R-2h5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vsg-ju-54O" secondAttribute="bottom" constant="16" id="bGB-6m-NFL"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vsg-ju-54O" secondAttribute="trailing" constant="16" id="dsB-gm-qWe"/>
+                <constraint firstItem="cqJ-th-Ywz" firstAttribute="leading" secondItem="jJd-gU-A4X" secondAttribute="leading" id="dy2-7q-Lyx"/>
+                <constraint firstItem="jJd-gU-A4X" firstAttribute="top" secondItem="cqJ-th-Ywz" secondAttribute="bottom" constant="6" id="ezb-hw-bXN"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jJd-gU-A4X" secondAttribute="trailing" constant="6" id="jvk-wJ-XiY"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vIB-MB-2HL" secondAttribute="trailing" constant="16" id="uW1-IO-aB2"/>
                 <constraint firstItem="jJd-gU-A4X" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="6" id="xdm-OF-Afz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="138.40000000000001" y="152.47376311844079"/>
         </view>
     </objects>
+    <resources>
+        <image name="calendar-button" width="18" height="18"/>
+    </resources>
 </document>

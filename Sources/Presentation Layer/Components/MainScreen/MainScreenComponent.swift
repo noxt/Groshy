@@ -33,9 +33,11 @@ final class MainScreenComponent: UIViewController, Component {
     var accountSelectorScene: Scene<AccountSelectorConnector, AccountSelectorComponent>!
     var keyboardScene: Scene<KeyboardConnector, KeyboardComponent>!
 
+    @IBOutlet weak var currentValueContainer: UIView!
     @IBOutlet weak var currentValueLabel: UILabel!
     @IBOutlet weak var keyboardContainer: UIView!
     @IBOutlet weak var applyButton: UIButton!
+    @IBOutlet weak var calendarButton: UIButton!
 
     private var accountSelectorSceneConfigured = false
     private var keyboardSceneConfigured = false
@@ -77,6 +79,18 @@ final class MainScreenComponent: UIViewController, Component {
     func setup() {
         view.backgroundColor = Colors.darkWhite
 
+        currentValueContainer.backgroundColor = Colors.white
+        currentValueContainer.layer.cornerRadius = Constants.cornerRadius
+
+        currentValueLabel.textColor = Colors.green
+        currentValueLabel.font = Fonts.Rubik.Regular(size: 25)
+
+        calendarButton.setTitleColor(Colors.darkGray, for: .normal)
+        calendarButton.backgroundColor = Colors.white
+        calendarButton.layer.cornerRadius = Constants.cornerRadius
+        calendarButton.titleLabel?.font = Fonts.Rubik.Regular(size: 12)
+        calendarButton.tintColor = Colors.darkGray
+
         applyButton.layer.cornerRadius = Constants.cornerRadius
         applyButton.backgroundColor = Colors.blue
         applyButton.setTitleColor(Colors.white, for: .normal)
@@ -85,11 +99,26 @@ final class MainScreenComponent: UIViewController, Component {
         setupKeyboardScene()
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        centerButtonImageAndTitle(button: calendarButton)
+    }
+
     func render() {
         switch props.state {
         case let .idle(currentValue: currentValue):
             currentValueLabel.text = currentValue
         }
+    }
+
+    func centerButtonImageAndTitle(button: UIButton) {
+        let spacing: CGFloat = 9.0
+
+        let imageSize = button.imageView!.frame.size
+        let titleSize = button.titleLabel!.frame.size
+
+        button.titleEdgeInsets = UIEdgeInsets(top: -(titleSize.height), left: -imageSize.width, bottom: spacing, right: 0)
+        button.imageEdgeInsets = UIEdgeInsets(top: spacing, left: 0, bottom: -(imageSize.height), right: -titleSize.width)
     }
 
 }
