@@ -20,4 +20,37 @@ struct Images {
         return UIImage(named: "statistics-button")!
     }
 
+
+    struct Categories {
+
+        static var car: UIImage {
+            return UIImage(named: "categories/car")!
+        }
+
+        static var entertaiment: UIImage {
+            return UIImage(named: "categories/entertaiment")!
+        }
+
+        static var healt: UIImage {
+            return UIImage(named: "categories/healt")!
+        }
+
+        static var presents: UIImage {
+            return UIImage(named: "categories/presents")!
+        }
+
+        static var products: UIImage {
+            return UIImage(named: "categories/products")!
+        }
+
+        static var restaurants: UIImage {
+            return UIImage(named: "categories/restaurants")!
+        }
+
+        static var shops: UIImage {
+            return UIImage(named: "categories/shops")!
+        }
+
+    }
+
 }
