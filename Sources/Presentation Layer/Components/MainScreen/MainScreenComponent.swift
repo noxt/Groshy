@@ -31,9 +31,11 @@ final class MainScreenComponent: UIViewController, Component {
     // UI Props
 
     var accountSelectorScene: Scene<AccountSelectorConnector, AccountSelectorComponent>!
+    var categoriesScene: Scene<CategoriesConnector, CategoriesComponent>!
     var keyboardScene: Scene<KeyboardConnector, KeyboardComponent>!
 
     @IBOutlet weak var categoriesTitleLabel: UILabel!
+    @IBOutlet weak var categoriesContainer: UIView!
     @IBOutlet weak var addCommentButton: UIButton!
     @IBOutlet weak var currentValueContainer: UIView!
     @IBOutlet weak var currentValueLabel: UILabel!
@@ -42,6 +44,7 @@ final class MainScreenComponent: UIViewController, Component {
     @IBOutlet weak var calendarButton: UIButton!
 
     private var accountSelectorSceneConfigured = false
+    private var categoriesSceneConfigured = false
     private var keyboardSceneConfigured = false
 
 
@@ -104,6 +107,7 @@ final class MainScreenComponent: UIViewController, Component {
         applyButton.titleLabel?.font = Fonts.Rubik.Medium(size: 17)
 
         setupKeyboardScene()
+        setupCategoriesScene()
     }
 
     override func viewDidLayoutSubviews() {
@@ -156,6 +160,20 @@ extension MainScreenComponent {
             make.edges.equalTo(keyboardContainer)
         }
         keyboardScene.component.didMove(toParent: self)
+    }
+
+    private func setupCategoriesScene() {
+        guard !categoriesSceneConfigured else {
+            return
+        }
+        categoriesSceneConfigured = true
+
+        addChild(categoriesScene.component)
+        categoriesContainer.addSubview(categoriesScene.view)
+        categoriesScene.view.snp.makeConstraints { (make) in
+            make.edges.equalTo(categoriesContainer)
+        }
+        categoriesScene.component.didMove(toParent: self)
     }
 
 }

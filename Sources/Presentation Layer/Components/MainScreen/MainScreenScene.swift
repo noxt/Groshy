@@ -13,6 +13,7 @@ struct MainScreenScene {
         let component = MainScreenComponent(connector: connector)
         component.keyboardScene = KeyboardScene.makeScene(with: repositories)
         component.accountSelectorScene = AccountSelectorScene.makeScene(with: repositories)
+        component.categoriesScene = CategoriesScene.makeScene(with: repositories)
         return Scene(connector, component)
     }
 

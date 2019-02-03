@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoriesComponent" customModule="Groshy" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="mIv-lB-1IB" id="kXp-vs-mjb"/>
+                <outlet property="titleLabel" destination="0k7-mY-PBf" id="hFj-ce-1Dw"/>
+                <outlet property="view" destination="iN0-l3-epB" id="837-tm-ToH"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="235"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="mIv-lB-1IB">
+                    <rect key="frame" x="177.5" y="107.5" width="20" height="20"/>
+                </activityIndicatorView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0k7-mY-PBf">
+                    <rect key="frame" x="166.5" y="107" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="0k7-mY-PBf" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="0hD-mt-mUx"/>
+                <constraint firstItem="0k7-mY-PBf" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="N8m-Fr-FMM"/>
+                <constraint firstItem="mIv-lB-1IB" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="kex-aI-TqH"/>
+                <constraint firstItem="mIv-lB-1IB" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="tZL-k2-LRP"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-74.400000000000006" y="200.14992503748127"/>
+        </view>
+    </objects>
+</document>

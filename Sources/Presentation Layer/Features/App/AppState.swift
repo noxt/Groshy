@@ -11,11 +11,13 @@ extension AppFeature {
     struct State: Codable {
 
         let accountsState: AccountsFeature.State
+        let categoriesState: CategoriesFeature.State
         let keyboardState: KeyboardFeature.State
 
 
         static let initial = State(
             accountsState: .initial,
+            categoriesState: .initial,
             keyboardState: .initial
         )
 

@@ -15,6 +15,7 @@
                 <outlet property="addCommentButton" destination="5I2-m3-iiH" id="ndb-rr-Af8"/>
                 <outlet property="applyButton" destination="vsg-ju-54O" id="q9S-ib-3CY"/>
                 <outlet property="calendarButton" destination="2AM-09-GVf" id="1bH-PF-N22"/>
+                <outlet property="categoriesContainer" destination="ViB-Qf-6a3" id="qyf-un-op9"/>
                 <outlet property="categoriesTitleLabel" destination="DNI-0j-hwG" id="xu4-Ah-JBh"/>
                 <outlet property="currentValueContainer" destination="cqJ-th-Ywz" id="ivz-Sr-xYC"/>
                 <outlet property="currentValueLabel" destination="vIB-MB-2HL" id="lYQ-iO-yfh"/>

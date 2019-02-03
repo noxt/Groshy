@@ -13,6 +13,11 @@
 		1932F4432207697000B2502B /* CategoriesCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1932F4422207697000B2502B /* CategoriesCommands.swift */; };
 		1932F4452207697E00B2502B /* CategoriesReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1932F4442207697E00B2502B /* CategoriesReducer.swift */; };
 		1932F4472207698700B2502B /* CategoriesState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1932F4462207698700B2502B /* CategoriesState.swift */; };
+		1932F44922077BFA00B2502B /* CategoriesComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1932F44822077BFA00B2502B /* CategoriesComponent.swift */; };
+		1932F44B22077C0300B2502B /* CategoriesComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1932F44A22077C0300B2502B /* CategoriesComponent.xib */; };
+		1932F44D22077C0F00B2502B /* CategoriesConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1932F44C22077C0F00B2502B /* CategoriesConnector.swift */; };
+		1932F44F22077C1600B2502B /* CategoriesProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1932F44E22077C1600B2502B /* CategoriesProps.swift */; };
+		1932F45122077C1F00B2502B /* CategoriesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1932F45022077C1F00B2502B /* CategoriesScene.swift */; };
 		1940F4B321FB03F50063DB54 /* TransactionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4B221FB03F50063DB54 /* TransactionFeature.swift */; };
 		1940F4B521FB04290063DB54 /* TransactionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4B421FB04290063DB54 /* TransactionState.swift */; };
 		1940F4B821FB0C9D0063DB54 /* KeyboardFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4B721FB0C9D0063DB54 /* KeyboardFeature.swift */; };
@@ -117,6 +122,11 @@
 		1932F4422207697000B2502B /* CategoriesCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCommands.swift; sourceTree = "<group>"; };
 		1932F4442207697E00B2502B /* CategoriesReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesReducer.swift; sourceTree = "<group>"; };
 		1932F4462207698700B2502B /* CategoriesState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesState.swift; sourceTree = "<group>"; };
+		1932F44822077BFA00B2502B /* CategoriesComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesComponent.swift; sourceTree = "<group>"; };
+		1932F44A22077C0300B2502B /* CategoriesComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesComponent.xib; sourceTree = "<group>"; };
+		1932F44C22077C0F00B2502B /* CategoriesConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesConnector.swift; sourceTree = "<group>"; };
+		1932F44E22077C1600B2502B /* CategoriesProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesProps.swift; sourceTree = "<group>"; };
+		1932F45022077C1F00B2502B /* CategoriesScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesScene.swift; sourceTree = "<group>"; };
 		1940F4B221FB03F50063DB54 /* TransactionFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFeature.swift; sourceTree = "<group>"; };
 		1940F4B421FB04290063DB54 /* TransactionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionState.swift; sourceTree = "<group>"; };
 		1940F4B721FB0C9D0063DB54 /* KeyboardFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardFeature.swift; sourceTree = "<group>"; };
@@ -347,6 +357,11 @@
 		1943B02B21F9C4F30054119C /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				1932F44822077BFA00B2502B /* CategoriesComponent.swift */,
+				1932F44A22077C0300B2502B /* CategoriesComponent.xib */,
+				1932F44C22077C0F00B2502B /* CategoriesConnector.swift */,
+				1932F44E22077C1600B2502B /* CategoriesProps.swift */,
+				1932F45022077C1F00B2502B /* CategoriesScene.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -836,6 +851,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1943B00C21F66D890054119C /* MainScreenComponent.xib in Resources */,
+				1932F44B22077C0300B2502B /* CategoriesComponent.xib in Resources */,
 				1973907521FCBC3400D892F4 /* Rubik-Bold.ttf in Resources */,
 				1973907B21FCBC3400D892F4 /* Rubik-BlackItalic.ttf in Resources */,
 				19A1B19221F3837E0090F760 /* LaunchScreen.storyboard in Resources */,
@@ -980,6 +996,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19A1B1D021F398910090F760 /* AppFeature.swift in Sources */,
+				1932F44922077BFA00B2502B /* CategoriesComponent.swift in Sources */,
 				1932F4412207696500B2502B /* CategoriesActions.swift in Sources */,
 				19A1B1DB21F3B4D30090F760 /* RepositoryProvider.swift in Sources */,
 				1940F4BC21FB0E4D0063DB54 /* KeyboardActions.swift in Sources */,
@@ -1005,6 +1022,7 @@
 				19A1B1C821F3895C0090F760 /* AccountsState.swift in Sources */,
 				19A1B1C621F3894E0090F760 /* Account.swift in Sources */,
 				1973907F21FCBC7E00D892F4 /* Fonts.swift in Sources */,
+				1932F44D22077C0F00B2502B /* CategoriesConnector.swift in Sources */,
 				1943B00621F66D3C0054119C /* MainScreenConnector.swift in Sources */,
 				19A1B1E221F3B5E10090F760 /* ServiceProviderProtocol.swift in Sources */,
 				19A1B1E021F3B5A90090F760 /* ServiceProvider.swift in Sources */,
@@ -1017,9 +1035,11 @@
 				19A1B1F021F4CF700090F760 /* AccountsRepositoryProtocol.swift in Sources */,
 				1973909321FF850100D892F4 /* AccountSelectorConnector.swift in Sources */,
 				1943B03521F9EED50054119C /* CategoryIcon.swift in Sources */,
+				1932F44F22077C1600B2502B /* CategoriesProps.swift in Sources */,
 				1940F4B521FB04290063DB54 /* TransactionState.swift in Sources */,
 				19A1B1CE21F395F10090F760 /* AccountsFeature.swift in Sources */,
 				1932F43F2207695A00B2502B /* CategoriesFeature.swift in Sources */,
+				1932F45122077C1F00B2502B /* CategoriesScene.swift in Sources */,
 				19A1B18821F3837C0090F760 /* AppDelegate.swift in Sources */,
 				19A1B1D721F3B3080090F760 /* NibIdentifiable.swift in Sources */,
 				19A1B1E921F3B6200090F760 /* KeychainStorageService.swift in Sources */,
