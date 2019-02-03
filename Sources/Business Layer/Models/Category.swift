@@ -6,7 +6,7 @@
 import Foundation
 
 
-struct Category {
+struct Category: Codable {
 
     typealias ID = UUID
 

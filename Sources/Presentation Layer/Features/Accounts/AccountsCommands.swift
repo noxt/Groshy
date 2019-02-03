@@ -43,12 +43,18 @@ extension AccountsFeature {
             }
         }
 
-        private static func normalize(accounts: [Account]) -> [Account.ID: Account] {
-            var accountsDict: [Account.ID: Account] = [:]
-            for account in accounts {
-                accountsDict[account.id] = account
+        static func selectCurrentAccount(_ repositories: RepositoryProviderProtocol) -> Command<Account> {
+            return Command<Account> { account in
+                core.dispatch(Actions.CurrentAccountSelected(accountID: account.id))
             }
-            return accountsDict
+        }
+
+        private static func normalize(accounts: [Account]) -> [Account.ID: Account] {
+            var dict: [Account.ID: Account] = [:]
+            for account in accounts {
+                dict[account.id] = account
+            }
+            return dict
         }
 
     }

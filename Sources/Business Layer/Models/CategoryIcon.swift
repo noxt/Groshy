@@ -7,7 +7,7 @@ import UIKit
 
 
 extension Category {
-    enum Icon {
+    enum Icon: String, Codable {
         case car
         case entertaiment
         case healt
