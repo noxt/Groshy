@@ -293,9 +293,6 @@
 		1943B00421F66C370054119C /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				1943B02921F9C4BE0054119C /* AccountSelector */,
-				1943B02B21F9C4F30054119C /* Categories */,
-				1943B02A21F9C4DA0054119C /* Keyboard */,
 				1943B00921F66D630054119C /* MainScreenComponent.swift */,
 				1943B00B21F66D890054119C /* MainScreenComponent.xib */,
 				1943B00521F66D3C0054119C /* MainScreenConnector.swift */,
@@ -366,20 +363,6 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
-		1943B02C21F9E94D0054119C /* AccountsScreen */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = AccountsScreen;
-			sourceTree = "<group>";
-		};
-		1943B02D21F9E9560054119C /* StatisticsScreen */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = StatisticsScreen;
-			sourceTree = "<group>";
-		};
 		1973906621FCBBA900D892F4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -447,10 +430,14 @@
 		19A1B18621F3837C0090F760 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				19A1B1B621F384260090F760 /* Application Layer */,
-				19A1B1B721F3842D0090F760 /* Business Layer */,
-				19A1B1B821F384380090F760 /* Presentation Layer */,
+				19A1B1B621F384260090F760 /* App */,
+				19A1B1BD21F384D70090F760 /* Common */,
+				19A1B1D321F3A8A30090F760 /* Components */,
+				19A1B1BE21F384DC0090F760 /* Features */,
+				19A1B1BF21F385E50090F760 /* Models */,
+				19A1B1BC21F384C80090F760 /* Repositories */,
 				19A1B1B921F384400090F760 /* Resources */,
+				19A1B1BB21F384C10090F760 /* Services */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -484,34 +471,13 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		19A1B1B621F384260090F760 /* Application Layer */ = {
+		19A1B1B621F384260090F760 /* App */ = {
 			isa = PBXGroup;
 			children = (
 				19A1B18721F3837C0090F760 /* AppDelegate.swift */,
 				19A1B19321F3837E0090F760 /* Info.plist */,
 			);
-			path = "Application Layer";
-			sourceTree = "<group>";
-		};
-		19A1B1B721F3842D0090F760 /* Business Layer */ = {
-			isa = PBXGroup;
-			children = (
-				19A1B1BA21F384BB0090F760 /* Common */,
-				19A1B1BF21F385E50090F760 /* Models */,
-				19A1B1BC21F384C80090F760 /* Repositories */,
-				19A1B1BB21F384C10090F760 /* Services */,
-			);
-			path = "Business Layer";
-			sourceTree = "<group>";
-		};
-		19A1B1B821F384380090F760 /* Presentation Layer */ = {
-			isa = PBXGroup;
-			children = (
-				19A1B1BD21F384D70090F760 /* Common */,
-				19A1B1BE21F384DC0090F760 /* Features */,
-				19A1B1D321F3A8A30090F760 /* Components */,
-			);
-			path = "Presentation Layer";
+			path = App;
 			sourceTree = "<group>";
 		};
 		19A1B1B921F384400090F760 /* Resources */ = {
@@ -524,13 +490,6 @@
 				19A1B19021F3837E0090F760 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		19A1B1BA21F384BB0090F760 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
 			sourceTree = "<group>";
 		};
 		19A1B1BB21F384C10090F760 /* Services */ = {
@@ -609,8 +568,9 @@
 		19A1B1D321F3A8A30090F760 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				1943B02C21F9E94D0054119C /* AccountsScreen */,
-				1943B02D21F9E9560054119C /* StatisticsScreen */,
+				1943B02921F9C4BE0054119C /* AccountSelector */,
+				1943B02B21F9C4F30054119C /* Categories */,
+				1943B02A21F9C4DA0054119C /* Keyboard */,
 				1943B00421F66C370054119C /* MainScreen */,
 			);
 			path = Components;
@@ -1233,7 +1193,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EP4DBFYCG5;
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Application Layer/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1253,7 +1213,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EP4DBFYCG5;
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Application Layer/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

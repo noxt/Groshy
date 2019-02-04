@@ -66,9 +66,9 @@ final class AccountSelectorComponent: UIViewController, Component {
 
     func render() {
         switch props.state {
-        case let .idle(title: title, amount: amount):
-            titleLabel.text = title
-            amountLabel.text = amount
+        case let .idle(info: info):
+            titleLabel.text = info.title
+            amountLabel.text = info.amount
             containerStackView.isHidden = false
             activityIndicator.isHidden = true
             
