@@ -12,7 +12,7 @@ struct CategoriesProps {
     struct CategoryInfo {
         let title: String
         let icon: UIImage
-        let currentBalance: Double
+        let currentBalance: String?
         let selectCommand: PlainCommand?
     }
 

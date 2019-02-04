@@ -15,29 +15,40 @@ extension CategoriesFeature {
             return PlainCommand {
                 core.dispatch(Actions.LoadingStarted())
 
-                DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 2.0) {
-                    let categories = [
-                        Category(id: UUID(), icon: .car, title: "Транспорт"),
-                        Category(id: UUID(), icon: .entertaiment, title: "Развлечения"),
-                        Category(id: UUID(), icon: .healt, title: "Здоровье"),
-                        Category(id: UUID(), icon: .presents, title: "Подарки"),
-                        Category(id: UUID(), icon: .products, title: "Магазин"),
-                        Category(id: UUID(), icon: .restaurants, title: "Рестораны"),
-                        Category(id: UUID(), icon: .shops, title: "Магазины"),
-                    ]
+                DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 1.0) {
+                    do {
+                        let categories = try repositories.categoriesRepository.loadCategories()
 
-                    let categoriesByID = normalize(categories: categories)
-                    core.dispatch(Actions.CategoriesUpdated(categories: categoriesByID))
+                        let categoriesByID = normalize(categories: categories)
+                        core.dispatch(Actions.CategoriesUpdated(categories: categoriesByID))
 
-                    let sortOrder = categories.map { $0.id }
-                    core.dispatch(Actions.SortOrderUpdated(sortOrder: sortOrder))
+                        let sortOrder = categories.map { $0.id }
+                        core.dispatch(Actions.SortOrderUpdated(sortOrder: sortOrder))
+                    } catch let e {
+                        core.dispatch(Actions.Error(message: e.localizedDescription))
+                    }
                 }
             }
         }
 
         static func createCategory(_ repositories: RepositoryProviderProtocol) -> Command<Category> {
             return Command<Category> { newCategory in
+                core.dispatch(Actions.LoadingStarted())
 
+                do {
+                    try repositories.categoriesRepository.create(category: newCategory)
+                    let categories = try repositories.categoriesRepository.loadCategories()
+
+                    let categoriesByID = normalize(categories: categories)
+                    core.dispatch(Actions.CategoriesUpdated(categories: categoriesByID))
+
+                    let sortOrder = categories.map { $0.id }
+                    core.dispatch(Actions.SortOrderUpdated(sortOrder: sortOrder))
+
+                    core.dispatch(Actions.CurrentCategorySelected(categoryID: newCategory.id))
+                } catch let e {
+                    core.dispatch(Actions.Error(message: e.localizedDescription))
+                }
             }
         }
 

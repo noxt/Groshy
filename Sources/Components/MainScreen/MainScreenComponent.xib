@@ -45,7 +45,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqJ-th-Ywz">
                     <rect key="frame" x="6" y="317" width="270" height="74"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vIB-MB-2HL">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="vIB-MB-2HL">
                             <rect key="frame" x="10" y="26.5" width="250" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
@@ -85,8 +85,11 @@
                     <state key="normal" image="comment-button"/>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ViB-Qf-6a3">
-                    <rect key="frame" x="16" y="83" width="343" height="218"/>
+                    <rect key="frame" x="16" y="83" width="343" height="184"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="184" id="4Zy-cm-7N9"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -106,7 +109,7 @@
                 <constraint firstItem="cqJ-th-Ywz" firstAttribute="leading" secondItem="jJd-gU-A4X" secondAttribute="leading" id="dy2-7q-Lyx"/>
                 <constraint firstItem="jJd-gU-A4X" firstAttribute="top" secondItem="cqJ-th-Ywz" secondAttribute="bottom" constant="6" id="ezb-hw-bXN"/>
                 <constraint firstItem="DNI-0j-hwG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="hNN-3D-fcn"/>
-                <constraint firstItem="cqJ-th-Ywz" firstAttribute="top" secondItem="ViB-Qf-6a3" secondAttribute="bottom" constant="16" id="iPf-EY-IC1"/>
+                <constraint firstItem="cqJ-th-Ywz" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ViB-Qf-6a3" secondAttribute="bottom" constant="16" id="iPf-EY-IC1"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5I2-m3-iiH" secondAttribute="trailing" id="iPj-CA-Ufq"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jJd-gU-A4X" secondAttribute="trailing" constant="6" id="jvk-wJ-XiY"/>
                 <constraint firstItem="5I2-m3-iiH" firstAttribute="centerY" secondItem="DNI-0j-hwG" secondAttribute="centerY" id="nDo-1H-8jN"/>

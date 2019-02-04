@@ -9,10 +9,14 @@ import Foundation
 class RepositoryProvider: RepositoryProviderProtocol {
 
     let accountsRepository: AccountsRepositoryProtocol
+    let categoriesRepository: CategoriesRepositoryProtocol
 
 
     init(serviceProvider: ServiceProviderProtocol = ServiceProvider()) {
         accountsRepository = AccountsRepository(
+            storageService: serviceProvider.securityStorageService
+        )
+        categoriesRepository = CategoriesRepository(
             storageService: serviceProvider.securityStorageService
         )
     }

@@ -51,6 +51,10 @@ struct Images {
             return UIImage(named: "categories/shops")!
         }
 
+        static var plus: UIImage {
+            return UIImage(named: "categories/plus")!
+        }
+
     }
 
 }

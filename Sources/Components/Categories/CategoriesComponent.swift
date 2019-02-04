@@ -9,6 +9,14 @@ import Unicore
 
 final class CategoriesComponent: UIViewController, Component {
 
+    private struct Constants {
+        static let rowsCount: CGFloat = 4
+        static let horizontalSpacing: CGFloat = 8
+        static let verticalSpacing: CGFloat = 8
+        static let itemHeight: CGFloat = 86
+    }
+
+
     // Props
 
     private let connector: CategoriesConnector!
@@ -20,11 +28,12 @@ final class CategoriesComponent: UIViewController, Component {
             render()
         }
     }
+    private var categories: [CategoriesProps.CategoryInfo]!
 
 
     // UI Props
 
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
 
@@ -53,24 +62,71 @@ final class CategoriesComponent: UIViewController, Component {
     // MARK: - Component lifecycle
 
     func setup() {
-        titleLabel.textColor = Colors.blue
-        titleLabel.font = Fonts.Rubik.Medium(size: 15)
-
+        collectionView.register(CategoryCell.nib, forCellWithReuseIdentifier: CategoryCell.nibIdentifier)
+        collectionView.delegate = self
+        collectionView.dataSource = self
         props.loadCategoriesList.execute()
+    }
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        let width: CGFloat = view.bounds.width - Constants.horizontalSpacing * (Constants.rowsCount - 1)
+        layout.itemSize = CGSize(width: width / Constants.rowsCount, height: Constants.itemHeight)
+        layout.minimumInteritemSpacing = Constants.horizontalSpacing
+        layout.minimumLineSpacing = Constants.verticalSpacing
     }
 
     func render() {
         switch props.state {
         case let .idle(categories: categories):
-            titleLabel.text = String(categories.count)
-            titleLabel.isHidden = false
+            self.categories = categories
+            collectionView.reloadData()
+            collectionView.isHidden = false
             activityIndicator.isHidden = true
 
         case .loading:
-            titleLabel.isHidden = true
+            collectionView.isHidden = true
             activityIndicator.isHidden = false
             activityIndicator.startAnimating()
         }
+    }
+
+}
+
+
+// MARK: - UICollectionViewDataSource
+
+extension CategoriesComponent: UICollectionViewDataSource {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return categories.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.nibIdentifier, for: indexPath) as! CategoryCell
+        let data = categories[indexPath.row]
+        let props = CategoryCell.Props(
+            title: data.title,
+            image: data.icon,
+            currentBalance: data.currentBalance,
+            isSelected: data.selectCommand == nil
+        )
+        cell.setup(props: props)
+        return cell
+    }
+
+}
+
+
+// MARK: - UICollectionViewDelegate
+
+extension CategoriesComponent: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let data = categories[indexPath.row]
+        data.selectCommand?.execute()
     }
 
 }

@@ -33,6 +33,8 @@ final class CategoriesConnector: BaseConnector<CategoriesProps> {
             }
         }
 
+        categories.append(addButtonProps())
+
         return .idle(categories: categories)
     }
 
@@ -49,8 +51,24 @@ final class CategoriesConnector: BaseConnector<CategoriesProps> {
         return CategoriesProps.CategoryInfo(
             title: category.title,
             icon: category.icon.image,
-            currentBalance: 0,
+            currentBalance: "0 BYN",
             selectCommand: command
+        )
+    }
+
+    private func addButtonProps() -> CategoriesProps.CategoryInfo {
+        return CategoriesProps.CategoryInfo(
+            title: "Добавить",
+            icon: Images.Categories.plus,
+            currentBalance: nil,
+            selectCommand: PlainCommand { [unowned self] in
+                let category = Category(
+                    id: Category.ID(),
+                    icon: .car,
+                    title: "Транспорт"
+                )
+                CategoriesFeature.Commands.createCategory(self.repositories).execute(with: category)
+            }
         )
     }
 

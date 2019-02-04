@@ -13,7 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoriesComponent" customModule="Groshy" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="mIv-lB-1IB" id="kXp-vs-mjb"/>
-                <outlet property="titleLabel" destination="0k7-mY-PBf" id="hFj-ce-1Dw"/>
+                <outlet property="collectionView" destination="kHt-0N-wwZ" id="NeN-F0-Q9j"/>
                 <outlet property="view" destination="iN0-l3-epB" id="837-tm-ToH"/>
             </connections>
         </placeholder>
@@ -25,19 +25,25 @@
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="mIv-lB-1IB">
                     <rect key="frame" x="177.5" y="107.5" width="20" height="20"/>
                 </activityIndicatorView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0k7-mY-PBf">
-                    <rect key="frame" x="166.5" y="107" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="kHt-0N-wwZ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="235"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CiD-UB-9Pu">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="0k7-mY-PBf" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="0hD-mt-mUx"/>
-                <constraint firstItem="0k7-mY-PBf" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="N8m-Fr-FMM"/>
+                <constraint firstItem="kHt-0N-wwZ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Uo5-ZC-NSs"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="kHt-0N-wwZ" secondAttribute="bottom" id="XoT-sm-yMb"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="kHt-0N-wwZ" secondAttribute="trailing" id="Yg1-3U-Cve"/>
                 <constraint firstItem="mIv-lB-1IB" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="kex-aI-TqH"/>
                 <constraint firstItem="mIv-lB-1IB" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="tZL-k2-LRP"/>
+                <constraint firstItem="kHt-0N-wwZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="uzM-Mj-j63"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
