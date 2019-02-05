@@ -7,7 +7,6 @@ import Foundation
 
 
 extension KeyboardFeature {
-
     struct State: Codable {
 
         let expression: String?
@@ -20,5 +19,4 @@ extension KeyboardFeature {
         )
 
     }
-
 }

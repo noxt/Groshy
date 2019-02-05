@@ -8,7 +8,6 @@ import Unicore
 
 
 extension CategoriesFeature {
-
     struct Actions {
 
         struct LoadingStarted: Action {
@@ -28,6 +27,4 @@ extension CategoriesFeature {
         }
 
     }
-
 }
-

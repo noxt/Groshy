@@ -8,7 +8,6 @@ import Unicore
 
 
 extension TransactionFeature {
-
     struct Actions {
 
         struct CategorySelected: Action {
@@ -16,6 +15,4 @@ extension TransactionFeature {
         }
 
     }
-
 }
-

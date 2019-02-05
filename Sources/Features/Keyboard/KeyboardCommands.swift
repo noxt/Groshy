@@ -8,7 +8,6 @@ import Unicore
 
 
 extension KeyboardFeature {
-
     struct Commands {
 
         static func addDigit(currentValue: String) -> Command<Digit> {
@@ -71,5 +70,4 @@ extension KeyboardFeature {
         }
 
     }
-
 }

@@ -7,7 +7,6 @@ import Foundation
 
 
 extension CategoriesFeature {
-
     struct State: Codable {
 
         let categories: [Category.ID : Category]
@@ -24,5 +23,4 @@ extension CategoriesFeature {
         )
 
     }
-
 }

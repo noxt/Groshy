@@ -7,7 +7,6 @@ import Foundation
 
 
 extension AppFeature {
-
     struct State: Codable {
 
         let accountsState: AccountsFeature.State
@@ -24,5 +23,4 @@ extension AppFeature {
         )
 
     }
-
 }

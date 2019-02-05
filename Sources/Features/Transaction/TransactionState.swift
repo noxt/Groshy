@@ -7,7 +7,6 @@ import Foundation
 
 
 extension TransactionFeature {
-
     struct State: Codable {
 
         let accountID: Account.ID?
@@ -15,6 +14,7 @@ extension TransactionFeature {
         let date: Date?
         let value: Double?
 
+        
         static let initial = State(
             accountID: nil,
             categoryID: nil,
@@ -22,5 +22,4 @@ extension TransactionFeature {
             value: nil
         )
     }
-
 }

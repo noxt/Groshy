@@ -8,7 +8,6 @@ import Unicore
 
 
 extension CategoriesFeature {
-
     struct Commands {
 
         static func loadCategoriesList(_ repositories: RepositoryProviderProtocol) -> PlainCommand {
@@ -61,5 +60,4 @@ extension CategoriesFeature {
         }
 
     }
-
 }

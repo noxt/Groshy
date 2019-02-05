@@ -8,7 +8,6 @@ import Unicore
 
 
 extension AccountsFeature {
-    
     struct Actions {
 
         struct CurrentAccountSelected: Action {
@@ -28,5 +27,4 @@ extension AccountsFeature {
         }
 
     }
-
 }

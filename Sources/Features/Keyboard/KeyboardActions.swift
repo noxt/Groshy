@@ -8,7 +8,6 @@ import Unicore
 
 
 extension KeyboardFeature {
-
     struct Actions {
 
         struct CurrentValueUpdated: Action {
@@ -16,5 +15,4 @@ extension KeyboardFeature {
         }
 
     }
-
 }

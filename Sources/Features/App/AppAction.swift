@@ -8,12 +8,10 @@ import Unicore
 
 
 extension AppFeature {
-
     struct Action {
 
         struct WillEnterForeground: Unicore.Action { }
         struct DidEnterBackground: Unicore.Action { }
         
     }
-    
 }

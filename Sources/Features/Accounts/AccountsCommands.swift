@@ -8,7 +8,6 @@ import Unicore
 
 
 extension AccountsFeature {
-
     struct Commands {
 
         static func loadAccountsList(_ repositories: RepositoryProviderProtocol) -> PlainCommand {
@@ -58,5 +57,4 @@ extension AccountsFeature {
         }
 
     }
-
 }
