@@ -8,9 +8,7 @@ import Unicore
 
 
 extension AccountsFeature {
-
     static func reduce(_ old: State, with action: Action) -> State {
-
         switch action {
 
         case let payload as Actions.CurrentAccountSelected:
@@ -49,7 +47,5 @@ extension AccountsFeature {
             return old
 
         }
-
     }
-
 }

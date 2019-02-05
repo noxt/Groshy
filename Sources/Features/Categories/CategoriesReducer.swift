@@ -8,23 +8,11 @@ import Unicore
 
 
 extension CategoriesFeature {
-
     static func reduce(_ old: State, with action: Action) -> State {
-
         switch action {
-
-        case let payload as Actions.CurrentCategorySelected:
-            return State(
-                currentCategoryID: payload.categoryID,
-                categories: old.categories,
-                sortOrder: old.sortOrder,
-                isLoading: false,
-                error: nil
-            )
 
         case let payload as Actions.CategoriesUpdated:
             return State(
-                currentCategoryID: old.currentCategoryID,
                 categories: payload.categories,
                 sortOrder: old.sortOrder,
                 isLoading: false,
@@ -33,7 +21,6 @@ extension CategoriesFeature {
 
         case is Actions.LoadingStarted:
             return State(
-                currentCategoryID: old.currentCategoryID,
                 categories: old.categories,
                 sortOrder: old.sortOrder,
                 isLoading: true,
@@ -42,7 +29,6 @@ extension CategoriesFeature {
 
         case let payload as Actions.Error:
             return State(
-                currentCategoryID: old.currentCategoryID,
                 categories: old.categories,
                 sortOrder: old.sortOrder,
                 isLoading: false,
@@ -51,7 +37,6 @@ extension CategoriesFeature {
 
         case let payload as Actions.SortOrderUpdated:
             return State(
-                currentCategoryID: old.currentCategoryID,
                 categories: old.categories,
                 sortOrder: payload.sortOrder,
                 isLoading: false,
@@ -62,8 +47,5 @@ extension CategoriesFeature {
             return old
 
         }
-
     }
-
 }
-

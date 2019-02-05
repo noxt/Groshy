@@ -45,16 +45,10 @@ extension CategoriesFeature {
                     let sortOrder = categories.map { $0.id }
                     core.dispatch(Actions.SortOrderUpdated(sortOrder: sortOrder))
 
-                    core.dispatch(Actions.CurrentCategorySelected(categoryID: newCategory.id))
+                    TransactionFeature.Commands.selectCategory(repositories).execute(with: newCategory)
                 } catch let e {
                     core.dispatch(Actions.Error(message: e.localizedDescription))
                 }
-            }
-        }
-
-        static func selectCurrentCategory(_ repositories: RepositoryProviderProtocol) -> Command<Category> {
-            return Command<Category> { category in
-                core.dispatch(Actions.CurrentCategorySelected(categoryID: category.id))
             }
         }
 

@@ -8,9 +8,7 @@ import Unicore
 
 
 extension KeyboardFeature {
-
     static func reduce(_ old: State, with action: Action) -> State {
-
         switch action {
 
         case let payload as Actions.CurrentValueUpdated:
@@ -23,8 +21,5 @@ extension KeyboardFeature {
             return old
 
         }
-
     }
-
 }
-

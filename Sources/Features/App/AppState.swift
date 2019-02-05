@@ -13,12 +13,14 @@ extension AppFeature {
         let accountsState: AccountsFeature.State
         let categoriesState: CategoriesFeature.State
         let keyboardState: KeyboardFeature.State
+        let transactionState: TransactionFeature.State
 
 
         static let initial = State(
             accountsState: .initial,
             categoriesState: .initial,
-            keyboardState: .initial
+            keyboardState: .initial,
+            transactionState: .initial
         )
 
     }

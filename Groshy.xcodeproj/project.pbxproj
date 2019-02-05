@@ -67,6 +67,9 @@
 		1973909321FF850100D892F4 /* AccountSelectorConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973909221FF850100D892F4 /* AccountSelectorConnector.swift */; };
 		1973909521FF850B00D892F4 /* AccountSelectorProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973909421FF850B00D892F4 /* AccountSelectorProps.swift */; };
 		1973909721FF851400D892F4 /* AccountSelectorScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973909621FF851400D892F4 /* AccountSelectorScene.swift */; };
+		1994BAF5220A21AF00B494F4 /* TransactionCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994BAF4220A21AF00B494F4 /* TransactionCommands.swift */; };
+		1994BAF7220A21B900B494F4 /* TransactionActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994BAF6220A21B900B494F4 /* TransactionActions.swift */; };
+		1994BAF9220A21C300B494F4 /* TransactionReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994BAF8220A21C300B494F4 /* TransactionReducer.swift */; };
 		19A1B18821F3837C0090F760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B18721F3837C0090F760 /* AppDelegate.swift */; };
 		19A1B18F21F3837D0090F760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19A1B18E21F3837D0090F760 /* Assets.xcassets */; };
 		19A1B19221F3837E0090F760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A1B19021F3837E0090F760 /* LaunchScreen.storyboard */; };
@@ -181,6 +184,9 @@
 		1973909221FF850100D892F4 /* AccountSelectorConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSelectorConnector.swift; sourceTree = "<group>"; };
 		1973909421FF850B00D892F4 /* AccountSelectorProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSelectorProps.swift; sourceTree = "<group>"; };
 		1973909621FF851400D892F4 /* AccountSelectorScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSelectorScene.swift; sourceTree = "<group>"; };
+		1994BAF4220A21AF00B494F4 /* TransactionCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCommands.swift; sourceTree = "<group>"; };
+		1994BAF6220A21B900B494F4 /* TransactionActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionActions.swift; sourceTree = "<group>"; };
+		1994BAF8220A21C300B494F4 /* TransactionReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionReducer.swift; sourceTree = "<group>"; };
 		19A1B18421F3837C0090F760 /* Groshy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Groshy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A1B18721F3837C0090F760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19A1B18E21F3837D0090F760 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -274,7 +280,10 @@
 		1940F4B121FB02B70063DB54 /* Transaction */ = {
 			isa = PBXGroup;
 			children = (
+				1994BAF6220A21B900B494F4 /* TransactionActions.swift */,
+				1994BAF4220A21AF00B494F4 /* TransactionCommands.swift */,
 				1940F4B221FB03F50063DB54 /* TransactionFeature.swift */,
+				1994BAF8220A21C300B494F4 /* TransactionReducer.swift */,
 				1940F4B421FB04290063DB54 /* TransactionState.swift */,
 			);
 			path = Transaction;
@@ -558,9 +567,9 @@
 			isa = PBXGroup;
 			children = (
 				19A1B1D421F3B1740090F760 /* AppAction.swift */,
-				19A1B1C121F3860E0090F760 /* AppState.swift */,
 				19A1B1CF21F398910090F760 /* AppFeature.swift */,
 				19A1B1D121F3991D0090F760 /* AppReducer.swift */,
+				19A1B1C121F3860E0090F760 /* AppState.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -991,6 +1000,7 @@
 				1932F44922077BFA00B2502B /* CategoriesComponent.swift in Sources */,
 				1932F4412207696500B2502B /* CategoriesActions.swift in Sources */,
 				19A1B1DB21F3B4D30090F760 /* RepositoryProvider.swift in Sources */,
+				1994BAF5220A21AF00B494F4 /* TransactionCommands.swift in Sources */,
 				1940F4BC21FB0E4D0063DB54 /* KeyboardActions.swift in Sources */,
 				19A1B1F421F4D8B90090F760 /* AccountsRepositoryError.swift in Sources */,
 				1943B01221F67ED30054119C /* Connector.swift in Sources */,
@@ -998,6 +1008,7 @@
 				1940F4BA21FB0CB60063DB54 /* KeyboardState.swift in Sources */,
 				1943B04121FA07890054119C /* KeyboardComponent.swift in Sources */,
 				1940F4C521FC8AB50063DB54 /* UIColor+RGB.swift in Sources */,
+				1994BAF7220A21B900B494F4 /* TransactionActions.swift in Sources */,
 				1943B03F21FA077D0054119C /* KeyboardConnector.swift in Sources */,
 				1973909721FF851400D892F4 /* AccountSelectorScene.swift in Sources */,
 				19A1B1ED21F3B6200090F760 /* StorageServiceProtocol.swift in Sources */,
@@ -1018,6 +1029,7 @@
 				1932F44D22077C0F00B2502B /* CategoriesConnector.swift in Sources */,
 				1943B00621F66D3C0054119C /* MainScreenConnector.swift in Sources */,
 				19A1B1E221F3B5E10090F760 /* ServiceProviderProtocol.swift in Sources */,
+				1994BAF9220A21C300B494F4 /* TransactionReducer.swift in Sources */,
 				19E0B0BB2208C75B00AF56D7 /* CategoryCell.swift in Sources */,
 				19A1B1E021F3B5A90090F760 /* ServiceProvider.swift in Sources */,
 				19A1B1D221F3991D0090F760 /* AppReducer.swift in Sources */,

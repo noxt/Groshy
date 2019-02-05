@@ -18,6 +18,7 @@ final class CategoriesConnector: BaseConnector<CategoriesProps> {
 
     private func mapToPropsState(state: AppFeature.State) -> CategoriesProps.State {
         let categoriesState = state.categoriesState
+        let transactionState = state.transactionState
 
         guard !categoriesState.isLoading else {
             return .loading
@@ -28,7 +29,7 @@ final class CategoriesConnector: BaseConnector<CategoriesProps> {
             if let category = categoriesState.categories[id] {
                 categories.append(mapCategoryToProps(
                     category: category,
-                    isSelected: categoriesState.currentCategoryID == category.id
+                    isSelected: transactionState.categoryID == category.id
                 ))
             }
         }
@@ -42,7 +43,7 @@ final class CategoriesConnector: BaseConnector<CategoriesProps> {
         let command: PlainCommand?
         if !isSelected {
             command = PlainCommand { [unowned self] in
-                CategoriesFeature.Commands.selectCurrentCategory(self.repositories).execute(with: category)
+                TransactionFeature.Commands.selectCategory(self.repositories).execute(with: category)
             }
         } else {
             command = nil

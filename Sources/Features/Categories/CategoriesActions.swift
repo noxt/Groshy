@@ -11,10 +11,6 @@ extension CategoriesFeature {
 
     struct Actions {
 
-        struct CurrentCategorySelected: Action {
-            let categoryID: Category.ID
-        }
-
         struct LoadingStarted: Action {
 
         }
