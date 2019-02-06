@@ -7,11 +7,9 @@ import Foundation
 
 
 struct CategoriesScene {
-
     static func makeScene(with repositories: RepositoryProviderProtocol) -> Scene<CategoriesConnector, CategoriesComponent> {
         let connector = CategoriesConnector(repositories: repositories)
         let component = CategoriesComponent(connector: connector)
         return Scene(connector, component)
     }
-
 }

@@ -7,14 +7,14 @@ import Foundation
 
 
 struct MainScreenScene {
-
     static func makeScene(with repositories: RepositoryProviderProtocol) -> Scene<MainScreenConnector, MainScreenComponent> {
         let connector = MainScreenConnector(repositories: repositories)
-        let component = MainScreenComponent(connector: connector)
-        component.keyboardScene = KeyboardScene.makeScene(with: repositories)
-        component.accountSelectorScene = AccountSelectorScene.makeScene(with: repositories)
-        component.categoriesScene = CategoriesScene.makeScene(with: repositories)
+        let component = MainScreenComponent(
+            connector: connector,
+            accountSelectorScene: AccountSelectorScene.makeScene(with: repositories),
+            categoriesScene: CategoriesScene.makeScene(with: repositories),
+            keyboardScene: KeyboardScene.makeScene(with: repositories)
+        )
         return Scene(connector, component)
     }
-
 }

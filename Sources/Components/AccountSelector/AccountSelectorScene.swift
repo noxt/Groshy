@@ -7,11 +7,9 @@ import Foundation
 
 
 struct AccountSelectorScene {
-
     static func makeScene(with repositories: RepositoryProviderProtocol) -> Scene<AccountSelectorConnector, AccountSelectorComponent> {
         let connector = AccountSelectorConnector(repositories: repositories)
         let component = AccountSelectorComponent(connector: connector)
         return Scene(connector, component)
     }
-
 }

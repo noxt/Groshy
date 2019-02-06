@@ -30,9 +30,9 @@ final class MainScreenComponent: UIViewController, Component {
 
     // UI Props
 
-    var accountSelectorScene: Scene<AccountSelectorConnector, AccountSelectorComponent>!
-    var categoriesScene: Scene<CategoriesConnector, CategoriesComponent>!
-    var keyboardScene: Scene<KeyboardConnector, KeyboardComponent>!
+    let accountSelectorScene: Scene<AccountSelectorConnector, AccountSelectorComponent>
+    let categoriesScene: Scene<CategoriesConnector, CategoriesComponent>
+    let keyboardScene: Scene<KeyboardConnector, KeyboardComponent>
 
     @IBOutlet weak var categoriesTitleLabel: UILabel!
     @IBOutlet weak var categoriesContainer: UIView!
@@ -50,8 +50,16 @@ final class MainScreenComponent: UIViewController, Component {
 
     // MARK: - Initializator
 
-    init(connector: MainScreenConnector) {
+    init(connector: MainScreenConnector,
+         accountSelectorScene: Scene<AccountSelectorConnector, AccountSelectorComponent>,
+         categoriesScene: Scene<CategoriesConnector, CategoriesComponent>,
+         keyboardScene: Scene<KeyboardConnector, KeyboardComponent>
+     ) {
         self.connector = connector
+        self.accountSelectorScene = accountSelectorScene
+        self.categoriesScene = categoriesScene
+        self.keyboardScene = keyboardScene
+
         super.init(nibName: nil, bundle: nil)
     }
 
