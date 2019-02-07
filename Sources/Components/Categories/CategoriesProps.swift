@@ -10,10 +10,15 @@ import Unicore
 struct CategoriesProps {
 
     struct CategoryInfo {
+        let id: Category.ID
         let title: String
         let icon: UIImage
         let currentBalance: String?
         let selectCommand: PlainCommand?
+
+        var isSelected: Bool {
+            return selectCommand == nil
+        }
     }
 
     enum State: Equatable {
@@ -32,13 +37,11 @@ struct CategoriesProps {
 
 extension CategoriesProps.CategoryInfo: Equatable {
     static func ==(lhs: CategoriesProps.CategoryInfo, rhs: CategoriesProps.CategoryInfo) -> Bool {
-        return lhs.title == rhs.title
-            && lhs.icon == rhs.icon
+        return lhs.id == rhs.id
+            && lhs.title == rhs.title
+            && lhs.icon.isEqual(rhs.icon)
             && lhs.currentBalance == rhs.currentBalance
-            && (
-                (lhs.selectCommand == nil && rhs.selectCommand == nil)
-             || (lhs.selectCommand != nil && rhs.selectCommand != nil)
-            )
+            && lhs.isSelected == rhs.isSelected
     }
 }
 
@@ -48,3 +51,11 @@ extension CategoriesProps: Equatable {
     }
 }
 
+
+// MARK: - Hashable
+
+extension CategoriesProps.CategoryInfo: Hashable {
+    var hashValue: Int {
+        return id.hashValue
+    }
+}

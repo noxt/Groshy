@@ -43,8 +43,6 @@ extension CategoriesFeature {
 
                     let sortOrder = categories.map { $0.id }
                     core.dispatch(Actions.SortOrderUpdated(sortOrder: sortOrder))
-
-                    TransactionFeature.Commands.selectCategory(repositories).execute(with: newCategory)
                 } catch let e {
                     core.dispatch(Actions.Error(message: e.localizedDescription))
                 }

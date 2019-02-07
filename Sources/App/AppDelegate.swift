@@ -49,6 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func cleanDB() {
         try? KeychainStorageService().deleteValue(forKey: .accounts)
+        try? KeychainStorageService().deleteValue(forKey: .categories)
     }
 
 }

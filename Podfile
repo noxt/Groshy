@@ -10,6 +10,7 @@ target 'Groshy' do
   pod 'KeychainAccess', '~> 3.1'
   pod 'Result', '~> 4.1'
   pod 'SnapKit', '~> 4.0'
+  pod 'DeepDiff', '~> 1.4'
 
 
   target 'GroshyTests' do

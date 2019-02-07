@@ -32,7 +32,7 @@ class CategoryCell: UICollectionViewCell {
     }
 
 
-    func setup(props: Props) {
+    func setup(props: CategoriesProps.CategoryInfo) {
         if props.isSelected {
             layer.borderColor = Colors.red.cgColor
             layer.borderWidth = 1
@@ -42,19 +42,9 @@ class CategoryCell: UICollectionViewCell {
         }
 
         titleLabel.text = props.title
-        imageView.image = props.image
+        imageView.image = props.icon
         amountLabel.text = props.currentBalance
         amountLabel.isHidden = props.currentBalance == nil
     }
 
-}
-
-
-extension CategoryCell {
-    struct Props {
-        let title: String
-        let image: UIImage
-        let currentBalance: String?
-        let isSelected: Bool
-    }
 }

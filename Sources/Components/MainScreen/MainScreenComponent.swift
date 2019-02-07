@@ -30,9 +30,9 @@ final class MainScreenComponent: UIViewController, Component {
 
     // UI Props
 
-    let accountSelectorScene: Scene<AccountSelectorConnector, AccountSelectorComponent>
-    let categoriesScene: Scene<CategoriesConnector, CategoriesComponent>
-    let keyboardScene: Scene<KeyboardConnector, KeyboardComponent>
+    private let accountSelectorScene: Scene<AccountSelectorConnector, AccountSelectorComponent>
+    private let categoriesScene: Scene<CategoriesConnector, CategoriesComponent>
+    private let keyboardScene: Scene<KeyboardConnector, KeyboardComponent>
 
     @IBOutlet weak var categoriesTitleLabel: UILabel!
     @IBOutlet weak var categoriesContainer: UIView!

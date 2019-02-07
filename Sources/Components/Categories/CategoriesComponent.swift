@@ -5,6 +5,7 @@
 
 import UIKit
 import Unicore
+import DeepDiff
 
 
 final class CategoriesComponent: UIViewController, Component {
@@ -28,7 +29,7 @@ final class CategoriesComponent: UIViewController, Component {
             render()
         }
     }
-    private var categories: [CategoriesProps.CategoryInfo]!
+    private var categories: [CategoriesProps.CategoryInfo] = []
 
 
     // UI Props
@@ -54,8 +55,10 @@ final class CategoriesComponent: UIViewController, Component {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        connector.connect(to: self)
         setup()
+        connector.connect(to: self)
+
+        props.loadCategoriesList.execute()
     }
 
 
@@ -65,7 +68,6 @@ final class CategoriesComponent: UIViewController, Component {
         collectionView.register(CategoryCell.nib, forCellWithReuseIdentifier: CategoryCell.nibIdentifier)
         collectionView.delegate = self
         collectionView.dataSource = self
-        props.loadCategoriesList.execute()
     }
 
     override func viewWillLayoutSubviews() {
@@ -80,11 +82,14 @@ final class CategoriesComponent: UIViewController, Component {
 
     func render() {
         switch props.state {
-        case let .idle(categories: categories):
-            self.categories = categories
-            collectionView.reloadData()
+        case let .idle(categories: newCategories):
             collectionView.isHidden = false
             activityIndicator.isHidden = true
+
+            let changes = diff(old: categories, new: newCategories)
+            collectionView.reload(changes: changes, updateData: { [weak self] in
+                self?.categories = newCategories
+            })
 
         case .loading:
             collectionView.isHidden = true
@@ -106,14 +111,7 @@ extension CategoriesComponent: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.nibIdentifier, for: indexPath) as! CategoryCell
-        let data = categories[indexPath.row]
-        let props = CategoryCell.Props(
-            title: data.title,
-            image: data.icon,
-            currentBalance: data.currentBalance,
-            isSelected: data.selectCommand == nil
-        )
-        cell.setup(props: props)
+        cell.setup(props: categories[indexPath.row])
         return cell
     }
 
@@ -125,8 +123,7 @@ extension CategoriesComponent: UICollectionViewDataSource {
 extension CategoriesComponent: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let data = categories[indexPath.row]
-        data.selectCommand?.execute()
+        categories[indexPath.row].selectCommand?.execute()
     }
 
 }

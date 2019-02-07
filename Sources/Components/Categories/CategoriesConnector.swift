@@ -50,6 +50,7 @@ final class CategoriesConnector: BaseConnector<CategoriesProps> {
         }
 
         return CategoriesProps.CategoryInfo(
+            id: category.id,
             title: category.title,
             icon: category.icon.image,
             currentBalance: "0 BYN",
@@ -57,8 +58,10 @@ final class CategoriesConnector: BaseConnector<CategoriesProps> {
         )
     }
 
+    private static let addButtonUUID = UUID()
     private func addButtonProps() -> CategoriesProps.CategoryInfo {
         return CategoriesProps.CategoryInfo(
+            id: CategoriesConnector.addButtonUUID,
             title: "Добавить",
             icon: Images.Categories.plus,
             currentBalance: nil,

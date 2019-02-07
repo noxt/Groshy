@@ -426,6 +426,15 @@
 			path = Rubic;
 			sourceTree = "<group>";
 		};
+		1994BB16220C6C2600B494F4 /* CategoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				19E0B0BA2208C75B00AF56D7 /* CategoryCell.swift */,
+				19E0B0BC2208C76600AF56D7 /* CategoryCell.xib */,
+			);
+			path = CategoryCell;
+			sourceTree = "<group>";
+		};
 		19A1B17B21F3837C0090F760 = {
 			isa = PBXGroup;
 			children = (
@@ -712,8 +721,7 @@
 		19E0B0B92208C73800AF56D7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				19E0B0BA2208C75B00AF56D7 /* CategoryCell.swift */,
-				19E0B0BC2208C76600AF56D7 /* CategoryCell.xib */,
+				1994BB16220C6C2600B494F4 /* CategoryCell */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -933,6 +941,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Groshy/Pods-Groshy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DeepDiff/DeepDiff.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -942,6 +951,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeepDiff.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
