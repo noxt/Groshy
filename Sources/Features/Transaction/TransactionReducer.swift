@@ -11,18 +11,18 @@ extension TransactionFeature {
     static func reduce(_ old: State, with action: Action) -> State {
         switch action {
 
-        case let payload as AccountsFeature.Actions.CurrentAccountSelected:
+        case let AccountsFeature.Actions.currentAccountSelected(accountID: accountID):
             return State(
-                accountID: payload.accountID,
+                accountID: accountID,
                 categoryID: old.categoryID,
                 date: old.date,
                 value: old.value
             )
 
-        case let payload as Actions.CategorySelected:
+        case let Actions.categorySelected(categoryID: categoryID):
             return State(
                 accountID: old.accountID,
-                categoryID: payload.categoryID,
+                categoryID: categoryID,
                 date: old.date,
                 value: old.value
             )

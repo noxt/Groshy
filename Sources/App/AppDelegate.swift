@@ -40,11 +40,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
-        core.dispatch(AppFeature.Action.WillEnterForeground())
+        core.dispatch(AppFeature.Actions.willEnterForeground)
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        core.dispatch(AppFeature.Action.DidEnterBackground())
+        core.dispatch(AppFeature.Actions.didEnterBackground)
     }
 
     private func cleanDB() {

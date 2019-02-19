@@ -13,7 +13,7 @@ extension TransactionFeature {
 
         static func selectCategory(_ repositories: RepositoryProviderProtocol) -> Command<Category> {
             return Command<Category> { category in
-                core.dispatch(Actions.CategorySelected(categoryID: category.id))
+                core.dispatch(Actions.categorySelected(categoryID: category.id))
             }
         }
 

@@ -8,23 +8,10 @@ import Unicore
 
 
 extension CategoriesFeature {
-    struct Actions {
-
-        struct LoadingStarted: Action {
-
-        }
-
-        struct CategoriesUpdated: Action {
-            let categories: [Category.ID: Category]
-        }
-
-        struct SortOrderUpdated: Action {
-            let sortOrder: [Category.ID]
-        }
-
-        struct Error: Action {
-            let message: String
-        }
-
+    enum Actions: Action {
+        case loadingStarted
+        case categoriesUpdated(categories: [Category.ID: Category])
+        case sortOrderUpdated(sortOrder: [Category.ID])
+        case error(message: String)
     }
 }

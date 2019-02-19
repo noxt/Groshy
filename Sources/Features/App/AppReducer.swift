@@ -8,7 +8,7 @@ import Unicore
 
 
 extension AppFeature {
-    static func reduce(_ old: State, with action: Unicore.Action) -> State {
+    static func reduce(_ old: State, with action: Action) -> State {
         return State(
             accountsState: AccountsFeature.reduce(old.accountsState, with: action),
             categoriesState: CategoriesFeature.reduce(old.categoriesState, with: action),

@@ -11,15 +11,23 @@ extension CategoriesFeature {
     static func reduce(_ old: State, with action: Action) -> State {
         switch action {
 
-        case let payload as Actions.CategoriesUpdated:
+        case let Actions.categoriesUpdated(categories: categories):
             return State(
-                categories: payload.categories,
+                categories: categories,
                 sortOrder: old.sortOrder,
                 isLoading: false,
                 error: nil
             )
 
-        case is Actions.LoadingStarted:
+        case let Actions.sortOrderUpdated(sortOrder: sortOrder):
+            return State(
+                categories: old.categories,
+                sortOrder: sortOrder,
+                isLoading: false,
+                error: nil
+            )
+
+        case Actions.loadingStarted:
             return State(
                 categories: old.categories,
                 sortOrder: old.sortOrder,
@@ -27,20 +35,12 @@ extension CategoriesFeature {
                 error: nil
             )
 
-        case let payload as Actions.Error:
+        case let Actions.error(message: message):
             return State(
                 categories: old.categories,
                 sortOrder: old.sortOrder,
                 isLoading: false,
-                error: payload.message
-            )
-
-        case let payload as Actions.SortOrderUpdated:
-            return State(
-                categories: old.categories,
-                sortOrder: payload.sortOrder,
-                isLoading: false,
-                error: nil
+                error: message
             )
 
         default:

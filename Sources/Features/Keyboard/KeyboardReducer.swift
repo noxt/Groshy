@@ -11,10 +11,10 @@ extension KeyboardFeature {
     static func reduce(_ old: State, with action: Action) -> State {
         switch action {
 
-        case let payload as Actions.CurrentValueUpdated:
+        case let Actions.currentValueUpdated(value: value):
             return State(
                 expression: old.expression,
-                currentValue: payload.value
+                currentValue: value
             )
 
         default:

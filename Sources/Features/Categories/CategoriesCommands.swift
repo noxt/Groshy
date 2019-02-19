@@ -12,39 +12,37 @@ extension CategoriesFeature {
 
         static func loadCategoriesList(_ repositories: RepositoryProviderProtocol) -> PlainCommand {
             return PlainCommand {
-                core.dispatch(Actions.LoadingStarted())
+                core.dispatch(Actions.loadingStarted)
 
-                DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 1.0) {
-                    do {
-                        let categories = try repositories.categoriesRepository.loadCategories()
+                do {
+                    let categories = try repositories.categoriesRepository.loadCategories()
 
-                        let categoriesByID = normalize(categories: categories)
-                        core.dispatch(Actions.CategoriesUpdated(categories: categoriesByID))
+                    let categoriesByID = normalize(categories: categories)
+                    core.dispatch(Actions.categoriesUpdated(categories: categoriesByID))
 
-                        let sortOrder = categories.map { $0.id }
-                        core.dispatch(Actions.SortOrderUpdated(sortOrder: sortOrder))
-                    } catch let e {
-                        core.dispatch(Actions.Error(message: e.localizedDescription))
-                    }
+                    let sortOrder = categories.map { $0.id }
+                    core.dispatch(Actions.sortOrderUpdated(sortOrder: sortOrder))
+                } catch let e {
+                    core.dispatch(Actions.error(message: e.localizedDescription))
                 }
             }
         }
 
         static func createCategory(_ repositories: RepositoryProviderProtocol) -> Command<Category> {
             return Command<Category> { newCategory in
-                core.dispatch(Actions.LoadingStarted())
+                core.dispatch(Actions.loadingStarted)
 
                 do {
                     try repositories.categoriesRepository.create(category: newCategory)
                     let categories = try repositories.categoriesRepository.loadCategories()
 
                     let categoriesByID = normalize(categories: categories)
-                    core.dispatch(Actions.CategoriesUpdated(categories: categoriesByID))
+                    core.dispatch(Actions.categoriesUpdated(categories: categoriesByID))
 
                     let sortOrder = categories.map { $0.id }
-                    core.dispatch(Actions.SortOrderUpdated(sortOrder: sortOrder))
+                    core.dispatch(Actions.sortOrderUpdated(sortOrder: sortOrder))
                 } catch let e {
-                    core.dispatch(Actions.Error(message: e.localizedDescription))
+                    core.dispatch(Actions.error(message: e.localizedDescription))
                 }
             }
         }

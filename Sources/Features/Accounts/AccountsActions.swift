@@ -8,23 +8,10 @@ import Unicore
 
 
 extension AccountsFeature {
-    struct Actions {
-
-        struct CurrentAccountSelected: Action {
-            let accountID: Account.ID
-        }
-
-        struct LoadingStarted: Action {
-
-        }
-
-        struct AccountsUpdated: Action {
-            let accounts: [Account.ID: Account]
-        }
-
-        struct Error: Action {
-            let message: String
-        }
-
+    enum Actions: Action {
+        case loadingStarted
+        case currentAccountSelected(accountID: Account.ID)
+        case accountsUpdated(accounts: [Account.ID: Account])
+        case error(message: String)
     }
 }

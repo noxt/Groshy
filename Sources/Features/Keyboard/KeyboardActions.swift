@@ -8,11 +8,7 @@ import Unicore
 
 
 extension KeyboardFeature {
-    struct Actions {
-
-        struct CurrentValueUpdated: Action {
-            let value: String
-        }
-
+    enum Actions: Action {
+        case currentValueUpdated(value: String)
     }
 }

@@ -20,7 +20,7 @@ extension KeyboardFeature {
                     newValue.append(String(digit))
                 }
 
-                core.dispatch(Actions.CurrentValueUpdated(value: newValue))
+                core.dispatch(Actions.currentValueUpdated(value: newValue))
             }
         }
 
@@ -42,7 +42,7 @@ extension KeyboardFeature {
                     newValue.append("0")
                 }
                 newValue.append(commaCharacter)
-                core.dispatch(Actions.CurrentValueUpdated(value: newValue))
+                core.dispatch(Actions.currentValueUpdated(value: newValue))
             }
         }
 
@@ -59,13 +59,13 @@ extension KeyboardFeature {
                     newValue = "0"
                 }
 
-                core.dispatch(Actions.CurrentValueUpdated(value: newValue))
+                core.dispatch(Actions.currentValueUpdated(value: newValue))
             }
         }
 
         static func removeAllCommand() -> PlainCommand {
             return PlainCommand {
-                core.dispatch(Actions.CurrentValueUpdated(value: "0"))
+                core.dispatch(Actions.currentValueUpdated(value: "0"))
             }
         }
 

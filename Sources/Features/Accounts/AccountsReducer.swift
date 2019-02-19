@@ -11,23 +11,23 @@ extension AccountsFeature {
     static func reduce(_ old: State, with action: Action) -> State {
         switch action {
 
-        case let payload as Actions.CurrentAccountSelected:
+        case let Actions.currentAccountSelected(accountID: accountID):
             return State(
-                currentAccountID: payload.accountID,
+                currentAccountID: accountID,
                 accounts: old.accounts,
                 isLoading: false,
                 error: nil
             )
 
-        case let payload as Actions.AccountsUpdated:
+        case let Actions.accountsUpdated(accounts: accounts):
             return State(
                 currentAccountID: old.currentAccountID,
-                accounts: payload.accounts,
+                accounts: accounts,
                 isLoading: false,
                 error: nil
             )
 
-        case is Actions.LoadingStarted:
+        case Actions.loadingStarted:
             return State(
                 currentAccountID: old.currentAccountID,
                 accounts: old.accounts,
@@ -35,12 +35,12 @@ extension AccountsFeature {
                 error: nil
             )
 
-        case let payload as Actions.Error:
+        case let Actions.error(message: message):
             return State(
                 currentAccountID: old.currentAccountID,
                 accounts: old.accounts,
                 isLoading: false,
-                error: payload.message
+                error: message
             )
 
         default:

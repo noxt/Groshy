@@ -12,39 +12,39 @@ extension AccountsFeature {
 
         static func loadAccountsList(_ repositories: RepositoryProviderProtocol) -> PlainCommand {
             return PlainCommand {
-                core.dispatch(Actions.LoadingStarted())
+                core.dispatch(Actions.loadingStarted)
 
                 do {
                     let accounts = try repositories.accountsRepository.loadAccounts()
-                    core.dispatch(Actions.AccountsUpdated(accounts: normalize(accounts: accounts)))
+                    core.dispatch(Actions.accountsUpdated(accounts: normalize(accounts: accounts)))
 
                     if let currentAccount = accounts.last {
-                        core.dispatch(Actions.CurrentAccountSelected(accountID: currentAccount.id))
+                        core.dispatch(Actions.currentAccountSelected(accountID: currentAccount.id))
                     }
                 } catch let e {
-                    core.dispatch(Actions.Error(message: e.localizedDescription))
+                    core.dispatch(Actions.error(message: e.localizedDescription))
                 }
             }
         }
 
         static func createAccount(_ repositories: RepositoryProviderProtocol) -> Command<Account> {
             return Command<Account> { newAccount in
-                core.dispatch(Actions.LoadingStarted())
+                core.dispatch(Actions.loadingStarted)
 
                 do {
                     try repositories.accountsRepository.create(account: newAccount)
                     let accounts = try repositories.accountsRepository.loadAccounts()
-                    core.dispatch(Actions.AccountsUpdated(accounts: normalize(accounts: accounts)))
-                    core.dispatch(Actions.CurrentAccountSelected(accountID: newAccount.id))
+                    core.dispatch(Actions.accountsUpdated(accounts: normalize(accounts: accounts)))
+                    core.dispatch(Actions.currentAccountSelected(accountID: newAccount.id))
                 } catch let e {
-                    core.dispatch(Actions.Error(message: e.localizedDescription))
+                    core.dispatch(Actions.error(message: e.localizedDescription))
                 }
             }
         }
 
         static func selectCurrentAccount(_ repositories: RepositoryProviderProtocol) -> Command<Account> {
             return Command<Account> { account in
-                core.dispatch(Actions.CurrentAccountSelected(accountID: account.id))
+                core.dispatch(Actions.currentAccountSelected(accountID: account.id))
             }
         }
 
