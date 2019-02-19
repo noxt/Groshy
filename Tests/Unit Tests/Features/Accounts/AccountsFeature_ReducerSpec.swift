@@ -36,7 +36,7 @@ class AccountsFeature_ReducerSpec: QuickSpec {
                 }
 
                 it("should update state") {
-                    self.emit(action: AccountsFeature.Actions.CurrentAccountSelected(accountID: account.id)) { (state) -> Bool in
+                    self.emit(action: AccountsFeature.Actions.currentAccountSelected(accountID: account.id)) { (state) -> Bool in
                         return state.currentAccountID == account.id
                     }
                 }
@@ -44,7 +44,7 @@ class AccountsFeature_ReducerSpec: QuickSpec {
 
             context("when emited LoadingStarted action") {
                 it("should update state") {
-                    self.emit(action: AccountsFeature.Actions.LoadingStarted()) { (state) -> Bool in
+                    self.emit(action: AccountsFeature.Actions.loadingStarted) { (state) -> Bool in
                         return state.isLoading
                     }
                 }
@@ -66,7 +66,7 @@ class AccountsFeature_ReducerSpec: QuickSpec {
                 }
 
                 it("should update state") {
-                    self.emit(action: AccountsFeature.Actions.AccountsUpdated(accounts: accounts)) { (state) -> Bool in
+                    self.emit(action: AccountsFeature.Actions.accountsUpdated(accounts: accounts)) { (state) -> Bool in
                         return state.accounts == accounts
                     }
                 }
@@ -76,7 +76,7 @@ class AccountsFeature_ReducerSpec: QuickSpec {
                 let errorMessage = "Error Message"
 
                 it("should update state") {
-                    self.emit(action: AccountsFeature.Actions.Error(message: errorMessage)) { (state) -> Bool in
+                    self.emit(action: AccountsFeature.Actions.error(message: errorMessage)) { (state) -> Bool in
                         return state.error == errorMessage
                     }
                 }
