@@ -98,6 +98,8 @@
 		19A1B1F421F4D8B90090F760 /* AccountsRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B1F321F4D8B90090F760 /* AccountsRepositoryError.swift */; };
 		19A1B1FD21F4DCC30090F760 /* MockServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B1FC21F4DCC30090F760 /* MockServiceProvider.swift */; };
 		19A1B1FF21F4DD230090F760 /* MockStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B1FE21F4DD230090F760 /* MockStorageService.swift */; };
+		19CCEA4B221C54F700C56217 /* BaseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CCEA4A221C54F700C56217 /* BaseComponent.swift */; };
+		19CCEA4E221C5C5B00C56217 /* CategoriesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CCEA4D221C5C5B00C56217 /* CategoriesDataSource.swift */; };
 		19E0B0B42208BF1C00AF56D7 /* CategoriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E0B0B32208BF1C00AF56D7 /* CategoriesRepository.swift */; };
 		19E0B0B62208BF2500AF56D7 /* CategoriesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E0B0B52208BF2500AF56D7 /* CategoriesRepositoryProtocol.swift */; };
 		19E0B0B82208BF4500AF56D7 /* CategoriesRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E0B0B72208BF4500AF56D7 /* CategoriesRepositoryError.swift */; };
@@ -221,6 +223,8 @@
 		19A1B1F321F4D8B90090F760 /* AccountsRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsRepositoryError.swift; sourceTree = "<group>"; };
 		19A1B1FC21F4DCC30090F760 /* MockServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockServiceProvider.swift; sourceTree = "<group>"; };
 		19A1B1FE21F4DD230090F760 /* MockStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStorageService.swift; sourceTree = "<group>"; };
+		19CCEA4A221C54F700C56217 /* BaseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseComponent.swift; sourceTree = "<group>"; };
+		19CCEA4D221C5C5B00C56217 /* CategoriesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesDataSource.swift; sourceTree = "<group>"; };
 		19E0B0B32208BF1C00AF56D7 /* CategoriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepository.swift; sourceTree = "<group>"; };
 		19E0B0B52208BF2500AF56D7 /* CategoriesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepositoryProtocol.swift; sourceTree = "<group>"; };
 		19E0B0B72208BF4500AF56D7 /* CategoriesRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepositoryError.swift; sourceTree = "<group>"; };
@@ -324,6 +328,7 @@
 		1943B01321F67F050054119C /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				19CCEA4A221C54F700C56217 /* BaseComponent.swift */,
 				1943B01421F67F100054119C /* BaseConnector.swift */,
 				1943B01A21F68D9C0054119C /* Scene.swift */,
 			);
@@ -373,6 +378,7 @@
 		1943B02B21F9C4F30054119C /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				19CCEA4C221C5C4600C56217 /* DataSource */,
 				19E0B0B92208C73800AF56D7 /* Views */,
 				1932F44822077BFA00B2502B /* CategoriesComponent.swift */,
 				1932F44A22077C0300B2502B /* CategoriesComponent.xib */,
@@ -706,6 +712,14 @@
 				1973908921FF4E7900D892F4 /* AccountsRepository+DeleteAccountSpec.swift */,
 			);
 			path = Accounts;
+			sourceTree = "<group>";
+		};
+		19CCEA4C221C5C4600C56217 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				19CCEA4D221C5C5B00C56217 /* CategoriesDataSource.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 		19E0B0B22208BF0500AF56D7 /* Categories */ = {
@@ -1052,6 +1066,7 @@
 				1973909321FF850100D892F4 /* AccountSelectorConnector.swift in Sources */,
 				1943B03521F9EED50054119C /* CategoryIcon.swift in Sources */,
 				1932F44F22077C1600B2502B /* CategoriesProps.swift in Sources */,
+				19CCEA4E221C5C5B00C56217 /* CategoriesDataSource.swift in Sources */,
 				1940F4B521FB04290063DB54 /* TransactionState.swift in Sources */,
 				19A1B1CE21F395F10090F760 /* AccountsFeature.swift in Sources */,
 				1932F43F2207695A00B2502B /* CategoriesFeature.swift in Sources */,
@@ -1066,6 +1081,7 @@
 				1940F4BE21FB0E5C0063DB54 /* KeyboardCommands.swift in Sources */,
 				19A1B1CC21F395B20090F760 /* AccountsReducer.swift in Sources */,
 				1943B00821F66D4C0054119C /* MainScreenProps.swift in Sources */,
+				19CCEA4B221C54F700C56217 /* BaseComponent.swift in Sources */,
 				19A1B1DD21F3B4F70090F760 /* RepositoryProviderProtocol.swift in Sources */,
 				1943B01721F67FDB0054119C /* Component.swift in Sources */,
 				1940F4C021FB1D8E0063DB54 /* KeyboardReducer.swift in Sources */,

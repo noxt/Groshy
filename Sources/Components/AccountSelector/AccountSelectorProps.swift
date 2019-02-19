@@ -9,13 +9,8 @@ import Unicore
 
 struct AccountSelectorProps {
 
-    struct AccountInfo: Equatable {
-        let title: String
-        let amount: String
-    }
-
     enum State: Equatable {
-        case idle(info: AccountInfo)
+        case idle(title: String, amount: String)
         case loading
     }
 

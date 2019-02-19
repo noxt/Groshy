@@ -7,20 +7,7 @@ import UIKit
 import Unicore
 
 
-final class AccountSelectorComponent: UIViewController, Component {
-
-    // Props
-
-    private let connector: AccountSelectorConnector!
-    var props: AccountSelectorProps! {
-        didSet {
-            guard props != oldValue else {
-                return
-            }
-            render()
-        }
-    }
-
+final class AccountSelectorComponent: BaseComponent<AccountSelectorConnector> {
 
     // UI Props
 
@@ -30,45 +17,25 @@ final class AccountSelectorComponent: UIViewController, Component {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
 
-    // MARK: - Initializator
-
-    init(connector: AccountSelectorConnector) {
-        self.connector = connector
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-
-    // MARK: - UIKit lifecycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        connector.connect(to: self)
-        setup()
-    }
-
-
     // MARK: - Component lifecycle
 
-    func setup() {
+    override func setup() {
         titleLabel.textColor = Colors.blue
         titleLabel.font = Fonts.Rubik.Medium(size: 15)
 
         amountLabel.textColor = Colors.blue
         amountLabel.font = Fonts.Rubik.Regular(size: 11)
+    }
 
+    override func loadInitialData() {
         props.loadAccountsList.execute()
     }
 
-    func render() {
+    override func render(old oldProps: AccountSelectorProps?) {
         switch props.state {
-        case let .idle(info: info):
-            titleLabel.text = info.title
-            amountLabel.text = info.amount
+        case let .idle(title: title, amount: amount):
+            titleLabel.text = title
+            amountLabel.text = amount
             containerStackView.isHidden = false
             activityIndicator.isHidden = true
             

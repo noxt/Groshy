@@ -8,23 +8,10 @@ import Unicore
 import SnapKit
 
 
-final class MainScreenComponent: UIViewController, Component {
+final class MainScreenComponent: BaseComponent<MainScreenConnector> {
 
     private struct Constants {
         static let cornerRadius: CGFloat = 4
-    }
-
-
-    // Props
-
-    private let connector: MainScreenConnector!
-    var props: MainScreenProps! {
-        didSet {
-            guard props != oldValue else {
-                return
-            }
-            render()
-        }
     }
 
 
@@ -55,12 +42,11 @@ final class MainScreenComponent: UIViewController, Component {
          categoriesScene: Scene<CategoriesConnector, CategoriesComponent>,
          keyboardScene: Scene<KeyboardConnector, KeyboardComponent>
      ) {
-        self.connector = connector
         self.accountSelectorScene = accountSelectorScene
         self.categoriesScene = categoriesScene
         self.keyboardScene = keyboardScene
 
-        super.init(nibName: nil, bundle: nil)
+        super.init(connector: connector)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -69,13 +55,6 @@ final class MainScreenComponent: UIViewController, Component {
 
 
     // MARK: - UIKit lifecycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        connector.connect(to: self)
-        setup()
-    }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -86,51 +65,12 @@ final class MainScreenComponent: UIViewController, Component {
         setupAccountSelectorScene()
     }
 
-
-    // MARK: - Component lifecycle
-
-    func setup() {
-        view.backgroundColor = Colors.darkWhite
-
-        categoriesTitleLabel.textColor = Colors.black
-        categoriesTitleLabel.font = Fonts.Rubik.Regular(size: 17)
-
-        addCommentButton.tintColor = Colors.gray
-
-        currentValueContainer.backgroundColor = Colors.white
-        currentValueContainer.layer.cornerRadius = Constants.cornerRadius
-
-        currentValueLabel.textColor = Colors.green
-        currentValueLabel.font = Fonts.Rubik.Regular(size: 25)
-
-        calendarButton.setTitleColor(Colors.darkGray, for: .normal)
-        calendarButton.backgroundColor = Colors.white
-        calendarButton.layer.cornerRadius = Constants.cornerRadius
-        calendarButton.titleLabel?.font = Fonts.Rubik.Regular(size: 12)
-        calendarButton.tintColor = Colors.darkGray
-
-        applyButton.layer.cornerRadius = Constants.cornerRadius
-        applyButton.backgroundColor = Colors.blue
-        applyButton.setTitleColor(Colors.white, for: .normal)
-        applyButton.titleLabel?.font = Fonts.Rubik.Medium(size: 17)
-
-        setupKeyboardScene()
-        setupCategoriesScene()
-    }
-
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         centerButtonImageAndTitle(button: calendarButton)
     }
 
-    func render() {
-        switch props.state {
-        case let .idle(currentValue: currentValue):
-            currentValueLabel.text = currentValue
-        }
-    }
-
-    func centerButtonImageAndTitle(button: UIButton) {
+    private func centerButtonImageAndTitle(button: UIButton) {
         let spacing: CGFloat = 9.0
 
         let imageSize = button.imageView!.frame.size
@@ -140,8 +80,29 @@ final class MainScreenComponent: UIViewController, Component {
         button.imageEdgeInsets = UIEdgeInsets(top: spacing, left: 0, bottom: -(imageSize.height), right: -titleSize.width)
     }
 
+
+    // MARK: - Component lifecycle
+
+    override func setup() {
+        view.backgroundColor = Colors.darkWhite
+
+        setupCategories()
+        setupCurrentValue()
+        setupCalendarButton()
+        setupApplyButton()
+
+        setupKeyboardScene()
+        setupCategoriesScene()
+    }
+
+    override func render(old oldProps: MainScreenProps?) {
+        currentValueLabel.text = props.currentValue
+    }
+
 }
 
+
+// MARK: - Setup
 
 extension MainScreenComponent {
 
@@ -182,6 +143,36 @@ extension MainScreenComponent {
             make.edges.equalTo(categoriesContainer)
         }
         categoriesScene.component.didMove(toParent: self)
+    }
+
+    private func setupCategories() {
+        categoriesTitleLabel.textColor = Colors.black
+        categoriesTitleLabel.font = Fonts.Rubik.Regular(size: 17)
+
+        addCommentButton.tintColor = Colors.gray
+    }
+
+    private func setupCurrentValue() {
+        currentValueContainer.backgroundColor = Colors.white
+        currentValueContainer.layer.cornerRadius = Constants.cornerRadius
+
+        currentValueLabel.textColor = Colors.green
+        currentValueLabel.font = Fonts.Rubik.Regular(size: 25)
+    }
+
+    private func setupCalendarButton() {
+        calendarButton.setTitleColor(Colors.darkGray, for: .normal)
+        calendarButton.backgroundColor = Colors.white
+        calendarButton.layer.cornerRadius = Constants.cornerRadius
+        calendarButton.titleLabel?.font = Fonts.Rubik.Regular(size: 12)
+        calendarButton.tintColor = Colors.darkGray
+    }
+
+    private func setupApplyButton() {
+        applyButton.layer.cornerRadius = Constants.cornerRadius
+        applyButton.backgroundColor = Colors.blue
+        applyButton.setTitleColor(Colors.white, for: .normal)
+        applyButton.titleLabel?.font = Fonts.Rubik.Medium(size: 17)
     }
 
 }

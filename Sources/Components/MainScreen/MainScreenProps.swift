@@ -7,22 +7,6 @@ import Foundation
 import Unicore
 
 
-struct MainScreenProps {
-
-    enum State: Equatable {
-        case idle(currentValue: String)
-    }
-
-
-    let state: State
-
-}
-
-
-// MARK: - Equatable
-
-extension MainScreenProps: Equatable {
-    static func ==(lhs: MainScreenProps, rhs: MainScreenProps) -> Bool {
-        return lhs.state == rhs.state
-    }
+struct MainScreenProps: Equatable {
+    let currentValue: String
 }

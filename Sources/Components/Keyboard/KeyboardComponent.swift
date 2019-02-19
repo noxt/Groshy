@@ -7,23 +7,10 @@ import UIKit
 import Unicore
 
 
-final class KeyboardComponent: UIViewController, Component {
+final class KeyboardComponent: BaseComponent<KeyboardConnector> {
 
     private struct Constants {
         static let cornerRadius: CGFloat = 4
-    }
-
-
-    // Props
-
-    private let connector: KeyboardConnector!
-    var props: KeyboardProps! {
-        didSet {
-            guard props != oldValue else {
-                return
-            }
-            render()
-        }
     }
 
 
@@ -35,36 +22,10 @@ final class KeyboardComponent: UIViewController, Component {
     @IBOutlet weak var removeButton: UIButton!
 
 
-    // MARK: - Initializator
-
-    init(connector: KeyboardConnector) {
-        self.connector = connector
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-
-    // MARK: - UIKit lifecycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        connector.connect(to: self)
-        setup()
-    }
-
-
     // MARK: - Component lifecycle
 
-    func setup() {
+    override func setup() {
         setupButtons()
-    }
-
-    func render() {
-        
     }
 
 

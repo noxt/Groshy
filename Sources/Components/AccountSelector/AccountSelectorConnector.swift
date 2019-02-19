@@ -29,10 +29,8 @@ final class AccountSelectorConnector: BaseConnector<AccountSelectorProps> {
         }
 
         return .idle(
-            info: AccountSelectorProps.AccountInfo(
-                title: currentAccount?.title ?? "Undefined account",
-                amount: "1 953 BYN"
-            )
+            title: currentAccount?.title ?? "Undefined account",
+            amount: "1 953 BYN"
         )
     }
 

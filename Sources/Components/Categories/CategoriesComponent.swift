@@ -5,10 +5,9 @@
 
 import UIKit
 import Unicore
-import DeepDiff
 
 
-final class CategoriesComponent: UIViewController, Component {
+final class CategoriesComponent: BaseComponent<CategoriesConnector> {
 
     private struct Constants {
         static let rowsCount: CGFloat = 4
@@ -20,16 +19,7 @@ final class CategoriesComponent: UIViewController, Component {
 
     // Props
 
-    private let connector: CategoriesConnector!
-    var props: CategoriesProps! {
-        didSet {
-            guard props != oldValue else {
-                return
-            }
-            render()
-        }
-    }
-    private var categories: [CategoriesProps.CategoryInfo] = []
+    private var dataSource: CategoriesDataSource!
 
 
     // UI Props
@@ -38,38 +28,8 @@ final class CategoriesComponent: UIViewController, Component {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
 
-    // MARK: - Initializator
-
-    init(connector: CategoriesConnector) {
-        self.connector = connector
-        super.init(nibName: nil, bundle: nil)
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-
     // MARK: - UIKit lifecycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        setup()
-        connector.connect(to: self)
-
-        props.loadCategoriesList.execute()
-    }
-
-
-    // MARK: - Component lifecycle
-
-    func setup() {
-        collectionView.register(CategoryCell.nib, forCellWithReuseIdentifier: CategoryCell.nibIdentifier)
-        collectionView.delegate = self
-        collectionView.dataSource = self
-    }
-
+    
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
 
@@ -80,50 +40,29 @@ final class CategoriesComponent: UIViewController, Component {
         layout.minimumLineSpacing = Constants.verticalSpacing
     }
 
-    func render() {
+
+    // MARK: - Component lifecycle
+
+    override func setup() {
+        dataSource = CategoriesDataSource(collectionView: collectionView)
+    }
+
+    override func loadInitialData() {
+        props.loadCategoriesList.execute()
+    }
+
+    override func render(old oldProps: CategoriesProps?) {
         switch props.state {
-        case let .idle(categories: newCategories):
+        case let .idle(categories: categories):
             collectionView.isHidden = false
             activityIndicator.isHidden = true
-
-            let changes = diff(old: categories, new: newCategories)
-            collectionView.reload(changes: changes, updateData: { [weak self] in
-                self?.categories = newCategories
-            })
+            dataSource.update(categories: categories)
 
         case .loading:
             collectionView.isHidden = true
             activityIndicator.isHidden = false
             activityIndicator.startAnimating()
         }
-    }
-
-}
-
-
-// MARK: - UICollectionViewDataSource
-
-extension CategoriesComponent: UICollectionViewDataSource {
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return categories.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCell.nibIdentifier, for: indexPath) as! CategoryCell
-        cell.setup(props: categories[indexPath.row])
-        return cell
-    }
-
-}
-
-
-// MARK: - UICollectionViewDelegate
-
-extension CategoriesComponent: UICollectionViewDelegate {
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        categories[indexPath.row].selectCommand?.execute()
     }
 
 }
