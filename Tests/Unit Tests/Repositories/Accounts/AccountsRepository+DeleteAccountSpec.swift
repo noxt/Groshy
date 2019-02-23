@@ -25,7 +25,6 @@ class AccountsRepository_DeleteAccountSpec: QuickSpec {
                 services = nil
             }
 
-
             describe("delete account") {
                 context("when accounts list not empty") {
                     var account: Account!
@@ -40,20 +39,23 @@ class AccountsRepository_DeleteAccountSpec: QuickSpec {
 
                         account = accounts[1]
                     }
+                    
 
-                    it("deleted without errors") {
-                        expect { try repositories.accountsRepository.delete(account: account) }.toNot(throwError())
-                    }
-
-                    it("setup key for accounts") {
-                        try? repositories.accountsRepository.delete(account: account)
-                        expect(services._securityStorageService.spySetKey).to(equal(.accounts))
-                    }
-
-                    it("updated in DB") {
-                        try? repositories.accountsRepository.delete(account: account)
-                        accounts.remove(at: 1)
-                        expect(services._securityStorageService.spySetValue as? [Account]).to(equal(accounts))
+                    it("updated in db") {
+                        waitUntil(action: { (done) in
+                            repositories.accountsRepository
+                                .delete(account: account)
+                                .done({ _ in
+                                    expect(services._securityStorageService.spySetKey).to(equal(.accounts))
+                                    accounts.remove(at: 1)
+                                    expect(services._securityStorageService.spySetValue as? [Account]).to(equal(accounts))
+                                    done()
+                                })
+                                .catch({ (error) in
+                                    expect(error).to(beNil())
+                                    done()
+                                })
+                        })
                     }
                 }
 
@@ -68,8 +70,19 @@ class AccountsRepository_DeleteAccountSpec: QuickSpec {
                         account = Account(id: UUID(), title: "Some Account")
                     }
 
-                    it("emmit error") {
-                        expect { try repositories.accountsRepository.delete(account: account) }.to(throwError(AccountsRepositoryError.accountNotFound))
+                    it("repository emit error") {
+                        waitUntil(action: { (done) in
+                            repositories.accountsRepository
+                                .delete(account: account)
+                                .done({ _ in
+                                    expect(false).to(beFalse())
+                                    done()
+                                })
+                                .catch({ (error) in
+                                    expect(error.localizedDescription).to(equal(AccountsRepositoryError.accountNotFound.localizedDescription))
+                                    done()
+                                })
+                        })
                     }
                 }
             }

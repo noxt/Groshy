@@ -39,18 +39,21 @@ class AccountsRepository_CreateAccountSpec: QuickSpec {
                         services._securityStorageService.spyStorage[.accounts] = accounts
                     }
 
-                    it("saved without errors") {
-                        expect { try repositories.accountsRepository.create(account: newAccount) }.toNot(throwError())
-                    }
-
-                    it("setup key for accounts") {
-                        try? repositories.accountsRepository.create(account: newAccount)
-                        expect(services._securityStorageService.spySetKey).to(equal(.accounts))
-                    }
-
-                    it("added in DB") {
-                        try? repositories.accountsRepository.create(account: newAccount)
-                        expect(services._securityStorageService.spySetValue as? [Account]).to(equal(accounts + [newAccount]))
+                    it("created in db") {
+                        waitUntil(action: { (done) in
+                            repositories.accountsRepository
+                                .create(account: newAccount)
+                                .done({ account in
+                                    expect(account).to(equal(newAccount))
+                                    expect(services._securityStorageService.spySetKey).to(equal(.accounts))
+                                    expect(services._securityStorageService.spySetValue as? [Account]).to(equal(accounts + [newAccount]))
+                                    done()
+                                })
+                                .catch({ (error) in
+                                    expect(error).to(beNil())
+                                    done()
+                                })
+                        })
                     }
                 }
 
@@ -62,8 +65,19 @@ class AccountsRepository_CreateAccountSpec: QuickSpec {
                         services._securityStorageService.spySetError = StorageServiceError.savingError
                     }
 
-                    it("emmit error") {
-                        expect { try repositories.accountsRepository.create(account: newAccount) }.to(throwError(StorageServiceError.savingError))
+                    it("repository emit error") {
+                        waitUntil(action: { (done) in
+                            repositories.accountsRepository
+                                .create(account: newAccount)
+                                .done({ _ in
+                                    expect(false).to(beFalse())
+                                    done()
+                                })
+                                .catch({ (error) in
+                                    expect(error.localizedDescription).to(equal(StorageServiceError.savingError.localizedDescription))
+                                    done()
+                                })
+                        })
                     }
                 }
             }

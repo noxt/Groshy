@@ -40,19 +40,21 @@ class AccountsRepository_UpdateAccountSpec: QuickSpec {
                         account.title = "New Account Title"
                     }
 
-                    it("saved without errors") {
-                        expect { try repositories.accountsRepository.update(account: account) }.toNot(throwError())
-                    }
-
-                    it("setup key for accounts") {
-                        try? repositories.accountsRepository.update(account: account)
-                        expect(services._securityStorageService.spySetKey).to(equal(.accounts))
-                    }
-
-                    it("updated in DB") {
-                        try? repositories.accountsRepository.update(account: account)
-                        accounts[1] = account
-                        expect(services._securityStorageService.spySetValue as? [Account]).to(equal(accounts))
+                    it("updated in db") {
+                        waitUntil(action: { (done) in
+                            repositories.accountsRepository
+                                .update(account: account)
+                                .done({ _ in
+                                    expect(services._securityStorageService.spySetKey).to(equal(.accounts))
+                                    accounts[1] = account
+                                    expect(services._securityStorageService.spySetValue as? [Account]).to(equal(accounts))
+                                    done()
+                                })
+                                .catch({ (error) in
+                                    expect(error).to(beNil())
+                                    done()
+                                })
+                        })
                     }
                 }
 
@@ -67,8 +69,19 @@ class AccountsRepository_UpdateAccountSpec: QuickSpec {
                         ]
                     }
 
-                    it("emmit error") {
-                        expect { try repositories.accountsRepository.update(account: account) }.to(throwError(AccountsRepositoryError.accountNotFound))
+                    it("repository emit error") {
+                        waitUntil(action: { (done) in
+                            repositories.accountsRepository
+                                .update(account: account)
+                                .done({ _ in
+                                    expect(false).to(beFalse())
+                                    done()
+                                })
+                                .catch({ (error) in
+                                    expect(error.localizedDescription).to(equal(AccountsRepositoryError.accountNotFound.localizedDescription))
+                                    done()
+                                })
+                        })
                     }
                 }
             }

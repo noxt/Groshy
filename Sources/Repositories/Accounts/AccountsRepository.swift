@@ -30,41 +30,46 @@ class AccountsRepository: AccountsRepositoryProtocol {
 
     func create(account: Account) -> Promise<Account> {
         return loadAccounts()
+            .then({ (accounts) -> Promise<[Account]> in
+                return .value(accounts + [account])
+            })
             .then({ [weak self] (accounts) -> Promise<Account> in
-                try self?.storageService.set(value: accounts + [account], forKey: .accounts)
+                try self?.storageService.set(value: accounts, forKey: .accounts)
                 return .value(account)
             })
     }
 
     func update(account: Account) -> Promise<Account> {
         return loadAccounts()
-            .then({ [weak self] (accounts) -> Promise<Account> in
+            .then({ (accounts) -> Promise<[Account]> in
                 guard let index = accounts.firstIndex(where: { $0.id == account.id }) else {
                     throw AccountsRepositoryError.accountNotFound
                 }
 
                 var newAccounts = accounts
                 newAccounts[index] = account
-
-                try self?.storageService.set(value: newAccounts, forKey: .accounts)
-
+                return .value(newAccounts)
+            })
+            .then({ [weak self] (accounts) -> Promise<Account> in
+                try self?.storageService.set(value: accounts, forKey: .accounts)
                 return .value(account)
             })
     }
 
     func delete(account: Account) -> Promise<Void> {
         return loadAccounts()
-            .then({ [weak self] (accounts) -> Promise<Void> in
+            .then({ (accounts) -> Promise<[Account]> in
                 guard let index = accounts.firstIndex(where: { $0.id == account.id }) else {
                     throw AccountsRepositoryError.accountNotFound
                 }
 
                 var newAccounts = accounts
                 newAccounts.remove(at: index)
-
-                try self?.storageService.set(value: newAccounts, forKey: .accounts)
-
-                return .value(Void())
+                return .value(newAccounts)
+            })
+            .then({ [weak self] (accounts) -> Promise<Void> in
+                try self?.storageService.set(value: accounts, forKey: .accounts)
+                return Promise()
             })
     }
 

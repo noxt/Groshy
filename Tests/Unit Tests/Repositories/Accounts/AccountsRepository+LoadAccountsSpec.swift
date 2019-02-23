@@ -6,6 +6,7 @@
 import XCTest
 import Quick
 import Nimble
+import PromiseKit
 @testable import Groshy
 
 
@@ -38,7 +39,7 @@ class AccountsRepository_LoadAccountsSpec: QuickSpec {
                         services._securityStorageService.spyStorage[.accounts] = accounts
                     }
                     it("returns correct accounts") {
-                        expect { try repositories.accountsRepository.loadAccounts() }.to(equal(accounts))
+                        expect(repositories.accountsRepository.loadAccounts().value).to(equal(accounts))
                     }
                 }
 
@@ -47,7 +48,7 @@ class AccountsRepository_LoadAccountsSpec: QuickSpec {
                         services._securityStorageService.spyStorage[.accounts] = [Account]()
                     }
                     it("returns empty accounts list") {
-                        expect { try repositories.accountsRepository.loadAccounts() }.to(equal([]))
+                        expect(repositories.accountsRepository.loadAccounts().value).to(equal([]))
                     }
                 }
 
@@ -56,7 +57,7 @@ class AccountsRepository_LoadAccountsSpec: QuickSpec {
                         services._securityStorageService.spyGetError = StorageServiceError.gettingError
                     }
                     it("returns empty accounts list") {
-                        expect { try repositories.accountsRepository.loadAccounts() }.to(equal([]))
+                        expect(repositories.accountsRepository.loadAccounts().value).to(equal([]))
                     }
                 }
             }
