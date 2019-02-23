@@ -28,18 +28,17 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YCC-C3-egg">
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YCC-C3-egg">
                         <rect key="frame" x="8" y="35" width="111" height="81"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Vf-wb-frI">
-                                <rect key="frame" x="47.5" y="0.0" width="16" height="16"/>
+                                <rect key="frame" x="47.5" y="0.0" width="16" height="40.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="16" id="CMf-O6-nqR"/>
-                                    <constraint firstAttribute="height" constant="16" id="ZDW-aR-gqu"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m62-t1-EXT">
-                                <rect key="frame" x="34.5" y="60.5" width="42" height="20.5"/>
+                                <rect key="frame" x="34.5" y="40.5" width="42" height="40.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
