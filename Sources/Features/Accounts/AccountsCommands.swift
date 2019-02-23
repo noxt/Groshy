@@ -5,6 +5,7 @@
 
 import Foundation
 import Unicore
+import PromiseKit
 
 
 extension AccountsFeature {
@@ -14,16 +15,17 @@ extension AccountsFeature {
             return PlainCommand {
                 core.dispatch(Actions.loadingStarted)
 
-                do {
-                    let accounts = try repositories.accountsRepository.loadAccounts()
-                    core.dispatch(Actions.accountsUpdated(accounts: normalize(accounts: accounts)))
+                repositories.accountsRepository.loadAccounts()
+                    .done({ (accounts) in
+                        core.dispatch(Actions.accountsUpdated(accounts: normalize(accounts: accounts)))
 
-                    if let currentAccount = accounts.last {
-                        core.dispatch(Actions.currentAccountSelected(accountID: currentAccount.id))
-                    }
-                } catch let e {
-                    core.dispatch(Actions.error(message: e.localizedDescription))
-                }
+                        if let currentAccount = accounts.last {
+                            core.dispatch(Actions.currentAccountSelected(accountID: currentAccount.id))
+                        }
+                    })
+                    .catch({ (error) in
+                        core.dispatch(Actions.error(message: error.localizedDescription))
+                    })
             }
         }
 
@@ -31,14 +33,17 @@ extension AccountsFeature {
             return Command<Account> { newAccount in
                 core.dispatch(Actions.loadingStarted)
 
-                do {
-                    try repositories.accountsRepository.create(account: newAccount)
-                    let accounts = try repositories.accountsRepository.loadAccounts()
-                    core.dispatch(Actions.accountsUpdated(accounts: normalize(accounts: accounts)))
-                    core.dispatch(Actions.currentAccountSelected(accountID: newAccount.id))
-                } catch let e {
-                    core.dispatch(Actions.error(message: e.localizedDescription))
-                }
+                repositories.accountsRepository.create(account: newAccount)
+                    .then({ (_) -> Promise<[Account]> in
+                        return repositories.accountsRepository.loadAccounts()
+                    })
+                    .done({ (accounts) in
+                        core.dispatch(Actions.accountsUpdated(accounts: normalize(accounts: accounts)))
+                        core.dispatch(Actions.currentAccountSelected(accountID: newAccount.id))
+                    })
+                    .catch({ (error) in
+                        core.dispatch(Actions.error(message: error.localizedDescription))
+                    })
             }
         }
 

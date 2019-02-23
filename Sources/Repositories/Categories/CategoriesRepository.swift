@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import PromiseKit
 
 
 class CategoriesRepository: CategoriesRepositoryProtocol {
@@ -16,47 +17,55 @@ class CategoriesRepository: CategoriesRepositoryProtocol {
     }
 
 
-    func loadCategories() throws -> [Category] {
-        let categories: [Category]
-
-        do {
-            categories = try storageService.getValue(forKey: .categories)
-        } catch StorageServiceError.gettingError {
-            categories = []
-            try storageService.set(value: categories, forKey: .categories)
+    func loadCategories() -> Promise<[Category]> {
+        return Promise { seal in
+            do {
+                seal.fulfill(try storageService.getValue(forKey: .categories))
+            } catch StorageServiceError.gettingError {
+                try storageService.set(value: [Category](), forKey: .categories)
+                seal.fulfill([])
+            }
         }
-
-        return categories
     }
 
-    func create(category: Category) throws {
-        var categories = try loadCategories()
-        categories.append(category)
-        try storageService.set(value: categories, forKey: .categories)
+    func create(category: Category) -> Promise<Category> {
+        return loadCategories()
+            .then({ [weak self] (categories) -> Promise<Category> in
+                try self?.storageService.set(value: categories + [category], forKey: .categories)
+                return .value(category)
+            })
     }
 
-    func update(category: Category) throws {
-        var categories = try loadCategories()
+    func update(category: Category) -> Promise<Category> {
+        return loadCategories()
+            .then({ [weak self] (categories) -> Promise<Category> in
+                guard let index = categories.firstIndex(where: { $0.id == category.id }) else {
+                    throw CategoriesRepositoryError.categoryNotFound
+                }
 
-        guard let index = categories.firstIndex(where: { $0.id == category.id }) else {
-            throw CategoriesRepositoryError.categoryNotFound
-        }
+                var newCategories = categories
+                newCategories[index] = category
 
-        categories[index] = category
+                try self?.storageService.set(value: newCategories, forKey: .categories)
 
-        try storageService.set(value: categories, forKey: .categories)
+                return .value(category)
+            })
     }
 
-    func delete(category: Category) throws {
-        var categories = try loadCategories()
+    func delete(category: Category) -> Promise<Void> {
+        return loadCategories()
+            .then({ [weak self] (categories) -> Promise<Void> in
+                guard let index = categories.firstIndex(where: { $0.id == category.id }) else {
+                    throw CategoriesRepositoryError.categoryNotFound
+                }
 
-        guard let index = categories.firstIndex(where: { $0.id == category.id }) else {
-            throw CategoriesRepositoryError.categoryNotFound
-        }
+                var newCategories = categories
+                newCategories.remove(at: index)
 
-        categories.remove(at: index)
+                try self?.storageService.set(value: newCategories, forKey: .categories)
 
-        try storageService.set(value: categories, forKey: .categories)
+                return .value(Void())
+            })
     }
 
 }

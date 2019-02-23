@@ -4,13 +4,14 @@
 //
 
 import Foundation
+import PromiseKit
 
 
 protocol AccountsRepositoryProtocol {
 
-    func loadAccounts() throws -> [Account]
-    func create(account: Account) throws
-    func update(account: Account) throws
-    func delete(account: Account) throws
+    func loadAccounts() -> Promise<[Account]>
+    func create(account: Account) -> Promise<Account>
+    func update(account: Account) -> Promise<Account>
+    func delete(account: Account) -> Promise<Void>
 
 }

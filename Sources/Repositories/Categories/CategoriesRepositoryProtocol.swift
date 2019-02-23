@@ -4,13 +4,14 @@
 //
 
 import Foundation
+import PromiseKit
 
 
 protocol CategoriesRepositoryProtocol {
 
-    func loadCategories() throws -> [Category]
-    func create(category: Category) throws
-    func update(category: Category) throws
-    func delete(category: Category) throws
+    func loadCategories() -> Promise<[Category]>
+    func create(category: Category) -> Promise<Category>
+    func update(category: Category) -> Promise<Category>
+    func delete(category: Category) -> Promise<Void>
 
 }

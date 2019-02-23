@@ -7,19 +7,28 @@ PODS:
   - Moya/Core (12.0.1):
     - Alamofire (~> 4.1)
     - Result (~> 4.0)
-  - Nimble (7.3.3)
+  - Nimble (7.3.4)
+  - PromiseKit (6.8.3):
+    - PromiseKit/CorePromise (= 6.8.3)
+    - PromiseKit/Foundation (= 6.8.3)
+    - PromiseKit/UIKit (= 6.8.3)
+  - PromiseKit/CorePromise (6.8.3)
+  - PromiseKit/Foundation (6.8.3):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.8.3):
+    - PromiseKit/CorePromise
   - Quick (1.3.4)
   - Result (4.1.0)
   - SnapKit (4.2.0)
-  - Unicore (1.0.4)
+  - Unicore (1.0.6)
 
 DEPENDENCIES:
   - DeepDiff (~> 1.4)
   - KeychainAccess (~> 3.1)
   - Moya (~> 12.0)
   - Nimble (~> 7.3)
+  - PromiseKit (~> 6.8)
   - Quick (~> 1.3)
-  - Result (~> 4.1)
   - SnapKit (~> 4.0)
   - Unicore (~> 1.0)
 
@@ -30,6 +39,7 @@ SPEC REPOS:
     - KeychainAccess
     - Moya
     - Nimble
+    - PromiseKit
     - Quick
     - Result
     - SnapKit
@@ -40,12 +50,13 @@ SPEC CHECKSUMS:
   DeepDiff: c4dea751ace912310e0668ec3b2e5ebf06831c0d
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
-  Nimble: 3b434b1e7d0a92603a13550a82880b0d952f518e
+  Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
+  PromiseKit: 94c6e781838c5bf4717677d0d882b0e7250c80fc
   Quick: f4f7f063c524394c73ed93ac70983c609805d481
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
-  Unicore: dcf82d3f2724855e1be20b6ce1fc68b8db627c96
+  Unicore: dd48bc179635ea3007c62c16646ff39241ef3b87
 
-PODFILE CHECKSUM: d40d6db14adb5646c63d8fe374d151d62407bec8
+PODFILE CHECKSUM: 4e66e45907f877a0f654356c1c8720bb8deb6b00
 
 COCOAPODS: 1.5.3

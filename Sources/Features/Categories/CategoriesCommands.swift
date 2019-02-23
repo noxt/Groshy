@@ -5,6 +5,7 @@
 
 import Foundation
 import Unicore
+import PromiseKit
 
 
 extension CategoriesFeature {
@@ -14,17 +15,13 @@ extension CategoriesFeature {
             return PlainCommand {
                 core.dispatch(Actions.loadingStarted)
 
-                do {
-                    let categories = try repositories.categoriesRepository.loadCategories()
-
-                    let categoriesByID = normalize(categories: categories)
-                    core.dispatch(Actions.categoriesUpdated(categories: categoriesByID))
-
-                    let sortOrder = categories.map { $0.id }
-                    core.dispatch(Actions.sortOrderUpdated(sortOrder: sortOrder))
-                } catch let e {
-                    core.dispatch(Actions.error(message: e.localizedDescription))
-                }
+                repositories.categoriesRepository.loadCategories()
+                    .done({ (categories) in
+                        update(categories: categories)
+                    })
+                    .catch({ (error) in
+                        core.dispatch(Actions.error(message: error.localizedDescription))
+                    })
             }
         }
 
@@ -32,19 +29,25 @@ extension CategoriesFeature {
             return Command<Category> { newCategory in
                 core.dispatch(Actions.loadingStarted)
 
-                do {
-                    try repositories.categoriesRepository.create(category: newCategory)
-                    let categories = try repositories.categoriesRepository.loadCategories()
-
-                    let categoriesByID = normalize(categories: categories)
-                    core.dispatch(Actions.categoriesUpdated(categories: categoriesByID))
-
-                    let sortOrder = categories.map { $0.id }
-                    core.dispatch(Actions.sortOrderUpdated(sortOrder: sortOrder))
-                } catch let e {
-                    core.dispatch(Actions.error(message: e.localizedDescription))
-                }
+                repositories.categoriesRepository.create(category: newCategory)
+                    .then({ (_) -> Promise<[Category]> in
+                        repositories.categoriesRepository.loadCategories()
+                    })
+                    .done({ (categories) in
+                        update(categories: categories)
+                    })
+                    .catch({ (error) in
+                        core.dispatch(Actions.error(message: error.localizedDescription))
+                    })
             }
+        }
+
+        private static func update(categories: [Category]) {
+            let categoriesByID = normalize(categories: categories)
+            core.dispatch(Actions.categoriesUpdated(categories: categoriesByID))
+
+            let sortOrder = categories.map { $0.id }
+            core.dispatch(Actions.sortOrderUpdated(sortOrder: sortOrder))
         }
 
         private static func normalize(categories: [Category]) -> [Category.ID: Category] {
