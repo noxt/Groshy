@@ -25,7 +25,6 @@ class AccountsRepository_CreateAccountSpec: QuickSpec {
                 services = nil
             }
 
-
             describe("create account") {
                 context("when accounts list not empty") {
                     var newAccount: Account!

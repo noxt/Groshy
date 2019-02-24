@@ -26,7 +26,6 @@ class AccountsRepository_LoadAccountsSpec: QuickSpec {
                 services = nil
             }
 
-
             describe("load accounts") {
                 context("when list not empty") {
                     var accounts: [Account] = []
