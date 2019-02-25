@@ -27,8 +27,8 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
     @IBOutlet weak var currentValueContainer: UIView!
     @IBOutlet weak var currentValueLabel: UILabel!
     @IBOutlet weak var keyboardContainer: UIView!
-    @IBOutlet weak var applyButton: UIButton!
-    @IBOutlet weak var calendarButton: UIButton!
+    @IBOutlet weak var applyButton: HighlightedButton!
+    @IBOutlet weak var calendarButton: HighlightedButton!
 
     private var accountSelectorSceneConfigured = false
     private var categoriesSceneConfigured = false
@@ -59,8 +59,15 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: Images.settings, style: .plain, target: nil, action: nil)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: Images.statistics, style: .plain, target: nil, action: nil)
+        let settingsButton = UIButton(type: .custom)
+        settingsButton.setBackgroundImage(Images.Buttons.settings, for: .normal)
+        settingsButton.setBackgroundImage(Images.Buttons.settingsSelected, for: .highlighted)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: settingsButton)
+
+        let statisticsButton = UIButton(type: .custom)
+        statisticsButton.setBackgroundImage(Images.Buttons.statistics, for: .normal)
+        statisticsButton.setBackgroundImage(Images.Buttons.statisticsSelected, for: .highlighted)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: statisticsButton)
         
         setupAccountSelectorScene()
     }
@@ -150,6 +157,8 @@ extension MainScreenComponent {
         categoriesTitleLabel.font = Fonts.Rubik.Regular(size: 17)
 
         addCommentButton.tintColor = Colors.gray
+        addCommentButton.setImage(Images.Buttons.comment, for: .normal)
+        addCommentButton.setImage(Images.Buttons.commentSelected, for: .highlighted)
     }
 
     private func setupCurrentValue() {
@@ -161,18 +170,23 @@ extension MainScreenComponent {
     }
 
     private func setupCalendarButton() {
+        calendarButton.setImage(Images.Buttons.calendar, for: .normal)
+        calendarButton.setImage(Images.Buttons.calendarSelected, for: .highlighted)
         calendarButton.setTitleColor(Colors.darkGray, for: .normal)
-        calendarButton.backgroundColor = Colors.white
+        calendarButton.setTitleColor(Colors.white, for: .highlighted)
         calendarButton.layer.cornerRadius = Constants.cornerRadius
         calendarButton.titleLabel?.font = Fonts.Rubik.Regular(size: 12)
-        calendarButton.tintColor = Colors.darkGray
+        calendarButton.defaultBackgroundColor = Colors.white
+        calendarButton.highlightedBackgroundColor = Colors.lightGray
     }
 
     private func setupApplyButton() {
         applyButton.layer.cornerRadius = Constants.cornerRadius
-        applyButton.backgroundColor = Colors.blue
         applyButton.setTitleColor(Colors.white, for: .normal)
+        applyButton.setTitleColor(Colors.white, for: .highlighted)
         applyButton.titleLabel?.font = Fonts.Rubik.Medium(size: 17)
+        applyButton.defaultBackgroundColor = Colors.blue
+        applyButton.highlightedBackgroundColor = Colors.darkBlue
     }
 
 }

@@ -16,10 +16,10 @@ final class KeyboardComponent: BaseComponent<KeyboardConnector> {
 
     // UI Props
 
-    @IBOutlet var digitsButtons: [UIButton]!
-    @IBOutlet var operationsButtons: [UIButton]!
-    @IBOutlet weak var commaButton: UIButton!
-    @IBOutlet weak var removeButton: UIButton!
+    @IBOutlet var digitsButtons: [HighlightedButton]!
+    @IBOutlet var operationsButtons: [HighlightedButton]!
+    @IBOutlet weak var commaButton: HighlightedButton!
+    @IBOutlet weak var removeButton: HighlightedButton!
 
 
     // MARK: - Component lifecycle
@@ -66,32 +66,32 @@ extension KeyboardComponent {
 
     private func setupButtons() {
         for button in digitsButtons {
-            setup(button: button)
-            button.tintColor = Colors.darkGray
+            setup(button: button, titleColor: Colors.darkGray)
         }
 
         for button in operationsButtons {
-            setup(button: button)
-            button.tintColor = Colors.gray
+            setup(button: button, titleColor: Colors.gray)
             button.isHidden = true
         }
 
-        setup(button: commaButton)
-        commaButton.tintColor = Colors.darkGray
+        setup(button: commaButton, titleColor: Colors.darkGray)
         commaButton.setTitle(NumberFormatter().decimalSeparator, for: .normal)
 
-        setup(button: removeButton)
-        removeButton.setImage(Images.delete, for: .normal)
-        removeButton.tintColor = Colors.gray
+        setup(button: removeButton, titleColor: Colors.gray)
+        removeButton.setImage(Images.Buttons.delete, for: .normal)
+        removeButton.setImage(Images.Buttons.deleteSelected, for: .highlighted)
 
         let removeAllTap = UILongPressGestureRecognizer(target: self, action: #selector(removeAllDidPressed))
         removeButton.addGestureRecognizer(removeAllTap)
     }
 
-    private func setup(button: UIButton) {
+    private func setup(button: HighlightedButton, titleColor: UIColor) {
         button.layer.cornerRadius = Constants.cornerRadius
-        button.backgroundColor = Colors.white
+        button.defaultBackgroundColor = Colors.white
+        button.highlightedBackgroundColor = Colors.lightGray
         button.titleLabel?.font = Fonts.Rubik.Regular(size: 25)
+        button.setTitleColor(titleColor, for: .normal)
+        button.setTitleColor(Colors.white, for: .highlighted)
     }
 
 }

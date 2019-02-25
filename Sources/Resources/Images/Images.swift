@@ -8,16 +8,48 @@ import UIKit
 
 struct Images {
 
-    static var delete: UIImage {
-        return UIImage(named: "delete-button")!
-    }
+    struct Buttons {
 
-    static var settings: UIImage {
-        return UIImage(named: "settings-button")!
-    }
+        static var delete: UIImage {
+            return UIImage(named: "buttons/delete")!
+        }
 
-    static var statistics: UIImage {
-        return UIImage(named: "statistics-button")!
+        static var deleteSelected: UIImage {
+            return UIImage(named: "buttons/delete-selected")!
+        }
+
+        static var settings: UIImage {
+            return UIImage(named: "buttons/settings")!
+        }
+
+        static var settingsSelected: UIImage {
+            return UIImage(named: "buttons/settings-selected")!
+        }
+
+        static var statistics: UIImage {
+            return UIImage(named: "buttons/statistics")!
+        }
+
+        static var statisticsSelected: UIImage {
+            return UIImage(named: "buttons/statistics-selected")!
+        }
+
+        static var calendar: UIImage {
+            return UIImage(named: "buttons/calendar")!
+        }
+
+        static var calendarSelected: UIImage {
+            return UIImage(named: "buttons/calendar-selected")!
+        }
+
+        static var comment: UIImage {
+            return UIImage(named: "buttons/comment")!
+        }
+
+        static var commentSelected: UIImage {
+            return UIImage(named: "buttons/comment-selected")!
+        }
+
     }
 
 
