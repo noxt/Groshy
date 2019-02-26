@@ -4,7 +4,7 @@
 //
 
 import UIKit
-import DeepDiff
+import DifferenceKit
 
 
 final class CategoriesDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
@@ -31,10 +31,10 @@ final class CategoriesDataSource: NSObject, UICollectionViewDataSource, UICollec
     // MARK: - Updating data
 
     func update(categories: [CategoriesProps.CategoryInfo]) {
-        let changes = diff(old: self.categories, new: categories)
-        collectionView.reload(changes: changes, updateData: { [weak self] in
-            self?.categories = categories
-        })
+        let changeset = StagedChangeset(source: self.categories, target: categories)
+        collectionView.reload(using: changeset) { (categories) in
+            self.categories = categories
+        }
     }
 
 
@@ -57,4 +57,13 @@ final class CategoriesDataSource: NSObject, UICollectionViewDataSource, UICollec
         categories[indexPath.row].selectCommand?.execute()
     }
 
+}
+
+
+// MARK: - Differentiable
+
+extension CategoriesProps.CategoryInfo: Differentiable {
+    var differenceIdentifier: Category.ID {
+        return id
+    }
 }

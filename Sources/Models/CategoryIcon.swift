@@ -7,7 +7,7 @@ import UIKit
 
 
 extension Category {
-    enum Icon: String, Codable {
+    enum Icon: String, CaseIterable, Codable {
         case car
         case entertaiment
         case healt
@@ -15,6 +15,10 @@ extension Category {
         case products
         case restaurants
         case shops
+
+        static func random() -> Icon {
+            return Icon.allCases.randomElement()!
+        }
     }
 }
 

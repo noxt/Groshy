@@ -8,7 +8,7 @@ target 'Groshy' do
   pod 'Unicore', '~> 1.0'
   pod 'Moya', '~> 12.0'
   pod 'KeychainAccess', '~> 3.1'
-  pod 'DeepDiff', '~> 1.4'
+  pod 'DifferenceKit', '~> 1.0'
   pod 'PromiseKit', '~> 6.8'
 
 

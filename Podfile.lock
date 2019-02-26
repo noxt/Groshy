@@ -1,6 +1,11 @@
 PODS:
   - Alamofire (4.8.1)
-  - DeepDiff (1.4.0)
+  - DifferenceKit (1.0.0):
+    - DifferenceKit/Core (= 1.0.0)
+    - DifferenceKit/UIKitExtension (= 1.0.0)
+  - DifferenceKit/Core (1.0.0)
+  - DifferenceKit/UIKitExtension (1.0.0):
+    - DifferenceKit/Core
   - KeychainAccess (3.1.2)
   - Moya (12.0.1):
     - Moya/Core (= 12.0.1)
@@ -22,7 +27,7 @@ PODS:
   - Unicore (1.0.6)
 
 DEPENDENCIES:
-  - DeepDiff (~> 1.4)
+  - DifferenceKit
   - KeychainAccess (~> 3.1)
   - Moya (~> 12.0)
   - Nimble (~> 7.3)
@@ -33,7 +38,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
-    - DeepDiff
+    - DifferenceKit
     - KeychainAccess
     - Moya
     - Nimble
@@ -44,7 +49,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
-  DeepDiff: c4dea751ace912310e0668ec3b2e5ebf06831c0d
+  DifferenceKit: d501e37b866e98a8aaee0f61ceb02ad98e52b9c1
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
   Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
   Nimble: 051e3d8912d40138fa5591c78594f95fb172af37
@@ -53,6 +58,6 @@ SPEC CHECKSUMS:
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   Unicore: dd48bc179635ea3007c62c16646ff39241ef3b87
 
-PODFILE CHECKSUM: bc35a6e46b3ada44a1da1bd21eada5c9d641b491
+PODFILE CHECKSUM: 813f16a74a2848b78872d8b08f704c7cd38cb6a6
 
 COCOAPODS: 1.5.3

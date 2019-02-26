@@ -105,6 +105,13 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
         currentValueLabel.text = props.currentValue
     }
 
+
+    // MARK: - IBActions
+
+    @IBAction func addCategory() {
+        props.addCategoryCommand.execute(with: self)
+    }
+
 }
 
 

@@ -34,7 +34,7 @@ final class CategoriesConnector: BaseConnector<CategoriesProps> {
             }
         }
 
-        categories.append(addButtonProps())
+//        categories.append(addButtonProps())
 
         return .idle(categories: categories)
     }
@@ -58,22 +58,15 @@ final class CategoriesConnector: BaseConnector<CategoriesProps> {
         )
     }
 
-    private static let addButtonUUID = UUID()
-    private func addButtonProps() -> CategoriesProps.CategoryInfo {
-        return CategoriesProps.CategoryInfo(
-            id: CategoriesConnector.addButtonUUID,
-            title: "Добавить",
-            icon: Images.Categories.plus,
-            currentBalance: nil,
-            selectCommand: PlainCommand { [unowned self] in
-                let category = Category(
-                    id: Category.ID(),
-                    icon: .car,
-                    title: "Транспорт"
-                )
-                CategoriesFeature.Commands.createCategory(self.repositories).execute(with: category)
-            }
-        )
-    }
+//    private static let addButtonUUID = UUID()
+//    private func addButtonProps() -> CategoriesProps.CategoryInfo {
+//        return CategoriesProps.CategoryInfo(
+//            id: CategoriesConnector.addButtonUUID,
+//            title: "Добавить",
+//            icon: Images.Categories.plus,
+//            currentBalance: nil,
+//            selectCommand: addCategoryCommand()
+//        )
+//    }
 
 }

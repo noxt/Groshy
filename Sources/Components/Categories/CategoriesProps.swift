@@ -50,12 +50,3 @@ extension CategoriesProps: Equatable {
         return lhs.state == rhs.state
     }
 }
-
-
-// MARK: - Hashable
-
-extension CategoriesProps.CategoryInfo: Hashable {
-    var hashValue: Int {
-        return id.hashValue
-    }
-}

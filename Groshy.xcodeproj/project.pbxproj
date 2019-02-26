@@ -104,6 +104,8 @@
 		19DACDF22225AFF700C2F36C /* UIView+Margins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DACDF12225AFF700C2F36C /* UIView+Margins.swift */; };
 		19DACDF42225B02D00C2F36C /* UIViewController+SafeAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DACDF32225B02D00C2F36C /* UIViewController+SafeAnchor.swift */; };
 		19DACDF62225BAC400C2F36C /* UIView+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DACDF52225BAC400C2F36C /* UIView+Container.swift */; };
+		19DACDF82225EC2800C2F36C /* MainScreenCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DACDF72225EC2700C2F36C /* MainScreenCommands.swift */; };
+		19DACDFA2225EFC300C2F36C /* Command+Equitable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DACDF92225EFC300C2F36C /* Command+Equitable.swift */; };
 		19E0B0B42208BF1C00AF56D7 /* CategoriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E0B0B32208BF1C00AF56D7 /* CategoriesRepository.swift */; };
 		19E0B0B62208BF2500AF56D7 /* CategoriesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E0B0B52208BF2500AF56D7 /* CategoriesRepositoryProtocol.swift */; };
 		19E0B0B82208BF4500AF56D7 /* CategoriesRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E0B0B72208BF4500AF56D7 /* CategoriesRepositoryError.swift */; };
@@ -233,6 +235,8 @@
 		19DACDF12225AFF700C2F36C /* UIView+Margins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Margins.swift"; sourceTree = "<group>"; };
 		19DACDF32225B02D00C2F36C /* UIViewController+SafeAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SafeAnchor.swift"; sourceTree = "<group>"; };
 		19DACDF52225BAC400C2F36C /* UIView+Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Container.swift"; sourceTree = "<group>"; };
+		19DACDF72225EC2700C2F36C /* MainScreenCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCommands.swift; sourceTree = "<group>"; };
+		19DACDF92225EFC300C2F36C /* Command+Equitable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Command+Equitable.swift"; sourceTree = "<group>"; };
 		19E0B0B32208BF1C00AF56D7 /* CategoriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepository.swift; sourceTree = "<group>"; };
 		19E0B0B52208BF2500AF56D7 /* CategoriesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepositoryProtocol.swift; sourceTree = "<group>"; };
 		19E0B0B72208BF4500AF56D7 /* CategoriesRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepositoryError.swift; sourceTree = "<group>"; };
@@ -324,6 +328,7 @@
 		1943B00421F66C370054119C /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
+				19DACDF72225EC2700C2F36C /* MainScreenCommands.swift */,
 				1943B00921F66D630054119C /* MainScreenComponent.swift */,
 				1943B00B21F66D890054119C /* MainScreenComponent.xib */,
 				1943B00521F66D3C0054119C /* MainScreenConnector.swift */,
@@ -751,6 +756,7 @@
 		19DACDF02225AFBF00C2F36C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				19DACDF92225EFC300C2F36C /* Command+Equitable.swift */,
 				19DACDF52225BAC400C2F36C /* UIView+Container.swift */,
 				19DACDF12225AFF700C2F36C /* UIView+Margins.swift */,
 				19DACDF32225B02D00C2F36C /* UIViewController+SafeAnchor.swift */,
@@ -991,7 +997,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Groshy/Pods-Groshy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/DeepDiff/DeepDiff.framework",
+				"${BUILT_PRODUCTS_DIR}/DifferenceKit/DifferenceKit.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
@@ -1001,7 +1007,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DeepDiff.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DifferenceKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
@@ -1060,6 +1066,7 @@
 				1932F44922077BFA00B2502B /* CategoriesComponent.swift in Sources */,
 				1932F4412207696500B2502B /* CategoriesActions.swift in Sources */,
 				19A1B1DB21F3B4D30090F760 /* RepositoryProvider.swift in Sources */,
+				19DACDF82225EC2800C2F36C /* MainScreenCommands.swift in Sources */,
 				1994BAF5220A21AF00B494F4 /* TransactionCommands.swift in Sources */,
 				1940F4BC21FB0E4D0063DB54 /* KeyboardActions.swift in Sources */,
 				19A1B1F421F4D8B90090F760 /* AccountsRepositoryError.swift in Sources */,
@@ -1113,6 +1120,7 @@
 				19E0B0B82208BF4500AF56D7 /* CategoriesRepositoryError.swift in Sources */,
 				19A1B18821F3837C0090F760 /* AppDelegate.swift in Sources */,
 				19DACDF62225BAC400C2F36C /* UIView+Container.swift in Sources */,
+				19DACDFA2225EFC300C2F36C /* Command+Equitable.swift in Sources */,
 				19A1B1D721F3B3080090F760 /* NibIdentifiable.swift in Sources */,
 				19A1B1E921F3B6200090F760 /* KeychainStorageService.swift in Sources */,
 				1940F4C221FC890A0063DB54 /* Colors.swift in Sources */,

@@ -3,7 +3,7 @@
 //  Copyright © 2019 Groshy. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Unicore
 
 
@@ -11,7 +11,8 @@ final class MainScreenConnector: BaseConnector<MainScreenProps> {
 
     override func mapToProps(state: AppFeature.State) -> MainScreenProps {
         return MainScreenProps(
-            currentValue: state.keyboardState.currentValue
+            currentValue: state.keyboardState.currentValue,
+            addCategoryCommand: MainScreenCommands.addCategoryCommand(repositories)
         )
     }
 

@@ -3,10 +3,11 @@
 //  Copyright © 2019 Groshy. All rights reserved.
 //
 
-import Foundation
+import UIKit
 import Unicore
 
 
 struct MainScreenProps: Equatable {
     let currentValue: String
+    let addCategoryCommand: Command<UIViewController>
 }
