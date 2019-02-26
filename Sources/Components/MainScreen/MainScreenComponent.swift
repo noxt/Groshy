@@ -5,7 +5,6 @@
 
 import UIKit
 import Unicore
-import SnapKit
 
 
 final class MainScreenComponent: BaseComponent<MainScreenConnector> {
@@ -131,10 +130,7 @@ extension MainScreenComponent {
         keyboardSceneConfigured = true
 
         addChild(keyboardScene.component)
-        keyboardContainer.addSubview(keyboardScene.view)
-        keyboardScene.view.snp.makeConstraints { (make) in
-            make.edges.equalTo(keyboardContainer)
-        }
+        keyboardContainer.addChild(view: keyboardScene.view)
         keyboardScene.component.didMove(toParent: self)
     }
 
@@ -145,10 +141,7 @@ extension MainScreenComponent {
         categoriesSceneConfigured = true
 
         addChild(categoriesScene.component)
-        categoriesContainer.addSubview(categoriesScene.view)
-        categoriesScene.view.snp.makeConstraints { (make) in
-            make.edges.equalTo(categoriesContainer)
-        }
+        categoriesContainer.addChild(view: categoriesScene.view)
         categoriesScene.component.didMove(toParent: self)
     }
 

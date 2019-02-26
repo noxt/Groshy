@@ -19,7 +19,6 @@ PODS:
     - PromiseKit/CorePromise
   - Quick (1.3.4)
   - Result (4.1.0)
-  - SnapKit (4.2.0)
   - Unicore (1.0.6)
 
 DEPENDENCIES:
@@ -29,7 +28,6 @@ DEPENDENCIES:
   - Nimble (~> 7.3)
   - PromiseKit (~> 6.8)
   - Quick (~> 1.3)
-  - SnapKit (~> 4.0)
   - Unicore (~> 1.0)
 
 SPEC REPOS:
@@ -42,7 +40,6 @@ SPEC REPOS:
     - PromiseKit
     - Quick
     - Result
-    - SnapKit
     - Unicore
 
 SPEC CHECKSUMS:
@@ -54,9 +51,8 @@ SPEC CHECKSUMS:
   PromiseKit: 94c6e781838c5bf4717677d0d882b0e7250c80fc
   Quick: f4f7f063c524394c73ed93ac70983c609805d481
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   Unicore: dd48bc179635ea3007c62c16646ff39241ef3b87
 
-PODFILE CHECKSUM: 4e66e45907f877a0f654356c1c8720bb8deb6b00
+PODFILE CHECKSUM: bc35a6e46b3ada44a1da1bd21eada5c9d641b491
 
 COCOAPODS: 1.5.3

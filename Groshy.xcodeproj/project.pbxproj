@@ -101,6 +101,9 @@
 		19CCEA4B221C54F700C56217 /* BaseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CCEA4A221C54F700C56217 /* BaseComponent.swift */; };
 		19CCEA4E221C5C5B00C56217 /* CategoriesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CCEA4D221C5C5B00C56217 /* CategoriesDataSource.swift */; };
 		19DACDEF22247D6A00C2F36C /* HighlightedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DACDEE22247D6A00C2F36C /* HighlightedButton.swift */; };
+		19DACDF22225AFF700C2F36C /* UIView+Margins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DACDF12225AFF700C2F36C /* UIView+Margins.swift */; };
+		19DACDF42225B02D00C2F36C /* UIViewController+SafeAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DACDF32225B02D00C2F36C /* UIViewController+SafeAnchor.swift */; };
+		19DACDF62225BAC400C2F36C /* UIView+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DACDF52225BAC400C2F36C /* UIView+Container.swift */; };
 		19E0B0B42208BF1C00AF56D7 /* CategoriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E0B0B32208BF1C00AF56D7 /* CategoriesRepository.swift */; };
 		19E0B0B62208BF2500AF56D7 /* CategoriesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E0B0B52208BF2500AF56D7 /* CategoriesRepositoryProtocol.swift */; };
 		19E0B0B82208BF4500AF56D7 /* CategoriesRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E0B0B72208BF4500AF56D7 /* CategoriesRepositoryError.swift */; };
@@ -227,6 +230,9 @@
 		19CCEA4A221C54F700C56217 /* BaseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseComponent.swift; sourceTree = "<group>"; };
 		19CCEA4D221C5C5B00C56217 /* CategoriesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesDataSource.swift; sourceTree = "<group>"; };
 		19DACDEE22247D6A00C2F36C /* HighlightedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedButton.swift; sourceTree = "<group>"; };
+		19DACDF12225AFF700C2F36C /* UIView+Margins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Margins.swift"; sourceTree = "<group>"; };
+		19DACDF32225B02D00C2F36C /* UIViewController+SafeAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SafeAnchor.swift"; sourceTree = "<group>"; };
+		19DACDF52225BAC400C2F36C /* UIView+Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Container.swift"; sourceTree = "<group>"; };
 		19E0B0B32208BF1C00AF56D7 /* CategoriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepository.swift; sourceTree = "<group>"; };
 		19E0B0B52208BF2500AF56D7 /* CategoriesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepositoryProtocol.swift; sourceTree = "<group>"; };
 		19E0B0B72208BF4500AF56D7 /* CategoriesRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepositoryError.swift; sourceTree = "<group>"; };
@@ -552,6 +558,7 @@
 			isa = PBXGroup;
 			children = (
 				1943B01321F67F050054119C /* Base */,
+				19DACDF02225AFBF00C2F36C /* Extensions */,
 				19A1B1D821F3B48F0090F760 /* Protocols */,
 				19DACDEC22247D4700C2F36C /* Views */,
 			);
@@ -739,6 +746,16 @@
 				19DACDEE22247D6A00C2F36C /* HighlightedButton.swift */,
 			);
 			path = HighlightedButton;
+			sourceTree = "<group>";
+		};
+		19DACDF02225AFBF00C2F36C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				19DACDF52225BAC400C2F36C /* UIView+Container.swift */,
+				19DACDF12225AFF700C2F36C /* UIView+Margins.swift */,
+				19DACDF32225B02D00C2F36C /* UIViewController+SafeAnchor.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		19E0B0B22208BF0500AF56D7 /* Categories */ = {
@@ -979,7 +996,6 @@
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Unicore/Unicore.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -990,7 +1006,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Unicore.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1074,6 +1089,7 @@
 				1973907F21FCBC7E00D892F4 /* Fonts.swift in Sources */,
 				1932F44D22077C0F00B2502B /* CategoriesConnector.swift in Sources */,
 				1943B00621F66D3C0054119C /* MainScreenConnector.swift in Sources */,
+				19DACDF42225B02D00C2F36C /* UIViewController+SafeAnchor.swift in Sources */,
 				19A1B1E221F3B5E10090F760 /* ServiceProviderProtocol.swift in Sources */,
 				1994BAF9220A21C300B494F4 /* TransactionReducer.swift in Sources */,
 				19E0B0BB2208C75B00AF56D7 /* CategoryCell.swift in Sources */,
@@ -1083,6 +1099,7 @@
 				1932F4432207697000B2502B /* CategoriesCommands.swift in Sources */,
 				1932F4472207698700B2502B /* CategoriesState.swift in Sources */,
 				1973908121FDEC7E00D892F4 /* Images.swift in Sources */,
+				19DACDF22225AFF700C2F36C /* UIView+Margins.swift in Sources */,
 				1943B03121F9EDE20054119C /* Category.swift in Sources */,
 				19A1B1F021F4CF700090F760 /* AccountsRepositoryProtocol.swift in Sources */,
 				1973909321FF850100D892F4 /* AccountSelectorConnector.swift in Sources */,
@@ -1095,6 +1112,7 @@
 				1932F45122077C1F00B2502B /* CategoriesScene.swift in Sources */,
 				19E0B0B82208BF4500AF56D7 /* CategoriesRepositoryError.swift in Sources */,
 				19A1B18821F3837C0090F760 /* AppDelegate.swift in Sources */,
+				19DACDF62225BAC400C2F36C /* UIView+Container.swift in Sources */,
 				19A1B1D721F3B3080090F760 /* NibIdentifiable.swift in Sources */,
 				19A1B1E921F3B6200090F760 /* KeychainStorageService.swift in Sources */,
 				1940F4C221FC890A0063DB54 /* Colors.swift in Sources */,
