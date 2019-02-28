@@ -5,6 +5,7 @@
 
 import UIKit
 import Unicore
+import SwifterSwift
 
 
 final class MainScreenComponent: BaseComponent<MainScreenConnector> {
@@ -28,6 +29,7 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
     @IBOutlet weak var keyboardContainer: UIView!
     @IBOutlet weak var applyButton: HighlightedButton!
     @IBOutlet weak var calendarButton: HighlightedButton!
+    @IBOutlet weak var addCategoryButton: HighlightedButton!
 
     private var accountSelectorSceneConfigured = false
     private var categoriesSceneConfigured = false
@@ -154,11 +156,16 @@ extension MainScreenComponent {
 
     private func setupCategories() {
         categoriesTitleLabel.textColor = Colors.black
-        categoriesTitleLabel.font = Fonts.Rubik.Regular(size: 17)
+        categoriesTitleLabel.font = Fonts.Rubik.Bold(size: 24)
 
-        addCommentButton.tintColor = Colors.gray
-        addCommentButton.setImage(Images.Buttons.comment, for: .normal)
-        addCommentButton.setImage(Images.Buttons.commentSelected, for: .highlighted)
+        addCategoryButton.borderColor = Colors.gray
+        addCategoryButton.borderWidth = 1
+        addCategoryButton.cornerRadius = addCategoryButton.height / 2
+        addCategoryButton.titleLabel?.font = Fonts.Rubik.Regular(size: 13)
+        addCategoryButton.setTitleColor(Colors.gray, for: .normal)
+        addCategoryButton.setTitleColor(Colors.white, for: .highlighted)
+        addCategoryButton.defaultBackgroundColor = Colors.clear
+        addCategoryButton.highlightedBackgroundColor = Colors.gray
     }
 
     private func setupCurrentValue() {
@@ -187,6 +194,10 @@ extension MainScreenComponent {
         applyButton.titleLabel?.font = Fonts.Rubik.Medium(size: 17)
         applyButton.defaultBackgroundColor = Colors.blue
         applyButton.highlightedBackgroundColor = Colors.darkBlue
+
+        addCommentButton.tintColor = Colors.gray
+        addCommentButton.setImage(Images.Buttons.comment, for: .normal)
+        addCommentButton.setImage(Images.Buttons.commentSelected, for: .highlighted)
     }
 
 }

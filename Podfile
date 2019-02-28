@@ -10,6 +10,7 @@ target 'Groshy' do
   pod 'KeychainAccess', '~> 3.1'
   pod 'DifferenceKit', '~> 1.0'
   pod 'PromiseKit', '~> 6.8'
+  pod 'SwifterSwift', '~> 4.6'
 
 
   target 'GroshyTests' do

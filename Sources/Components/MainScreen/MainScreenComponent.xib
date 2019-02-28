@@ -12,7 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainScreenComponent" customModule="Groshy" customModuleProvider="target">
             <connections>
-                <outlet property="addCommentButton" destination="5I2-m3-iiH" id="ndb-rr-Af8"/>
+                <outlet property="addCategoryButton" destination="6dD-vJ-7sQ" id="fXq-tj-34p"/>
+                <outlet property="addCommentButton" destination="mTr-Ko-X8H" id="w1h-U2-9Xe"/>
                 <outlet property="applyButton" destination="vsg-ju-54O" id="q9S-ib-3CY"/>
                 <outlet property="calendarButton" destination="2AM-09-GVf" id="1bH-PF-N22"/>
                 <outlet property="categoriesContainer" destination="ViB-Qf-6a3" id="qyf-un-op9"/>
@@ -29,7 +30,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vsg-ju-54O" customClass="HighlightedButton" customModule="Groshy" customModuleProvider="target">
-                    <rect key="frame" x="16" y="607" width="343" height="44"/>
+                    <rect key="frame" x="16" y="607" width="303" height="44"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="44" id="vb1-kH-vxH"/>
                     </constraints>
@@ -76,17 +77,6 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5I2-m3-iiH">
-                    <rect key="frame" x="325" y="35.5" width="50" height="50"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="cqx-M4-Pli"/>
-                        <constraint firstAttribute="width" constant="50" id="l6U-H0-c9d"/>
-                    </constraints>
-                    <state key="normal" image="buttons/comment"/>
-                    <connections>
-                        <action selector="addCategory" destination="-1" eventType="touchUpInside" id="glt-g4-Ogm"/>
-                    </connections>
-                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ViB-Qf-6a3">
                     <rect key="frame" x="16" y="83" width="343" height="184"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -94,6 +84,22 @@
                         <constraint firstAttribute="height" constant="184" id="4Zy-cm-7N9"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mTr-Ko-X8H">
+                    <rect key="frame" x="325" y="607" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="WM8-r3-ax3"/>
+                        <constraint firstAttribute="width" constant="44" id="cPH-sZ-q34"/>
+                    </constraints>
+                    <state key="normal" image="buttons/comment"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6dD-vJ-7sQ" customClass="HighlightedButton" customModule="Groshy" customModuleProvider="target">
+                    <rect key="frame" x="274" y="47.5" width="85" height="26"/>
+                    <inset key="contentEdgeInsets" minX="8" minY="4" maxX="8" maxY="4"/>
+                    <state key="normal" title="Добавить"/>
+                    <connections>
+                        <action selector="addCategory" destination="-1" eventType="touchUpInside" id="kRW-qx-vc4"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -103,19 +109,21 @@
                 <constraint firstItem="2AM-09-GVf" firstAttribute="top" secondItem="cqJ-th-Ywz" secondAttribute="top" id="K4S-rf-FI6"/>
                 <constraint firstItem="ViB-Qf-6a3" firstAttribute="top" secondItem="DNI-0j-hwG" secondAttribute="bottom" constant="12" id="Nqz-AG-UFS"/>
                 <constraint firstItem="DNI-0j-hwG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="NxW-Ul-IPY"/>
+                <constraint firstItem="mTr-Ko-X8H" firstAttribute="top" secondItem="vsg-ju-54O" secondAttribute="top" id="PtF-ex-wka"/>
+                <constraint firstItem="6dD-vJ-7sQ" firstAttribute="trailing" secondItem="ViB-Qf-6a3" secondAttribute="trailing" id="Ssq-0z-TXv"/>
+                <constraint firstItem="mTr-Ko-X8H" firstAttribute="leading" secondItem="vsg-ju-54O" secondAttribute="trailing" constant="6" id="TC1-fK-UHb"/>
                 <constraint firstItem="2AM-09-GVf" firstAttribute="leading" secondItem="cqJ-th-Ywz" secondAttribute="trailing" constant="6" id="UEB-qC-J8H"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ViB-Qf-6a3" secondAttribute="trailing" constant="16" id="UZM-jy-w61"/>
                 <constraint firstItem="2AM-09-GVf" firstAttribute="trailing" secondItem="jJd-gU-A4X" secondAttribute="trailing" id="YVo-Ef-csU"/>
                 <constraint firstItem="vsg-ju-54O" firstAttribute="top" secondItem="jJd-gU-A4X" secondAttribute="bottom" constant="16" id="aa4-0R-2h5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vsg-ju-54O" secondAttribute="bottom" constant="16" id="bGB-6m-NFL"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="vsg-ju-54O" secondAttribute="trailing" constant="16" id="dsB-gm-qWe"/>
+                <constraint firstItem="6dD-vJ-7sQ" firstAttribute="firstBaseline" secondItem="DNI-0j-hwG" secondAttribute="firstBaseline" id="bN4-R4-Qrt"/>
                 <constraint firstItem="cqJ-th-Ywz" firstAttribute="leading" secondItem="jJd-gU-A4X" secondAttribute="leading" id="dy2-7q-Lyx"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mTr-Ko-X8H" secondAttribute="trailing" constant="6" id="eJn-iG-oy5"/>
                 <constraint firstItem="jJd-gU-A4X" firstAttribute="top" secondItem="cqJ-th-Ywz" secondAttribute="bottom" constant="6" id="ezb-hw-bXN"/>
                 <constraint firstItem="DNI-0j-hwG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="hNN-3D-fcn"/>
                 <constraint firstItem="cqJ-th-Ywz" firstAttribute="top" relation="greaterThanOrEqual" secondItem="ViB-Qf-6a3" secondAttribute="bottom" constant="8" id="iPf-EY-IC1"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5I2-m3-iiH" secondAttribute="trailing" id="iPj-CA-Ufq"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jJd-gU-A4X" secondAttribute="trailing" constant="6" id="jvk-wJ-XiY"/>
-                <constraint firstItem="5I2-m3-iiH" firstAttribute="centerY" secondItem="DNI-0j-hwG" secondAttribute="centerY" id="nDo-1H-8jN"/>
                 <constraint firstItem="jJd-gU-A4X" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="6" id="xdm-OF-Afz"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
