@@ -10,5 +10,6 @@ protocol RepositoryProviderProtocol {
 
     var accountsRepository: AccountsRepositoryProtocol { get }
     var categoriesRepository: CategoriesRepositoryProtocol { get }
+    var transactionRepository: TransactionRepositoryProtocol { get }
 
 }

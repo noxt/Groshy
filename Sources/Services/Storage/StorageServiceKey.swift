@@ -9,4 +9,5 @@ import Foundation
 enum StorageServiceKey: String {
     case accounts
     case categories
+    case transactions
 }

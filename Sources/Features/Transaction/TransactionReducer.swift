@@ -16,7 +16,9 @@ extension TransactionFeature {
                 accountID: accountID,
                 categoryID: old.categoryID,
                 date: old.date,
-                value: old.value
+                value: old.value,
+                isLoading: false,
+                error: nil
             )
 
         case let Actions.categorySelected(categoryID: categoryID):
@@ -24,7 +26,9 @@ extension TransactionFeature {
                 accountID: old.accountID,
                 categoryID: categoryID,
                 date: old.date,
-                value: old.value
+                value: old.value,
+                isLoading: false,
+                error: nil
             )
 
         default:

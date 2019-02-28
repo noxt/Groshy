@@ -17,6 +17,12 @@ extension TransactionFeature {
             }
         }
 
+        static func createTransaction(_ repositories: RepositoryProviderProtocol) -> Command<Transaction> {
+            return Command<Transaction> { transaction in
+                core.dispatch(Actions.loadingStarted)
+            }
+        }
+
     }
 
 }

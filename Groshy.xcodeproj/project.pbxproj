@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0F5F156400EF92E8088D4F3A /* Pods_GroshyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F91E71E98CF0F647F159C96 /* Pods_GroshyUITests.framework */; };
+		190F4B6F2228829B00939A43 /* TransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190F4B6E2228829B00939A43 /* TransactionRepository.swift */; };
+		190F4B71222882A500939A43 /* TransactionRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190F4B70222882A500939A43 /* TransactionRepositoryProtocol.swift */; };
+		190F4B7322288CE300939A43 /* TransactionRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190F4B7222288CE200939A43 /* TransactionRepositoryError.swift */; };
 		1932F43F2207695A00B2502B /* CategoriesFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1932F43E2207695A00B2502B /* CategoriesFeature.swift */; };
 		1932F4412207696500B2502B /* CategoriesActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1932F4402207696500B2502B /* CategoriesActions.swift */; };
 		1932F4432207697000B2502B /* CategoriesCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1932F4422207697000B2502B /* CategoriesCommands.swift */; };
@@ -133,6 +136,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		190F4B6E2228829B00939A43 /* TransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepository.swift; sourceTree = "<group>"; };
+		190F4B70222882A500939A43 /* TransactionRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepositoryProtocol.swift; sourceTree = "<group>"; };
+		190F4B7222288CE200939A43 /* TransactionRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepositoryError.swift; sourceTree = "<group>"; };
 		1932F43E2207695A00B2502B /* CategoriesFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFeature.swift; sourceTree = "<group>"; };
 		1932F4402207696500B2502B /* CategoriesActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesActions.swift; sourceTree = "<group>"; };
 		1932F4422207697000B2502B /* CategoriesCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCommands.swift; sourceTree = "<group>"; };
@@ -281,6 +287,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		190F4B6D2228826E00939A43 /* Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				190F4B6E2228829B00939A43 /* TransactionRepository.swift */,
+				190F4B70222882A500939A43 /* TransactionRepositoryProtocol.swift */,
+				190F4B7222288CE200939A43 /* TransactionRepositoryError.swift */,
+			);
+			path = Transaction;
+			sourceTree = "<group>";
+		};
 		1932F43D2207693B00B2502B /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -555,6 +571,7 @@
 				19A1B1EE21F4CF580090F760 /* Accounts */,
 				19E0B0B22208BF0500AF56D7 /* Categories */,
 				19A1B1D921F3B4BC0090F760 /* Provider */,
+				190F4B6D2228826E00939A43 /* Transaction */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1118,10 +1135,13 @@
 				1940F4B521FB04290063DB54 /* TransactionState.swift in Sources */,
 				19A1B1CE21F395F10090F760 /* AccountsFeature.swift in Sources */,
 				1932F43F2207695A00B2502B /* CategoriesFeature.swift in Sources */,
+				190F4B71222882A500939A43 /* TransactionRepositoryProtocol.swift in Sources */,
 				1932F45122077C1F00B2502B /* CategoriesScene.swift in Sources */,
+				190F4B6F2228829B00939A43 /* TransactionRepository.swift in Sources */,
 				19E0B0B82208BF4500AF56D7 /* CategoriesRepositoryError.swift in Sources */,
 				19A1B18821F3837C0090F760 /* AppDelegate.swift in Sources */,
 				19DACDF62225BAC400C2F36C /* UIView+Container.swift in Sources */,
+				190F4B7322288CE300939A43 /* TransactionRepositoryError.swift in Sources */,
 				19DACDFA2225EFC300C2F36C /* Command+Equitable.swift in Sources */,
 				19A1B1D721F3B3080090F760 /* NibIdentifiable.swift in Sources */,
 				19A1B1E921F3B6200090F760 /* KeychainStorageService.swift in Sources */,

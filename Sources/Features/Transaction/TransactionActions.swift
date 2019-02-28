@@ -9,6 +9,8 @@ import Unicore
 
 extension TransactionFeature {
     enum Actions: Action {
+        case loadingStarted
         case categorySelected(categoryID: Category.ID)
+        case error(message: String)
     }
 }

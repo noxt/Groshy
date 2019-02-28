@@ -6,7 +6,7 @@
 import Foundation
 
 
-struct Transaction {
+struct Transaction: Codable {
     typealias ID = UUID
 
     let id: ID

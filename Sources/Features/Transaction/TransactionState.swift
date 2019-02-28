@@ -13,13 +13,17 @@ extension TransactionFeature {
         let categoryID: Category.ID?
         let date: Date?
         let value: Double?
+        let isLoading: Bool
+        let error: String?
 
         
         static let initial = State(
             accountID: nil,
             categoryID: nil,
             date: nil,
-            value: nil
+            value: nil,
+            isLoading: false,
+            error: nil
         )
     }
 }
