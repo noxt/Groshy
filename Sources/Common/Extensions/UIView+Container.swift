@@ -8,7 +8,7 @@ import UIKit
 
 public extension UIView {
 
-    public func addChild(view: UIView) {
+    func addChild(view: UIView) {
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
 

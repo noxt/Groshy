@@ -8,7 +8,7 @@ import UIKit
 
 public extension UIView {
 
-    public func changeMargings(insets: UIEdgeInsets) {
+    func changeMargings(insets: UIEdgeInsets) {
         if #available(iOS 11, *) {
             directionalLayoutMargins = NSDirectionalEdgeInsets(top: insets.top, leading: insets.left, bottom: insets.bottom, trailing: insets.right)
         } else {
@@ -16,11 +16,11 @@ public extension UIView {
         }
     }
 
-    public func changeMargins(inset: CGFloat) {
+    func changeMargins(inset: CGFloat) {
         changeMargings(insets: UIEdgeInsets(top: inset, left: inset, bottom: inset, right: inset))
     }
 
-    public func changeMargins(horizontal: CGFloat, vertical: CGFloat) {
+    func changeMargins(horizontal: CGFloat, vertical: CGFloat) {
         changeMargings(insets: UIEdgeInsets(top: vertical, left: horizontal, bottom: vertical, right: horizontal))
     }
 

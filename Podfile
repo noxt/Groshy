@@ -5,19 +5,19 @@ target 'Groshy' do
 
   # Pods for Groshy
 
-  pod 'Unicore', '~> 1.0'
-  pod 'Moya', '~> 12.0'
-  pod 'KeychainAccess', '~> 3.1'
-  pod 'DifferenceKit', '~> 1.0'
-  pod 'PromiseKit', '~> 6.8'
-  pod 'SwifterSwift', '~> 4.6'
+  pod 'Unicore'
+  pod 'Moya'
+  pod 'KeychainAccess'
+  pod 'DifferenceKit'
+  pod 'PromiseKit'
+  pod 'SwifterSwift'
 
 
   target 'GroshyTests' do
     inherit! :search_paths
 
-    pod 'Quick', '~> 1.3'
-    pod 'Nimble', '~> 7.3'
+    pod 'Quick'
+    pod 'Nimble'
   end
 
   target 'GroshyUITests' do

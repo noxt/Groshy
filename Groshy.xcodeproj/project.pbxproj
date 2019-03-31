@@ -992,7 +992,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-GroshyTests/Pods-GroshyTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-GroshyTests/Pods-GroshyTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
@@ -1003,7 +1003,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GroshyTests/Pods-GroshyTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GroshyTests/Pods-GroshyTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7EF9DEDAE7B8C8DB3B56F844 /* [CP] Embed Pods Frameworks */ = {
@@ -1012,7 +1012,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Groshy/Pods-Groshy-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Groshy/Pods-Groshy-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DifferenceKit/DifferenceKit.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
@@ -1035,7 +1035,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Groshy/Pods-Groshy-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Groshy/Pods-Groshy-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		89A20F0DC9C229BFCE333EBD /* [CP] Check Pods Manifest.lock */ = {
