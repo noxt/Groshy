@@ -114,6 +114,10 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
         props.addCategoryCommand.execute(with: self)
     }
 
+    @IBAction func createTransaction() {
+        props.createTransactionCommand.execute()
+    }
+
 }
 
 

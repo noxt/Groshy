@@ -10,8 +10,8 @@ struct Transaction: Codable {
     typealias ID = UUID
 
     let id: ID
-    let account: Account
-    let catagory: Category
+    let accountID: Account.ID
+    let catagoryID: Category.ID
     let value: Double
     let date: Date
 }

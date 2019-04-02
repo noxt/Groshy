@@ -12,7 +12,8 @@ final class MainScreenConnector: BaseConnector<MainScreenProps> {
     override func mapToProps(state: AppFeature.State) -> MainScreenProps {
         return MainScreenProps(
             currentValue: state.keyboardState.currentValue,
-            addCategoryCommand: MainScreenCommands.addCategoryCommand(repositories)
+            addCategoryCommand: MainScreenCommands.addCategoryCommand(repositories),
+            createTransactionCommand: TransactionFeature.Commands.createTransaction(repositories, state: state.transactionState)
         )
     }
 

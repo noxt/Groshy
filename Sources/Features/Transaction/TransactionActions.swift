@@ -10,7 +10,10 @@ import Unicore
 extension TransactionFeature {
     enum Actions: Action {
         case loadingStarted
-        case categorySelected(categoryID: Category.ID)
+        case selectCategory(categoryID: Category.ID)
+        case selectDate(Date)
+        case renameValue(Double)
         case error(message: String)
+        case clear
     }
 }

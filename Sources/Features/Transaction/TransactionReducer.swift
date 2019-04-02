@@ -21,7 +21,7 @@ extension TransactionFeature {
                 error: nil
             )
 
-        case let Actions.categorySelected(categoryID: categoryID):
+        case let Actions.selectCategory(categoryID: categoryID):
             return State(
                 accountID: old.accountID,
                 categoryID: categoryID,
@@ -30,6 +30,29 @@ extension TransactionFeature {
                 isLoading: false,
                 error: nil
             )
+
+        case let Actions.selectDate(date):
+            return State(
+                accountID: old.accountID,
+                categoryID: old.categoryID,
+                date: date,
+                value: old.value,
+                isLoading: false,
+                error: nil
+            )
+
+        case let Actions.renameValue(value):
+            return State(
+                accountID: old.accountID,
+                categoryID: old.categoryID,
+                date: old.date,
+                value: value,
+                isLoading: false,
+                error: nil
+            )
+
+        case Actions.clear:
+            return State.initial
 
         default:
             return old

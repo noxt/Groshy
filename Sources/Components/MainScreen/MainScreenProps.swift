@@ -10,4 +10,5 @@ import Unicore
 struct MainScreenProps: Equatable {
     let currentValue: String
     let addCategoryCommand: Command<UIViewController>
+    let createTransactionCommand: PlainCommand
 }
