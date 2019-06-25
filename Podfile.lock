@@ -1,28 +1,28 @@
 PODS:
   - Alamofire (4.8.2)
-  - DifferenceKit (1.1.1):
-    - DifferenceKit/Core (= 1.1.1)
-    - DifferenceKit/UIKitExtension (= 1.1.1)
-  - DifferenceKit/Core (1.1.1)
-  - DifferenceKit/UIKitExtension (1.1.1):
+  - DifferenceKit (1.1.2):
+    - DifferenceKit/Core (= 1.1.2)
+    - DifferenceKit/UIKitExtension (= 1.1.2)
+  - DifferenceKit/Core (1.1.2)
+  - DifferenceKit/UIKitExtension (1.1.2):
     - DifferenceKit/Core
-  - KeychainAccess (3.1.2)
-  - Moya (12.0.1):
-    - Moya/Core (= 12.0.1)
-  - Moya/Core (12.0.1):
+  - KeychainAccess (3.2.0)
+  - Moya (13.0.1):
+    - Moya/Core (= 13.0.1)
+  - Moya/Core (13.0.1):
     - Alamofire (~> 4.1)
-    - Result (~> 4.0)
+    - Result (~> 4.1)
   - Nimble (8.0.1)
-  - PromiseKit (6.8.3):
-    - PromiseKit/CorePromise (= 6.8.3)
-    - PromiseKit/Foundation (= 6.8.3)
-    - PromiseKit/UIKit (= 6.8.3)
-  - PromiseKit/CorePromise (6.8.3)
-  - PromiseKit/Foundation (6.8.3):
+  - PromiseKit (6.8.4):
+    - PromiseKit/CorePromise (= 6.8.4)
+    - PromiseKit/Foundation (= 6.8.4)
+    - PromiseKit/UIKit (= 6.8.4)
+  - PromiseKit/CorePromise (6.8.4)
+  - PromiseKit/Foundation (6.8.4):
     - PromiseKit/CorePromise
-  - PromiseKit/UIKit (6.8.3):
+  - PromiseKit/UIKit (6.8.4):
     - PromiseKit/CorePromise
-  - Quick (2.0.0)
+  - Quick (2.1.0)
   - Result (4.1.0)
   - SwifterSwift (5.0.0):
     - SwifterSwift/AppKit (= 5.0.0)
@@ -70,12 +70,12 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  DifferenceKit: cf1b84e2207ea45c3640381cb229cf46c1647466
-  KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
-  Moya: cf730b3cd9e005401ef37a85143aa141a12fd38f
+  DifferenceKit: 3a1cff9ac9a9cdf2a3f205671067797e83c3f066
+  KeychainAccess: 3b1bf8a77eb4c6ea1ce9404c292e48f948954c6b
+  Moya: f4a4b80ff2f8a4ffc208dfb31cd91636622fee6e
   Nimble: 45f786ae66faa9a709624227fae502db55a8bdd0
-  PromiseKit: 94c6e781838c5bf4717677d0d882b0e7250c80fc
-  Quick: ce1276c7c27ba2da3cb2fd0cde053c3648b3b22d
+  PromiseKit: 51794a832647e7b819336dc2279039ce9f1cc49b
+  Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
   SwifterSwift: 96f90594b370802f01647c2b1229c74a84ffafee
   Unicore: dd48bc179635ea3007c62c16646ff39241ef3b87

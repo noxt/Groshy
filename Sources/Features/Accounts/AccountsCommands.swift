@@ -17,10 +17,10 @@ extension AccountsFeature {
 
                 repositories.accountsRepository.loadAccounts()
                     .done({ (accounts) in
-                        core.dispatch(Actions.accountsUpdated(accounts: normalize(accounts: accounts)))
+                        core.dispatch(Actions.setAccounts(accounts))
 
                         if let currentAccount = accounts.last {
-                            core.dispatch(Actions.currentAccountSelected(accountID: currentAccount.id))
+                            core.dispatch(Actions.selectAccount(currentAccount))
                         }
                     })
                     .catch({ (error) in
@@ -38,8 +38,8 @@ extension AccountsFeature {
                         return repositories.accountsRepository.loadAccounts()
                     })
                     .done({ (accounts) in
-                        core.dispatch(Actions.accountsUpdated(accounts: normalize(accounts: accounts)))
-                        core.dispatch(Actions.currentAccountSelected(accountID: newAccount.id))
+                        core.dispatch(Actions.setAccounts(accounts))
+                        core.dispatch(Actions.selectAccount(newAccount))
                     })
                     .catch({ (error) in
                         core.dispatch(Actions.error(message: error.localizedDescription))
@@ -49,16 +49,8 @@ extension AccountsFeature {
 
         static func selectCurrentAccount(_ repositories: RepositoryProviderProtocol) -> Command<Account> {
             return Command<Account> { account in
-                core.dispatch(Actions.currentAccountSelected(accountID: account.id))
+                core.dispatch(Actions.selectAccount(account))
             }
-        }
-
-        private static func normalize(accounts: [Account]) -> [Account.ID: Account] {
-            var dict: [Account.ID: Account] = [:]
-            for account in accounts {
-                dict[account.id] = account
-            }
-            return dict
         }
 
     }

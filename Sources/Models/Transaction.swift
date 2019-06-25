@@ -6,12 +6,14 @@
 import Foundation
 
 
-struct Transaction: Codable {
-    typealias ID = UUID
+struct Transaction: Codable, Identifiable {
+    
+    typealias RawIdentifier = UUID
 
     let id: ID
     let accountID: Account.ID
     let catagoryID: Category.ID
     let value: Double
     let date: Date
+
 }

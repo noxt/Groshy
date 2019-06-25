@@ -10,16 +10,14 @@ import SwifterSwift
 
 final class MainScreenComponent: BaseComponent<MainScreenConnector> {
 
+    // MARK: - Types
+    
     private struct Constants {
         static let cornerRadius: CGFloat = 4
     }
 
 
-    // UI Props
-
-    private let accountSelectorScene: Scene<AccountSelectorConnector, AccountSelectorComponent>
-    private let categoriesScene: Scene<CategoriesConnector, CategoriesComponent>
-    private let keyboardScene: Scene<KeyboardConnector, KeyboardComponent>
+    // MARK: - IBOutlets
 
     @IBOutlet weak var categoriesTitleLabel: UILabel!
     @IBOutlet weak var categoriesContainer: UIView!
@@ -31,21 +29,28 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
     @IBOutlet weak var calendarButton: HighlightedButton!
     @IBOutlet weak var addCategoryButton: HighlightedButton!
 
-    private var accountSelectorSceneConfigured = false
-    private var categoriesSceneConfigured = false
-    private var keyboardSceneConfigured = false
+
+    // MARK: - Private Properties
+    
+    private let accountSelectorComponent: AccountSelectorComponent
+    private let categoriesComponent: CategoriesComponent
+    private let keyboardComponent: KeyboardComponent
+    
+    private var accountSelectorComponentConfigured = false
+    private var categoriesComponentConfigured = false
+    private var keyboardComponentConfigured = false
 
 
-    // MARK: - Initializator
+    // MARK: - Initializers
 
     init(connector: MainScreenConnector,
-         accountSelectorScene: Scene<AccountSelectorConnector, AccountSelectorComponent>,
-         categoriesScene: Scene<CategoriesConnector, CategoriesComponent>,
-         keyboardScene: Scene<KeyboardConnector, KeyboardComponent>
+         accountSelectorComponent: AccountSelectorComponent,
+         categoriesComponent: CategoriesComponent,
+         keyboardComponent: KeyboardComponent
      ) {
-        self.accountSelectorScene = accountSelectorScene
-        self.categoriesScene = categoriesScene
-        self.keyboardScene = keyboardScene
+        self.accountSelectorComponent = accountSelectorComponent
+        self.categoriesComponent = categoriesComponent
+        self.keyboardComponent = keyboardComponent
 
         super.init(connector: connector)
     }
@@ -70,7 +75,7 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
         statisticsButton.setBackgroundImage(Images.Buttons.statisticsSelected, for: .highlighted)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: statisticsButton)
         
-        setupAccountSelectorScene()
+        setupAccountSelectorComponent()
     }
 
     override func viewDidLayoutSubviews() {
@@ -99,12 +104,13 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
         setupCalendarButton()
         setupApplyButton()
 
-        setupKeyboardScene()
-        setupCategoriesScene()
+        setupKeyboardComponent()
+        setupCategoriesComponent()
     }
 
     override func render(old oldProps: MainScreenProps?) {
         currentValueLabel.text = props.currentValue
+        applyButton.isEnabled = props.isNewTransactionValid
     }
 
 
@@ -125,37 +131,37 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
 
 extension MainScreenComponent {
 
-    private func setupAccountSelectorScene() {
-        guard !accountSelectorSceneConfigured else {
+    private func setupAccountSelectorComponent() {
+        guard !accountSelectorComponentConfigured else {
             return
         }
-        accountSelectorSceneConfigured = true
+        accountSelectorComponentConfigured = true
 
-        navigationController?.addChild(accountSelectorScene.component)
-        navigationItem.titleView = accountSelectorScene.view
-        accountSelectorScene.component.didMove(toParent: navigationController!)
+        navigationController?.addChild(accountSelectorComponent)
+        navigationItem.titleView = accountSelectorComponent.view
+        accountSelectorComponent.didMove(toParent: navigationController!)
     }
 
-    private func setupKeyboardScene() {
-        guard !keyboardSceneConfigured else {
+    private func setupKeyboardComponent() {
+        guard !keyboardComponentConfigured else {
             return
         }
-        keyboardSceneConfigured = true
+        keyboardComponentConfigured = true
 
-        addChild(keyboardScene.component)
-        keyboardContainer.addChild(view: keyboardScene.view)
-        keyboardScene.component.didMove(toParent: self)
+        addChild(keyboardComponent)
+        keyboardContainer.addChild(view: keyboardComponent.view)
+        keyboardComponent.didMove(toParent: self)
     }
 
-    private func setupCategoriesScene() {
-        guard !categoriesSceneConfigured else {
+    private func setupCategoriesComponent() {
+        guard !categoriesComponentConfigured else {
             return
         }
-        categoriesSceneConfigured = true
+        categoriesComponentConfigured = true
 
-        addChild(categoriesScene.component)
-        categoriesContainer.addChild(view: categoriesScene.view)
-        categoriesScene.component.didMove(toParent: self)
+        addChild(categoriesComponent)
+        categoriesContainer.addChild(view: categoriesComponent.view)
+        categoriesComponent.didMove(toParent: self)
     }
 
     private func setupCategories() {

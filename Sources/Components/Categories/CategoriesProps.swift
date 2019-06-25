@@ -24,11 +24,11 @@ struct CategoriesProps {
     enum State: Equatable {
         case loading
         case idle(categories: [CategoryInfo])
+        case empty
     }
 
 
     let state: State
-    let loadCategoriesList: PlainCommand
 
 }
 

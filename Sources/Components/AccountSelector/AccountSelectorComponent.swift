@@ -9,7 +9,7 @@ import Unicore
 
 final class AccountSelectorComponent: BaseComponent<AccountSelectorConnector> {
 
-    // UI Props
+    // MARK: - IBOutlets
 
     @IBOutlet weak var containerStackView: UIStackView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -17,7 +17,7 @@ final class AccountSelectorComponent: BaseComponent<AccountSelectorConnector> {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
 
-    // MARK: - Component lifecycle
+    // MARK: - Lifecycle
 
     override func setup() {
         titleLabel.textColor = Colors.blue
@@ -25,10 +25,6 @@ final class AccountSelectorComponent: BaseComponent<AccountSelectorConnector> {
 
         amountLabel.textColor = Colors.blue
         amountLabel.font = Fonts.Rubik.Regular(size: 11)
-    }
-
-    override func loadInitialData() {
-        props.loadAccountsList.execute()
     }
 
     override func render(old oldProps: AccountSelectorProps?) {

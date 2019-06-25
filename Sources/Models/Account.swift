@@ -6,10 +6,10 @@
 import Foundation
 
 
-struct Account: Codable, Equatable {
+struct Account: Codable, Equatable, Identifiable {
 
-    typealias ID = UUID
-    
+    typealias RawIdentifier = UUID
+
     let id: ID
     var title: String
     

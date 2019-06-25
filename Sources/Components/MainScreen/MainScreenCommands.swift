@@ -24,7 +24,7 @@ struct MainScreenCommands {
                 }
 
                 let category = Category(
-                    id: Category.ID(),
+                    id: Category.ID(rawValue: UUID()),
                     icon: .random(),
                     title: title
                 )

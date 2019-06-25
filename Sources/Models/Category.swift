@@ -6,9 +6,9 @@
 import Foundation
 
 
-struct Category: Codable {
+struct Category: Codable, Identifiable {
 
-    typealias ID = UUID
+    typealias RawIdentifier = UUID
 
     let id: ID
     let icon: Icon

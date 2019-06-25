@@ -9,6 +9,7 @@ import Foundation
 extension CategoriesFeature {
     struct State: Codable {
 
+        let selectedCategory: Category.ID?
         let categories: [Category.ID : Category]
         let sortOrder: [Category.ID]
         let isLoading: Bool
@@ -16,6 +17,7 @@ extension CategoriesFeature {
 
 
         static let initial = State(
+            selectedCategory: nil,
             categories: [:],
             sortOrder: [],
             isLoading: false,

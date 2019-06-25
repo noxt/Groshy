@@ -9,6 +9,7 @@ import Unicore
 
 struct MainScreenProps: Equatable {
     let currentValue: String
+    let isNewTransactionValid: Bool
     let addCategoryCommand: Command<UIViewController>
     let createTransactionCommand: PlainCommand
 }

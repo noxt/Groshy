@@ -5,7 +5,6 @@
 
 import Foundation
 
-
 extension AccountsFeature {
     struct State: Codable {
 

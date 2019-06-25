@@ -6,22 +6,16 @@
 import Foundation
 
 
-extension TransactionFeature {
+extension TransactionsFeature {
     struct State: Codable {
 
-        let accountID: Account.ID?
-        let categoryID: Category.ID?
-        let date: Date?
-        let value: Double?
+        let transactions: [Transaction.ID: Transaction]
         let isLoading: Bool
         let error: String?
 
         
         static let initial = State(
-            accountID: nil,
-            categoryID: nil,
-            date: nil,
-            value: nil,
+            transactions: [:],
             isLoading: false,
             error: nil
         )

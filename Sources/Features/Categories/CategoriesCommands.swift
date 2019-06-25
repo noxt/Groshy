@@ -17,7 +17,7 @@ extension CategoriesFeature {
 
                 repositories.categoriesRepository.loadCategories()
                     .done({ (categories) in
-                        update(categories: categories)
+                        core.dispatch(Actions.setCategories(categories))
                     })
                     .catch({ (error) in
                         core.dispatch(Actions.error(message: error.localizedDescription))
@@ -34,28 +34,18 @@ extension CategoriesFeature {
                         repositories.categoriesRepository.loadCategories()
                     })
                     .done({ (categories) in
-                        update(categories: categories)
+                        core.dispatch(Actions.setCategories(categories))
                     })
                     .catch({ (error) in
                         core.dispatch(Actions.error(message: error.localizedDescription))
                     })
             }
         }
-
-        private static func update(categories: [Category]) {
-            let categoriesByID = normalize(categories: categories)
-            core.dispatch(Actions.categoriesUpdated(categories: categoriesByID))
-
-            let sortOrder = categories.map { $0.id }
-            core.dispatch(Actions.sortOrderUpdated(sortOrder: sortOrder))
-        }
-
-        private static func normalize(categories: [Category]) -> [Category.ID: Category] {
-            var dict: [Category.ID: Category] = [:]
-            for category in categories {
-                dict[category.id] = category
+        
+        static func selectCategory(_ repositories: RepositoryProviderProtocol) -> Command<Category> {
+            return Command<Category> { category in
+                core.dispatch(Actions.selectCategory(category))
             }
-            return dict
         }
 
     }

@@ -8,21 +8,22 @@ import Unicore
 
 
 extension AccountsFeature {
+
     static func reduce(_ old: State, with action: Action) -> State {
         switch action {
 
-        case let Actions.currentAccountSelected(accountID: accountID):
+        case let Actions.selectAccount(account):
             return State(
-                currentAccountID: accountID,
+                currentAccountID: account.id,
                 accounts: old.accounts,
                 isLoading: false,
                 error: nil
             )
 
-        case let Actions.accountsUpdated(accounts: accounts):
+        case let Actions.setAccounts(accounts):
             return State(
                 currentAccountID: old.currentAccountID,
-                accounts: accounts,
+                accounts: normalize(accounts: accounts),
                 isLoading: false,
                 error: nil
             )
@@ -48,4 +49,13 @@ extension AccountsFeature {
 
         }
     }
+    
+    private static func normalize(accounts: [Account]) -> [Account.ID : Account] {
+        var dict: [Account.ID: Account] = [:]
+        for account in accounts {
+            dict[account.id] = account
+        }
+        return dict
+    }
+    
 }

@@ -11,8 +11,7 @@ final class AccountSelectorConnector: BaseConnector<AccountSelectorProps> {
 
     override func mapToProps(state: AppFeature.State) -> AccountSelectorProps {
         return AccountSelectorProps(
-            state: mapToPropsState(state: state),
-            loadAccountsList: AccountsFeature.Commands.loadAccountsList(repositories)
+            state: mapToPropsState(state: state)
         )
     }
 

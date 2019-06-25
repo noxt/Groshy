@@ -8,27 +8,40 @@ import Unicore
 
 
 extension CategoriesFeature {
+    
     static func reduce(_ old: State, with action: Action) -> State {
         switch action {
 
-        case let Actions.categoriesUpdated(categories: categories):
+        case let Actions.setCategories(categories):
             return State(
-                categories: categories,
-                sortOrder: old.sortOrder,
+                selectedCategory: old.selectedCategory,
+                categories: normalize(categories: categories),
+                sortOrder: categories.map({ $0.id }),
                 isLoading: false,
                 error: nil
             )
 
-        case let Actions.sortOrderUpdated(sortOrder: sortOrder):
+        case let Actions.selectCategory(category):
             return State(
+                selectedCategory: category.id,
                 categories: old.categories,
-                sortOrder: sortOrder,
+                sortOrder: old.sortOrder,
+                isLoading: false,
+                error: nil
+            )
+            
+        case Actions.clearSelectedCategory:
+            return State(
+                selectedCategory: nil,
+                categories: old.categories,
+                sortOrder: old.sortOrder,
                 isLoading: false,
                 error: nil
             )
 
         case Actions.loadingStarted:
             return State(
+                selectedCategory: old.selectedCategory,
                 categories: old.categories,
                 sortOrder: old.sortOrder,
                 isLoading: true,
@@ -37,6 +50,7 @@ extension CategoriesFeature {
 
         case let Actions.error(message: message):
             return State(
+                selectedCategory: old.selectedCategory,
                 categories: old.categories,
                 sortOrder: old.sortOrder,
                 isLoading: false,
@@ -48,4 +62,13 @@ extension CategoriesFeature {
 
         }
     }
+    
+    private static func normalize(categories: [Category]) -> [Category.ID: Category] {
+        var dict: [Category.ID: Category] = [:]
+        for category in categories {
+            dict[category.id] = category
+        }
+        return dict
+    }
+    
 }

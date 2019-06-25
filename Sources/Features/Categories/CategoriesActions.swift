@@ -10,8 +10,9 @@ import Unicore
 extension CategoriesFeature {
     enum Actions: Action {
         case loadingStarted
-        case categoriesUpdated(categories: [Category.ID: Category])
-        case sortOrderUpdated(sortOrder: [Category.ID])
+        case setCategories([Category])
+        case selectCategory(Category)
+        case clearSelectedCategory
         case error(message: String)
     }
 }

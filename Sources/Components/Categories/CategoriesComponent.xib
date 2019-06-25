@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="activityIndicator" destination="mIv-lB-1IB" id="kXp-vs-mjb"/>
                 <outlet property="collectionView" destination="kHt-0N-wwZ" id="NeN-F0-Q9j"/>
+                <outlet property="emptyLabel" destination="sl5-4j-ExS" id="Q8g-pU-8xN"/>
                 <outlet property="view" destination="iN0-l3-epB" id="837-tm-ToH"/>
             </connections>
         </placeholder>
@@ -25,6 +26,12 @@
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="mIv-lB-1IB">
                     <rect key="frame" x="177.5" y="107.5" width="20" height="20"/>
                 </activityIndicatorView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Categories List is empty. Please create some category" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sl5-4j-ExS">
+                    <rect key="frame" x="20" y="97" width="335" height="41"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="kHt-0N-wwZ">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="235"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -38,9 +45,12 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="sl5-4j-ExS" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="NAa-gH-IEL"/>
+                <constraint firstItem="sl5-4j-ExS" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-20" id="PUS-1h-QxX"/>
                 <constraint firstItem="kHt-0N-wwZ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Uo5-ZC-NSs"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="kHt-0N-wwZ" secondAttribute="bottom" id="XoT-sm-yMb"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="kHt-0N-wwZ" secondAttribute="trailing" id="Yg1-3U-Cve"/>
+                <constraint firstItem="sl5-4j-ExS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="ibk-WR-htR"/>
                 <constraint firstItem="mIv-lB-1IB" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="kex-aI-TqH"/>
                 <constraint firstItem="mIv-lB-1IB" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="tZL-k2-LRP"/>
                 <constraint firstItem="kHt-0N-wwZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="uzM-Mj-j63"/>

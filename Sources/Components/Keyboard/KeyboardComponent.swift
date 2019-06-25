@@ -9,12 +9,14 @@ import Unicore
 
 final class KeyboardComponent: BaseComponent<KeyboardConnector> {
 
+    // MARK: - Types
+    
     private struct Constants {
         static let cornerRadius: CGFloat = 4
     }
 
 
-    // UI Props
+    // MARK: - IBOutlets
 
     @IBOutlet var digitsButtons: [HighlightedButton]!
     @IBOutlet var operationsButtons: [HighlightedButton]!
@@ -22,14 +24,14 @@ final class KeyboardComponent: BaseComponent<KeyboardConnector> {
     @IBOutlet weak var removeButton: HighlightedButton!
 
 
-    // MARK: - Component lifecycle
+    // MARK: - Lifecycle
 
     override func setup() {
         setupButtons()
     }
 
 
-    // MARK: - Actions
+    // MARK: - IBActions
 
     @IBAction func digitDidPressed(_ sender: UIButton) {
         guard let digit = KeyboardFeature.Digit(sender.titleLabel?.text ?? "") else {

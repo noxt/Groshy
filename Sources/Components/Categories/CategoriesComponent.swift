@@ -9,6 +9,8 @@ import Unicore
 
 final class CategoriesComponent: BaseComponent<CategoriesConnector> {
 
+    // MARK: - Types
+    
     private struct Constants {
         static let rowsCount: CGFloat = 4
         static let horizontalSpacing: CGFloat = 8
@@ -17,15 +19,16 @@ final class CategoriesComponent: BaseComponent<CategoriesConnector> {
     }
 
 
-    // Props
+    // MARK: - Private Properties
 
     private var dataSource: CategoriesDataSource!
 
 
-    // UI Props
+    // MARK: - IBOutlets
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var emptyLabel: UILabel!
 
 
     // MARK: - UIKit lifecycle
@@ -47,21 +50,24 @@ final class CategoriesComponent: BaseComponent<CategoriesConnector> {
         dataSource = CategoriesDataSource(collectionView: collectionView)
     }
 
-    override func loadInitialData() {
-        props.loadCategoriesList.execute()
-    }
-
     override func render(old oldProps: CategoriesProps?) {
         switch props.state {
         case let .idle(categories: categories):
             collectionView.isHidden = false
             activityIndicator.isHidden = true
+            emptyLabel.isHidden = true
             dataSource.update(categories: categories)
 
         case .loading:
             collectionView.isHidden = true
             activityIndicator.isHidden = false
+            emptyLabel.isHidden = true
             activityIndicator.startAnimating()
+            
+        case .empty:
+            collectionView.isHidden = true
+            activityIndicator.isHidden = true
+            emptyLabel.isHidden = false
         }
     }
 

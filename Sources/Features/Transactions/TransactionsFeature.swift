@@ -6,4 +6,4 @@
 import Foundation
 
 
-struct TransactionFeature { }
+struct TransactionsFeature { }

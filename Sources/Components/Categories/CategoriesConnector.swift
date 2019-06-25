@@ -11,51 +11,79 @@ final class CategoriesConnector: BaseConnector<CategoriesProps> {
 
     override func mapToProps(state: AppFeature.State) -> CategoriesProps {
         return CategoriesProps(
-            state: mapToPropsState(state: state),
-            loadCategoriesList: CategoriesFeature.Commands.loadCategoriesList(repositories)
+            state: mapToPropsState(state: state)
         )
     }
 
     private func mapToPropsState(state: AppFeature.State) -> CategoriesProps.State {
         let categoriesState = state.categoriesState
-        let transactionState = state.transactionState
+        let transactionsState = state.transactionState
 
         guard !categoriesState.isLoading else {
             return .loading
         }
+        
+        let transactionsByCategories = groupTransactionsByCategory(transactionsState.transactions)
 
         var categories: [CategoriesProps.CategoryInfo] = []
         for id in categoriesState.sortOrder {
             if let category = categoriesState.categories[id] {
+                let balance: Double? = transactionsByCategories[category.id]?.reduce(0, { (res, transaction) -> Double in
+                    return res + transaction.value
+                })
+                
                 categories.append(mapCategoryToProps(
                     category: category,
-                    isSelected: transactionState.categoryID == category.id
+                    isSelected: categoriesState.selectedCategory == category.id,
+                    balance: balance ?? 0
                 ))
             }
         }
-
-//        categories.append(addButtonProps())
-
+        
+        guard !categories.isEmpty else {
+            return .empty
+        }
+        
         return .idle(categories: categories)
     }
 
-    private func mapCategoryToProps(category: Category, isSelected: Bool) -> CategoriesProps.CategoryInfo {
+    private func mapCategoryToProps(category: Category, isSelected: Bool, balance: Double) -> CategoriesProps.CategoryInfo {
         let command: PlainCommand?
         if !isSelected {
-            command = PlainCommand { [unowned self] in
-                TransactionFeature.Commands.selectCategory(self.repositories).execute(with: category)
+            command = PlainCommand { [weak self] in
+                guard let self = self else {
+                    return
+                }
+                CategoriesFeature.Commands.selectCategory(self.repositories).execute(with: category)
             }
         } else {
             command = nil
         }
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .currencyAccounting
+        numberFormatter.currencyCode = "BYN"
 
         return CategoriesProps.CategoryInfo(
             id: category.id,
             title: category.title,
             icon: category.icon.image,
-            currentBalance: "0 BYN",
+            currentBalance: numberFormatter.string(from: NSNumber(value: balance)),
             selectCommand: command
         )
+    }
+    
+    private func groupTransactionsByCategory(_ transactions: [Transaction.ID: Transaction]) -> [Category.ID: [Transaction]] {
+        var groups = [Category.ID: [Transaction]]()
+        
+        for transaction in transactions.values {
+            if groups[transaction.catagoryID] == nil {
+                groups[transaction.catagoryID] = []
+            }
+            groups[transaction.catagoryID]?.append(transaction)
+        }
+        
+        return groups
     }
 
 //    private static let addButtonUUID = UUID()

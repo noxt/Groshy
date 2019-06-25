@@ -10,8 +10,8 @@ import Unicore
 extension AccountsFeature {
     enum Actions: Action {
         case loadingStarted
-        case currentAccountSelected(accountID: Account.ID)
-        case accountsUpdated(accounts: [Account.ID: Account])
+        case selectAccount(Account)
+        case setAccounts([Account])
         case error(message: String)
     }
 }

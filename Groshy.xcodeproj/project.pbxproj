@@ -20,9 +20,9 @@
 		1932F44B22077C0300B2502B /* CategoriesComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1932F44A22077C0300B2502B /* CategoriesComponent.xib */; };
 		1932F44D22077C0F00B2502B /* CategoriesConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1932F44C22077C0F00B2502B /* CategoriesConnector.swift */; };
 		1932F44F22077C1600B2502B /* CategoriesProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1932F44E22077C1600B2502B /* CategoriesProps.swift */; };
-		1932F45122077C1F00B2502B /* CategoriesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1932F45022077C1F00B2502B /* CategoriesScene.swift */; };
-		1940F4B321FB03F50063DB54 /* TransactionFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4B221FB03F50063DB54 /* TransactionFeature.swift */; };
-		1940F4B521FB04290063DB54 /* TransactionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4B421FB04290063DB54 /* TransactionState.swift */; };
+		1932F45122077C1F00B2502B /* CategoriesComponent+Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1932F45022077C1F00B2502B /* CategoriesComponent+Build.swift */; };
+		1940F4B321FB03F50063DB54 /* TransactionsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4B221FB03F50063DB54 /* TransactionsFeature.swift */; };
+		1940F4B521FB04290063DB54 /* TransactionsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4B421FB04290063DB54 /* TransactionsState.swift */; };
 		1940F4B821FB0C9D0063DB54 /* KeyboardFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4B721FB0C9D0063DB54 /* KeyboardFeature.swift */; };
 		1940F4BA21FB0CB60063DB54 /* KeyboardState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4B921FB0CB60063DB54 /* KeyboardState.swift */; };
 		1940F4BC21FB0E4D0063DB54 /* KeyboardActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4BB21FB0E4D0063DB54 /* KeyboardActions.swift */; };
@@ -34,7 +34,7 @@
 		1943B00821F66D4C0054119C /* MainScreenProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B00721F66D4C0054119C /* MainScreenProps.swift */; };
 		1943B00A21F66D630054119C /* MainScreenComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B00921F66D630054119C /* MainScreenComponent.swift */; };
 		1943B00C21F66D890054119C /* MainScreenComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1943B00B21F66D890054119C /* MainScreenComponent.xib */; };
-		1943B01021F66FDC0054119C /* MainScreenScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B00F21F66FDC0054119C /* MainScreenScene.swift */; };
+		1943B01021F66FDC0054119C /* MainScreenComponent+Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B00F21F66FDC0054119C /* MainScreenComponent+Build.swift */; };
 		1943B01221F67ED30054119C /* Connector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B01121F67ED30054119C /* Connector.swift */; };
 		1943B01521F67F100054119C /* BaseConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B01421F67F100054119C /* BaseConnector.swift */; };
 		1943B01721F67FDB0054119C /* Component.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B01621F67FDB0054119C /* Component.swift */; };
@@ -43,7 +43,7 @@
 		1943B03121F9EDE20054119C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B02F21F9EDD90054119C /* Category.swift */; };
 		1943B03521F9EED50054119C /* CategoryIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B03321F9EE5D0054119C /* CategoryIcon.swift */; };
 		1943B03721F9F46E0054119C /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B03621F9F46E0054119C /* Transaction.swift */; };
-		1943B03921FA075F0054119C /* KeyboardScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B03821FA075F0054119C /* KeyboardScene.swift */; };
+		1943B03921FA075F0054119C /* KeyboardComponent+Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B03821FA075F0054119C /* KeyboardComponent+Build.swift */; };
 		1943B03D21FA07750054119C /* KeyboardProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B03C21FA07750054119C /* KeyboardProps.swift */; };
 		1943B03F21FA077D0054119C /* KeyboardConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B03E21FA077D0054119C /* KeyboardConnector.swift */; };
 		1943B04121FA07890054119C /* KeyboardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B04021FA07890054119C /* KeyboardComponent.swift */; };
@@ -69,10 +69,11 @@
 		1973909121FF84F000D892F4 /* AccountSelectorComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1973909021FF84F000D892F4 /* AccountSelectorComponent.xib */; };
 		1973909321FF850100D892F4 /* AccountSelectorConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973909221FF850100D892F4 /* AccountSelectorConnector.swift */; };
 		1973909521FF850B00D892F4 /* AccountSelectorProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973909421FF850B00D892F4 /* AccountSelectorProps.swift */; };
-		1973909721FF851400D892F4 /* AccountSelectorScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973909621FF851400D892F4 /* AccountSelectorScene.swift */; };
-		1994BAF5220A21AF00B494F4 /* TransactionCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994BAF4220A21AF00B494F4 /* TransactionCommands.swift */; };
-		1994BAF7220A21B900B494F4 /* TransactionActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994BAF6220A21B900B494F4 /* TransactionActions.swift */; };
-		1994BAF9220A21C300B494F4 /* TransactionReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994BAF8220A21C300B494F4 /* TransactionReducer.swift */; };
+		1973909721FF851400D892F4 /* AccountSelectorComponent+Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973909621FF851400D892F4 /* AccountSelectorComponent+Build.swift */; };
+		1985296A229D356800B8BCD5 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19852969229D356800B8BCD5 /* Identity.swift */; };
+		1994BAF5220A21AF00B494F4 /* TransactionsCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994BAF4220A21AF00B494F4 /* TransactionsCommands.swift */; };
+		1994BAF7220A21B900B494F4 /* TransactionsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994BAF6220A21B900B494F4 /* TransactionsActions.swift */; };
+		1994BAF9220A21C300B494F4 /* TransactionsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994BAF8220A21C300B494F4 /* TransactionsReducer.swift */; };
 		19A1B18821F3837C0090F760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B18721F3837C0090F760 /* AppDelegate.swift */; };
 		19A1B18F21F3837D0090F760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19A1B18E21F3837D0090F760 /* Assets.xcassets */; };
 		19A1B19221F3837E0090F760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A1B19021F3837E0090F760 /* LaunchScreen.storyboard */; };
@@ -148,9 +149,9 @@
 		1932F44A22077C0300B2502B /* CategoriesComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesComponent.xib; sourceTree = "<group>"; };
 		1932F44C22077C0F00B2502B /* CategoriesConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesConnector.swift; sourceTree = "<group>"; };
 		1932F44E22077C1600B2502B /* CategoriesProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesProps.swift; sourceTree = "<group>"; };
-		1932F45022077C1F00B2502B /* CategoriesScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesScene.swift; sourceTree = "<group>"; };
-		1940F4B221FB03F50063DB54 /* TransactionFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFeature.swift; sourceTree = "<group>"; };
-		1940F4B421FB04290063DB54 /* TransactionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionState.swift; sourceTree = "<group>"; };
+		1932F45022077C1F00B2502B /* CategoriesComponent+Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoriesComponent+Build.swift"; sourceTree = "<group>"; };
+		1940F4B221FB03F50063DB54 /* TransactionsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFeature.swift; sourceTree = "<group>"; };
+		1940F4B421FB04290063DB54 /* TransactionsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsState.swift; sourceTree = "<group>"; };
 		1940F4B721FB0C9D0063DB54 /* KeyboardFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardFeature.swift; sourceTree = "<group>"; };
 		1940F4B921FB0CB60063DB54 /* KeyboardState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardState.swift; sourceTree = "<group>"; };
 		1940F4BB21FB0E4D0063DB54 /* KeyboardActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardActions.swift; sourceTree = "<group>"; };
@@ -162,7 +163,7 @@
 		1943B00721F66D4C0054119C /* MainScreenProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenProps.swift; sourceTree = "<group>"; };
 		1943B00921F66D630054119C /* MainScreenComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenComponent.swift; sourceTree = "<group>"; };
 		1943B00B21F66D890054119C /* MainScreenComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainScreenComponent.xib; sourceTree = "<group>"; };
-		1943B00F21F66FDC0054119C /* MainScreenScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenScene.swift; sourceTree = "<group>"; };
+		1943B00F21F66FDC0054119C /* MainScreenComponent+Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainScreenComponent+Build.swift"; sourceTree = "<group>"; };
 		1943B01121F67ED30054119C /* Connector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connector.swift; sourceTree = "<group>"; };
 		1943B01421F67F100054119C /* BaseConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseConnector.swift; sourceTree = "<group>"; };
 		1943B01621F67FDB0054119C /* Component.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Component.swift; sourceTree = "<group>"; };
@@ -171,7 +172,7 @@
 		1943B02F21F9EDD90054119C /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		1943B03321F9EE5D0054119C /* CategoryIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIcon.swift; sourceTree = "<group>"; };
 		1943B03621F9F46E0054119C /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
-		1943B03821FA075F0054119C /* KeyboardScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardScene.swift; sourceTree = "<group>"; };
+		1943B03821FA075F0054119C /* KeyboardComponent+Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyboardComponent+Build.swift"; sourceTree = "<group>"; };
 		1943B03C21FA07750054119C /* KeyboardProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardProps.swift; sourceTree = "<group>"; };
 		1943B03E21FA077D0054119C /* KeyboardConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardConnector.swift; sourceTree = "<group>"; };
 		1943B04021FA07890054119C /* KeyboardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardComponent.swift; sourceTree = "<group>"; };
@@ -197,10 +198,11 @@
 		1973909021FF84F000D892F4 /* AccountSelectorComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSelectorComponent.xib; sourceTree = "<group>"; };
 		1973909221FF850100D892F4 /* AccountSelectorConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSelectorConnector.swift; sourceTree = "<group>"; };
 		1973909421FF850B00D892F4 /* AccountSelectorProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSelectorProps.swift; sourceTree = "<group>"; };
-		1973909621FF851400D892F4 /* AccountSelectorScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSelectorScene.swift; sourceTree = "<group>"; };
-		1994BAF4220A21AF00B494F4 /* TransactionCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCommands.swift; sourceTree = "<group>"; };
-		1994BAF6220A21B900B494F4 /* TransactionActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionActions.swift; sourceTree = "<group>"; };
-		1994BAF8220A21C300B494F4 /* TransactionReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionReducer.swift; sourceTree = "<group>"; };
+		1973909621FF851400D892F4 /* AccountSelectorComponent+Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSelectorComponent+Build.swift"; sourceTree = "<group>"; };
+		19852969229D356800B8BCD5 /* Identity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
+		1994BAF4220A21AF00B494F4 /* TransactionsCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCommands.swift; sourceTree = "<group>"; };
+		1994BAF6220A21B900B494F4 /* TransactionsActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsActions.swift; sourceTree = "<group>"; };
+		1994BAF8220A21C300B494F4 /* TransactionsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsReducer.swift; sourceTree = "<group>"; };
 		19A1B18421F3837C0090F760 /* Groshy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Groshy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A1B18721F3837C0090F760 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19A1B18E21F3837D0090F760 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -309,18 +311,6 @@
 			path = Categories;
 			sourceTree = "<group>";
 		};
-		1940F4B121FB02B70063DB54 /* Transaction */ = {
-			isa = PBXGroup;
-			children = (
-				1994BAF6220A21B900B494F4 /* TransactionActions.swift */,
-				1994BAF4220A21AF00B494F4 /* TransactionCommands.swift */,
-				1940F4B221FB03F50063DB54 /* TransactionFeature.swift */,
-				1994BAF8220A21C300B494F4 /* TransactionReducer.swift */,
-				1940F4B421FB04290063DB54 /* TransactionState.swift */,
-			);
-			path = Transaction;
-			sourceTree = "<group>";
-		};
 		1940F4B621FB0C640063DB54 /* Keyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,9 +337,9 @@
 				19DACDF72225EC2700C2F36C /* MainScreenCommands.swift */,
 				1943B00921F66D630054119C /* MainScreenComponent.swift */,
 				1943B00B21F66D890054119C /* MainScreenComponent.xib */,
+				1943B00F21F66FDC0054119C /* MainScreenComponent+Build.swift */,
 				1943B00521F66D3C0054119C /* MainScreenConnector.swift */,
 				1943B00721F66D4C0054119C /* MainScreenProps.swift */,
-				1943B00F21F66FDC0054119C /* MainScreenScene.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -385,9 +375,9 @@
 			children = (
 				1973908E21FF84E400D892F4 /* AccountSelectorComponent.swift */,
 				1973909021FF84F000D892F4 /* AccountSelectorComponent.xib */,
+				1973909621FF851400D892F4 /* AccountSelectorComponent+Build.swift */,
 				1973909221FF850100D892F4 /* AccountSelectorConnector.swift */,
 				1973909421FF850B00D892F4 /* AccountSelectorProps.swift */,
-				1973909621FF851400D892F4 /* AccountSelectorScene.swift */,
 			);
 			path = AccountSelector;
 			sourceTree = "<group>";
@@ -397,9 +387,9 @@
 			children = (
 				1943B04021FA07890054119C /* KeyboardComponent.swift */,
 				1943B04221FA07930054119C /* KeyboardComponent.xib */,
+				1943B03821FA075F0054119C /* KeyboardComponent+Build.swift */,
 				1943B03E21FA077D0054119C /* KeyboardConnector.swift */,
 				1943B03C21FA07750054119C /* KeyboardProps.swift */,
-				1943B03821FA075F0054119C /* KeyboardScene.swift */,
 			);
 			path = Keyboard;
 			sourceTree = "<group>";
@@ -411,9 +401,9 @@
 				19E0B0B92208C73800AF56D7 /* Views */,
 				1932F44822077BFA00B2502B /* CategoriesComponent.swift */,
 				1932F44A22077C0300B2502B /* CategoriesComponent.xib */,
+				1932F45022077C1F00B2502B /* CategoriesComponent+Build.swift */,
 				1932F44C22077C0F00B2502B /* CategoriesConnector.swift */,
 				1932F44E22077C1600B2502B /* CategoriesProps.swift */,
-				1932F45022077C1F00B2502B /* CategoriesScene.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -459,6 +449,18 @@
 				1973907321FCBC3400D892F4 /* Rubik-BoldItalic.ttf */,
 			);
 			path = Rubic;
+			sourceTree = "<group>";
+		};
+		19852967229C772B00B8BCD5 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				1994BAF6220A21B900B494F4 /* TransactionsActions.swift */,
+				1994BAF4220A21AF00B494F4 /* TransactionsCommands.swift */,
+				1940F4B221FB03F50063DB54 /* TransactionsFeature.swift */,
+				1994BAF8220A21C300B494F4 /* TransactionsReducer.swift */,
+				1940F4B421FB04290063DB54 /* TransactionsState.swift */,
+			);
+			path = Transactions;
 			sourceTree = "<group>";
 		};
 		1994BB16220C6C2600B494F4 /* CategoryCell */ = {
@@ -594,7 +596,7 @@
 				19A1B1C021F385FF0090F760 /* App */,
 				1932F43D2207693B00B2502B /* Categories */,
 				1940F4B621FB0C640063DB54 /* Keyboard */,
-				1940F4B121FB02B70063DB54 /* Transaction */,
+				19852967229C772B00B8BCD5 /* Transactions */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -649,6 +651,7 @@
 			children = (
 				1943B01621F67FDB0054119C /* Component.swift */,
 				1943B01121F67ED30054119C /* Connector.swift */,
+				19852969229D356800B8BCD5 /* Identity.swift */,
 				19A1B1D621F3B3080090F760 /* NibIdentifiable.swift */,
 			);
 			path = Protocols;
@@ -1086,7 +1089,7 @@
 				1932F4412207696500B2502B /* CategoriesActions.swift in Sources */,
 				19A1B1DB21F3B4D30090F760 /* RepositoryProvider.swift in Sources */,
 				19DACDF82225EC2800C2F36C /* MainScreenCommands.swift in Sources */,
-				1994BAF5220A21AF00B494F4 /* TransactionCommands.swift in Sources */,
+				1994BAF5220A21AF00B494F4 /* TransactionsCommands.swift in Sources */,
 				1940F4BC21FB0E4D0063DB54 /* KeyboardActions.swift in Sources */,
 				19A1B1F421F4D8B90090F760 /* AccountsRepositoryError.swift in Sources */,
 				1943B01221F67ED30054119C /* Connector.swift in Sources */,
@@ -1094,9 +1097,9 @@
 				1940F4BA21FB0CB60063DB54 /* KeyboardState.swift in Sources */,
 				1943B04121FA07890054119C /* KeyboardComponent.swift in Sources */,
 				1940F4C521FC8AB50063DB54 /* UIColor+RGB.swift in Sources */,
-				1994BAF7220A21B900B494F4 /* TransactionActions.swift in Sources */,
+				1994BAF7220A21B900B494F4 /* TransactionsActions.swift in Sources */,
 				1943B03F21FA077D0054119C /* KeyboardConnector.swift in Sources */,
-				1973909721FF851400D892F4 /* AccountSelectorScene.swift in Sources */,
+				1973909721FF851400D892F4 /* AccountSelectorComponent+Build.swift in Sources */,
 				19A1B1ED21F3B6200090F760 /* StorageServiceProtocol.swift in Sources */,
 				1943B01F21F857FA0054119C /* AccountsCommands.swift in Sources */,
 				19DACDEF22247D6A00C2F36C /* HighlightedButton.swift in Sources */,
@@ -1109,19 +1112,20 @@
 				19A1B1EB21F3B6200090F760 /* StorageServiceKey.swift in Sources */,
 				1932F4452207697E00B2502B /* CategoriesReducer.swift in Sources */,
 				19A1B1D521F3B1740090F760 /* AppAction.swift in Sources */,
-				1943B01021F66FDC0054119C /* MainScreenScene.swift in Sources */,
+				1943B01021F66FDC0054119C /* MainScreenComponent+Build.swift in Sources */,
 				19A1B1C821F3895C0090F760 /* AccountsState.swift in Sources */,
 				19A1B1C621F3894E0090F760 /* Account.swift in Sources */,
 				1973907F21FCBC7E00D892F4 /* Fonts.swift in Sources */,
 				1932F44D22077C0F00B2502B /* CategoriesConnector.swift in Sources */,
+				1985296A229D356800B8BCD5 /* Identity.swift in Sources */,
 				1943B00621F66D3C0054119C /* MainScreenConnector.swift in Sources */,
 				19DACDF42225B02D00C2F36C /* UIViewController+SafeAnchor.swift in Sources */,
 				19A1B1E221F3B5E10090F760 /* ServiceProviderProtocol.swift in Sources */,
-				1994BAF9220A21C300B494F4 /* TransactionReducer.swift in Sources */,
+				1994BAF9220A21C300B494F4 /* TransactionsReducer.swift in Sources */,
 				19E0B0BB2208C75B00AF56D7 /* CategoryCell.swift in Sources */,
 				19A1B1E021F3B5A90090F760 /* ServiceProvider.swift in Sources */,
 				19A1B1D221F3991D0090F760 /* AppReducer.swift in Sources */,
-				1943B03921FA075F0054119C /* KeyboardScene.swift in Sources */,
+				1943B03921FA075F0054119C /* KeyboardComponent+Build.swift in Sources */,
 				1932F4432207697000B2502B /* CategoriesCommands.swift in Sources */,
 				1932F4472207698700B2502B /* CategoriesState.swift in Sources */,
 				1973908121FDEC7E00D892F4 /* Images.swift in Sources */,
@@ -1132,11 +1136,11 @@
 				1943B03521F9EED50054119C /* CategoryIcon.swift in Sources */,
 				1932F44F22077C1600B2502B /* CategoriesProps.swift in Sources */,
 				19CCEA4E221C5C5B00C56217 /* CategoriesDataSource.swift in Sources */,
-				1940F4B521FB04290063DB54 /* TransactionState.swift in Sources */,
+				1940F4B521FB04290063DB54 /* TransactionsState.swift in Sources */,
 				19A1B1CE21F395F10090F760 /* AccountsFeature.swift in Sources */,
 				1932F43F2207695A00B2502B /* CategoriesFeature.swift in Sources */,
 				190F4B71222882A500939A43 /* TransactionRepositoryProtocol.swift in Sources */,
-				1932F45122077C1F00B2502B /* CategoriesScene.swift in Sources */,
+				1932F45122077C1F00B2502B /* CategoriesComponent+Build.swift in Sources */,
 				190F4B6F2228829B00939A43 /* TransactionRepository.swift in Sources */,
 				19E0B0B82208BF4500AF56D7 /* CategoriesRepositoryError.swift in Sources */,
 				19A1B18821F3837C0090F760 /* AppDelegate.swift in Sources */,
@@ -1158,7 +1162,7 @@
 				1973908F21FF84E400D892F4 /* AccountSelectorComponent.swift in Sources */,
 				19A1B1CA21F389D60090F760 /* AccountsActions.swift in Sources */,
 				19E0B0B42208BF1C00AF56D7 /* CategoriesRepository.swift in Sources */,
-				1940F4B321FB03F50063DB54 /* TransactionFeature.swift in Sources */,
+				1940F4B321FB03F50063DB54 /* TransactionsFeature.swift in Sources */,
 				1943B03D21FA07750054119C /* KeyboardProps.swift in Sources */,
 				1943B00A21F66D630054119C /* MainScreenComponent.swift in Sources */,
 				1973909521FF850B00D892F4 /* AccountSelectorProps.swift in Sources */,

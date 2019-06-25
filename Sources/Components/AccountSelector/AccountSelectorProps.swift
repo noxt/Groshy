@@ -16,7 +16,6 @@ struct AccountSelectorProps {
 
 
     let state: State
-    let loadAccountsList: PlainCommand
 
 }
 

@@ -24,9 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
 
 //        cleanDB()
+//        AccountsFeature.Commands.createAccount(repositories).execute(with: Account(id: Account.ID(rawValue: UUID()), title: "ЗП"))
+        
+        TransactionsFeature.Commands.loadTransactionsList(repositories).execute()
+        AccountsFeature.Commands.loadAccountsList(repositories).execute()
+        CategoriesFeature.Commands.loadCategoriesList(repositories).execute()
 
-        let mainScene = MainScreenScene.makeScene(with: repositories)
-        let navigationController = UINavigationController(rootViewController: mainScene.component)
+        let mainComponent = MainScreenComponent.build(with: repositories)
+        let navigationController = UINavigationController(rootViewController: mainComponent)
 
         navigationController.navigationBar.isTranslucent = false
         navigationController.navigationBar.backgroundColor = Colors.white
@@ -50,6 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func cleanDB() {
         try? KeychainStorageService().deleteValue(forKey: .accounts)
         try? KeychainStorageService().deleteValue(forKey: .categories)
+        try? KeychainStorageService().deleteValue(forKey: .transactions)
     }
 
 }

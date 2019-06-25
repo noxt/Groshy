@@ -12,7 +12,7 @@ extension AppFeature {
         let accountsState: AccountsFeature.State
         let categoriesState: CategoriesFeature.State
         let keyboardState: KeyboardFeature.State
-        let transactionState: TransactionFeature.State
+        let transactionState: TransactionsFeature.State
 
 
         static let initial = State(
