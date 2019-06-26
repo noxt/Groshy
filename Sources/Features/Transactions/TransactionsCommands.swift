@@ -36,7 +36,7 @@ extension TransactionsFeature {
                     })
                     .done({ (transactions) in
                         core.dispatch(Actions.setTransactions(transactions))
-                        core.dispatch(KeyboardFeature.Actions.currentValueUpdated(value: ""))
+                        core.dispatch(KeyboardFeature.Actions.currentValueUpdated(value: "0"))
                     })
                     .catch({ (error) in
                         core.dispatch(Actions.error(message: error.localizedDescription))

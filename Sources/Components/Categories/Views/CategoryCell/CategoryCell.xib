@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APr-fa-Upx">
-                        <rect key="frame" x="8" y="12" width="111" height="15"/>
+                        <rect key="frame" x="5" y="12" width="117" height="15"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="cKM-Oc-ghe"/>
                         </constraints>
@@ -29,16 +29,16 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YCC-C3-egg">
-                        <rect key="frame" x="8" y="35" width="111" height="81"/>
+                        <rect key="frame" x="5" y="35" width="117" height="81"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Vf-wb-frI">
-                                <rect key="frame" x="47.5" y="0.0" width="16" height="40.5"/>
+                                <rect key="frame" x="50.5" y="0.0" width="16" height="40.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="16" id="CMf-O6-nqR"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m62-t1-EXT">
-                                <rect key="frame" x="34.5" y="40.5" width="42" height="40.5"/>
+                                <rect key="frame" x="37.5" y="40.5" width="42" height="40.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -53,8 +53,8 @@
                 <constraint firstItem="YCC-C3-egg" firstAttribute="leading" secondItem="APr-fa-Upx" secondAttribute="leading" id="Gjs-9N-y9n"/>
                 <constraint firstItem="YCC-C3-egg" firstAttribute="top" secondItem="APr-fa-Upx" secondAttribute="bottom" constant="8" id="Mtk-bO-Cgg"/>
                 <constraint firstItem="YCC-C3-egg" firstAttribute="trailing" secondItem="APr-fa-Upx" secondAttribute="trailing" id="hs1-rE-EaE"/>
-                <constraint firstItem="APr-fa-Upx" firstAttribute="leading" secondItem="42G-Xb-O7s" secondAttribute="leading" constant="8" id="jO7-MG-QGd"/>
-                <constraint firstAttribute="trailing" secondItem="APr-fa-Upx" secondAttribute="trailing" constant="8" id="rgm-wu-ubs"/>
+                <constraint firstItem="APr-fa-Upx" firstAttribute="leading" secondItem="42G-Xb-O7s" secondAttribute="leading" constant="5" id="jO7-MG-QGd"/>
+                <constraint firstAttribute="trailing" secondItem="APr-fa-Upx" secondAttribute="trailing" constant="5" id="rgm-wu-ubs"/>
                 <constraint firstItem="APr-fa-Upx" firstAttribute="top" secondItem="42G-Xb-O7s" secondAttribute="top" constant="12" id="sCr-BX-fgM"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="TiQ-DO-ELQ"/>

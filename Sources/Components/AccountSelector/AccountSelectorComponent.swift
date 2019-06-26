@@ -27,8 +27,12 @@ final class AccountSelectorComponent: BaseComponent<AccountSelectorConnector> {
         amountLabel.font = Fonts.Rubik.Regular(size: 11)
     }
 
-    override func render(old oldProps: AccountSelectorProps?) {
-        switch props.state {
+    override func render(old oldProps: AccountSelectorPropsState?) {
+        guard props != nil else {
+            return
+        }
+
+        switch props! {
         case let .idle(title: title, amount: amount):
             titleLabel.text = title
             amountLabel.text = amount

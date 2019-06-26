@@ -19,7 +19,7 @@
 		1932F44922077BFA00B2502B /* CategoriesComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1932F44822077BFA00B2502B /* CategoriesComponent.swift */; };
 		1932F44B22077C0300B2502B /* CategoriesComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1932F44A22077C0300B2502B /* CategoriesComponent.xib */; };
 		1932F44D22077C0F00B2502B /* CategoriesConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1932F44C22077C0F00B2502B /* CategoriesConnector.swift */; };
-		1932F44F22077C1600B2502B /* CategoriesProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1932F44E22077C1600B2502B /* CategoriesProps.swift */; };
+		1932F44F22077C1600B2502B /* CategoriesPropsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1932F44E22077C1600B2502B /* CategoriesPropsState.swift */; };
 		1932F45122077C1F00B2502B /* CategoriesComponent+Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1932F45022077C1F00B2502B /* CategoriesComponent+Build.swift */; };
 		1940F4B321FB03F50063DB54 /* TransactionsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4B221FB03F50063DB54 /* TransactionsFeature.swift */; };
 		1940F4B521FB04290063DB54 /* TransactionsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940F4B421FB04290063DB54 /* TransactionsState.swift */; };
@@ -68,7 +68,7 @@
 		1973908F21FF84E400D892F4 /* AccountSelectorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973908E21FF84E400D892F4 /* AccountSelectorComponent.swift */; };
 		1973909121FF84F000D892F4 /* AccountSelectorComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1973909021FF84F000D892F4 /* AccountSelectorComponent.xib */; };
 		1973909321FF850100D892F4 /* AccountSelectorConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973909221FF850100D892F4 /* AccountSelectorConnector.swift */; };
-		1973909521FF850B00D892F4 /* AccountSelectorProps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973909421FF850B00D892F4 /* AccountSelectorProps.swift */; };
+		1973909521FF850B00D892F4 /* AccountSelectorPropsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973909421FF850B00D892F4 /* AccountSelectorPropsState.swift */; };
 		1973909721FF851400D892F4 /* AccountSelectorComponent+Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973909621FF851400D892F4 /* AccountSelectorComponent+Build.swift */; };
 		1985296A229D356800B8BCD5 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19852969229D356800B8BCD5 /* Identity.swift */; };
 		1994BAF5220A21AF00B494F4 /* TransactionsCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994BAF4220A21AF00B494F4 /* TransactionsCommands.swift */; };
@@ -148,7 +148,7 @@
 		1932F44822077BFA00B2502B /* CategoriesComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesComponent.swift; sourceTree = "<group>"; };
 		1932F44A22077C0300B2502B /* CategoriesComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesComponent.xib; sourceTree = "<group>"; };
 		1932F44C22077C0F00B2502B /* CategoriesConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesConnector.swift; sourceTree = "<group>"; };
-		1932F44E22077C1600B2502B /* CategoriesProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesProps.swift; sourceTree = "<group>"; };
+		1932F44E22077C1600B2502B /* CategoriesPropsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesPropsState.swift; sourceTree = "<group>"; };
 		1932F45022077C1F00B2502B /* CategoriesComponent+Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CategoriesComponent+Build.swift"; sourceTree = "<group>"; };
 		1940F4B221FB03F50063DB54 /* TransactionsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsFeature.swift; sourceTree = "<group>"; };
 		1940F4B421FB04290063DB54 /* TransactionsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsState.swift; sourceTree = "<group>"; };
@@ -197,7 +197,7 @@
 		1973908E21FF84E400D892F4 /* AccountSelectorComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSelectorComponent.swift; sourceTree = "<group>"; };
 		1973909021FF84F000D892F4 /* AccountSelectorComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSelectorComponent.xib; sourceTree = "<group>"; };
 		1973909221FF850100D892F4 /* AccountSelectorConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSelectorConnector.swift; sourceTree = "<group>"; };
-		1973909421FF850B00D892F4 /* AccountSelectorProps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSelectorProps.swift; sourceTree = "<group>"; };
+		1973909421FF850B00D892F4 /* AccountSelectorPropsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSelectorPropsState.swift; sourceTree = "<group>"; };
 		1973909621FF851400D892F4 /* AccountSelectorComponent+Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSelectorComponent+Build.swift"; sourceTree = "<group>"; };
 		19852969229D356800B8BCD5 /* Identity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
 		1994BAF4220A21AF00B494F4 /* TransactionsCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCommands.swift; sourceTree = "<group>"; };
@@ -377,7 +377,7 @@
 				1973909021FF84F000D892F4 /* AccountSelectorComponent.xib */,
 				1973909621FF851400D892F4 /* AccountSelectorComponent+Build.swift */,
 				1973909221FF850100D892F4 /* AccountSelectorConnector.swift */,
-				1973909421FF850B00D892F4 /* AccountSelectorProps.swift */,
+				1973909421FF850B00D892F4 /* AccountSelectorPropsState.swift */,
 			);
 			path = AccountSelector;
 			sourceTree = "<group>";
@@ -403,7 +403,7 @@
 				1932F44A22077C0300B2502B /* CategoriesComponent.xib */,
 				1932F45022077C1F00B2502B /* CategoriesComponent+Build.swift */,
 				1932F44C22077C0F00B2502B /* CategoriesConnector.swift */,
-				1932F44E22077C1600B2502B /* CategoriesProps.swift */,
+				1932F44E22077C1600B2502B /* CategoriesPropsState.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -1134,7 +1134,7 @@
 				19A1B1F021F4CF700090F760 /* AccountsRepositoryProtocol.swift in Sources */,
 				1973909321FF850100D892F4 /* AccountSelectorConnector.swift in Sources */,
 				1943B03521F9EED50054119C /* CategoryIcon.swift in Sources */,
-				1932F44F22077C1600B2502B /* CategoriesProps.swift in Sources */,
+				1932F44F22077C1600B2502B /* CategoriesPropsState.swift in Sources */,
 				19CCEA4E221C5C5B00C56217 /* CategoriesDataSource.swift in Sources */,
 				1940F4B521FB04290063DB54 /* TransactionsState.swift in Sources */,
 				19A1B1CE21F395F10090F760 /* AccountsFeature.swift in Sources */,
@@ -1165,7 +1165,7 @@
 				1940F4B321FB03F50063DB54 /* TransactionsFeature.swift in Sources */,
 				1943B03D21FA07750054119C /* KeyboardProps.swift in Sources */,
 				1943B00A21F66D630054119C /* MainScreenComponent.swift in Sources */,
-				1973909521FF850B00D892F4 /* AccountSelectorProps.swift in Sources */,
+				1973909521FF850B00D892F4 /* AccountSelectorPropsState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1342,7 +1342,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EP4DBFYCG5;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1362,7 +1362,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EP4DBFYCG5;
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

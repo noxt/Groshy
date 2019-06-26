@@ -74,7 +74,7 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
         statisticsButton.setBackgroundImage(Images.Buttons.statistics, for: .normal)
         statisticsButton.setBackgroundImage(Images.Buttons.statisticsSelected, for: .highlighted)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: statisticsButton)
-        
+
         setupAccountSelectorComponent()
     }
 

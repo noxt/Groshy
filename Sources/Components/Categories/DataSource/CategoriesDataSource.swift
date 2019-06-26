@@ -12,7 +12,7 @@ final class CategoriesDataSource: NSObject, UICollectionViewDataSource, UICollec
     // MARK: - Props
 
     private weak var collectionView: UICollectionView!
-    private var categories: [CategoriesProps.CategoryInfo] = []
+    private var categories: [CategoriesPropsState.CategoryInfo] = []
 
 
     // MARK: - Initialization
@@ -30,7 +30,7 @@ final class CategoriesDataSource: NSObject, UICollectionViewDataSource, UICollec
 
     // MARK: - Updating data
 
-    func update(categories: [CategoriesProps.CategoryInfo]) {
+    func update(categories: [CategoriesPropsState.CategoryInfo]) {
         let changeset = StagedChangeset(source: self.categories, target: categories)
         collectionView.reload(using: changeset) { (categories) in
             self.categories = categories
@@ -62,7 +62,7 @@ final class CategoriesDataSource: NSObject, UICollectionViewDataSource, UICollec
 
 // MARK: - Differentiable
 
-extension CategoriesProps.CategoryInfo: Differentiable {
+extension CategoriesPropsState.CategoryInfo: Differentiable {
     var differenceIdentifier: Category.ID {
         return id
     }

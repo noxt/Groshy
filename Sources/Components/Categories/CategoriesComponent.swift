@@ -50,8 +50,12 @@ final class CategoriesComponent: BaseComponent<CategoriesConnector> {
         dataSource = CategoriesDataSource(collectionView: collectionView)
     }
 
-    override func render(old oldProps: CategoriesProps?) {
-        switch props.state {
+    override func render(old oldProps: CategoriesPropsState?) {
+        guard props != nil else {
+            return
+        }
+        
+        switch props! {
         case let .idle(categories: categories):
             collectionView.isHidden = false
             activityIndicator.isHidden = true

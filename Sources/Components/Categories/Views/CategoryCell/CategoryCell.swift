@@ -32,7 +32,7 @@ class CategoryCell: UICollectionViewCell {
     }
 
 
-    func setup(props: CategoriesProps.CategoryInfo) {
+    func setup(props: CategoriesPropsState.CategoryInfo) {
         if props.isSelected {
             layer.borderColor = Colors.red.cgColor
             layer.borderWidth = 1

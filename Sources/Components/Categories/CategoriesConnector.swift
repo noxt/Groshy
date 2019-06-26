@@ -7,15 +7,13 @@ import Foundation
 import Unicore
 
 
-final class CategoriesConnector: BaseConnector<CategoriesProps> {
+final class CategoriesConnector: BaseConnector<CategoriesPropsState> {
 
-    override func mapToProps(state: AppFeature.State) -> CategoriesProps {
-        return CategoriesProps(
-            state: mapToPropsState(state: state)
-        )
+    override func mapToProps(state: AppFeature.State) -> CategoriesPropsState {
+        return mapToPropsState(state: state)
     }
 
-    private func mapToPropsState(state: AppFeature.State) -> CategoriesProps.State {
+    private func mapToPropsState(state: AppFeature.State) -> CategoriesPropsState {
         let categoriesState = state.categoriesState
         let transactionsState = state.transactionState
 
@@ -25,7 +23,7 @@ final class CategoriesConnector: BaseConnector<CategoriesProps> {
         
         let transactionsByCategories = groupTransactionsByCategory(transactionsState.transactions)
 
-        var categories: [CategoriesProps.CategoryInfo] = []
+        var categories: [CategoriesPropsState.CategoryInfo] = []
         for id in categoriesState.sortOrder {
             if let category = categoriesState.categories[id] {
                 let balance: Double? = transactionsByCategories[category.id]?.reduce(0, { (res, transaction) -> Double in
@@ -47,7 +45,7 @@ final class CategoriesConnector: BaseConnector<CategoriesProps> {
         return .idle(categories: categories)
     }
 
-    private func mapCategoryToProps(category: Category, isSelected: Bool, balance: Double) -> CategoriesProps.CategoryInfo {
+    private func mapCategoryToProps(category: Category, isSelected: Bool, balance: Double) -> CategoriesPropsState.CategoryInfo {
         let command: PlainCommand?
         if !isSelected {
             command = PlainCommand { [weak self] in
@@ -64,7 +62,7 @@ final class CategoriesConnector: BaseConnector<CategoriesProps> {
         numberFormatter.numberStyle = .currencyAccounting
         numberFormatter.currencyCode = "BYN"
 
-        return CategoriesProps.CategoryInfo(
+        return CategoriesPropsState.CategoryInfo(
             id: category.id,
             title: category.title,
             icon: category.icon.image,

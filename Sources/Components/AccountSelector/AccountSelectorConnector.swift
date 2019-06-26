@@ -7,15 +7,13 @@ import Foundation
 import Unicore
 
 
-final class AccountSelectorConnector: BaseConnector<AccountSelectorProps> {
+final class AccountSelectorConnector: BaseConnector<AccountSelectorPropsState> {
 
-    override func mapToProps(state: AppFeature.State) -> AccountSelectorProps {
-        return AccountSelectorProps(
-            state: mapToPropsState(state: state)
-        )
+    override func mapToProps(state: AppFeature.State) -> AccountSelectorPropsState {
+        return mapToPropsState(state: state)
     }
 
-    private func mapToPropsState(state: AppFeature.State) -> AccountSelectorProps.State {
+    private func mapToPropsState(state: AppFeature.State) -> AccountSelectorPropsState {
         let accountsState = state.accountsState
 
         guard !accountsState.isLoading else {
