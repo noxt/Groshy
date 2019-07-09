@@ -17,6 +17,10 @@ struct Images {
         static var deleteSelected: UIImage {
             return UIImage(named: "buttons/delete-selected")!
         }
+        
+        static var change: UIImage {
+            return UIImage(named: "buttons/change")!
+        }
 
         static var settings: UIImage {
             return UIImage(named: "buttons/settings")!

@@ -24,11 +24,25 @@ final class AccountSelectorConnector: BaseConnector<AccountSelectorPropsState> {
         if let id = accountsState.currentAccountID {
             currentAccount = accountsState.accounts[id]
         }
-
+        
+        var currentBalance: Double = 0
+        if let account = currentAccount {
+            let transactions = self.transactions(from: state.transactionState, for: account)
+            currentBalance = transactions.reduce(0, { (result, transaction) -> Double in
+                return result + transaction.value
+            })
+        }
+        
         return .idle(
             title: currentAccount?.title ?? "Undefined account",
-            amount: "1 953 BYN"
+            amount: NumberFormatter.byn.string(from: NSNumber(value: currentBalance)) ?? ""
         )
+    }
+    
+    private func transactions(from state: TransactionsFeature.State, for account: Account) -> [Transaction] {
+        return state.transactions.values.filter({ (transaction) -> Bool in
+            transaction.accountID == account.id
+        })
     }
 
 }

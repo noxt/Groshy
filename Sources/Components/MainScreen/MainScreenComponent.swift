@@ -19,12 +19,13 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
 
     // MARK: - IBOutlets
 
+    @IBOutlet weak var accountSelectorContainer: UIView!
     @IBOutlet weak var categoriesTitleLabel: UILabel!
     @IBOutlet weak var categoriesContainer: UIView!
-    @IBOutlet weak var addCommentButton: UIButton!
     @IBOutlet weak var currentValueContainer: UIView!
     @IBOutlet weak var currentValueLabel: UILabel!
     @IBOutlet weak var keyboardContainer: UIView!
+    @IBOutlet weak var addCommentButton: HighlightedButton!
     @IBOutlet weak var applyButton: HighlightedButton!
     @IBOutlet weak var calendarButton: HighlightedButton!
     @IBOutlet weak var addCategoryButton: HighlightedButton!
@@ -60,40 +61,6 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
     }
 
 
-    // MARK: - UIKit lifecycle
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-        let settingsButton = UIButton(type: .custom)
-        settingsButton.setBackgroundImage(Images.Buttons.settings, for: .normal)
-        settingsButton.setBackgroundImage(Images.Buttons.settingsSelected, for: .highlighted)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: settingsButton)
-
-        let statisticsButton = UIButton(type: .custom)
-        statisticsButton.setBackgroundImage(Images.Buttons.statistics, for: .normal)
-        statisticsButton.setBackgroundImage(Images.Buttons.statisticsSelected, for: .highlighted)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: statisticsButton)
-
-        setupAccountSelectorComponent()
-    }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        centerButtonImageAndTitle(button: calendarButton)
-    }
-
-    private func centerButtonImageAndTitle(button: UIButton) {
-        let spacing: CGFloat = 9.0
-
-        let imageSize = button.imageView!.frame.size
-        let titleSize = button.titleLabel!.frame.size
-
-        button.titleEdgeInsets = UIEdgeInsets(top: -(titleSize.height), left: -imageSize.width, bottom: spacing, right: 0)
-        button.imageEdgeInsets = UIEdgeInsets(top: spacing, left: 0, bottom: -(imageSize.height), right: -titleSize.width)
-    }
-
-
     // MARK: - Component lifecycle
 
     override func setup() {
@@ -103,14 +70,16 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
         setupCurrentValue()
         setupCalendarButton()
         setupApplyButton()
+        setupAddCommentButton()
 
+        setupAccountSelectorComponent()
         setupKeyboardComponent()
         setupCategoriesComponent()
     }
 
     override func render(old oldProps: MainScreenProps?) {
         currentValueLabel.text = props.currentValue
-        applyButton.isEnabled = props.isNewTransactionValid
+        applyButton.isEnabled = props.createTransactionCommand != nil
     }
 
 
@@ -121,7 +90,7 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
     }
 
     @IBAction func createTransaction() {
-        props.createTransactionCommand.execute()
+        props.createTransactionCommand?.execute()
     }
 
 }
@@ -137,9 +106,9 @@ extension MainScreenComponent {
         }
         accountSelectorComponentConfigured = true
 
-        navigationController?.addChild(accountSelectorComponent)
-        navigationItem.titleView = accountSelectorComponent.view
-        accountSelectorComponent.didMove(toParent: navigationController!)
+        addChild(accountSelectorComponent)
+        accountSelectorContainer.addChild(view: accountSelectorComponent.view)
+        accountSelectorComponent.didMove(toParent: self)
     }
 
     private func setupKeyboardComponent() {
@@ -166,12 +135,12 @@ extension MainScreenComponent {
 
     private func setupCategories() {
         categoriesTitleLabel.textColor = Colors.black
-        categoriesTitleLabel.font = Fonts.Rubik.Bold(size: 24)
+        categoriesTitleLabel.font = Fonts.Rubik.Bold(size: 30)
 
         addCategoryButton.borderColor = Colors.gray
         addCategoryButton.borderWidth = 1
         addCategoryButton.cornerRadius = addCategoryButton.height / 2
-        addCategoryButton.titleLabel?.font = Fonts.Rubik.Regular(size: 13)
+        addCategoryButton.titleLabel?.font = Fonts.Rubik.Regular(size: 12)
         addCategoryButton.setTitleColor(Colors.gray, for: .normal)
         addCategoryButton.setTitleColor(Colors.white, for: .highlighted)
         addCategoryButton.defaultBackgroundColor = Colors.clear
@@ -182,19 +151,13 @@ extension MainScreenComponent {
         currentValueContainer.backgroundColor = Colors.white
         currentValueContainer.layer.cornerRadius = Constants.cornerRadius
 
-        currentValueLabel.textColor = Colors.green
-        currentValueLabel.font = Fonts.Rubik.Regular(size: 25)
+        currentValueLabel.textColor = Colors.black
+        currentValueLabel.font = Fonts.Rubik.Medium(size: 25)
     }
 
     private func setupCalendarButton() {
         calendarButton.setImage(Images.Buttons.calendar, for: .normal)
         calendarButton.setImage(Images.Buttons.calendarSelected, for: .highlighted)
-        calendarButton.setTitleColor(Colors.darkGray, for: .normal)
-        calendarButton.setTitleColor(Colors.white, for: .highlighted)
-        calendarButton.layer.cornerRadius = Constants.cornerRadius
-        calendarButton.titleLabel?.font = Fonts.Rubik.Regular(size: 12)
-        calendarButton.defaultBackgroundColor = Colors.white
-        calendarButton.highlightedBackgroundColor = Colors.lightGray
     }
 
     private func setupApplyButton() {
@@ -204,10 +167,15 @@ extension MainScreenComponent {
         applyButton.titleLabel?.font = Fonts.Rubik.Medium(size: 17)
         applyButton.defaultBackgroundColor = Colors.blue
         applyButton.highlightedBackgroundColor = Colors.darkBlue
-
+    }
+    
+    private func setupAddCommentButton() {
         addCommentButton.tintColor = Colors.gray
         addCommentButton.setImage(Images.Buttons.comment, for: .normal)
         addCommentButton.setImage(Images.Buttons.commentSelected, for: .highlighted)
+        addCommentButton.layer.cornerRadius = Constants.cornerRadius
+        addCommentButton.defaultBackgroundColor = Colors.white
+        addCommentButton.highlightedBackgroundColor = Colors.lightGray
     }
 
 }

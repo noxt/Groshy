@@ -47,6 +47,12 @@ extension CategoriesFeature {
                 core.dispatch(Actions.selectCategory(category))
             }
         }
+        
+        static func clearSelectedCategory(_ repositories: RepositoryProviderProtocol) -> PlainCommand {
+            return PlainCommand {
+                core.dispatch(Actions.clearSelectedCategory)
+            }
+        }
 
     }
 }

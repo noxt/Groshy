@@ -38,6 +38,8 @@ final class CategoriesConnector: BaseConnector<CategoriesPropsState> {
             }
         }
         
+//        categories.append(addButtonProps())
+        
         guard !categories.isEmpty else {
             return .empty
         }
@@ -55,19 +57,16 @@ final class CategoriesConnector: BaseConnector<CategoriesPropsState> {
                 CategoriesFeature.Commands.selectCategory(self.repositories).execute(with: category)
             }
         } else {
-            command = nil
+            command = CategoriesFeature.Commands.clearSelectedCategory(repositories)
         }
         
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .currencyAccounting
-        numberFormatter.currencyCode = "BYN"
-
         return CategoriesPropsState.CategoryInfo(
             id: category.id,
             title: category.title,
             icon: category.icon.image,
-            currentBalance: numberFormatter.string(from: NSNumber(value: balance)),
-            selectCommand: command
+            currentBalance: NumberFormatter.byn.string(from: NSNumber(value: balance)),
+            selectCommand: command,
+            isSelected: isSelected
         )
     }
     
@@ -84,15 +83,16 @@ final class CategoriesConnector: BaseConnector<CategoriesPropsState> {
         return groups
     }
 
-//    private static let addButtonUUID = UUID()
-//    private func addButtonProps() -> CategoriesProps.CategoryInfo {
-//        return CategoriesProps.CategoryInfo(
-//            id: CategoriesConnector.addButtonUUID,
-//            title: "Добавить",
-//            icon: Images.Categories.plus,
-//            currentBalance: nil,
-//            selectCommand: addCategoryCommand()
-//        )
-//    }
+    private static let addButtonUUID = Category.ID(rawValue: UUID())
+    private func addButtonProps() -> CategoriesPropsState.CategoryInfo {
+        return CategoriesPropsState.CategoryInfo(
+            id: CategoriesConnector.addButtonUUID,
+            title: "Добавить",
+            icon: Images.Categories.plus,
+            currentBalance: nil,
+            selectCommand: CategoriesFeature.Commands.clearSelectedCategory(repositories),
+            isSelected: false
+        )
+    }
 
 }

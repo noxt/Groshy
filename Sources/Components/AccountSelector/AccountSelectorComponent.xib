@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Rubik-Bold.ttf">
+            <string>Rubik-Bold</string>
+        </array>
+        <array key="Rubik-Medium.ttf">
+            <string>Rubik-Medium</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AccountSelectorComponent" customModule="Groshy" customModuleProvider="target">
             <connections>
@@ -21,25 +29,48 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="232" height="61"/>
+            <rect key="frame" x="0.0" y="0.0" width="232" height="75"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Kfq-J1-V73">
-                    <rect key="frame" x="106" y="20.5" width="20" height="20"/>
+                    <rect key="frame" x="106" y="27.5" width="20" height="20"/>
                 </activityIndicatorView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="dmr-ts-16F">
-                    <rect key="frame" x="0.0" y="0.0" width="232" height="61"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dmr-ts-16F">
+                    <rect key="frame" x="0.0" y="0.0" width="232" height="75"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcA-uK-nay">
-                            <rect key="frame" x="0.0" y="0.0" width="232" height="30.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sL-eg-aSg">
-                            <rect key="frame" x="0.0" y="30.5" width="232" height="30.5"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ask-PL-sZQ">
+                            <rect key="frame" x="0.0" y="0.0" width="232" height="46"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcA-uK-nay">
+                                    <rect key="frame" x="0.0" y="0.0" width="68.5" height="46"/>
+                                    <fontDescription key="fontDescription" name="Rubik-Bold" family="Rubik" pointSize="30"/>
+                                    <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNQ-na-urP">
+                                    <rect key="frame" x="73.5" y="0.0" width="46" height="46"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="eNQ-na-urP" secondAttribute="height" multiplier="1:1" id="J66-4h-Pyh"/>
+                                    </constraints>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" image="buttons/change"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="eNQ-na-urP" firstAttribute="leading" secondItem="EcA-uK-nay" secondAttribute="trailing" constant="5" id="AsZ-Ff-CfE"/>
+                                <constraint firstItem="eNQ-na-urP" firstAttribute="top" secondItem="Ask-PL-sZQ" secondAttribute="top" id="ICQ-xd-9as"/>
+                                <constraint firstItem="EcA-uK-nay" firstAttribute="top" secondItem="Ask-PL-sZQ" secondAttribute="top" id="QPg-vs-W8y"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="eNQ-na-urP" secondAttribute="trailing" id="VM8-Ig-bKe"/>
+                                <constraint firstAttribute="bottom" secondItem="eNQ-na-urP" secondAttribute="bottom" id="ZLy-JE-AKn"/>
+                                <constraint firstAttribute="bottom" secondItem="EcA-uK-nay" secondAttribute="bottom" id="hL3-b4-oqe"/>
+                                <constraint firstItem="EcA-uK-nay" firstAttribute="leading" secondItem="Ask-PL-sZQ" secondAttribute="leading" id="uez-qg-uBj"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 234$" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sL-eg-aSg">
+                            <rect key="frame" x="0.0" y="51" width="232" height="24"/>
+                            <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="22"/>
+                            <color key="textColor" red="0.1764705882352941" green="0.61176470588235299" blue="0.85882352941176465" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
@@ -56,7 +87,10 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="-54.399999999999999" y="-224.4377811094453"/>
+            <point key="canvasLocation" x="-54.399999999999999" y="-219.94002998500753"/>
         </view>
     </objects>
+    <resources>
+        <image name="buttons/change" width="22" height="22"/>
+    </resources>
 </document>

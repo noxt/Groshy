@@ -35,4 +35,28 @@ struct MainScreenCommands {
         }
     }
 
+    static func createTransactionCommand(_ repositories: RepositoryProviderProtocol, state: AppFeature.State) -> PlainCommand? {
+        guard let accountID = state.accountsState.currentAccountID,
+            let categoryID = state.categoriesState.selectedCategory,
+            let value = NumberFormatter.currency.number(from: state.keyboardState.currentValue) else {
+                return nil
+        }
+        
+        guard value.doubleValue > 0 else {
+            return nil
+        }
+        
+        let transaction = Transaction(
+            id: Transaction.ID(rawValue: UUID()),
+            accountID: accountID,
+            catagoryID: categoryID,
+            value: value.doubleValue,
+            date: Date()
+        )
+        
+        return PlainCommand {
+            TransactionsFeature.Commands.createTransaction(repositories).execute(with: transaction)
+        }
+    }
+
 }

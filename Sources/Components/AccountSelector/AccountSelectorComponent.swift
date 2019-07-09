@@ -5,6 +5,7 @@
 
 import UIKit
 import Unicore
+import SwifterSwift
 
 
 final class AccountSelectorComponent: BaseComponent<AccountSelectorConnector> {
@@ -20,11 +21,11 @@ final class AccountSelectorComponent: BaseComponent<AccountSelectorConnector> {
     // MARK: - Lifecycle
 
     override func setup() {
-        titleLabel.textColor = Colors.blue
-        titleLabel.font = Fonts.Rubik.Medium(size: 15)
+        titleLabel.textColor = Colors.black
+        titleLabel.font = Fonts.Rubik.Bold(size: 30)
 
         amountLabel.textColor = Colors.blue
-        amountLabel.font = Fonts.Rubik.Regular(size: 11)
+        amountLabel.font = Fonts.Rubik.Medium(size: 22)
     }
 
     override func render(old oldProps: AccountSelectorPropsState?) {

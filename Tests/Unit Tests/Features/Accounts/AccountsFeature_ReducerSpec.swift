@@ -18,7 +18,7 @@ class AccountsFeature_ReducerSpec: QuickSpec {
     private var core: Core<State>!
 
     override func spec() {
-        describe("an accounts feature reducer") {
+        describe("reducer") {
             beforeEach {
                 self.disposer = Disposer()
                 self.core = Core(state: .initial, reducer: AccountsFeature.reduce)
@@ -29,20 +29,16 @@ class AccountsFeature_ReducerSpec: QuickSpec {
                 self.core = nil
             }
 
-            context("when emited CurrentAccountSelected action") {
-                var account: Account!
-                beforeEach {
-                    account = self.makeAccount(title: "Test Account")
-                }
-
+            context("on selectAccount action") {
                 it("should update state") {
-                    self.emit(action: AccountsFeature.Actions.currentAccountSelected(accountID: account.id)) { (state) -> Bool in
+                    let account = Account.make(title: "Test Account")
+                    self.emit(action: AccountsFeature.Actions.selectAccount(account)) { (state) -> Bool in
                         return state.currentAccountID == account.id
                     }
                 }
             }
 
-            context("when emited LoadingStarted action") {
+            context("on loadingStarted action") {
                 it("should update state") {
                     self.emit(action: AccountsFeature.Actions.loadingStarted) { (state) -> Bool in
                         return state.isLoading
@@ -50,46 +46,34 @@ class AccountsFeature_ReducerSpec: QuickSpec {
                 }
             }
 
-            context("when emited AccountsUpdated action") {
-                var accounts: [Account.ID: Account]!
-
-                beforeEach {
-                    let account1 = self.makeAccount(title: "Test Account 1")
-                    let account2 = self.makeAccount(title: "Test Account 2")
-                    let account3 = self.makeAccount(title: "Test Account 3")
-
-                    accounts = [
+            context("on setAccounts action") {
+                it("should update state") {
+                    let account1 = Account.make(title: "Test Account 1")
+                    let account2 = Account.make(title: "Test Account 2")
+                    let account3 = Account.make(title: "Test Account 3")
+                    
+                    let accounts = [
                         account1.id: account1,
                         account2.id: account2,
                         account3.id: account3
                     ]
-                }
-
-                it("should update state") {
-                    self.emit(action: AccountsFeature.Actions.accountsUpdated(accounts: accounts)) { (state) -> Bool in
+                    let newAccounts = accounts.values.map({ $0 })
+                    
+                    self.emit(action: AccountsFeature.Actions.setAccounts(newAccounts)) { (state) -> Bool in
                         return state.accounts == accounts
                     }
                 }
             }
 
-            context("when emited Error action") {
-                let errorMessage = "Error Message"
-
+            context("on error action") {
                 it("should update state") {
+                    let errorMessage = "Error Message"
                     self.emit(action: AccountsFeature.Actions.error(message: errorMessage)) { (state) -> Bool in
                         return state.error == errorMessage
                     }
                 }
             }
         }
-    }
-
-
-    private func makeAccount(title: String) -> Account {
-        return Account(
-            id: UUID(),
-            title: title
-        )
     }
 
     private func emit(action: Action, isValid: @escaping (State) -> Bool) {

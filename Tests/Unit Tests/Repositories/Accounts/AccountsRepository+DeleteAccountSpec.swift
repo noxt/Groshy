@@ -11,7 +11,7 @@ import Nimble
 
 class AccountsRepository_DeleteAccountSpec: QuickSpec {
     override func spec() {
-        describe("an accounts repository") {
+        describe("delete account") {
             var repositories: RepositoryProviderProtocol!
             var services: MockServiceProvider!
 
@@ -25,65 +25,55 @@ class AccountsRepository_DeleteAccountSpec: QuickSpec {
                 services = nil
             }
 
-            describe("delete account") {
-                context("when accounts list not empty") {
-                    var account: Account!
-                    var accounts: [Account]!
-                    beforeEach {
-                        accounts = [
-                            Account(id: UUID(), title: "Account #1"),
-                            Account(id: UUID(), title: "Account #2"),
-                            Account(id: UUID(), title: "Account #3"),
-                        ]
-                        services._securityStorageService.spyStorage[.accounts] = accounts
-
-                        account = accounts[1]
-                    }
+            context("accounts list not empty") {
+                it("should update db") {
+                    var accounts = [
+                        Account.make(title: "Account #1"),
+                        Account.make(title: "Account #2"),
+                        Account.make(title: "Account #3"),
+                    ]
+                    services._securityStorageService.spyStorage[.accounts] = accounts
                     
-
-                    it("updated in db") {
-                        waitUntil(action: { (done) in
-                            repositories.accountsRepository
-                                .delete(account: account)
-                                .done({ _ in
-                                    expect(services._securityStorageService.spySetKey).to(equal(.accounts))
-                                    accounts.remove(at: 1)
-                                    expect(services._securityStorageService.spySetValue as? [Account]).to(equal(accounts))
-                                    done()
-                                })
-                                .catch({ (error) in
-                                    expect(error).to(beNil())
-                                    done()
-                                })
-                        })
-                    }
+                    let account = accounts[1]
+                    
+                    waitUntil(action: { (done) in
+                        repositories.accountsRepository
+                            .delete(account: account)
+                            .done({ _ in
+                                expect(services._securityStorageService.spySetKey).to(equal(.accounts))
+                                accounts.remove(at: 1)
+                                expect(services._securityStorageService.spySetValue as? [Account]).to(equal(accounts))
+                                done()
+                            })
+                            .catch({ (error) in
+                                expect(error).to(beNil())
+                                done()
+                            })
+                    })
                 }
+            }
 
-                context("when storage emits error") {
-                    var account: Account!
-                    beforeEach {
-                        services._securityStorageService.spyStorage[.accounts] = [
-                            Account(id: UUID(), title: "Account #1"),
-                            Account(id: UUID(), title: "Account #2"),
-                            Account(id: UUID(), title: "Account #3"),
-                        ]
-                        account = Account(id: UUID(), title: "Some Account")
-                    }
-
-                    it("repository emit error") {
-                        waitUntil(action: { (done) in
-                            repositories.accountsRepository
-                                .delete(account: account)
-                                .done({ _ in
-                                    expect(false).to(beFalse())
-                                    done()
-                                })
-                                .catch({ (error) in
-                                    expect(error.localizedDescription).to(equal(AccountsRepositoryError.accountNotFound.localizedDescription))
-                                    done()
-                                })
-                        })
-                    }
+            context("storage emits an error") {
+                it("should emit an error") {
+                    services._securityStorageService.spyStorage[.accounts] = [
+                        Account.make(title: "Account #1"),
+                        Account.make(title: "Account #2"),
+                        Account.make(title: "Account #3"),
+                    ]
+                    let account = Account(id: Account.ID(rawValue: UUID()), title: "Some Account")
+                    
+                    waitUntil(action: { (done) in
+                        repositories.accountsRepository
+                            .delete(account: account)
+                            .done({ _ in
+                                expect(false).to(beFalse())
+                                done()
+                            })
+                            .catch({ (error) in
+                                expect(error.localizedDescription).to(equal(AccountsRepositoryError.accountNotFound.localizedDescription))
+                                done()
+                            })
+                    })
                 }
             }
         }

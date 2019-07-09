@@ -9,7 +9,7 @@ import UIKit
 struct Colors {
     static let clear = UIColor.clear
     static let white = UIColor(rgb: 0xFFFFFF)
-    static let darkWhite = UIColor(rgb: 0xF9F9F9)
+    static let darkWhite = UIColor(rgb: 0xF6F5F7)
     static let lightGray = UIColor(rgb: 0xE0E0E0)
     static let gray = UIColor(rgb: 0xBDBDBD)
     static let darkGray = UIColor(rgb: 0x828282)

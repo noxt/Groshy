@@ -48,6 +48,9 @@
 		1943B03F21FA077D0054119C /* KeyboardConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B03E21FA077D0054119C /* KeyboardConnector.swift */; };
 		1943B04121FA07890054119C /* KeyboardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943B04021FA07890054119C /* KeyboardComponent.swift */; };
 		1943B04321FA07930054119C /* KeyboardComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1943B04221FA07930054119C /* KeyboardComponent.xib */; };
+		1961FAE622D4DB03002C094D /* Account+Make.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1961FAE522D4DB03002C094D /* Account+Make.swift */; };
+		1961FAE822D4E27D002C094D /* MainScreenUITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1961FAE722D4E27D002C094D /* MainScreenUITestCase.swift */; };
+		19645D4A22D392AA00B0CA29 /* NumberFormatter+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19645D4922D392AA00B0CA29 /* NumberFormatter+Currency.swift */; };
 		1973907421FCBC3400D892F4 /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1973906A21FCBC3400D892F4 /* Rubik-MediumItalic.ttf */; };
 		1973907521FCBC3400D892F4 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1973906B21FCBC3400D892F4 /* Rubik-Bold.ttf */; };
 		1973907621FCBC3400D892F4 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1973906C21FCBC3400D892F4 /* Rubik-Light.ttf */; };
@@ -77,7 +80,6 @@
 		19A1B18821F3837C0090F760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B18721F3837C0090F760 /* AppDelegate.swift */; };
 		19A1B18F21F3837D0090F760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19A1B18E21F3837D0090F760 /* Assets.xcassets */; };
 		19A1B19221F3837E0090F760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A1B19021F3837E0090F760 /* LaunchScreen.storyboard */; };
-		19A1B1A821F3837E0090F760 /* GroshyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B1A721F3837E0090F760 /* GroshyUITests.swift */; };
 		19A1B1C221F3860E0090F760 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B1C121F3860E0090F760 /* AppState.swift */; };
 		19A1B1C621F3894E0090F760 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B1C521F3894E0090F760 /* Account.swift */; };
 		19A1B1C821F3895C0090F760 /* AccountsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B1C721F3895C0090F760 /* AccountsState.swift */; };
@@ -177,6 +179,9 @@
 		1943B03E21FA077D0054119C /* KeyboardConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardConnector.swift; sourceTree = "<group>"; };
 		1943B04021FA07890054119C /* KeyboardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardComponent.swift; sourceTree = "<group>"; };
 		1943B04221FA07930054119C /* KeyboardComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardComponent.xib; sourceTree = "<group>"; };
+		1961FAE522D4DB03002C094D /* Account+Make.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account+Make.swift"; sourceTree = "<group>"; };
+		1961FAE722D4E27D002C094D /* MainScreenUITestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenUITestCase.swift; sourceTree = "<group>"; };
+		19645D4922D392AA00B0CA29 /* NumberFormatter+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Currency.swift"; sourceTree = "<group>"; };
 		1973906A21FCBC3400D892F4 /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
 		1973906B21FCBC3400D892F4 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
 		1973906C21FCBC3400D892F4 /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
@@ -211,7 +216,6 @@
 		19A1B19821F3837E0090F760 /* GroshyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroshyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A1B19E21F3837E0090F760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19A1B1A321F3837E0090F760 /* GroshyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroshyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		19A1B1A721F3837E0090F760 /* GroshyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroshyUITests.swift; sourceTree = "<group>"; };
 		19A1B1A921F3837E0090F760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19A1B1C121F3860E0090F760 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		19A1B1C521F3894E0090F760 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -472,6 +476,14 @@
 			path = CategoryCell;
 			sourceTree = "<group>";
 		};
+		1998CFEC22D4DACA00B52FD7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1961FAE522D4DB03002C094D /* Account+Make.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		19A1B17B21F3837C0090F760 = {
 			isa = PBXGroup;
 			children = (
@@ -511,6 +523,7 @@
 		19A1B19B21F3837E0090F760 /* Unit Tests */ = {
 			isa = PBXGroup;
 			children = (
+				1998CFEC22D4DACA00B52FD7 /* Models */,
 				1943B02221F8C1610054119C /* Features */,
 				19A1B1F821F4DC7D0090F760 /* Mocks */,
 				19A1B1F521F4DBBB0090F760 /* Repositories */,
@@ -522,8 +535,8 @@
 		19A1B1A621F3837E0090F760 /* UI Tests */ = {
 			isa = PBXGroup;
 			children = (
-				19A1B1A721F3837E0090F760 /* GroshyUITests.swift */,
 				19A1B1A921F3837E0090F760 /* Info.plist */,
+				1961FAE722D4E27D002C094D /* MainScreenUITestCase.swift */,
 			);
 			path = "UI Tests";
 			sourceTree = "<group>";
@@ -780,6 +793,7 @@
 				19DACDF52225BAC400C2F36C /* UIView+Container.swift */,
 				19DACDF12225AFF700C2F36C /* UIView+Margins.swift */,
 				19DACDF32225B02D00C2F36C /* UIViewController+SafeAnchor.swift */,
+				19645D4922D392AA00B0CA29 /* NumberFormatter+Currency.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -905,6 +919,7 @@
 					};
 					19A1B1A221F3837E0090F760 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = 19A1B18321F3837C0090F760;
 					};
 				};
@@ -1125,6 +1140,7 @@
 				19E0B0BB2208C75B00AF56D7 /* CategoryCell.swift in Sources */,
 				19A1B1E021F3B5A90090F760 /* ServiceProvider.swift in Sources */,
 				19A1B1D221F3991D0090F760 /* AppReducer.swift in Sources */,
+				19645D4A22D392AA00B0CA29 /* NumberFormatter+Currency.swift in Sources */,
 				1943B03921FA075F0054119C /* KeyboardComponent+Build.swift in Sources */,
 				1932F4432207697000B2502B /* CategoriesCommands.swift in Sources */,
 				1932F4472207698700B2502B /* CategoriesState.swift in Sources */,
@@ -1176,6 +1192,7 @@
 				19A1B1FD21F4DCC30090F760 /* MockServiceProvider.swift in Sources */,
 				1973908421FF033800D892F4 /* AccountsRepository+LoadAccountsSpec.swift in Sources */,
 				1973908D21FF7C1A00D892F4 /* AccountsFeature_ReducerSpec.swift in Sources */,
+				1961FAE622D4DB03002C094D /* Account+Make.swift in Sources */,
 				1973908A21FF4E7900D892F4 /* AccountsRepository+DeleteAccountSpec.swift in Sources */,
 				1973908621FF46C800D892F4 /* AccountsRepository+CreateAccountSpec.swift in Sources */,
 				19A1B1FF21F4DD230090F760 /* MockStorageService.swift in Sources */,
@@ -1187,7 +1204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19A1B1A821F3837E0090F760 /* GroshyUITests.swift in Sources */,
+				1961FAE822D4E27D002C094D /* MainScreenUITestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1421,6 +1438,7 @@
 			baseConfigurationReference = 884E6ED1DE1C85D9FA2C1A82 /* Pods-GroshyUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Tests/UI Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1430,6 +1448,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Groshy.app.GroshyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Groshy;
@@ -1441,6 +1460,7 @@
 			baseConfigurationReference = 8C424832E1D666D694D8562B /* Pods-GroshyUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Tests/UI Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

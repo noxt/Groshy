@@ -13,9 +13,9 @@ final class CategoriesComponent: BaseComponent<CategoriesConnector> {
     
     private struct Constants {
         static let rowsCount: CGFloat = 4
-        static let horizontalSpacing: CGFloat = 8
-        static let verticalSpacing: CGFloat = 8
-        static let itemHeight: CGFloat = 86
+        static let horizontalSpacing: CGFloat = 7
+        static let verticalSpacing: CGFloat = 7
+        static let itemHeight: CGFloat = 90
     }
 
 

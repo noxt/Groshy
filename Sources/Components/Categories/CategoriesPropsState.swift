@@ -21,10 +21,7 @@ extension CategoriesPropsState {
         let icon: UIImage
         let currentBalance: String?
         let selectCommand: PlainCommand?
-        
-        var isSelected: Bool {
-            return selectCommand == nil
-        }
+        let isSelected: Bool
     }
 }
 

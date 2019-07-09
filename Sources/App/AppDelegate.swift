@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
 
 //        cleanDB()
-//        AccountsFeature.Commands.createAccount(repositories).execute(with: Account(id: Account.ID(rawValue: UUID()), title: "ЗП"))
+//        AccountsFeature.Commands.createAccount(repositories).execute(with: Account(id: Account.ID(rawValue: UUID()), title: "Зарплата"))
         
         TransactionsFeature.Commands.loadTransactionsList(repositories).execute()
         AccountsFeature.Commands.loadAccountsList(repositories).execute()
@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mainComponent = MainScreenComponent.build(with: repositories)
         let navigationController = UINavigationController(rootViewController: mainComponent)
 
+        navigationController.isNavigationBarHidden = true
         navigationController.navigationBar.isTranslucent = false
         navigationController.navigationBar.backgroundColor = Colors.white
         navigationController.navigationBar.tintColor = Colors.gray

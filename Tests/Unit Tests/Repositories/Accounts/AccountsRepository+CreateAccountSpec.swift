@@ -11,7 +11,7 @@ import Nimble
 
 class AccountsRepository_CreateAccountSpec: QuickSpec {
     override func spec() {
-        describe("an accounts repository") {
+        describe("create account") {
             var repositories: RepositoryProviderProtocol!
             var services: MockServiceProvider!
 
@@ -24,60 +24,73 @@ class AccountsRepository_CreateAccountSpec: QuickSpec {
                 repositories = nil
                 services = nil
             }
-
-            describe("create account") {
-                context("when accounts list not empty") {
-                    var newAccount: Account!
-                    var accounts: [Account]!
-                    beforeEach {
-                        newAccount = Account(id: UUID(), title: "New Account")
-                        accounts = [
-                            Account(id: UUID(), title: "Account #1"),
-                            Account(id: UUID(), title: "Account #2"),
-                        ]
-                        services._securityStorageService.spyStorage[.accounts] = accounts
-                    }
-
-                    it("created in db") {
-                        waitUntil(action: { (done) in
-                            repositories.accountsRepository
-                                .create(account: newAccount)
-                                .done({ account in
-                                    expect(account).to(equal(newAccount))
-                                    expect(services._securityStorageService.spySetKey).to(equal(.accounts))
-                                    expect(services._securityStorageService.spySetValue as? [Account]).to(equal(accounts + [newAccount]))
-                                    done()
-                                })
-                                .catch({ (error) in
-                                    expect(error).to(beNil())
-                                    done()
-                                })
-                        })
-                    }
+            
+            context("accounts list is empty") {
+                it("should create new record in storage") {
+                    let newAccount = Account.make(title: "New Account")
+                    services._securityStorageService.spyStorage[.accounts] = [Account]()
+                    
+                    waitUntil(action: { (done) in
+                        repositories.accountsRepository
+                            .create(account: newAccount)
+                            .done({ account in
+                                expect(account).to(equal(newAccount))
+                                expect(services._securityStorageService.spySetKey).to(equal(.accounts))
+                                expect(services._securityStorageService.spySetValue as? [Account]).to(equal([newAccount]))
+                                done()
+                            })
+                            .catch({ (error) in
+                                expect(error).to(beNil())
+                                done()
+                            })
+                    })
                 }
+            }
 
-                context("when storage emits error") {
-                    var newAccount: Account!
-                    beforeEach {
-                        newAccount = Account(id: UUID(), title: "New Account")
-                        services._securityStorageService.spyStorage[.accounts] = [Account]()
-                        services._securityStorageService.spySetError = StorageServiceError.savingError
-                    }
+            context("accounts list is not empty") {
+                it("should add account in storage") {
+                    let newAccount = Account.make(title: "New Account")
+                    let accounts = [
+                        Account.make(title: "Account #1"),
+                        Account.make(title: "Account #2"),
+                    ]
+                    services._securityStorageService.spyStorage[.accounts] = accounts
+                    
+                    waitUntil(action: { (done) in
+                        repositories.accountsRepository
+                            .create(account: newAccount)
+                            .done({ account in
+                                expect(account).to(equal(newAccount))
+                                expect(services._securityStorageService.spySetKey).to(equal(.accounts))
+                                expect(services._securityStorageService.spySetValue as? [Account]).to(equal(accounts + [newAccount]))
+                                done()
+                            })
+                            .catch({ (error) in
+                                expect(error).to(beNil())
+                                done()
+                            })
+                    })
+                }
+            }
 
-                    it("repository emit error") {
-                        waitUntil(action: { (done) in
-                            repositories.accountsRepository
-                                .create(account: newAccount)
-                                .done({ _ in
-                                    expect(false).to(beFalse())
-                                    done()
-                                })
-                                .catch({ (error) in
-                                    expect(error.localizedDescription).to(equal(StorageServiceError.savingError.localizedDescription))
-                                    done()
-                                })
-                        })
-                    }
+            context("storage emits an error") {
+                it("should emit an error") {
+                    let newAccount = Account.make(title: "New Account")
+                    services._securityStorageService.spyStorage[.accounts] = [Account]()
+                    services._securityStorageService.spySetError = StorageServiceError.savingError
+                    
+                    waitUntil(action: { (done) in
+                        repositories.accountsRepository
+                            .create(account: newAccount)
+                            .done({ _ in
+                                expect(false).to(beFalse())
+                                done()
+                            })
+                            .catch({ (error) in
+                                expect(error.localizedDescription).to(equal(StorageServiceError.savingError.localizedDescription))
+                                done()
+                            })
+                    })
                 }
             }
         }

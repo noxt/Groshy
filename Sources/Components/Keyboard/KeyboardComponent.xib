@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,17 +33,17 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="347" height="194"/>
+            <rect key="frame" x="0.0" y="0.0" width="347" height="210"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="S0J-Ow-Hwq">
-                    <rect key="frame" x="0.0" y="0.0" width="347" height="194"/>
+                <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="248" verticalCompressionResistancePriority="1000" axis="vertical" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="S0J-Ow-Hwq">
+                    <rect key="frame" x="0.0" y="0.0" width="347" height="210"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="HYJ-qR-Nk1">
-                            <rect key="frame" x="0.0" y="0.0" width="347" height="44"/>
+                            <rect key="frame" x="0.0" y="0.0" width="347" height="48"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i81-90-Q0k" customClass="HighlightedButton" customModule="Groshy" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="82.5" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="82.5" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="7"/>
                                     <connections>
@@ -51,7 +51,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2Y-pu-I1M" customClass="HighlightedButton" customModule="Groshy" customModuleProvider="target">
-                                    <rect key="frame" x="88.5" y="0.0" width="82" height="44"/>
+                                    <rect key="frame" x="88.5" y="0.0" width="82" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="8"/>
                                     <connections>
@@ -59,7 +59,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rj8-OG-OGz" customClass="HighlightedButton" customModule="Groshy" customModuleProvider="target">
-                                    <rect key="frame" x="176.5" y="0.0" width="82.5" height="44"/>
+                                    <rect key="frame" x="176.5" y="0.0" width="82.5" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="9"/>
                                     <connections>
@@ -67,7 +67,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Otz-wy-u0T" customClass="HighlightedButton" customModule="Groshy" customModuleProvider="target">
-                                    <rect key="frame" x="265" y="0.0" width="82" height="44"/>
+                                    <rect key="frame" x="265" y="0.0" width="82" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="÷"/>
                                     <connections>
@@ -76,14 +76,14 @@
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="height" constant="44" id="Vif-ug-n4k"/>
+                                <constraint firstAttribute="height" constant="48" id="Vif-ug-n4k"/>
                             </constraints>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="3jJ-dV-7M0">
-                            <rect key="frame" x="0.0" y="50" width="347" height="44"/>
+                            <rect key="frame" x="0.0" y="54" width="347" height="48"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UlR-gY-eSI" customClass="HighlightedButton" customModule="Groshy" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="82.5" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="82.5" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="4"/>
                                     <connections>
@@ -91,7 +91,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q5V-nV-7Cm" customClass="HighlightedButton" customModule="Groshy" customModuleProvider="target">
-                                    <rect key="frame" x="88.5" y="0.0" width="82" height="44"/>
+                                    <rect key="frame" x="88.5" y="0.0" width="82" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="5"/>
                                     <connections>
@@ -99,7 +99,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gt4-6x-odH" customClass="HighlightedButton" customModule="Groshy" customModuleProvider="target">
-                                    <rect key="frame" x="176.5" y="0.0" width="82.5" height="44"/>
+                                    <rect key="frame" x="176.5" y="0.0" width="82.5" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="6"/>
                                     <connections>
@@ -107,7 +107,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ycG-Nc-RkE" customClass="HighlightedButton" customModule="Groshy" customModuleProvider="target">
-                                    <rect key="frame" x="265" y="0.0" width="82" height="44"/>
+                                    <rect key="frame" x="265" y="0.0" width="82" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="×"/>
                                     <connections>
@@ -117,10 +117,10 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="NBw-Nd-F6I">
-                            <rect key="frame" x="0.0" y="100" width="347" height="44"/>
+                            <rect key="frame" x="0.0" y="108" width="347" height="48"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Swj-DG-G1R" customClass="HighlightedButton" customModule="Groshy" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="82.5" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="82.5" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="1"/>
                                     <connections>
@@ -128,7 +128,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ue-0R-1Fy" customClass="HighlightedButton" customModule="Groshy" customModuleProvider="target">
-                                    <rect key="frame" x="88.5" y="0.0" width="82" height="44"/>
+                                    <rect key="frame" x="88.5" y="0.0" width="82" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="2"/>
                                     <connections>
@@ -136,7 +136,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Pn-Xi-kX8" customClass="HighlightedButton" customModule="Groshy" customModuleProvider="target">
-                                    <rect key="frame" x="176.5" y="0.0" width="82.5" height="44"/>
+                                    <rect key="frame" x="176.5" y="0.0" width="82.5" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="3"/>
                                     <connections>
@@ -144,7 +144,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pwv-dV-JyD" customClass="HighlightedButton" customModule="Groshy" customModuleProvider="target">
-                                    <rect key="frame" x="265" y="0.0" width="82" height="44"/>
+                                    <rect key="frame" x="265" y="0.0" width="82" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="–"/>
                                     <connections>
@@ -154,10 +154,10 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="mN0-yk-C8R">
-                            <rect key="frame" x="0.0" y="150" width="347" height="44"/>
+                            <rect key="frame" x="0.0" y="162" width="347" height="48"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5CD-La-N1C" customClass="HighlightedButton" customModule="Groshy" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="82.5" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="82.5" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="0"/>
                                     <connections>
@@ -165,7 +165,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yC2-0W-WXR" customClass="HighlightedButton" customModule="Groshy" customModuleProvider="target">
-                                    <rect key="frame" x="88.5" y="0.0" width="82" height="44"/>
+                                    <rect key="frame" x="88.5" y="0.0" width="82" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title=","/>
                                     <connections>
@@ -173,7 +173,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="80D-T7-aLv" customClass="HighlightedButton" customModule="Groshy" customModuleProvider="target">
-                                    <rect key="frame" x="176.5" y="0.0" width="82.5" height="44"/>
+                                    <rect key="frame" x="176.5" y="0.0" width="82.5" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" image="buttons/delete"/>
                                     <connections>
@@ -181,7 +181,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eL-r8-pFr" customClass="HighlightedButton" customModule="Groshy" customModuleProvider="target">
-                                    <rect key="frame" x="265" y="0.0" width="82" height="44"/>
+                                    <rect key="frame" x="265" y="0.0" width="82" height="48"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="+"/>
                                     <connections>
@@ -192,9 +192,9 @@
                         </stackView>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="mN0-yk-C8R" firstAttribute="height" secondItem="NBw-Nd-F6I" secondAttribute="height" id="Tkz-Nj-x8v"/>
-                        <constraint firstItem="NBw-Nd-F6I" firstAttribute="height" secondItem="3jJ-dV-7M0" secondAttribute="height" id="rpa-mD-mdc"/>
-                        <constraint firstItem="3jJ-dV-7M0" firstAttribute="height" secondItem="HYJ-qR-Nk1" secondAttribute="height" id="uNS-2L-d2G"/>
+                        <constraint firstItem="NBw-Nd-F6I" firstAttribute="height" secondItem="3jJ-dV-7M0" secondAttribute="height" id="3uP-qj-J2p"/>
+                        <constraint firstItem="mN0-yk-C8R" firstAttribute="height" secondItem="NBw-Nd-F6I" secondAttribute="height" id="OMA-f8-qe9"/>
+                        <constraint firstItem="3jJ-dV-7M0" firstAttribute="height" secondItem="HYJ-qR-Nk1" secondAttribute="height" id="Rx8-pY-TLX"/>
                     </constraints>
                 </stackView>
             </subviews>
