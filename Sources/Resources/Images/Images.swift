@@ -29,6 +29,10 @@ struct Images {
         static var settingsSelected: UIImage {
             return UIImage(named: "buttons/settings-selected")!
         }
+        
+        static var filter: UIImage {
+            return UIImage(named: "buttons/filter")!
+        }
 
         static var statistics: UIImage {
             return UIImage(named: "buttons/statistics")!

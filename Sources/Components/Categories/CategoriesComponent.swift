@@ -4,7 +4,7 @@
 //
 
 import UIKit
-import Unicore
+import Command
 
 
 final class CategoriesComponent: BaseComponent<CategoriesConnector> {
@@ -13,9 +13,9 @@ final class CategoriesComponent: BaseComponent<CategoriesConnector> {
     
     private struct Constants {
         static let rowsCount: CGFloat = 4
-        static let horizontalSpacing: CGFloat = 7
-        static let verticalSpacing: CGFloat = 7
-        static let itemHeight: CGFloat = 90
+        static let horizontalSpacing: CGFloat = 5
+        static let verticalSpacing: CGFloat = 5
+        static let itemHeight: CGFloat = 84
     }
 
 
@@ -56,11 +56,12 @@ final class CategoriesComponent: BaseComponent<CategoriesConnector> {
         }
         
         switch props! {
-        case let .idle(categories: categories):
+        case let .idle(categories: categories, addCategoryCommand: addCategoryCommand):
             collectionView.isHidden = false
             activityIndicator.isHidden = true
             emptyLabel.isHidden = true
-            dataSource.update(categories: categories)
+            let items = categories + [addCategoryButtonProps(command: addCategoryCommand.bound(to: self))]
+            dataSource.update(categories: items)
 
         case .loading:
             collectionView.isHidden = true
@@ -73,6 +74,18 @@ final class CategoriesComponent: BaseComponent<CategoriesConnector> {
             activityIndicator.isHidden = true
             emptyLabel.isHidden = false
         }
+    }
+    
+    private static let addButtonUUID = Category.ID(rawValue: UUID())
+    private func addCategoryButtonProps(command: Command) -> CategoriesPropsState.CategoryInfo {
+        return CategoriesPropsState.CategoryInfo(
+            id: CategoriesComponent.addButtonUUID,
+            title: "Добавить",
+            icon: Images.Categories.plus,
+            currentBalance: nil,
+            selectCommand: command,
+            isSelected: false
+        )
     }
 
 }

@@ -4,15 +4,15 @@
 //
 
 import Foundation
-import Unicore
+import Command
 
 
 struct KeyboardProps {
-    let addDigitCommand: Command<KeyboardFeature.Digit>
-    let addOperationCommand: Command<KeyboardFeature.Operation>
-    let addCommaCommand: PlainCommand
-    let removeLastSymbolCommand: PlainCommand
-    let removeAllCommand: PlainCommand
+    let addDigitCommand: CommandOf<KeyboardFeature.Digit>
+    let addOperationCommand: CommandOf<KeyboardFeature.Operation>
+    let addCommaCommand: Command
+    let removeLastSymbolCommand: Command
+    let removeAllCommand: Command
 }
 
 

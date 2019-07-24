@@ -5,15 +5,15 @@
 
 import Foundation
 import PromiseKit
-import Unicore
+import Command
 
 
 extension TransactionsFeature {
 
     struct Commands {
         
-        static func loadTransactionsList(_ repositories: RepositoryProviderProtocol) -> PlainCommand {
-            return PlainCommand {
+        static func loadTransactionsList(_ repositories: RepositoryProviderProtocol) -> Command {
+            return Command {
                 core.dispatch(Actions.loadingStarted)
                 
                 repositories.transactionRepository.loadTransactions()
@@ -26,8 +26,8 @@ extension TransactionsFeature {
             }
         }
 
-        static func createTransaction(_ repositories: RepositoryProviderProtocol) -> Command<Transaction> {
-            return Command<Transaction> { transaction in
+        static func createTransaction(_ repositories: RepositoryProviderProtocol) -> CommandOf<Transaction> {
+            return CommandOf<Transaction> { transaction in
                 core.dispatch(Actions.loadingStarted)
                 
                 repositories.transactionRepository.create(transaction: transaction)

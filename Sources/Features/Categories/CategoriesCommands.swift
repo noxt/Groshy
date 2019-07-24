@@ -4,15 +4,15 @@
 //
 
 import Foundation
-import Unicore
+import Command
 import PromiseKit
 
 
 extension CategoriesFeature {
     struct Commands {
 
-        static func loadCategoriesList(_ repositories: RepositoryProviderProtocol) -> PlainCommand {
-            return PlainCommand {
+        static func loadCategoriesList(_ repositories: RepositoryProviderProtocol) -> Command {
+            return Command {
                 core.dispatch(Actions.loadingStarted)
 
                 repositories.categoriesRepository.loadCategories()
@@ -25,8 +25,8 @@ extension CategoriesFeature {
             }
         }
 
-        static func createCategory(_ repositories: RepositoryProviderProtocol) -> Command<Category> {
-            return Command<Category> { newCategory in
+        static func createCategory(_ repositories: RepositoryProviderProtocol) -> CommandOf<Category> {
+            return CommandOf<Category> { newCategory in
                 core.dispatch(Actions.loadingStarted)
 
                 repositories.categoriesRepository.create(category: newCategory)
@@ -42,14 +42,14 @@ extension CategoriesFeature {
             }
         }
         
-        static func selectCategory(_ repositories: RepositoryProviderProtocol) -> Command<Category> {
-            return Command<Category> { category in
+        static func selectCategory(_ repositories: RepositoryProviderProtocol) -> CommandOf<Category> {
+            return CommandOf<Category> { category in
                 core.dispatch(Actions.selectCategory(category))
             }
         }
         
-        static func clearSelectedCategory(_ repositories: RepositoryProviderProtocol) -> PlainCommand {
-            return PlainCommand {
+        static func clearSelectedCategory(_ repositories: RepositoryProviderProtocol) -> Command {
+            return Command {
                 core.dispatch(Actions.clearSelectedCategory)
             }
         }

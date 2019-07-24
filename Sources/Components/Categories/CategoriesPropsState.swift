@@ -4,12 +4,12 @@
 //
 
 import Foundation
-import Unicore
+import Command
 
 
 enum CategoriesPropsState: Equatable {
     case loading
-    case idle(categories: [CategoryInfo])
+    case idle(categories: [CategoryInfo], addCategoryCommand: CommandOf<UIViewController>)
     case empty
 }
 
@@ -20,7 +20,7 @@ extension CategoriesPropsState {
         let title: String
         let icon: UIImage
         let currentBalance: String?
-        let selectCommand: PlainCommand?
+        let selectCommand: Command?
         let isSelected: Bool
     }
 }
@@ -30,10 +30,11 @@ extension CategoriesPropsState {
 
 extension CategoriesPropsState.CategoryInfo: Equatable {
     static func ==(lhs: CategoriesPropsState.CategoryInfo, rhs: CategoriesPropsState.CategoryInfo) -> Bool {
-        return lhs.id == rhs.id
+        return lhs.id.rawValue.uuidString == rhs.id.rawValue.uuidString
             && lhs.title == rhs.title
             && lhs.icon.isEqual(rhs.icon)
             && lhs.currentBalance == rhs.currentBalance
+            && lhs.selectCommand == rhs.selectCommand
             && lhs.isSelected == rhs.isSelected
     }
 }

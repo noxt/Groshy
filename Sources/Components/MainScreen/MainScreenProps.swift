@@ -4,11 +4,11 @@
 //
 
 import UIKit
-import Unicore
+import Command
 
 
 struct MainScreenProps: Equatable {
+    let currentBalance: String
     let currentValue: String
-    let addCategoryCommand: Command<UIViewController>
-    let createTransactionCommand: PlainCommand?
+    let createTransactionCommand: Command?
 }

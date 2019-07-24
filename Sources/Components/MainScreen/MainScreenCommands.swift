@@ -4,38 +4,12 @@
 //
 
 import UIKit
-import Unicore
+import Command
 
 
 struct MainScreenCommands {
 
-    static func addCategoryCommand(_ repositories: RepositoryProviderProtocol) -> Command<UIViewController> {
-        return Command { viewController in
-            let alert = UIAlertController(title: "Как назвать категорию?", message: nil, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
-
-            alert.addTextField(configurationHandler: { textField in
-                textField.placeholder = "Введите название категории..."
-            })
-
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-                guard let title = alert.textFields?.first?.text else {
-                    return
-                }
-
-                let category = Category(
-                    id: Category.ID(rawValue: UUID()),
-                    icon: .random(),
-                    title: title
-                )
-                CategoriesFeature.Commands.createCategory(repositories).execute(with: category)
-            }))
-
-            viewController.present(alert, animated: true)
-        }
-    }
-
-    static func createTransactionCommand(_ repositories: RepositoryProviderProtocol, state: AppFeature.State) -> PlainCommand? {
+    static func createTransactionCommand(_ repositories: RepositoryProviderProtocol, state: AppFeature.State) -> Command? {
         guard let accountID = state.accountsState.currentAccountID,
             let categoryID = state.categoriesState.selectedCategory,
             let value = NumberFormatter.currency.number(from: state.keyboardState.currentValue) else {
@@ -54,7 +28,7 @@ struct MainScreenCommands {
             date: Date()
         )
         
-        return PlainCommand {
+        return Command {
             TransactionsFeature.Commands.createTransaction(repositories).execute(with: transaction)
         }
     }

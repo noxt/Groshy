@@ -4,12 +4,12 @@
 //
 
 import Foundation
-import Unicore
+import Command
 
 
-extension Command: Equatable {
+extension CommandOf: Equatable {
 
-    static func ==(lhs: Command<T>, rhs: Command<T>) -> Bool {
+    static func ==(lhs: CommandOf<T>, rhs: CommandOf<T>) -> Bool {
         return true
     }
 

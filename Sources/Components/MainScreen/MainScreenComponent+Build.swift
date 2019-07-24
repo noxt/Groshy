@@ -10,7 +10,6 @@ extension MainScreenComponent {
     static func build(with repositories: RepositoryProviderProtocol) -> MainScreenComponent {
         return MainScreenComponent(
             connector: MainScreenConnector(repositories: repositories),
-            accountSelectorComponent: AccountSelectorComponent.build(with: repositories),
             categoriesComponent: CategoriesComponent.build(with: repositories),
             keyboardComponent: KeyboardComponent.build(with: repositories)
         )

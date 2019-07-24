@@ -4,15 +4,15 @@
 //
 
 import Foundation
-import Unicore
+import Command
 import PromiseKit
 
 
 extension AccountsFeature {
     struct Commands {
 
-        static func loadAccountsList(_ repositories: RepositoryProviderProtocol) -> PlainCommand {
-            return PlainCommand {
+        static func loadAccountsList(_ repositories: RepositoryProviderProtocol) -> Command {
+            return Command {
                 core.dispatch(Actions.loadingStarted)
 
                 repositories.accountsRepository.loadAccounts()
@@ -29,8 +29,8 @@ extension AccountsFeature {
             }
         }
 
-        static func createAccount(_ repositories: RepositoryProviderProtocol) -> Command<Account> {
-            return Command<Account> { newAccount in
+        static func createAccount(_ repositories: RepositoryProviderProtocol) -> CommandOf<Account> {
+            return CommandOf<Account> { newAccount in
                 core.dispatch(Actions.loadingStarted)
 
                 repositories.accountsRepository.create(account: newAccount)
@@ -47,8 +47,8 @@ extension AccountsFeature {
             }
         }
 
-        static func selectCurrentAccount(_ repositories: RepositoryProviderProtocol) -> Command<Account> {
-            return Command<Account> { account in
+        static func selectCurrentAccount(_ repositories: RepositoryProviderProtocol) -> CommandOf<Account> {
+            return CommandOf<Account> { account in
                 core.dispatch(Actions.selectAccount(account))
             }
         }

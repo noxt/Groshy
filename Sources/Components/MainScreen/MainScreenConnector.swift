@@ -10,9 +10,13 @@ import Unicore
 final class MainScreenConnector: BaseConnector<MainScreenProps> {
 
     override func mapToProps(state: AppFeature.State) -> MainScreenProps {
+        let currentBalance = state.transactionState.transactions.values.reduce(0, { (result, transaction) -> Double in
+            return result + transaction.value
+        })
+        
         return MainScreenProps(
+            currentBalance: NumberFormatter.byn.string(from: NSNumber(value: currentBalance)) ?? "",
             currentValue: state.keyboardState.currentValue,
-            addCategoryCommand: MainScreenCommands.addCategoryCommand(repositories),
             createTransactionCommand: MainScreenCommands.createTransactionCommand(repositories, state: state)
         )
     }

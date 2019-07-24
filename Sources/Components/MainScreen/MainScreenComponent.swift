@@ -19,8 +19,8 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
 
     // MARK: - IBOutlets
 
-    @IBOutlet weak var accountSelectorContainer: UIView!
-    @IBOutlet weak var categoriesTitleLabel: UILabel!
+    @IBOutlet weak var currentBalanceLabel: UILabel!
+    @IBOutlet weak var appTitleLabel: UILabel!
     @IBOutlet weak var categoriesContainer: UIView!
     @IBOutlet weak var currentValueContainer: UIView!
     @IBOutlet weak var currentValueLabel: UILabel!
@@ -28,12 +28,10 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
     @IBOutlet weak var addCommentButton: HighlightedButton!
     @IBOutlet weak var applyButton: HighlightedButton!
     @IBOutlet weak var calendarButton: HighlightedButton!
-    @IBOutlet weak var addCategoryButton: HighlightedButton!
 
 
     // MARK: - Private Properties
     
-    private let accountSelectorComponent: AccountSelectorComponent
     private let categoriesComponent: CategoriesComponent
     private let keyboardComponent: KeyboardComponent
     
@@ -45,11 +43,9 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
     // MARK: - Initializers
 
     init(connector: MainScreenConnector,
-         accountSelectorComponent: AccountSelectorComponent,
          categoriesComponent: CategoriesComponent,
          keyboardComponent: KeyboardComponent
      ) {
-        self.accountSelectorComponent = accountSelectorComponent
         self.categoriesComponent = categoriesComponent
         self.keyboardComponent = keyboardComponent
 
@@ -66,28 +62,25 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
     override func setup() {
         view.backgroundColor = Colors.darkWhite
 
-        setupCategories()
+        setupCurrentBalanceLabel()
+        setupAppTitle()
         setupCurrentValue()
         setupCalendarButton()
         setupApplyButton()
         setupAddCommentButton()
 
-        setupAccountSelectorComponent()
         setupKeyboardComponent()
         setupCategoriesComponent()
     }
 
     override func render(old oldProps: MainScreenProps?) {
+        currentBalanceLabel.text = props.currentBalance
         currentValueLabel.text = props.currentValue
         applyButton.isEnabled = props.createTransactionCommand != nil
     }
 
 
     // MARK: - IBActions
-
-    @IBAction func addCategory() {
-        props.addCategoryCommand.execute(with: self)
-    }
 
     @IBAction func createTransaction() {
         props.createTransactionCommand?.execute()
@@ -99,17 +92,6 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
 // MARK: - Setup
 
 extension MainScreenComponent {
-
-    private func setupAccountSelectorComponent() {
-        guard !accountSelectorComponentConfigured else {
-            return
-        }
-        accountSelectorComponentConfigured = true
-
-        addChild(accountSelectorComponent)
-        accountSelectorContainer.addChild(view: accountSelectorComponent.view)
-        accountSelectorComponent.didMove(toParent: self)
-    }
 
     private func setupKeyboardComponent() {
         guard !keyboardComponentConfigured else {
@@ -132,19 +114,15 @@ extension MainScreenComponent {
         categoriesContainer.addChild(view: categoriesComponent.view)
         categoriesComponent.didMove(toParent: self)
     }
-
-    private func setupCategories() {
-        categoriesTitleLabel.textColor = Colors.black
-        categoriesTitleLabel.font = Fonts.Rubik.Bold(size: 30)
-
-        addCategoryButton.borderColor = Colors.gray
-        addCategoryButton.borderWidth = 1
-        addCategoryButton.cornerRadius = addCategoryButton.height / 2
-        addCategoryButton.titleLabel?.font = Fonts.Rubik.Regular(size: 12)
-        addCategoryButton.setTitleColor(Colors.gray, for: .normal)
-        addCategoryButton.setTitleColor(Colors.white, for: .highlighted)
-        addCategoryButton.defaultBackgroundColor = Colors.clear
-        addCategoryButton.highlightedBackgroundColor = Colors.gray
+    
+    private func setupCurrentBalanceLabel() {
+        currentBalanceLabel.textColor = Colors.darkGray
+        currentBalanceLabel.font = Fonts.Rubik.Medium(size: 14)
+    }
+    
+    private func setupAppTitle() {
+        appTitleLabel.textColor = Colors.black
+        appTitleLabel.font = Fonts.Rubik.Bold(size: 30)
     }
 
     private func setupCurrentValue() {

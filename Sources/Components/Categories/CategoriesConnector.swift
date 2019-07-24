@@ -4,7 +4,7 @@
 //
 
 import Foundation
-import Unicore
+import Command
 
 
 final class CategoriesConnector: BaseConnector<CategoriesPropsState> {
@@ -38,19 +38,17 @@ final class CategoriesConnector: BaseConnector<CategoriesPropsState> {
             }
         }
         
-//        categories.append(addButtonProps())
-        
         guard !categories.isEmpty else {
             return .empty
         }
         
-        return .idle(categories: categories)
+        return .idle(categories: categories, addCategoryCommand: CategoriesComponentCommands.addCategoryCommand(repositories))
     }
 
     private func mapCategoryToProps(category: Category, isSelected: Bool, balance: Double) -> CategoriesPropsState.CategoryInfo {
-        let command: PlainCommand?
+        let command: Command?
         if !isSelected {
-            command = PlainCommand { [weak self] in
+            command = Command { [weak self] in
                 guard let self = self else {
                     return
                 }
@@ -81,18 +79,6 @@ final class CategoriesConnector: BaseConnector<CategoriesPropsState> {
         }
         
         return groups
-    }
-
-    private static let addButtonUUID = Category.ID(rawValue: UUID())
-    private func addButtonProps() -> CategoriesPropsState.CategoryInfo {
-        return CategoriesPropsState.CategoryInfo(
-            id: CategoriesConnector.addButtonUUID,
-            title: "Добавить",
-            icon: Images.Categories.plus,
-            currentBalance: nil,
-            selectCommand: CategoriesFeature.Commands.clearSelectedCategory(repositories),
-            isSelected: false
-        )
     }
 
 }

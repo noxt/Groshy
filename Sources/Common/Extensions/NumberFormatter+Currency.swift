@@ -1,7 +1,4 @@
 //
-//  NumberFormatter+Currency.swift
-//  Groshy
-//
 //  Created by Dmitry Ivanenko on 08/07/2019.
 //  Copyright © 2019 Groshy. All rights reserved.
 //
@@ -18,9 +15,10 @@ extension NumberFormatter {
     }
     
     static var byn: NumberFormatter {
+        let BYN = Locale(identifier: "be_BY")
         let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .currencyAccounting
-        numberFormatter.currencyCode = "BYN"
+        numberFormatter.numberStyle = .currency
+        numberFormatter.locale = BYN
         return numberFormatter
     }
 

@@ -4,14 +4,14 @@
 //
 
 import Foundation
-import Unicore
+import Command
 
 
 extension KeyboardFeature {
     struct Commands {
 
-        static func addDigit(currentValue: String) -> Command<Digit> {
-            return Command<Digit> { digit in
+        static func addDigit(currentValue: String) -> CommandOf<Digit> {
+            return CommandOf<Digit> { digit in
                 var newValue = currentValue
 
                 if newValue == "0" {
@@ -24,14 +24,14 @@ extension KeyboardFeature {
             }
         }
 
-        static func addOperation(currentValue: String) -> Command<Operation> {
-            return Command<Operation> { digit in
+        static func addOperation(currentValue: String) -> CommandOf<Operation> {
+            return CommandOf<Operation> { digit in
 
             }
         }
 
-        static func addComma(currentValue: String) -> PlainCommand {
-            return PlainCommand {
+        static func addComma(currentValue: String) -> Command {
+            return Command {
                 guard let commaCharacter = NumberFormatter().decimalSeparator,
                     currentValue.firstIndex(of: commaCharacter.first!) == nil else {
                     return
@@ -46,8 +46,8 @@ extension KeyboardFeature {
             }
         }
 
-        static func removeLastSymbol(currentValue: String) -> PlainCommand {
-            return PlainCommand {
+        static func removeLastSymbol(currentValue: String) -> Command {
+            return Command {
                 guard !currentValue.isEmpty else {
                     return
                 }
@@ -63,8 +63,8 @@ extension KeyboardFeature {
             }
         }
 
-        static func removeAllCommand() -> PlainCommand {
-            return PlainCommand {
+        static func removeAllCommand() -> Command {
+            return Command {
                 core.dispatch(Actions.currentValueUpdated(value: "0"))
             }
         }
