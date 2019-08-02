@@ -39,12 +39,12 @@ extension KeychainStorageService: StorageServiceProtocol {
     }
 
     func getValue<T: Decodable>(forKey key: StorageServiceKey) throws -> T {
-        guard let data = try? keychain.getData(key.rawValue), data != nil else {
+        guard let data = try? keychain.getData(key.rawValue) else {
             throw StorageServiceError.gettingError
         }
 
         do {
-            return try decoder.decode(T.self, from: data!)
+            return try decoder.decode(T.self, from: data)
         } catch {
             throw StorageServiceError.decodingError
         }

@@ -1388,7 +1388,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Groshy.app.Groshy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1408,7 +1408,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Groshy.app.Groshy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1428,7 +1428,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Groshy.app.GroshyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Groshy.app/Groshy";
 			};
@@ -1449,7 +1449,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Groshy.app.GroshyTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Groshy.app/Groshy";
 			};
@@ -1471,7 +1471,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Groshy.app.GroshyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Groshy;
 			};
@@ -1492,7 +1492,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Groshy.app.GroshyUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = Groshy;
 			};
