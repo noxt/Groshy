@@ -56,6 +56,21 @@ extension CategoriesFeature {
                 isLoading: false,
                 error: message
             )
+            
+        case let Actions.moveCategory(categoryID, toPosition: position):
+            var sortOrder = old.sortOrder
+            if let oldPosition = sortOrder.firstIndex(of: categoryID) {
+                let info = sortOrder.remove(at: oldPosition)
+                sortOrder.insert(info, at: position)
+            }
+            
+            return State(
+                selectedCategory: old.selectedCategory,
+                categories: old.categories,
+                sortOrder: sortOrder,
+                isLoading: old.isLoading,
+                error: old.error
+            )
 
         default:
             return old

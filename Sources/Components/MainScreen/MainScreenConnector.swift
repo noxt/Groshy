@@ -3,7 +3,7 @@
 //  Copyright © 2019 Groshy. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import Unicore
 
 

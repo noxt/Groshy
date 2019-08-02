@@ -6,18 +6,24 @@
 import UIKit
 
 
-class CategoryCell: UICollectionViewCell {
+final class CategoryCell: UICollectionViewCell {
+
+    // MARK: - Types
 
     private struct Constants {
         static let cornerRadius: CGFloat = 4
     }
 
 
+    // MARK: - IBOutlet
+
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var containerStackView: UIStackView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var amountLabel: UILabel!
 
+
+    // MARK: - Lifetime
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,10 +38,12 @@ class CategoryCell: UICollectionViewCell {
     }
 
 
+    // MARK: - Public methods
+
     func setup(props: CategoriesPropsState.CategoryInfo) {
         if props.isSelected {
             layer.borderColor = Colors.red.cgColor
-            layer.borderWidth = 1
+            layer.borderWidth = 1.5
         } else {
             layer.borderColor = nil
             layer.borderWidth = 0

@@ -38,24 +38,36 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ClH-82-aEd">
-                    <rect key="frame" x="16" y="74" width="132.5" height="55"/>
+                    <rect key="frame" x="16" y="74" width="250.5" height="61.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25 BYN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeM-eE-IcT">
-                            <rect key="frame" x="0.0" y="0.0" width="132.5" height="20.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="250.5" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" text="Расходы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioG-z8-JDI">
-                            <rect key="frame" x="0.0" y="20.5" width="132.5" height="34.5"/>
-                            <fontDescription key="fontDescription" name="Rubik-Bold" family="Rubik" pointSize="29"/>
-                            <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="firstBaseline" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="NQd-eD-wb4">
+                            <rect key="frame" x="0.0" y="20.5" width="250.5" height="41"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" text="Расходы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ioG-z8-JDI">
+                                    <rect key="frame" x="0.0" y="0.0" width="132.5" height="34.5"/>
+                                    <fontDescription key="fontDescription" name="Rubik-Bold" family="Rubik" pointSize="29"/>
+                                    <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOE-wc-vco">
+                                    <rect key="frame" x="138.5" y="-6" width="112" height="47"/>
+                                    <fontDescription key="fontDescription" name="Rubik-Bold" family="Rubik" pointSize="29"/>
+                                    <state key="normal" title="за день">
+                                        <color key="titleColor" red="0.1764705882" green="0.61176470589999998" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                        </stackView>
                     </subviews>
                 </stackView>
                 <view contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="747" translatesAutoresizingMaskIntoConstraints="NO" id="XAM-BU-bAP">
-                    <rect key="frame" x="16" y="141" width="382" height="342"/>
+                    <rect key="frame" x="16" y="143.5" width="382" height="343.5"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="4NL-cx-dVU"/>
@@ -115,7 +127,7 @@
                     </state>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IZn-J1-Qp4">
-                    <rect key="frame" x="354" y="47.5" width="44" height="88"/>
+                    <rect key="frame" x="354" y="50.5" width="44" height="88"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xa8-ma-26h">
                             <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
@@ -135,7 +147,7 @@
                                 <constraint firstAttribute="height" constant="44" id="nqa-3l-2sr"/>
                             </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
-                            <state key="normal" image="buttons/filter"/>
+                            <state key="normal" image="buttons/statistics"/>
                         </button>
                     </subviews>
                 </stackView>
@@ -147,10 +159,10 @@
                 <constraint firstItem="mFh-L4-hLE" firstAttribute="leading" secondItem="eQe-6D-Tef" secondAttribute="trailing" constant="7" id="5oH-pk-pYN"/>
                 <constraint firstItem="KR3-tb-6uM" firstAttribute="trailing" secondItem="mFh-L4-hLE" secondAttribute="trailing" id="7xc-sy-MWp"/>
                 <constraint firstItem="753-3q-H9H" firstAttribute="trailing" secondItem="F75-Fg-Uxt" secondAttribute="trailing" constant="16" id="Hmf-J8-SHt"/>
-                <constraint firstItem="XAM-BU-bAP" firstAttribute="top" secondItem="ClH-82-aEd" secondAttribute="bottom" constant="12" id="MLg-Ch-nhW"/>
+                <constraint firstItem="XAM-BU-bAP" firstAttribute="top" secondItem="ClH-82-aEd" secondAttribute="bottom" constant="8" id="MLg-Ch-nhW"/>
                 <constraint firstItem="ClH-82-aEd" firstAttribute="leading" secondItem="753-3q-H9H" secondAttribute="leading" constant="16" id="RA1-C3-tCC"/>
                 <constraint firstItem="KR3-tb-6uM" firstAttribute="bottom" secondItem="MFO-gw-Bs1" secondAttribute="bottom" id="SS5-Eq-rHk"/>
-                <constraint firstItem="eQe-6D-Tef" firstAttribute="top" secondItem="XAM-BU-bAP" secondAttribute="bottom" constant="20" id="VCu-cr-8pd"/>
+                <constraint firstItem="eQe-6D-Tef" firstAttribute="top" secondItem="XAM-BU-bAP" secondAttribute="bottom" constant="16" id="VCu-cr-8pd"/>
                 <constraint firstItem="753-3q-H9H" firstAttribute="trailing" secondItem="mFh-L4-hLE" secondAttribute="trailing" constant="16" id="WF0-A8-2FG"/>
                 <constraint firstItem="F75-Fg-Uxt" firstAttribute="top" secondItem="eQe-6D-Tef" secondAttribute="bottom" constant="7" id="WkN-ag-7bE"/>
                 <constraint firstItem="KR3-tb-6uM" firstAttribute="top" secondItem="MFO-gw-Bs1" secondAttribute="top" id="agz-bn-cDQ"/>
@@ -175,7 +187,7 @@
     <resources>
         <image name="buttons/calendar" width="18" height="18"/>
         <image name="buttons/comment" width="24" height="22"/>
-        <image name="buttons/filter" width="18" height="18"/>
         <image name="buttons/settings" width="18" height="18"/>
+        <image name="buttons/statistics" width="18" height="13"/>
     </resources>
 </document>

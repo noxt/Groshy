@@ -43,12 +43,12 @@ final class CategoriesComponent: BaseComponent<CategoriesConnector> {
         layout.minimumLineSpacing = Constants.verticalSpacing
     }
 
-
-    // MARK: - Component lifecycle
-
     override func setup() {
         dataSource = CategoriesDataSource(collectionView: collectionView)
+        super.setup()
     }
+
+    // MARK: - Component lifecycle
 
     override func render(old oldProps: CategoriesPropsState?) {
         guard props != nil else {
@@ -57,16 +57,16 @@ final class CategoriesComponent: BaseComponent<CategoriesConnector> {
         
         switch props! {
         case let .idle(categories: categories, addCategoryCommand: addCategoryCommand):
+            dataSource.update(categories: categories)
+            dataSource.addCategoryCommand = addCategoryCommand.bound(to: self)
             collectionView.isHidden = false
             activityIndicator.isHidden = true
             emptyLabel.isHidden = true
-            let items = categories + [addCategoryButtonProps(command: addCategoryCommand.bound(to: self))]
-            dataSource.update(categories: items)
 
         case .loading:
             collectionView.isHidden = true
-            activityIndicator.isHidden = false
             emptyLabel.isHidden = true
+            activityIndicator.isHidden = false
             activityIndicator.startAnimating()
             
         case .empty:
@@ -74,18 +74,6 @@ final class CategoriesComponent: BaseComponent<CategoriesConnector> {
             activityIndicator.isHidden = true
             emptyLabel.isHidden = false
         }
-    }
-    
-    private static let addButtonUUID = Category.ID(rawValue: UUID())
-    private func addCategoryButtonProps(command: Command) -> CategoriesPropsState.CategoryInfo {
-        return CategoriesPropsState.CategoryInfo(
-            id: CategoriesComponent.addButtonUUID,
-            title: "Добавить",
-            icon: Images.Categories.plus,
-            currentBalance: nil,
-            selectCommand: command,
-            isSelected: false
-        )
     }
 
 }

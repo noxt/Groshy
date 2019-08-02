@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateCategoryScreenComponent" customModule="Groshy" customModuleProvider="target">
+            <connections>
+                <outlet property="iconsCollectionView" destination="0xF-gN-jPN" id="pJU-yJ-nt0"/>
+                <outlet property="saveButton" destination="xiK-F6-yjP" id="5DX-n5-G7f"/>
+                <outlet property="textField" destination="jhD-Yz-ypw" id="3he-az-AqJ"/>
+                <outlet property="textFieldBottomLine" destination="ach-SG-rzN" id="vn4-ot-krn"/>
+                <outlet property="titleLabel" destination="4ci-4w-eYL" id="OmO-0h-9Nc"/>
+                <outlet property="view" destination="iN0-l3-epB" id="ImQ-fb-ajL"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DiC-8X-UDV">
+                    <rect key="frame" x="40" y="84" width="334" height="320"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiK-F6-yjP" customClass="HighlightedButton" customModule="Groshy" customModuleProvider="target">
+                            <rect key="frame" x="20" y="256" width="294" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="OMu-yg-bAX"/>
+                            </constraints>
+                            <state key="normal" title="Создать"/>
+                            <connections>
+                                <action selector="save:" destination="-1" eventType="touchUpInside" id="OYa-Ga-y6b"/>
+                            </connections>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ach-SG-rzN">
+                            <rect key="frame" x="20" y="92" width="294" height="1"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="7Kf-gx-ASk"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Новая категория" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ci-4w-eYL">
+                            <rect key="frame" x="20" y="20" width="294" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jhD-Yz-ypw">
+                            <rect key="frame" x="20" y="56" width="294" height="36"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="aAd-fM-MQy"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                        </textField>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0xF-gN-jPN">
+                            <rect key="frame" x="0.0" y="103" width="314" height="143"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="8" minimumInteritemSpacing="20" id="EtH-RL-Ues">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="20" minY="10" maxX="0.0" maxY="10"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="jhD-Yz-ypw" firstAttribute="leading" secondItem="DiC-8X-UDV" secondAttribute="leading" constant="20" id="45d-Zm-f85"/>
+                        <constraint firstAttribute="bottom" secondItem="xiK-F6-yjP" secondAttribute="bottom" constant="20" id="8G9-sn-u3l"/>
+                        <constraint firstItem="jhD-Yz-ypw" firstAttribute="top" secondItem="4ci-4w-eYL" secondAttribute="bottom" constant="15" id="Cyh-mk-3uj"/>
+                        <constraint firstItem="4ci-4w-eYL" firstAttribute="leading" secondItem="DiC-8X-UDV" secondAttribute="leading" constant="20" id="Pm4-hp-FRv"/>
+                        <constraint firstAttribute="trailing" secondItem="jhD-Yz-ypw" secondAttribute="trailing" constant="20" id="TFv-bJ-04h"/>
+                        <constraint firstAttribute="trailing" secondItem="4ci-4w-eYL" secondAttribute="trailing" constant="20" id="UKd-az-vke"/>
+                        <constraint firstAttribute="trailing" secondItem="xiK-F6-yjP" secondAttribute="trailing" constant="20" id="XO9-Cq-E5a"/>
+                        <constraint firstItem="xiK-F6-yjP" firstAttribute="leading" secondItem="DiC-8X-UDV" secondAttribute="leading" constant="20" id="Ysd-QG-paj"/>
+                        <constraint firstAttribute="trailing" secondItem="0xF-gN-jPN" secondAttribute="trailing" constant="20" id="dCe-zd-wwV"/>
+                        <constraint firstItem="0xF-gN-jPN" firstAttribute="leading" secondItem="DiC-8X-UDV" secondAttribute="leading" id="eM3-5a-UjT"/>
+                        <constraint firstItem="xiK-F6-yjP" firstAttribute="top" secondItem="0xF-gN-jPN" secondAttribute="bottom" constant="10" id="hsI-57-Nea"/>
+                        <constraint firstItem="ach-SG-rzN" firstAttribute="trailing" secondItem="jhD-Yz-ypw" secondAttribute="trailing" id="i6d-sB-VL3"/>
+                        <constraint firstItem="ach-SG-rzN" firstAttribute="leading" secondItem="jhD-Yz-ypw" secondAttribute="leading" id="iPO-IE-xW7"/>
+                        <constraint firstItem="ach-SG-rzN" firstAttribute="top" secondItem="jhD-Yz-ypw" secondAttribute="bottom" id="okK-R2-PcD"/>
+                        <constraint firstItem="4ci-4w-eYL" firstAttribute="top" secondItem="DiC-8X-UDV" secondAttribute="top" constant="20" id="rVU-9e-sMe"/>
+                        <constraint firstItem="0xF-gN-jPN" firstAttribute="top" secondItem="ach-SG-rzN" secondAttribute="bottom" constant="10" id="sA3-uY-fwQ"/>
+                        <constraint firstAttribute="height" constant="320" id="zn6-gW-fgA"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.33000000000000002" alpha="0.90000000000000002" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="DiC-8X-UDV" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="MLc-wg-aG7"/>
+                <constraint firstItem="DiC-8X-UDV" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="40" id="rZh-7K-4Bb"/>
+                <constraint firstItem="DiC-8X-UDV" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="uYA-Xh-p1b"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DiC-8X-UDV" secondAttribute="trailing" constant="40" id="yeb-KR-DfJ"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-17.39130434782609" y="-118.52678571428571"/>
+        </view>
+    </objects>
+</document>

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -74,6 +74,8 @@
 		1973909521FF850B00D892F4 /* AccountSelectorPropsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973909421FF850B00D892F4 /* AccountSelectorPropsState.swift */; };
 		1973909721FF851400D892F4 /* AccountSelectorComponent+Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973909621FF851400D892F4 /* AccountSelectorComponent+Build.swift */; };
 		1985296A229D356800B8BCD5 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19852969229D356800B8BCD5 /* Identity.swift */; };
+		198A280C22F3219500B70DAF /* AddCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198A280B22F3219500B70DAF /* AddCategoryCell.swift */; };
+		198A280E22F322D500B70DAF /* AddCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 198A280D22F322D500B70DAF /* AddCategoryCell.xib */; };
 		1994BAF5220A21AF00B494F4 /* TransactionsCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994BAF4220A21AF00B494F4 /* TransactionsCommands.swift */; };
 		1994BAF7220A21B900B494F4 /* TransactionsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994BAF6220A21B900B494F4 /* TransactionsActions.swift */; };
 		1994BAF9220A21C300B494F4 /* TransactionsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994BAF8220A21C300B494F4 /* TransactionsReducer.swift */; };
@@ -104,6 +106,13 @@
 		19A1B1F421F4D8B90090F760 /* AccountsRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B1F321F4D8B90090F760 /* AccountsRepositoryError.swift */; };
 		19A1B1FD21F4DCC30090F760 /* MockServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B1FC21F4DCC30090F760 /* MockServiceProvider.swift */; };
 		19A1B1FF21F4DD230090F760 /* MockStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B1FE21F4DD230090F760 /* MockStorageService.swift */; };
+		19AF6E7922EF872100F5584A /* CreateCategoryIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AF6E7822EF872100F5584A /* CreateCategoryIconCollectionViewCell.swift */; };
+		19AF6E7B22EF873F00F5584A /* CreateCategoryIconCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19AF6E7A22EF873F00F5584A /* CreateCategoryIconCollectionViewCell.xib */; };
+		19CA638722E87CB800570BD5 /* CreateCategoryScreenComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA638622E87CB800570BD5 /* CreateCategoryScreenComponent.swift */; };
+		19CA638922E87CC500570BD5 /* CreateCategoryScreenComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19CA638822E87CC500570BD5 /* CreateCategoryScreenComponent.xib */; };
+		19CA638B22E87CDC00570BD5 /* CreateCategoryScreenComponent+Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA638A22E87CDC00570BD5 /* CreateCategoryScreenComponent+Build.swift */; };
+		19CA638D22E87CE300570BD5 /* CreateCategoryScreenConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA638C22E87CE300570BD5 /* CreateCategoryScreenConnector.swift */; };
+		19CA638F22E87CEB00570BD5 /* CreateCategoryScreenPropsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA638E22E87CEB00570BD5 /* CreateCategoryScreenPropsState.swift */; };
 		19CCEA4B221C54F700C56217 /* BaseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CCEA4A221C54F700C56217 /* BaseComponent.swift */; };
 		19CCEA4E221C5C5B00C56217 /* CategoriesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CCEA4D221C5C5B00C56217 /* CategoriesDataSource.swift */; };
 		19DACDEF22247D6A00C2F36C /* HighlightedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DACDEE22247D6A00C2F36C /* HighlightedButton.swift */; };
@@ -206,6 +215,8 @@
 		1973909421FF850B00D892F4 /* AccountSelectorPropsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSelectorPropsState.swift; sourceTree = "<group>"; };
 		1973909621FF851400D892F4 /* AccountSelectorComponent+Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSelectorComponent+Build.swift"; sourceTree = "<group>"; };
 		19852969229D356800B8BCD5 /* Identity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
+		198A280B22F3219500B70DAF /* AddCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryCell.swift; sourceTree = "<group>"; };
+		198A280D22F322D500B70DAF /* AddCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCategoryCell.xib; sourceTree = "<group>"; };
 		1994BAF4220A21AF00B494F4 /* TransactionsCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCommands.swift; sourceTree = "<group>"; };
 		1994BAF6220A21B900B494F4 /* TransactionsActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsActions.swift; sourceTree = "<group>"; };
 		1994BAF8220A21C300B494F4 /* TransactionsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsReducer.swift; sourceTree = "<group>"; };
@@ -242,6 +253,13 @@
 		19A1B1F321F4D8B90090F760 /* AccountsRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsRepositoryError.swift; sourceTree = "<group>"; };
 		19A1B1FC21F4DCC30090F760 /* MockServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockServiceProvider.swift; sourceTree = "<group>"; };
 		19A1B1FE21F4DD230090F760 /* MockStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStorageService.swift; sourceTree = "<group>"; };
+		19AF6E7822EF872100F5584A /* CreateCategoryIconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryIconCollectionViewCell.swift; sourceTree = "<group>"; };
+		19AF6E7A22EF873F00F5584A /* CreateCategoryIconCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCategoryIconCollectionViewCell.xib; sourceTree = "<group>"; };
+		19CA638622E87CB800570BD5 /* CreateCategoryScreenComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryScreenComponent.swift; sourceTree = "<group>"; };
+		19CA638822E87CC500570BD5 /* CreateCategoryScreenComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCategoryScreenComponent.xib; sourceTree = "<group>"; };
+		19CA638A22E87CDC00570BD5 /* CreateCategoryScreenComponent+Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateCategoryScreenComponent+Build.swift"; sourceTree = "<group>"; };
+		19CA638C22E87CE300570BD5 /* CreateCategoryScreenConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryScreenConnector.swift; sourceTree = "<group>"; };
+		19CA638E22E87CEB00570BD5 /* CreateCategoryScreenPropsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryScreenPropsState.swift; sourceTree = "<group>"; };
 		19CCEA4A221C54F700C56217 /* BaseComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseComponent.swift; sourceTree = "<group>"; };
 		19CCEA4D221C5C5B00C56217 /* CategoriesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesDataSource.swift; sourceTree = "<group>"; };
 		19DACDEE22247D6A00C2F36C /* HighlightedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedButton.swift; sourceTree = "<group>"; };
@@ -470,6 +488,15 @@
 			path = Transactions;
 			sourceTree = "<group>";
 		};
+		198A280A22F3218200B70DAF /* AddCategoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				198A280B22F3219500B70DAF /* AddCategoryCell.swift */,
+				198A280D22F322D500B70DAF /* AddCategoryCell.xib */,
+			);
+			path = AddCategoryCell;
+			sourceTree = "<group>";
+		};
 		1994BB16220C6C2600B494F4 /* CategoryCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -654,6 +681,7 @@
 		19A1B1D321F3A8A30090F760 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				19B4338222E87A1500336BCA /* CreateCategoryScreen */,
 				1943B02921F9C4BE0054119C /* AccountSelector */,
 				1943B02B21F9C4F30054119C /* Categories */,
 				1943B02A21F9C4DA0054119C /* Keyboard */,
@@ -765,6 +793,28 @@
 			path = Accounts;
 			sourceTree = "<group>";
 		};
+		19AF6E7722EF86FA00F5584A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				19AF6E7822EF872100F5584A /* CreateCategoryIconCollectionViewCell.swift */,
+				19AF6E7A22EF873F00F5584A /* CreateCategoryIconCollectionViewCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		19B4338222E87A1500336BCA /* CreateCategoryScreen */ = {
+			isa = PBXGroup;
+			children = (
+				19AF6E7722EF86FA00F5584A /* Views */,
+				19CA638622E87CB800570BD5 /* CreateCategoryScreenComponent.swift */,
+				19CA638822E87CC500570BD5 /* CreateCategoryScreenComponent.xib */,
+				19CA638A22E87CDC00570BD5 /* CreateCategoryScreenComponent+Build.swift */,
+				19CA638C22E87CE300570BD5 /* CreateCategoryScreenConnector.swift */,
+				19CA638E22E87CEB00570BD5 /* CreateCategoryScreenPropsState.swift */,
+			);
+			path = CreateCategoryScreen;
+			sourceTree = "<group>";
+		};
 		19CCEA4C221C5C4600C56217 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -814,6 +864,7 @@
 		19E0B0B92208C73800AF56D7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				198A280A22F3218200B70DAF /* AddCategoryCell */,
 				1994BB16220C6C2600B494F4 /* CategoryCell */,
 			);
 			path = Views;
@@ -959,6 +1010,7 @@
 				19A1B19221F3837E0090F760 /* LaunchScreen.storyboard in Resources */,
 				19E0B0BD2208C76600AF56D7 /* CategoryCell.xib in Resources */,
 				1973907A21FCBC3400D892F4 /* Rubik-LightItalic.ttf in Resources */,
+				198A280E22F322D500B70DAF /* AddCategoryCell.xib in Resources */,
 				1973907D21FCBC3400D892F4 /* Rubik-BoldItalic.ttf in Resources */,
 				1973907421FCBC3400D892F4 /* Rubik-MediumItalic.ttf in Resources */,
 				1943B04321FA07930054119C /* KeyboardComponent.xib in Resources */,
@@ -967,8 +1019,10 @@
 				1973907921FCBC3400D892F4 /* Rubik-Italic.ttf in Resources */,
 				1973907821FCBC3400D892F4 /* Rubik-Black.ttf in Resources */,
 				1973907C21FCBC3400D892F4 /* Rubik-Regular.ttf in Resources */,
+				19AF6E7B22EF873F00F5584A /* CreateCategoryIconCollectionViewCell.xib in Resources */,
 				19A1B18F21F3837D0090F760 /* Assets.xcassets in Resources */,
 				1973907721FCBC3400D892F4 /* Rubik-Medium.ttf in Resources */,
+				19CA638922E87CC500570BD5 /* CreateCategoryScreenComponent.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1090,8 +1144,10 @@
 				19A1B1DB21F3B4D30090F760 /* RepositoryProvider.swift in Sources */,
 				19DACDF82225EC2800C2F36C /* MainScreenCommands.swift in Sources */,
 				1994BAF5220A21AF00B494F4 /* TransactionsCommands.swift in Sources */,
+				19CA638F22E87CEB00570BD5 /* CreateCategoryScreenPropsState.swift in Sources */,
 				1940F4BC21FB0E4D0063DB54 /* KeyboardActions.swift in Sources */,
 				19A1B1F421F4D8B90090F760 /* AccountsRepositoryError.swift in Sources */,
+				198A280C22F3219500B70DAF /* AddCategoryCell.swift in Sources */,
 				1943B01221F67ED30054119C /* Connector.swift in Sources */,
 				19A1B1C221F3860E0090F760 /* AppState.swift in Sources */,
 				1940F4BA21FB0CB60063DB54 /* KeyboardState.swift in Sources */,
@@ -1114,6 +1170,7 @@
 				19A1B1D521F3B1740090F760 /* AppAction.swift in Sources */,
 				1943B01021F66FDC0054119C /* MainScreenComponent+Build.swift in Sources */,
 				19A1B1C821F3895C0090F760 /* AccountsState.swift in Sources */,
+				19CA638B22E87CDC00570BD5 /* CreateCategoryScreenComponent+Build.swift in Sources */,
 				19A1B1C621F3894E0090F760 /* Account.swift in Sources */,
 				1973907F21FCBC7E00D892F4 /* Fonts.swift in Sources */,
 				1932F44D22077C0F00B2502B /* CategoriesConnector.swift in Sources */,
@@ -1124,6 +1181,7 @@
 				1994BAF9220A21C300B494F4 /* TransactionsReducer.swift in Sources */,
 				19E0B0BB2208C75B00AF56D7 /* CategoryCell.swift in Sources */,
 				19A1B1E021F3B5A90090F760 /* ServiceProvider.swift in Sources */,
+				19CA638D22E87CE300570BD5 /* CreateCategoryScreenConnector.swift in Sources */,
 				19A1B1D221F3991D0090F760 /* AppReducer.swift in Sources */,
 				19645D4A22D392AA00B0CA29 /* NumberFormatter+Currency.swift in Sources */,
 				1943B03921FA075F0054119C /* KeyboardComponent+Build.swift in Sources */,
@@ -1135,12 +1193,14 @@
 				19A1B1F021F4CF700090F760 /* AccountsRepositoryProtocol.swift in Sources */,
 				1973909321FF850100D892F4 /* AccountSelectorConnector.swift in Sources */,
 				1943B03521F9EED50054119C /* CategoryIcon.swift in Sources */,
+				19CA638722E87CB800570BD5 /* CreateCategoryScreenComponent.swift in Sources */,
 				1932F44F22077C1600B2502B /* CategoriesPropsState.swift in Sources */,
 				19CCEA4E221C5C5B00C56217 /* CategoriesDataSource.swift in Sources */,
 				1940F4B521FB04290063DB54 /* TransactionsState.swift in Sources */,
 				19A1B1CE21F395F10090F760 /* AccountsFeature.swift in Sources */,
 				1932F43F2207695A00B2502B /* CategoriesFeature.swift in Sources */,
 				190F4B71222882A500939A43 /* TransactionRepositoryProtocol.swift in Sources */,
+				19AF6E7922EF872100F5584A /* CreateCategoryIconCollectionViewCell.swift in Sources */,
 				1932F45122077C1F00B2502B /* CategoriesComponent+Build.swift in Sources */,
 				190F4B6F2228829B00939A43 /* TransactionRepository.swift in Sources */,
 				19E0B0B82208BF4500AF56D7 /* CategoriesRepositoryError.swift in Sources */,

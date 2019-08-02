@@ -13,32 +13,30 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="42G-Xb-O7s" customClass="CategoryCell" customModule="Groshy" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="127" height="128"/>
+            <rect key="frame" x="0.0" y="0.0" width="127" height="113"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                <rect key="frame" x="0.0" y="0.0" width="127" height="128"/>
+                <rect key="frame" x="0.0" y="0.0" width="127" height="113"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APr-fa-Upx">
-                        <rect key="frame" x="5" y="12" width="117" height="15"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="15" id="cKM-Oc-ghe"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YCC-C3-egg">
-                        <rect key="frame" x="5" y="35" width="117" height="81"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="YCC-C3-egg">
+                        <rect key="frame" x="5" y="8" width="117" height="85"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Vf-wb-frI">
-                                <rect key="frame" x="50.5" y="0.0" width="16" height="40.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="APr-fa-Upx">
+                                <rect key="frame" x="2.5" y="0.0" width="112" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Vf-wb-frI">
+                                <rect key="frame" x="44.5" y="43.5" width="28" height="28"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="16" id="CMf-O6-nqR"/>
+                                    <constraint firstAttribute="width" constant="28" id="gBd-lS-9si"/>
+                                    <constraint firstAttribute="height" constant="28" id="lGV-67-duu"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m62-t1-EXT">
-                                <rect key="frame" x="37.5" y="40.5" width="42" height="40.5"/>
+                                <rect key="frame" x="37.5" y="76.5" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,23 +47,20 @@
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="YCC-C3-egg" secondAttribute="bottom" constant="12" id="0ds-gQ-ErR"/>
-                <constraint firstItem="YCC-C3-egg" firstAttribute="leading" secondItem="APr-fa-Upx" secondAttribute="leading" id="Gjs-9N-y9n"/>
-                <constraint firstItem="YCC-C3-egg" firstAttribute="top" secondItem="APr-fa-Upx" secondAttribute="bottom" constant="8" id="Mtk-bO-Cgg"/>
-                <constraint firstItem="YCC-C3-egg" firstAttribute="trailing" secondItem="APr-fa-Upx" secondAttribute="trailing" id="hs1-rE-EaE"/>
-                <constraint firstItem="APr-fa-Upx" firstAttribute="leading" secondItem="42G-Xb-O7s" secondAttribute="leading" constant="5" id="jO7-MG-QGd"/>
-                <constraint firstAttribute="trailing" secondItem="APr-fa-Upx" secondAttribute="trailing" constant="5" id="rgm-wu-ubs"/>
-                <constraint firstItem="APr-fa-Upx" firstAttribute="top" secondItem="42G-Xb-O7s" secondAttribute="top" constant="12" id="sCr-BX-fgM"/>
+                <constraint firstAttribute="bottom" secondItem="YCC-C3-egg" secondAttribute="bottom" constant="8" id="7Ek-Oa-57K"/>
+                <constraint firstItem="YCC-C3-egg" firstAttribute="leading" secondItem="42G-Xb-O7s" secondAttribute="leading" constant="5" id="7hR-yR-gkT"/>
+                <constraint firstAttribute="trailing" secondItem="YCC-C3-egg" secondAttribute="trailing" constant="5" id="F3k-hP-ydI"/>
+                <constraint firstItem="YCC-C3-egg" firstAttribute="top" secondItem="42G-Xb-O7s" secondAttribute="top" constant="8" id="btK-yf-us6"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="TiQ-DO-ELQ"/>
-            <size key="customSize" width="127" height="128"/>
+            <size key="customSize" width="127" height="113"/>
             <connections>
                 <outlet property="amountLabel" destination="m62-t1-EXT" id="341-my-02q"/>
                 <outlet property="containerStackView" destination="YCC-C3-egg" id="gk2-Cr-eyg"/>
                 <outlet property="imageView" destination="7Vf-wb-frI" id="BZM-bX-E7D"/>
                 <outlet property="titleLabel" destination="APr-fa-Upx" id="xco-rl-plv"/>
             </connections>
-            <point key="canvasLocation" x="301.60000000000002" y="41.379310344827587"/>
+            <point key="canvasLocation" x="301.60000000000002" y="34.632683658170919"/>
         </collectionViewCell>
     </objects>
 </document>

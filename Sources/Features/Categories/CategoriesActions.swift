@@ -14,5 +14,6 @@ extension CategoriesFeature {
         case selectCategory(Category)
         case clearSelectedCategory
         case error(message: String)
+        case moveCategory(Category.ID, toPosition: Int)
     }
 }

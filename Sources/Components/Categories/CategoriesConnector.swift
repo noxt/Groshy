@@ -37,11 +37,11 @@ final class CategoriesConnector: BaseConnector<CategoriesPropsState> {
                 ))
             }
         }
-        
-        guard !categories.isEmpty else {
-            return .empty
-        }
-        
+
+//        guard !categories.isEmpty else {
+//            return .empty
+//        }
+
         return .idle(categories: categories, addCategoryCommand: CategoriesComponentCommands.addCategoryCommand(repositories))
     }
 

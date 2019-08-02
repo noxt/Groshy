@@ -62,6 +62,10 @@ struct Images {
 
 
     struct Categories {
+        
+        static var plus: UIImage {
+            return UIImage(named: "categories/plus")!
+        }
 
         static var car: UIImage {
             return UIImage(named: "categories/car")!
@@ -69,10 +73,6 @@ struct Images {
 
         static var entertaiment: UIImage {
             return UIImage(named: "categories/entertaiment")!
-        }
-
-        static var healt: UIImage {
-            return UIImage(named: "categories/healt")!
         }
 
         static var presents: UIImage {
@@ -91,10 +91,106 @@ struct Images {
             return UIImage(named: "categories/shops")!
         }
 
-        static var plus: UIImage {
-            return UIImage(named: "categories/plus")!
+        static var baby: UIImage {
+            return UIImage(named: "categories/baby")!
         }
-
+        
+        static var bus: UIImage {
+            return UIImage(named: "categories/bus")!
+        }
+        
+        static var chair: UIImage {
+            return UIImage(named: "categories/chair")!
+        }
+        
+        static var computer: UIImage {
+            return UIImage(named: "categories/computer")!
+        }
+        
+        static var cosmetics: UIImage {
+            return UIImage(named: "categories/cosmetics")!
+        }
+        
+        static var discount: UIImage {
+            return UIImage(named: "categories/discount")!
+        }
+        
+        static var dumbbell: UIImage {
+            return UIImage(named: "categories/dumbbell")!
+        }
+        
+        static var farm: UIImage {
+            return UIImage(named: "categories/farm")!
+        }
+        
+        static var file: UIImage {
+            return UIImage(named: "categories/file")!
+        }
+        
+        static var fireworks: UIImage {
+            return UIImage(named: "categories/fireworks")!
+        }
+        
+        static var graduation: UIImage {
+            return UIImage(named: "categories/graduation")!
+        }
+        
+        static var health: UIImage {
+            return UIImage(named: "categories/health")!
+        }
+        
+        static var home: UIImage {
+            return UIImage(named: "categories/home")!
+        }
+        
+        static var microphone: UIImage {
+            return UIImage(named: "categories/microphone")!
+        }
+        
+        static var music: UIImage {
+            return UIImage(named: "categories/music")!
+        }
+        
+        static var paw: UIImage {
+            return UIImage(named: "categories/paw")!
+        }
+        
+        static var plane: UIImage {
+            return UIImage(named: "categories/plane")!
+        }
+        
+        static var puzzle: UIImage {
+            return UIImage(named: "categories/puzzle")!
+        }
+        
+        static var settings: UIImage {
+            return UIImage(named: "categories/settings")!
+        }
+        
+        static var sneaker: UIImage {
+            return UIImage(named: "categories/sneaker")!
+        }
+        
+        static var tShirt: UIImage {
+            return UIImage(named: "categories/t-shirt")!
+        }
+        
+        static var taxi: UIImage {
+            return UIImage(named: "categories/taxi")!
+        }
+        
+        static var telephone: UIImage {
+            return UIImage(named: "categories/telephone")!
+        }
+        
+        static var toy: UIImage {
+            return UIImage(named: "categories/toy")!
+        }
+        
+        static var video: UIImage {
+            return UIImage(named: "categories/video")!
+        }
+        
     }
 
 }

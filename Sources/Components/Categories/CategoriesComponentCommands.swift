@@ -12,27 +12,32 @@ struct CategoriesComponentCommands {
     
     static func addCategoryCommand(_ repositories: RepositoryProviderProtocol) -> CommandOf<UIViewController> {
         return CommandOf { viewController in
-            let alert = UIAlertController(title: "Как назвать категорию?", message: nil, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+            let createCategoryScreen = CreateCategoryScreenComponent.build(with: repositories)
+            createCategoryScreen.modalPresentationStyle = .overCurrentContext
+            createCategoryScreen.modalTransitionStyle = .crossDissolve
+            viewController.present(createCategoryScreen, animated: true, completion: nil)
             
-            alert.addTextField(configurationHandler: { textField in
-                textField.placeholder = "Введите название категории..."
-            })
-            
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-                guard let title = alert.textFields?.first?.text else {
-                    return
-                }
-                
-                let category = Category(
-                    id: Category.ID(rawValue: UUID()),
-                    icon: .random(),
-                    title: title
-                )
-                CategoriesFeature.Commands.createCategory(repositories).execute(with: category)
-            }))
-            
-            viewController.present(alert, animated: true)
+//            let alert = UIAlertController(title: "Как назвать категорию?", message: nil, preferredStyle: .alert)
+//            alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+//
+//            alert.addTextField(configurationHandler: { textField in
+//                textField.placeholder = "Введите название категории..."
+//            })
+//
+//            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+//                guard let title = alert.textFields?.first?.text else {
+//                    return
+//                }
+//
+//                let category = Category(
+//                    id: Category.ID(rawValue: UUID()),
+//                    icon: .random(),
+//                    title: title
+//                )
+//                CategoriesFeature.Commands.createCategory(repositories).execute(with: category)
+//            }))
+//
+//            viewController.present(alert, animated: true)
         }
     }
     
