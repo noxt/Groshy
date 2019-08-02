@@ -11,7 +11,7 @@ import SwifterSwift
 final class MainScreenComponent: BaseComponent<MainScreenConnector> {
 
     // MARK: - Types
-    
+
     private struct Constants {
         static let cornerRadius: CGFloat = 4
     }
@@ -31,10 +31,10 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
 
 
     // MARK: - Private Properties
-    
+
     private let categoriesComponent: CategoriesComponent
     private let keyboardComponent: KeyboardComponent
-    
+
     private var accountSelectorComponentConfigured = false
     private var categoriesComponentConfigured = false
     private var keyboardComponentConfigured = false
@@ -45,7 +45,7 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
     init(connector: MainScreenConnector,
          categoriesComponent: CategoriesComponent,
          keyboardComponent: KeyboardComponent
-     ) {
+    ) {
         self.categoriesComponent = categoriesComponent
         self.keyboardComponent = keyboardComponent
 
@@ -65,7 +65,6 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
         setupCurrentBalanceLabel()
         setupAppTitle()
         setupCurrentValue()
-        setupCalendarButton()
         setupApplyButton()
         setupAddCommentButton()
 
@@ -114,12 +113,12 @@ extension MainScreenComponent {
         categoriesContainer.addChild(view: categoriesComponent.view)
         categoriesComponent.didMove(toParent: self)
     }
-    
+
     private func setupCurrentBalanceLabel() {
         currentBalanceLabel.textColor = Colors.darkGray
         currentBalanceLabel.font = Fonts.Rubik.Medium(size: 14)
     }
-    
+
     private func setupAppTitle() {
         appTitleLabel.textColor = Colors.black
         appTitleLabel.font = Fonts.Rubik.Bold(size: 30)
@@ -133,11 +132,6 @@ extension MainScreenComponent {
         currentValueLabel.font = Fonts.Rubik.Medium(size: 25)
     }
 
-    private func setupCalendarButton() {
-        calendarButton.setImage(Images.Buttons.calendar, for: .normal)
-        calendarButton.setImage(Images.Buttons.calendarSelected, for: .highlighted)
-    }
-
     private func setupApplyButton() {
         applyButton.layer.cornerRadius = Constants.cornerRadius
         applyButton.setTitleColor(Colors.white, for: .normal)
@@ -146,7 +140,7 @@ extension MainScreenComponent {
         applyButton.defaultBackgroundColor = Colors.blue
         applyButton.highlightedBackgroundColor = Colors.darkBlue
     }
-    
+
     private func setupAddCommentButton() {
         addCommentButton.tintColor = Colors.gray
         addCommentButton.setImage(Images.Buttons.comment, for: .normal)

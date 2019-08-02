@@ -7,9 +7,9 @@ import Foundation
 
 
 extension CreateCategoryScreenComponent {
-    static func build(with repositories: RepositoryProviderProtocol) -> CreateCategoryScreenComponent {
+    static func build(with repositories: RepositoryProviderProtocol, editableCategoryID: Category.ID?) -> CreateCategoryScreenComponent {
         return CreateCategoryScreenComponent(
-            connector: CreateCategoryScreenConnector(repositories: repositories)
+            connector: CreateCategoryScreenConnector(repositories: repositories, editableCategoryID: editableCategoryID)
         )
     }
 }

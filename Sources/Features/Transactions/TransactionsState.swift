@@ -10,12 +10,14 @@ extension TransactionsFeature {
     struct State: Codable {
 
         let transactions: [Transaction.ID: Transaction]
+        let filter: TransactionFilter
         let isLoading: Bool
         let error: String?
 
         
         static let initial = State(
             transactions: [:],
+            filter: .perDay,
             isLoading: false,
             error: nil
         )

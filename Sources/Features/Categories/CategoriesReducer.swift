@@ -10,52 +10,29 @@ import Unicore
 extension CategoriesFeature {
     
     static func reduce(_ old: State, with action: Action) -> State {
+        var state = old
+
         switch action {
 
         case let Actions.setCategories(categories):
-            return State(
-                selectedCategory: old.selectedCategory,
-                categories: normalize(categories: categories),
-                sortOrder: categories.map({ $0.id }),
-                isLoading: false,
-                error: nil
-            )
+            state.categories = normalize(categories: categories)
+            state.sortOrder = categories.map({ $0.id })
+            state.isLoading = false
+            state.error = nil
 
         case let Actions.selectCategory(category):
-            return State(
-                selectedCategory: category.id,
-                categories: old.categories,
-                sortOrder: old.sortOrder,
-                isLoading: false,
-                error: nil
-            )
+            state.selectedCategory = category.id
             
         case Actions.clearSelectedCategory:
-            return State(
-                selectedCategory: nil,
-                categories: old.categories,
-                sortOrder: old.sortOrder,
-                isLoading: false,
-                error: nil
-            )
+            state.selectedCategory = nil
 
         case Actions.loadingStarted:
-            return State(
-                selectedCategory: old.selectedCategory,
-                categories: old.categories,
-                sortOrder: old.sortOrder,
-                isLoading: true,
-                error: nil
-            )
+            state.isLoading = true
+            state.error = nil
 
         case let Actions.error(message: message):
-            return State(
-                selectedCategory: old.selectedCategory,
-                categories: old.categories,
-                sortOrder: old.sortOrder,
-                isLoading: false,
-                error: message
-            )
+            state.isLoading = false
+            state.error = message
             
         case let Actions.moveCategory(categoryID, toPosition: position):
             var sortOrder = old.sortOrder
@@ -63,19 +40,15 @@ extension CategoriesFeature {
                 let info = sortOrder.remove(at: oldPosition)
                 sortOrder.insert(info, at: position)
             }
-            
-            return State(
-                selectedCategory: old.selectedCategory,
-                categories: old.categories,
-                sortOrder: sortOrder,
-                isLoading: old.isLoading,
-                error: old.error
-            )
+
+            state.sortOrder = sortOrder
 
         default:
-            return old
+            break
 
         }
+
+        return state
     }
     
     private static func normalize(categories: [Category]) -> [Category.ID: Category] {

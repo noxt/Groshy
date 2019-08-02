@@ -41,6 +41,21 @@ extension CategoriesFeature {
                     })
             }
         }
+
+        static func updateCategory(_ repositories: RepositoryProviderProtocol) -> CommandOf<Category> {
+            return CommandOf<Category> { category in
+                repositories.categoriesRepository.update(category: category)
+                    .then({ (_) -> Promise<[Category]> in
+                        repositories.categoriesRepository.loadCategories()
+                    })
+                    .done({ (categories) in
+                        core.dispatch(Actions.setCategories(categories))
+                    })
+                    .catch({ (error) in
+                        core.dispatch(Actions.error(message: error.localizedDescription))
+                    })
+            }
+        }
         
         static func selectCategory(_ repositories: RepositoryProviderProtocol) -> CommandOf<Category> {
             return CommandOf<Category> { category in

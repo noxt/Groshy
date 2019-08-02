@@ -21,6 +21,7 @@ final class CategoriesDataSource: NSObject {
     // MARK: - Public Properties
     
     var addCategoryCommand: Command?
+    var editCategoryCommand: CommandOf<Category.ID>?
     
 
     // MARK: - Private Properties
@@ -28,7 +29,13 @@ final class CategoriesDataSource: NSObject {
     private weak var collectionView: UICollectionView!
     private var items: [Item] = [.addButton]
     private lazy var longPressGesture: UILongPressGestureRecognizer = {
-        return UILongPressGestureRecognizer(target: self, action: #selector(self.longTap(_:)))
+        UILongPressGestureRecognizer(target: self, action: #selector(self.longTap(_:)))
+    }()
+    private lazy var doubleTapGesture: UITapGestureRecognizer = {
+        let gr = UITapGestureRecognizer(target: self, action: #selector(self.doubleTap(_:)))
+        gr.numberOfTapsRequired = 2
+        gr.delaysTouchesBegan = true
+        return gr
     }()
 
 
@@ -44,6 +51,7 @@ final class CategoriesDataSource: NSObject {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.addGestureRecognizer(longPressGesture)
+        collectionView.addGestureRecognizer(doubleTapGesture)
     }
 
 
@@ -112,20 +120,31 @@ extension CategoriesDataSource {
     }
 
     @objc func longTap(_ gesture: UIGestureRecognizer) {
+        let realLocation = gesture.location(in: collectionView)
+        var shiftedLocation = realLocation
+        shiftedLocation.x -= collectionView.contentOffset.x
+        
         switch gesture.state {
         case .began:
-            guard let selectedIndexPath = collectionView.indexPathForItem(at: gesture.location(in: collectionView)) else {
+            guard gesture.view!.frame.contains(shiftedLocation) else {
+                return
+            }
+            
+            guard let selectedIndexPath = collectionView.indexPathForItem(at: realLocation) else {
                 return
             }
             collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
+            
         case .changed:
-            if gesture.view!.frame.contains(gesture.location(in: gesture.view!)) {
-                collectionView.updateInteractiveMovementTargetPosition(gesture.location(in: gesture.view!))
-            } else {
+            guard gesture.view!.frame.contains(shiftedLocation) else {
                 collectionView.cancelInteractiveMovement()
+                return
             }
+            collectionView.updateInteractiveMovementTargetPosition(realLocation)
+            
         case .ended:
             collectionView.endInteractiveMovement()
+            
         default:
             collectionView.cancelInteractiveMovement()
         }
@@ -143,6 +162,24 @@ extension CategoriesDataSource {
         }
     }
 
+}
+
+
+// MARK: - Double tap
+
+extension CategoriesDataSource {
+    @objc func doubleTap(_ gesture: UIGestureRecognizer) {
+        guard let selectedIndexPath = collectionView.indexPathForItem(at: gesture.location(in: collectionView)) else {
+            return
+        }
+
+        switch items[selectedIndexPath.row] {
+        case let .category(info: info):
+            editCategoryCommand?.execute(with: info.id)
+        default:
+            break
+        }
+    }
 }
 
 

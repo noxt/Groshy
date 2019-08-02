@@ -46,10 +46,6 @@ struct Images {
             return UIImage(named: "buttons/calendar")!
         }
 
-        static var calendarSelected: UIImage {
-            return UIImage(named: "buttons/calendar-selected")!
-        }
-
         static var comment: UIImage {
             return UIImage(named: "buttons/comment")!
         }

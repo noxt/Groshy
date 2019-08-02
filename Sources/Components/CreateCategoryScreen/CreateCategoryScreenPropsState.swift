@@ -11,4 +11,5 @@ struct CreateCategoryScreenProps: Equatable {
     let title: String?
     let icon: Category.Icon?
     let onSave: CommandOf<Category>
+    let categoryID: Category.ID?
 }

@@ -9,7 +9,7 @@ import Command
 
 enum CategoriesPropsState: Equatable {
     case loading
-    case idle(categories: [CategoryInfo], addCategoryCommand: CommandOf<UIViewController>)
+    case idle(categories: [CategoryInfo], addCategoryCommand: CommandOf<UIViewController>, editCategoryCommand: CommandOf<(UIViewController, Category.ID)>)
     case empty
 }
 

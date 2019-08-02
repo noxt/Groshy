@@ -10,6 +10,7 @@ import Unicore
 extension TransactionsFeature {
     enum Actions: Action {
         case setTransactions([Transaction])
+        case setFilter(TransactionFilter)
         case loadingStarted
         case error(message: String)
     }

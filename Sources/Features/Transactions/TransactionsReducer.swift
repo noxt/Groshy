@@ -15,13 +15,23 @@ extension TransactionsFeature {
         case let Actions.setTransactions(transactions):
             return State(
                 transactions: normalize(transactions: transactions),
+                filter: old.filter,
                 isLoading: false,
                 error: nil
             )
             
+        case let Actions.setFilter(filter):
+            return State(
+                transactions: old.transactions,
+                filter: filter,
+                isLoading: old.isLoading,
+                error: old.error
+            )
+
         case Actions.loadingStarted:
             return State(
                 transactions: old.transactions,
+                filter: old.filter,
                 isLoading: true,
                 error: nil
             )
@@ -29,6 +39,7 @@ extension TransactionsFeature {
         case let Actions.error(message: message):
             return State(
                 transactions: old.transactions,
+                filter: old.filter,
                 isLoading: false,
                 error: message
             )

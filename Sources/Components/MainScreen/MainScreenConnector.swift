@@ -10,15 +10,30 @@ import Unicore
 final class MainScreenConnector: BaseConnector<MainScreenProps> {
 
     override func mapToProps(state: AppFeature.State) -> MainScreenProps {
-        let currentBalance = state.transactionState.transactions.values.reduce(0, { (result, transaction) -> Double in
-            return result + transaction.value
-        })
-        
+        let balance = currentBalance(state)
         return MainScreenProps(
-            currentBalance: NumberFormatter.byn.string(from: NSNumber(value: currentBalance)) ?? "",
+            currentBalance: NumberFormatter.byn.string(from: NSNumber(value: balance)) ?? "",
             currentValue: state.keyboardState.currentValue,
             createTransactionCommand: MainScreenCommands.createTransactionCommand(repositories, state: state)
         )
+    }
+
+    private func currentBalance(_ state: AppFeature.State) -> Double {
+        var currentAccount: Account? = nil
+        if let id = state.accountsState.currentAccountID {
+            currentAccount = state.accountsState.accounts[id]
+        }
+
+        var currentBalance: Double = 0
+        if let account = currentAccount {
+            let filteredTransactions = repositories.transactionRepository.filterTransactions(state.transactionState.transactions, filter: state.transactionState.filter)
+            let transactionsByAccount = repositories.transactionRepository.groupTransactionsByAccount(from: filteredTransactions)
+
+            let transactions = transactionsByAccount[account.id] ?? []
+            currentBalance = repositories.transactionRepository.balanceForTransactions(transactions)
+        }
+
+        return currentBalance
     }
 
 }

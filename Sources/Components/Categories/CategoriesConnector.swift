@@ -20,20 +20,20 @@ final class CategoriesConnector: BaseConnector<CategoriesPropsState> {
         guard !categoriesState.isLoading else {
             return .loading
         }
-        
-        let transactionsByCategories = groupTransactionsByCategory(transactionsState.transactions)
+
+        let filteredTransactions = repositories.transactionRepository.filterTransactions(transactionsState.transactions, filter: transactionsState.filter)
+        let transactionsByCategories = repositories.transactionRepository.groupTransactionsByCategory(filteredTransactions)
 
         var categories: [CategoriesPropsState.CategoryInfo] = []
         for id in categoriesState.sortOrder {
             if let category = categoriesState.categories[id] {
-                let balance: Double? = transactionsByCategories[category.id]?.reduce(0, { (res, transaction) -> Double in
-                    return res + transaction.value
-                })
-                
+                let transactions = transactionsByCategories[category.id] ?? []
+                let balance = repositories.transactionRepository.balanceForTransactions(transactions)
+
                 categories.append(mapCategoryToProps(
                     category: category,
                     isSelected: categoriesState.selectedCategory == category.id,
-                    balance: balance ?? 0
+                    balance: balance
                 ))
             }
         }
@@ -42,7 +42,11 @@ final class CategoriesConnector: BaseConnector<CategoriesPropsState> {
 //            return .empty
 //        }
 
-        return .idle(categories: categories, addCategoryCommand: CategoriesComponentCommands.addCategoryCommand(repositories))
+        return .idle(
+            categories: categories,
+            addCategoryCommand: CategoriesComponentCommands.addCategoryCommand(repositories),
+            editCategoryCommand: CategoriesComponentCommands.editCategoryCommand(repositories)
+        )
     }
 
     private func mapCategoryToProps(category: Category, isSelected: Bool, balance: Double) -> CategoriesPropsState.CategoryInfo {
@@ -57,7 +61,7 @@ final class CategoriesConnector: BaseConnector<CategoriesPropsState> {
         } else {
             command = CategoriesFeature.Commands.clearSelectedCategory(repositories)
         }
-        
+
         return CategoriesPropsState.CategoryInfo(
             id: category.id,
             title: category.title,
@@ -66,19 +70,6 @@ final class CategoriesConnector: BaseConnector<CategoriesPropsState> {
             selectCommand: command,
             isSelected: isSelected
         )
-    }
-    
-    private func groupTransactionsByCategory(_ transactions: [Transaction.ID: Transaction]) -> [Category.ID: [Transaction]] {
-        var groups = [Category.ID: [Transaction]]()
-        
-        for transaction in transactions.values {
-            if groups[transaction.catagoryID] == nil {
-                groups[transaction.catagoryID] = []
-            }
-            groups[transaction.catagoryID]?.append(transaction)
-        }
-        
-        return groups
     }
 
 }

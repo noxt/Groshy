@@ -68,11 +68,7 @@
 		1973908821FF472B00D892F4 /* AccountsRepository+UpdateAccountSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973908721FF472B00D892F4 /* AccountsRepository+UpdateAccountSpec.swift */; };
 		1973908A21FF4E7900D892F4 /* AccountsRepository+DeleteAccountSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973908921FF4E7900D892F4 /* AccountsRepository+DeleteAccountSpec.swift */; };
 		1973908D21FF7C1A00D892F4 /* AccountsFeature_ReducerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973908B21FF7C0800D892F4 /* AccountsFeature_ReducerSpec.swift */; };
-		1973908F21FF84E400D892F4 /* AccountSelectorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973908E21FF84E400D892F4 /* AccountSelectorComponent.swift */; };
-		1973909121FF84F000D892F4 /* AccountSelectorComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1973909021FF84F000D892F4 /* AccountSelectorComponent.xib */; };
-		1973909321FF850100D892F4 /* AccountSelectorConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973909221FF850100D892F4 /* AccountSelectorConnector.swift */; };
-		1973909521FF850B00D892F4 /* AccountSelectorPropsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973909421FF850B00D892F4 /* AccountSelectorPropsState.swift */; };
-		1973909721FF851400D892F4 /* AccountSelectorComponent+Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973909621FF851400D892F4 /* AccountSelectorComponent+Build.swift */; };
+		197638D022F426BE008DBAFF /* TransactionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197638CF22F426BE008DBAFF /* TransactionFilter.swift */; };
 		1985296A229D356800B8BCD5 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19852969229D356800B8BCD5 /* Identity.swift */; };
 		198A280C22F3219500B70DAF /* AddCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198A280B22F3219500B70DAF /* AddCategoryCell.swift */; };
 		198A280E22F322D500B70DAF /* AddCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 198A280D22F322D500B70DAF /* AddCategoryCell.xib */; };
@@ -209,11 +205,7 @@
 		1973908721FF472B00D892F4 /* AccountsRepository+UpdateAccountSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountsRepository+UpdateAccountSpec.swift"; sourceTree = "<group>"; };
 		1973908921FF4E7900D892F4 /* AccountsRepository+DeleteAccountSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountsRepository+DeleteAccountSpec.swift"; sourceTree = "<group>"; };
 		1973908B21FF7C0800D892F4 /* AccountsFeature_ReducerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsFeature_ReducerSpec.swift; sourceTree = "<group>"; };
-		1973908E21FF84E400D892F4 /* AccountSelectorComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSelectorComponent.swift; sourceTree = "<group>"; };
-		1973909021FF84F000D892F4 /* AccountSelectorComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountSelectorComponent.xib; sourceTree = "<group>"; };
-		1973909221FF850100D892F4 /* AccountSelectorConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSelectorConnector.swift; sourceTree = "<group>"; };
-		1973909421FF850B00D892F4 /* AccountSelectorPropsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSelectorPropsState.swift; sourceTree = "<group>"; };
-		1973909621FF851400D892F4 /* AccountSelectorComponent+Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountSelectorComponent+Build.swift"; sourceTree = "<group>"; };
+		197638CF22F426BE008DBAFF /* TransactionFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFilter.swift; sourceTree = "<group>"; };
 		19852969229D356800B8BCD5 /* Identity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
 		198A280B22F3219500B70DAF /* AddCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryCell.swift; sourceTree = "<group>"; };
 		198A280D22F322D500B70DAF /* AddCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCategoryCell.xib; sourceTree = "<group>"; };
@@ -392,18 +384,6 @@
 				1973908B21FF7C0800D892F4 /* AccountsFeature_ReducerSpec.swift */,
 			);
 			path = Accounts;
-			sourceTree = "<group>";
-		};
-		1943B02921F9C4BE0054119C /* AccountSelector */ = {
-			isa = PBXGroup;
-			children = (
-				1973908E21FF84E400D892F4 /* AccountSelectorComponent.swift */,
-				1973909021FF84F000D892F4 /* AccountSelectorComponent.xib */,
-				1973909621FF851400D892F4 /* AccountSelectorComponent+Build.swift */,
-				1973909221FF850100D892F4 /* AccountSelectorConnector.swift */,
-				1973909421FF850B00D892F4 /* AccountSelectorPropsState.swift */,
-			);
-			path = AccountSelector;
 			sourceTree = "<group>";
 		};
 		1943B02A21F9C4DA0054119C /* Keyboard */ = {
@@ -651,6 +631,7 @@
 				1943B02F21F9EDD90054119C /* Category.swift */,
 				1943B03321F9EE5D0054119C /* CategoryIcon.swift */,
 				1943B03621F9F46E0054119C /* Transaction.swift */,
+				197638CF22F426BE008DBAFF /* TransactionFilter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -682,7 +663,6 @@
 			isa = PBXGroup;
 			children = (
 				19B4338222E87A1500336BCA /* CreateCategoryScreen */,
-				1943B02921F9C4BE0054119C /* AccountSelector */,
 				1943B02B21F9C4F30054119C /* Categories */,
 				1943B02A21F9C4DA0054119C /* Keyboard */,
 				1943B00421F66C370054119C /* MainScreen */,
@@ -1014,7 +994,6 @@
 				1973907D21FCBC3400D892F4 /* Rubik-BoldItalic.ttf in Resources */,
 				1973907421FCBC3400D892F4 /* Rubik-MediumItalic.ttf in Resources */,
 				1943B04321FA07930054119C /* KeyboardComponent.xib in Resources */,
-				1973909121FF84F000D892F4 /* AccountSelectorComponent.xib in Resources */,
 				1973907621FCBC3400D892F4 /* Rubik-Light.ttf in Resources */,
 				1973907921FCBC3400D892F4 /* Rubik-Italic.ttf in Resources */,
 				1973907821FCBC3400D892F4 /* Rubik-Black.ttf in Resources */,
@@ -1155,7 +1134,6 @@
 				1940F4C521FC8AB50063DB54 /* UIColor+RGB.swift in Sources */,
 				1994BAF7220A21B900B494F4 /* TransactionsActions.swift in Sources */,
 				1943B03F21FA077D0054119C /* KeyboardConnector.swift in Sources */,
-				1973909721FF851400D892F4 /* AccountSelectorComponent+Build.swift in Sources */,
 				19A1B1ED21F3B6200090F760 /* StorageServiceProtocol.swift in Sources */,
 				1943B01F21F857FA0054119C /* AccountsCommands.swift in Sources */,
 				19DACDEF22247D6A00C2F36C /* HighlightedButton.swift in Sources */,
@@ -1167,6 +1145,7 @@
 				19E0B0B62208BF2500AF56D7 /* CategoriesRepositoryProtocol.swift in Sources */,
 				19A1B1EB21F3B6200090F760 /* StorageServiceKey.swift in Sources */,
 				1932F4452207697E00B2502B /* CategoriesReducer.swift in Sources */,
+				197638D022F426BE008DBAFF /* TransactionFilter.swift in Sources */,
 				19A1B1D521F3B1740090F760 /* AppAction.swift in Sources */,
 				1943B01021F66FDC0054119C /* MainScreenComponent+Build.swift in Sources */,
 				19A1B1C821F3895C0090F760 /* AccountsState.swift in Sources */,
@@ -1191,7 +1170,6 @@
 				19DACDF22225AFF700C2F36C /* UIView+Margins.swift in Sources */,
 				1943B03121F9EDE20054119C /* Category.swift in Sources */,
 				19A1B1F021F4CF700090F760 /* AccountsRepositoryProtocol.swift in Sources */,
-				1973909321FF850100D892F4 /* AccountSelectorConnector.swift in Sources */,
 				1943B03521F9EED50054119C /* CategoryIcon.swift in Sources */,
 				19CA638722E87CB800570BD5 /* CreateCategoryScreenComponent.swift in Sources */,
 				1932F44F22077C1600B2502B /* CategoriesPropsState.swift in Sources */,
@@ -1221,13 +1199,11 @@
 				19A1B1DD21F3B4F70090F760 /* RepositoryProviderProtocol.swift in Sources */,
 				1943B01721F67FDB0054119C /* Component.swift in Sources */,
 				1940F4C021FB1D8E0063DB54 /* KeyboardReducer.swift in Sources */,
-				1973908F21FF84E400D892F4 /* AccountSelectorComponent.swift in Sources */,
 				19A1B1CA21F389D60090F760 /* AccountsActions.swift in Sources */,
 				19E0B0B42208BF1C00AF56D7 /* CategoriesRepository.swift in Sources */,
 				1940F4B321FB03F50063DB54 /* TransactionsFeature.swift in Sources */,
 				1943B03D21FA07750054119C /* KeyboardProps.swift in Sources */,
 				1943B00A21F66D630054119C /* MainScreenComponent.swift in Sources */,
-				1973909521FF850B00D892F4 /* AccountSelectorPropsState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

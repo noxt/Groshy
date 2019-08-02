@@ -9,11 +9,11 @@ import Foundation
 extension CategoriesFeature {
     struct State: Codable {
 
-        let selectedCategory: Category.ID?
-        let categories: [Category.ID : Category]
-        let sortOrder: [Category.ID]
-        let isLoading: Bool
-        let error: String?
+        var selectedCategory: Category.ID?
+        var categories: [Category.ID : Category]
+        var sortOrder: [Category.ID]
+        var isLoading: Bool
+        var error: String?
 
 
         static let initial = State(

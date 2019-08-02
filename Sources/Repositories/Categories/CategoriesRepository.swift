@@ -42,12 +42,12 @@ class CategoriesRepository: CategoriesRepositoryProtocol {
                 guard let index = categories.firstIndex(where: { $0.id == category.id }) else {
                     throw CategoriesRepositoryError.categoryNotFound
                 }
-
+                
                 var newCategories = categories
                 newCategories[index] = category
-
+                
                 try self?.storageService.set(value: newCategories, forKey: .categories)
-
+                
                 return .value(category)
             })
     }
