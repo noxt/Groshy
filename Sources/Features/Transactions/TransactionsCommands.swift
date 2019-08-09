@@ -37,6 +37,7 @@ extension TransactionsFeature {
                     .done({ (transactions) in
                         core.dispatch(Actions.setTransactions(transactions))
                         core.dispatch(KeyboardFeature.Actions.currentValueUpdated(value: "0"))
+                        core.dispatch(HashtagsFeature.Actions.clearSelectedHashtag)
                     })
                     .catch({ (error) in
                         core.dispatch(Actions.error(message: error.localizedDescription))

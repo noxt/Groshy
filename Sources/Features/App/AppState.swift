@@ -13,13 +13,15 @@ extension AppFeature {
         let categoriesState: CategoriesFeature.State
         let keyboardState: KeyboardFeature.State
         let transactionState: TransactionsFeature.State
+        let hashtagsState: HashtagsFeature.State
 
 
         static let initial = State(
             accountsState: .initial,
             categoriesState: .initial,
             keyboardState: .initial,
-            transactionState: .initial
+            transactionState: .initial,
+            hashtagsState: .initial
         )
 
     }

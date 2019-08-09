@@ -27,8 +27,6 @@ final class CategoriesComponent: BaseComponent<CategoriesConnector> {
     // MARK: - IBOutlets
 
     @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var emptyLabel: UILabel!
 
 
     // MARK: - UIKit lifecycle
@@ -51,32 +49,59 @@ final class CategoriesComponent: BaseComponent<CategoriesConnector> {
     // MARK: - Component lifecycle
 
     override func render(old oldProps: CategoriesPropsState?) {
-        guard props != nil else {
-            return
-        }
-
-        switch props! {
-        case let .idle(categories: categories, addCategoryCommand: addCategoryCommand, editCategoryCommand: editCategoryCommand):
-            dataSource.update(categories: categories)
-            dataSource.addCategoryCommand = addCategoryCommand.bound(to: self)
-            dataSource.editCategoryCommand = CommandOf<Category.ID> { [unowned self] categoryId in
-                editCategoryCommand.execute(with: (self, categoryId))
-            }
-            collectionView.isHidden = false
-            activityIndicator.isHidden = true
-            emptyLabel.isHidden = true
-
-        case .loading:
-            collectionView.isHidden = true
-            emptyLabel.isHidden = true
-            activityIndicator.isHidden = false
-            activityIndicator.startAnimating()
-
-        case .empty:
-            collectionView.isHidden = true
-            activityIndicator.isHidden = true
-            emptyLabel.isHidden = false
-        }
+        dataSource.update(categories: props.categories)
+        dataSource.addCategoryCommand = props.addCategoryCommand.bound(to: self)
+        dataSource.showMenuForCategoryCommand = showMenuForCategoryCommand()
     }
 
+}
+
+
+// MARK: - Long tap on category
+
+extension CategoriesComponent {
+    
+    private func showMenuForCategoryCommand() -> CommandOf<CategoriesPropsState.CategoryInfo> {
+        return CommandOf { [unowned self] category in
+            let menuTitle = "Расходы на \(category.title.lowercased())"
+            
+            let optionMenu = UIAlertController(title: nil, message: menuTitle, preferredStyle: .actionSheet)
+            optionMenu.addAction(title: "История операций", style: .default, handler: self.showHistoryActionHandler(categoryId: category.id))
+            optionMenu.addAction(title: "Редактировать", style: .default, handler: self.editActionHandler(categoryId: category.id))
+            optionMenu.addAction(title: "Удалить", style: .destructive, handler: self.deleteActionHandler(categoryId: category.id))
+            optionMenu.addAction(title: "Отменить", style: .cancel)
+            
+            self.parent?.present(optionMenu, animated: true, completion: nil)
+        }
+    }
+    
+    private func editActionHandler(categoryId: Category.ID) -> ((UIAlertAction) -> Void) {
+        return { [unowned self] _ in
+            self.props.editCategoryCommand.execute(with: (self, categoryId))
+        }
+    }
+    
+    private func deleteActionHandler(categoryId: Category.ID) -> ((UIAlertAction) -> Void) {
+        return { [unowned self] _ in
+            let dialogMessage = UIAlertController(title: nil, message: "Вы действительно хотите удалить эту категорию?", preferredStyle: .alert)
+            
+            let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+                self.props.deleteCategoryCommand.execute(with: categoryId)
+            })
+            
+            let cancel = UIAlertAction(title: "Отмена", style: .cancel)
+            
+            dialogMessage.addAction(ok)
+            dialogMessage.addAction(cancel)
+            
+            self.present(dialogMessage, animated: true, completion: nil)
+        }
+    }
+    
+    private func showHistoryActionHandler(categoryId: Category.ID) -> ((UIAlertAction) -> Void) {
+        return { _ in
+            
+        }
+    }
+    
 }

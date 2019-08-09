@@ -14,6 +14,7 @@ protocol TransactionRepositoryProtocol {
     func create(transaction: Transaction) -> Promise<Transaction>
     func update(transaction: Transaction) -> Promise<Transaction>
     func delete(transaction: Transaction) -> Promise<Void>
+    func deleteTransactions(forCategoryId categoryId: Category.ID) -> Promise<Void>
 
     // Filters
     func filterTransactions(_ transactions: [Transaction.ID: Transaction], filter: TransactionFilter) -> [Transaction.ID: Transaction]

@@ -6,6 +6,7 @@
 import UIKit
 import DifferenceKit
 import Command
+import DTButtonMenuController
 
 
 final class CategoriesDataSource: NSObject {
@@ -21,7 +22,7 @@ final class CategoriesDataSource: NSObject {
     // MARK: - Public Properties
     
     var addCategoryCommand: Command?
-    var editCategoryCommand: CommandOf<Category.ID>?
+    var showMenuForCategoryCommand: CommandOf<CategoriesPropsState.CategoryInfo>?
     
 
     // MARK: - Private Properties
@@ -29,14 +30,12 @@ final class CategoriesDataSource: NSObject {
     private weak var collectionView: UICollectionView!
     private var items: [Item] = [.addButton]
     private lazy var longPressGesture: UILongPressGestureRecognizer = {
-        UILongPressGestureRecognizer(target: self, action: #selector(self.longTap(_:)))
-    }()
-    private lazy var doubleTapGesture: UITapGestureRecognizer = {
-        let gr = UITapGestureRecognizer(target: self, action: #selector(self.doubleTap(_:)))
-        gr.numberOfTapsRequired = 2
-        gr.delaysTouchesBegan = true
+        let gr = UILongPressGestureRecognizer(target: self, action: #selector(self.longTap(_:)))
+        gr.minimumPressDuration = 0.2
+        gr.delegate = self
         return gr
     }()
+    private var isMoveingAllowed = true
 
 
     // MARK: - Initializers
@@ -51,7 +50,6 @@ final class CategoriesDataSource: NSObject {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.addGestureRecognizer(longPressGesture)
-        collectionView.addGestureRecognizer(doubleTapGesture)
     }
 
 
@@ -94,6 +92,7 @@ extension CategoriesDataSource: UICollectionViewDataSource {
 // MARK: - UICollectionViewDelegate
 
 extension CategoriesDataSource: UICollectionViewDelegate {
+
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         
@@ -104,6 +103,44 @@ extension CategoriesDataSource: UICollectionViewDelegate {
             addCategoryCommand?.execute()
         }
     }
+
+}
+
+
+// MARK: - LongTap Edit
+
+extension CategoriesDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
+        switch items[indexPath.row] {
+        case let .category(info: category):
+            showMenuForCategoryCommand?.execute(with: category)
+            isMoveingAllowed = false
+            return true
+        default:
+            return false
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+        return false
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+        
+    }
+    
+}
+
+
+// MARK: - UIGestureRecognizerDelegate
+
+extension CategoriesDataSource: UIGestureRecognizerDelegate {
+
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return otherGestureRecognizer.isKind(of: UILongPressGestureRecognizer.self)
+    }
+
 }
 
 
@@ -133,10 +170,11 @@ extension CategoriesDataSource {
             guard let selectedIndexPath = collectionView.indexPathForItem(at: realLocation) else {
                 return
             }
+            isMoveingAllowed = true
             collectionView.beginInteractiveMovementForItem(at: selectedIndexPath)
             
         case .changed:
-            guard gesture.view!.frame.contains(shiftedLocation) else {
+            guard gesture.view!.frame.contains(shiftedLocation), isMoveingAllowed else {
                 collectionView.cancelInteractiveMovement()
                 return
             }
@@ -162,24 +200,6 @@ extension CategoriesDataSource {
         }
     }
 
-}
-
-
-// MARK: - Double tap
-
-extension CategoriesDataSource {
-    @objc func doubleTap(_ gesture: UIGestureRecognizer) {
-        guard let selectedIndexPath = collectionView.indexPathForItem(at: gesture.location(in: collectionView)) else {
-            return
-        }
-
-        switch items[selectedIndexPath.row] {
-        case let .category(info: info):
-            editCategoryCommand?.execute(with: info.id)
-        default:
-            break
-        }
-    }
 }
 
 

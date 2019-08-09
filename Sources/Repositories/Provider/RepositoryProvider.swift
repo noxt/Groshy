@@ -11,6 +11,7 @@ class RepositoryProvider: RepositoryProviderProtocol {
     let accountsRepository: AccountsRepositoryProtocol
     let categoriesRepository: CategoriesRepositoryProtocol
     let transactionRepository: TransactionRepositoryProtocol
+    let hashtagsRepository: HashtagsRepositoryProtocol
 
 
     init(serviceProvider: ServiceProviderProtocol = ServiceProvider()) {
@@ -21,6 +22,9 @@ class RepositoryProvider: RepositoryProviderProtocol {
             storageService: serviceProvider.securityStorageService
         )
         transactionRepository = TransactionRepository(
+            storageService: serviceProvider.securityStorageService
+        )
+        hashtagsRepository = HashtagsRepository(
             storageService: serviceProvider.securityStorageService
         )
     }

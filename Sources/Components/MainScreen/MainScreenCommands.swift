@@ -24,6 +24,7 @@ struct MainScreenCommands {
             id: Transaction.ID(rawValue: UUID()),
             accountID: accountID,
             catagoryID: categoryID,
+            hashtagID: state.hashtagsState.selectedHashtag,
             value: value.doubleValue,
             date: Date()
         )

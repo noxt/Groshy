@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 //        cleanDB()
 //        AccountsFeature.Commands.createAccount(repositories).execute(with: Account(id: Account.ID(rawValue: UUID()), title: "Зарплата"))
-        
+
         TransactionsFeature.Commands.loadTransactionsList(repositories).execute()
         AccountsFeature.Commands.loadAccountsList(repositories).execute()
         CategoriesFeature.Commands.loadCategoriesList(repositories).execute()

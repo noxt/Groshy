@@ -9,10 +9,15 @@ import Command
 
 final class CreateCategoryScreenConnector: BaseConnector<CreateCategoryScreenProps> {
 
-    private var editableCategoryID: Category.ID?
+    // MARK: - Private Properties
+    
+    private var mode: CreateCategoryScreenMode
 
-    init(repositories: RepositoryProviderProtocol, editableCategoryID: Category.ID?) {
-        self.editableCategoryID = editableCategoryID
+    
+    // MARK: - Initializers
+    
+    init(repositories: RepositoryProviderProtocol, mode: CreateCategoryScreenMode) {
+        self.mode = mode
         super.init(repositories: repositories)
     }
     
@@ -21,24 +26,27 @@ final class CreateCategoryScreenConnector: BaseConnector<CreateCategoryScreenPro
     }
     
 
-    override func mapToProps(state: AppFeature.State) -> CreateCategoryScreenProps {
-        var selectedCategory: Category? = nil
-        if let id = editableCategoryID {
-            selectedCategory = state.categoriesState.categories[id]
-        }
+    // MARK: - Lifecycle
 
+    override func mapToProps(state: AppFeature.State) -> CreateCategoryScreenProps {
+        let selectedCategory: Category?
         let onSave: CommandOf<Category>
-        if editableCategoryID == nil {
+        
+        switch mode {
+        case .add:
             onSave = CategoriesFeature.Commands.createCategory(repositories)
-        } else {
+            selectedCategory = nil
+
+        case let .edit(categoryId):
             onSave = CategoriesFeature.Commands.updateCategory(repositories)
+            selectedCategory = state.categoriesState.categories[categoryId]
         }
         
         return CreateCategoryScreenProps(
             title: selectedCategory?.title,
             icon: selectedCategory?.icon,
             onSave: onSave,
-            categoryID: editableCategoryID
+            mode: mode
         )
     }
 

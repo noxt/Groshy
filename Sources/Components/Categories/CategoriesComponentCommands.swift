@@ -12,7 +12,7 @@ struct CategoriesComponentCommands {
 
     static func addCategoryCommand(_ repositories: RepositoryProviderProtocol) -> CommandOf<UIViewController> {
         return CommandOf { viewController in
-            let createCategoryScreen = CreateCategoryScreenComponent.build(with: repositories, editableCategoryID: nil)
+            let createCategoryScreen = CreateCategoryScreenComponent.build(with: repositories, mode: .add)
             createCategoryScreen.modalPresentationStyle = .overCurrentContext
             createCategoryScreen.modalTransitionStyle = .crossDissolve
             viewController.present(createCategoryScreen, animated: true, completion: nil)
@@ -21,11 +21,11 @@ struct CategoriesComponentCommands {
     
     static func editCategoryCommand(_ repositories: RepositoryProviderProtocol) -> CommandOf<(UIViewController, Category.ID)> {
         return CommandOf { viewController, categoryID in
-            let createCategoryScreen = CreateCategoryScreenComponent.build(with: repositories, editableCategoryID: categoryID)
+            let createCategoryScreen = CreateCategoryScreenComponent.build(with: repositories, mode: .edit(categoryID))
             createCategoryScreen.modalPresentationStyle = .overCurrentContext
             createCategoryScreen.modalTransitionStyle = .crossDissolve
             viewController.present(createCategoryScreen, animated: true, completion: nil)
         }
     }
-
+    
 }

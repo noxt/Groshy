@@ -7,10 +7,11 @@ import Foundation
 import Command
 
 
-enum CategoriesPropsState: Equatable {
-    case loading
-    case idle(categories: [CategoryInfo], addCategoryCommand: CommandOf<UIViewController>, editCategoryCommand: CommandOf<(UIViewController, Category.ID)>)
-    case empty
+struct CategoriesPropsState: Equatable {
+    let categories: [CategoryInfo]
+    let addCategoryCommand: CommandOf<UIViewController>
+    let editCategoryCommand: CommandOf<(UIViewController, Category.ID)>
+    let deleteCategoryCommand: CommandOf<Category.ID>
 }
 
 

@@ -13,7 +13,8 @@ extension AppFeature {
             accountsState: AccountsFeature.reduce(old.accountsState, with: action),
             categoriesState: CategoriesFeature.reduce(old.categoriesState, with: action),
             keyboardState: KeyboardFeature.reduce(old.keyboardState, with: action),
-            transactionState: TransactionsFeature.reduce(old.transactionState, with: action)
+            transactionState: TransactionsFeature.reduce(old.transactionState, with: action),
+            hashtagsState: HashtagsFeature.reduce(old.hashtagsState, with: action)
         )
     }
 }

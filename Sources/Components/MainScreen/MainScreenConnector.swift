@@ -5,6 +5,7 @@
 
 import Foundation
 import Unicore
+import Command
 
 
 final class MainScreenConnector: BaseConnector<MainScreenProps> {
@@ -14,8 +15,19 @@ final class MainScreenConnector: BaseConnector<MainScreenProps> {
         return MainScreenProps(
             currentBalance: NumberFormatter.byn.string(from: NSNumber(value: balance)) ?? "",
             currentValue: state.keyboardState.currentValue,
-            createTransactionCommand: MainScreenCommands.createTransactionCommand(repositories, state: state)
+            currentFilter: state.transactionState.filter,
+            hasHashtag: state.hashtagsState.selectedHashtag != nil,
+            createTransactionCommand: MainScreenCommands.createTransactionCommand(repositories, state: state),
+            addHashtagCommand: addHashtagCommand()
         )
+    }
+    
+    private func addHashtagCommand() -> CommandOf<UIViewController> {
+        return CommandOf { [unowned self] vc in
+            let component = AddHashtagScreenComponent.build(with: self.repositories)
+            component.modalTransitionStyle = .crossDissolve
+            vc.present(component, animated: true, completion: nil)
+        }
     }
 
     private func currentBalance(_ state: AppFeature.State) -> Double {

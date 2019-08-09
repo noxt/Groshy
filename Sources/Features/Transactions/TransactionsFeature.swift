@@ -6,4 +6,4 @@
 import Foundation
 
 
-struct TransactionsFeature { }
+enum TransactionsFeature {}

@@ -28,7 +28,8 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
     @IBOutlet weak var addCommentButton: HighlightedButton!
     @IBOutlet weak var applyButton: HighlightedButton!
     @IBOutlet weak var calendarButton: HighlightedButton!
-
+    @IBOutlet weak var filterButton: UIButton!
+    
 
     // MARK: - Private Properties
 
@@ -76,6 +77,10 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
         currentBalanceLabel.text = props.currentBalance
         currentValueLabel.text = props.currentValue
         applyButton.isEnabled = props.createTransactionCommand != nil
+        filterButton.setTitle(props.currentFilter.title, for: .normal)
+        
+        let hashtagColor = props.hasHashtag ? Colors.red : Colors.gray
+        addCommentButton.setTitleColor(hashtagColor, for: .normal)
     }
 
 
@@ -83,6 +88,14 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
 
     @IBAction func createTransaction() {
         props.createTransactionCommand?.execute()
+    }
+
+    @IBAction func addHashtag(_ sender: Any) {
+        props.addHashtagCommand?.execute(with: self)
+    }
+    
+    @IBAction func changeFilter(_ sender: Any) {
+        showFilterMenu()
     }
 
 }
@@ -143,11 +156,48 @@ extension MainScreenComponent {
 
     private func setupAddCommentButton() {
         addCommentButton.tintColor = Colors.gray
-        addCommentButton.setImage(Images.Buttons.comment, for: .normal)
-        addCommentButton.setImage(Images.Buttons.commentSelected, for: .highlighted)
+        addCommentButton.titleLabel?.font = Fonts.Rubik.Medium(size: 32)
         addCommentButton.layer.cornerRadius = Constants.cornerRadius
-        addCommentButton.defaultBackgroundColor = Colors.white
-        addCommentButton.highlightedBackgroundColor = Colors.lightGray
     }
 
+}
+
+
+// MARK: - Long tap on category
+
+extension MainScreenComponent {
+    
+    private func showFilterMenu() {
+        let optionMenu = UIAlertController(title: nil, message: "Расходы", preferredStyle: .actionSheet)
+        
+        let periods = TransactionFilter.allCases
+        for period in periods {
+            optionMenu.addAction(title: period.title, style: .default) { _ in
+                core.dispatch(TransactionsFeature.Actions.setFilter(period))
+            }
+        }
+        
+        optionMenu.addAction(title: "Отменить", style: .cancel)
+        
+        self.present(optionMenu, animated: true, completion: nil)
+    }
+    
+}
+
+
+fileprivate extension TransactionFilter {
+    var title: String {
+        switch self {
+        case .perDay:
+            return "за день"
+        case .perWeek:
+            return "за неделю"
+        case .perMonth:
+            return "за месяц"
+        case .perYear:
+            return "за год"
+        case .allTime:
+            return "за все время"
+        }
+    }
 }

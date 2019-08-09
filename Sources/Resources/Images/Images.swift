@@ -54,6 +54,14 @@ struct Images {
             return UIImage(named: "buttons/comment-selected")!
         }
 
+        static var cancel: UIImage {
+            return UIImage(named: "buttons/cancel")!
+        }
+        
+        static var save: UIImage {
+            return UIImage(named: "buttons/save")!
+        }
+
     }
 
 

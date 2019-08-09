@@ -11,13 +11,6 @@ import UIKit
 
 final class CreateCategoryIconCollectionViewCell: UICollectionViewCell {
     
-    // MARK: - Types
-    
-    private struct Constants {
-        static let cornerRadius: CGFloat = 4
-    }
-
-    
     // MARK: - IBOutlets
     
     @IBOutlet weak var iconImageView: UIImageView!
@@ -27,8 +20,7 @@ final class CreateCategoryIconCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        layer.cornerRadius = Constants.cornerRadius
+        layer.cornerRadius = 4
     }
     
 

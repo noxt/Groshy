@@ -17,6 +17,7 @@ class BaseConnector<PropsType>: Connector
 
     required init(repositories: RepositoryProviderProtocol) {
         self.repositories = repositories
+        setup()
     }
 
 
@@ -32,6 +33,10 @@ class BaseConnector<PropsType>: Connector
 
     func mapToProps(state: AppFeature.State) -> PropsType {
         fatalError("mapToProps(state:) has not been implemented")
+    }
+
+    func setup() {
+        
     }
 
 }

@@ -20,14 +20,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainScreenComponent" customModule="Groshy" customModuleProvider="target">
             <connections>
-                <outlet property="addCommentButton" destination="mFh-L4-hLE" id="0Ib-xn-uUq"/>
+                <outlet property="addCommentButton" destination="KR3-tb-6uM" id="hvs-dB-65N"/>
                 <outlet property="appTitleLabel" destination="ioG-z8-JDI" id="78l-H3-kKl"/>
                 <outlet property="applyButton" destination="MFO-gw-Bs1" id="4EE-av-nxp"/>
-                <outlet property="calendarButton" destination="KR3-tb-6uM" id="7yz-QD-jv7"/>
+                <outlet property="calendarButton" destination="mFh-L4-hLE" id="xny-Kh-zcY"/>
                 <outlet property="categoriesContainer" destination="XAM-BU-bAP" id="n46-21-BOY"/>
                 <outlet property="currentBalanceLabel" destination="EeM-eE-IcT" id="LyX-EX-Z9V"/>
                 <outlet property="currentValueContainer" destination="eQe-6D-Tef" id="48J-Zu-cH9"/>
                 <outlet property="currentValueLabel" destination="roL-xI-9Ow" id="39p-Tl-Ymg"/>
+                <outlet property="filterButton" destination="QOE-wc-vco" id="8rk-Gu-cYV"/>
                 <outlet property="keyboardContainer" destination="F75-Fg-Uxt" id="VKA-3H-3F5"/>
                 <outlet property="view" destination="MHo-HF-Tx7" id="0VL-ZG-yx4"/>
             </connections>
@@ -61,6 +62,9 @@
                                     <state key="normal" title="за день">
                                         <color key="titleColor" red="0.1764705882" green="0.61176470589999998" blue="0.85882352939999995" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="changeFilter:" destination="-1" eventType="touchUpInside" id="YAx-Xe-E4p"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
@@ -74,10 +78,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eQe-6D-Tef">
-                    <rect key="frame" x="16" y="503" width="315" height="60"/>
+                    <rect key="frame" x="16" y="503" width="382" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999998807907104" translatesAutoresizingMaskIntoConstraints="NO" id="roL-xI-9Ow">
-                            <rect key="frame" x="10" y="15" width="295" height="30"/>
+                            <rect key="frame" x="10" y="15" width="362" height="30"/>
                             <fontDescription key="fontDescription" name="Rubik-Medium" family="Rubik" pointSize="25"/>
                             <color key="textColor" red="0.30980392159999998" green="0.30980392159999998" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -91,14 +95,6 @@
                         <constraint firstItem="roL-xI-9Ow" firstAttribute="leading" secondItem="eQe-6D-Tef" secondAttribute="leading" constant="10" id="zHN-QW-Ols"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFh-L4-hLE" customClass="HighlightedButton" customModule="Groshy" customModuleProvider="target">
-                    <rect key="frame" x="338" y="503" width="60" height="60"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="mFh-L4-hLE" secondAttribute="height" multiplier="1:1" id="pBq-JF-XDG"/>
-                    </constraints>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal" image="buttons/comment"/>
-                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F75-Fg-Uxt">
                     <rect key="frame" x="16" y="570" width="382" height="210"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -107,7 +103,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFO-gw-Bs1" customClass="HighlightedButton" customModule="Groshy" customModuleProvider="target">
-                    <rect key="frame" x="16" y="796" width="324" height="50"/>
+                    <rect key="frame" x="73" y="796" width="267" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="9d1-UL-AFp"/>
                     </constraints>
@@ -122,7 +118,12 @@
                     <constraints>
                         <constraint firstAttribute="width" secondItem="KR3-tb-6uM" secondAttribute="height" multiplier="1:1" id="YEe-vV-czi"/>
                     </constraints>
-                    <state key="normal" image="buttons/calendar"/>
+                    <state key="normal" title="#">
+                        <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="addHashtag:" destination="-1" eventType="touchUpInside" id="hxX-Kl-r4o"/>
+                    </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IZn-J1-Qp4">
                     <rect key="frame" x="354" y="50.5" width="44" height="88"/>
@@ -149,26 +150,36 @@
                         </button>
                     </subviews>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFh-L4-hLE" customClass="HighlightedButton" customModule="Groshy" customModuleProvider="target">
+                    <rect key="frame" x="16" y="796" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="mFh-L4-hLE" secondAttribute="height" multiplier="1:1" id="pBq-JF-XDG"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" image="buttons/calendar">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="IZn-J1-Qp4" firstAttribute="centerY" secondItem="ClH-82-aEd" secondAttribute="centerY" constant="-10" id="3aq-by-ZGn"/>
-                <constraint firstItem="mFh-L4-hLE" firstAttribute="top" secondItem="eQe-6D-Tef" secondAttribute="top" id="4ET-3C-WiT"/>
-                <constraint firstItem="mFh-L4-hLE" firstAttribute="leading" secondItem="eQe-6D-Tef" secondAttribute="trailing" constant="7" id="5oH-pk-pYN"/>
-                <constraint firstItem="KR3-tb-6uM" firstAttribute="trailing" secondItem="mFh-L4-hLE" secondAttribute="trailing" id="7xc-sy-MWp"/>
+                <constraint firstItem="mFh-L4-hLE" firstAttribute="top" secondItem="MFO-gw-Bs1" secondAttribute="top" id="4W6-dO-V6A"/>
+                <constraint firstItem="mFh-L4-hLE" firstAttribute="bottom" secondItem="MFO-gw-Bs1" secondAttribute="bottom" id="CrX-Bg-NK3"/>
                 <constraint firstItem="753-3q-H9H" firstAttribute="trailing" secondItem="F75-Fg-Uxt" secondAttribute="trailing" constant="16" id="Hmf-J8-SHt"/>
                 <constraint firstItem="XAM-BU-bAP" firstAttribute="top" secondItem="ClH-82-aEd" secondAttribute="bottom" constant="8" id="MLg-Ch-nhW"/>
                 <constraint firstItem="ClH-82-aEd" firstAttribute="leading" secondItem="753-3q-H9H" secondAttribute="leading" constant="16" id="RA1-C3-tCC"/>
                 <constraint firstItem="KR3-tb-6uM" firstAttribute="bottom" secondItem="MFO-gw-Bs1" secondAttribute="bottom" id="SS5-Eq-rHk"/>
                 <constraint firstItem="eQe-6D-Tef" firstAttribute="top" secondItem="XAM-BU-bAP" secondAttribute="bottom" constant="16" id="VCu-cr-8pd"/>
-                <constraint firstItem="753-3q-H9H" firstAttribute="trailing" secondItem="mFh-L4-hLE" secondAttribute="trailing" constant="16" id="WF0-A8-2FG"/>
                 <constraint firstItem="F75-Fg-Uxt" firstAttribute="top" secondItem="eQe-6D-Tef" secondAttribute="bottom" constant="7" id="WkN-ag-7bE"/>
                 <constraint firstItem="KR3-tb-6uM" firstAttribute="top" secondItem="MFO-gw-Bs1" secondAttribute="top" id="agz-bn-cDQ"/>
+                <constraint firstItem="MFO-gw-Bs1" firstAttribute="leading" secondItem="mFh-L4-hLE" secondAttribute="trailing" constant="7" id="bU8-dz-Dc1"/>
+                <constraint firstItem="mFh-L4-hLE" firstAttribute="leading" secondItem="F75-Fg-Uxt" secondAttribute="leading" id="cGW-fr-Dw7"/>
                 <constraint firstItem="MFO-gw-Bs1" firstAttribute="top" secondItem="F75-Fg-Uxt" secondAttribute="bottom" constant="16" id="exJ-Lk-1kN"/>
-                <constraint firstItem="mFh-L4-hLE" firstAttribute="bottom" secondItem="eQe-6D-Tef" secondAttribute="bottom" id="jPC-dK-7bE"/>
-                <constraint firstItem="MFO-gw-Bs1" firstAttribute="leading" secondItem="F75-Fg-Uxt" secondAttribute="leading" id="kd1-Kv-5G9"/>
+                <constraint firstItem="eQe-6D-Tef" firstAttribute="trailing" secondItem="F75-Fg-Uxt" secondAttribute="trailing" id="jjP-L5-Lp4"/>
                 <constraint firstItem="eQe-6D-Tef" firstAttribute="leading" secondItem="XAM-BU-bAP" secondAttribute="leading" id="luB-XS-rw9"/>
                 <constraint firstItem="XAM-BU-bAP" firstAttribute="leading" secondItem="753-3q-H9H" secondAttribute="leading" constant="16" id="mBO-bI-Fx7"/>
+                <constraint firstItem="KR3-tb-6uM" firstAttribute="trailing" secondItem="F75-Fg-Uxt" secondAttribute="trailing" id="mE0-92-c55"/>
                 <constraint firstItem="753-3q-H9H" firstAttribute="trailing" secondItem="XAM-BU-bAP" secondAttribute="trailing" constant="16" id="nsu-T3-uTa"/>
                 <constraint firstItem="ClH-82-aEd" firstAttribute="top" secondItem="753-3q-H9H" secondAttribute="top" constant="30" id="rvs-1g-bEV"/>
                 <constraint firstItem="F75-Fg-Uxt" firstAttribute="leading" secondItem="753-3q-H9H" secondAttribute="leading" constant="16" id="tts-ZX-0Gp"/>
@@ -184,7 +195,6 @@
     </objects>
     <resources>
         <image name="buttons/calendar" width="22" height="22"/>
-        <image name="buttons/comment" width="24" height="22"/>
         <image name="buttons/settings" width="18" height="18"/>
         <image name="buttons/statistics" width="18" height="13"/>
     </resources>

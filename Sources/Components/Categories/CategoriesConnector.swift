@@ -17,10 +17,6 @@ final class CategoriesConnector: BaseConnector<CategoriesPropsState> {
         let categoriesState = state.categoriesState
         let transactionsState = state.transactionState
 
-        guard !categoriesState.isLoading else {
-            return .loading
-        }
-
         let filteredTransactions = repositories.transactionRepository.filterTransactions(transactionsState.transactions, filter: transactionsState.filter)
         let transactionsByCategories = repositories.transactionRepository.groupTransactionsByCategory(filteredTransactions)
 
@@ -38,14 +34,11 @@ final class CategoriesConnector: BaseConnector<CategoriesPropsState> {
             }
         }
 
-//        guard !categories.isEmpty else {
-//            return .empty
-//        }
-
-        return .idle(
+        return CategoriesPropsState(
             categories: categories,
             addCategoryCommand: CategoriesComponentCommands.addCategoryCommand(repositories),
-            editCategoryCommand: CategoriesComponentCommands.editCategoryCommand(repositories)
+            editCategoryCommand: CategoriesComponentCommands.editCategoryCommand(repositories),
+            deleteCategoryCommand: CategoriesFeature.Commands.deleteCategory(repositories)
         )
     }
 

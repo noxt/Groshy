@@ -7,7 +7,7 @@ import Foundation
 import PromiseKit
 
 
-class TransactionRepository: TransactionRepositoryProtocol {
+final class TransactionRepository: TransactionRepositoryProtocol {
 
     private let storageService: StorageServiceProtocol
 
@@ -72,6 +72,20 @@ extension TransactionRepository {
                 var newTransactions = transactions
                 newTransactions.remove(at: index)
                 return .value(newTransactions)
+            })
+            .then({ [weak self] (transactions) -> Promise<Void> in
+                try self?.storageService.set(value: transactions, forKey: .transactions)
+                return Promise()
+            })
+    }
+    
+    func deleteTransactions(forCategoryId categoryId: Category.ID) -> Promise<Void> {
+        return loadTransactions()
+            .then({ (transactions) -> Promise<[Transaction]> in
+                let updatedTransactions = transactions.filter({ (transaction) -> Bool in
+                    return transaction.catagoryID != categoryId
+                })
+                return .value(updatedTransactions)
             })
             .then({ [weak self] (transactions) -> Promise<Void> in
                 try self?.storageService.set(value: transactions, forKey: .transactions)

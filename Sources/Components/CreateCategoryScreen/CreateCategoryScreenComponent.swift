@@ -12,9 +12,10 @@ final class CreateCategoryScreenComponent: BaseComponent<CreateCategoryScreenCon
     // MARK: - Types
 
     private struct Constants {
-        static let cornerRadius: CGFloat = 4
-        static let rowsCount: CGFloat = 4
-        static let itemSize: CGFloat = 50
+        struct Icons {
+            static let rowsCount: CGFloat = 4
+            static let itemSize: CGFloat = 50
+        }
     }
 
 
@@ -69,27 +70,21 @@ final class CreateCategoryScreenComponent: BaseComponent<CreateCategoryScreenCon
         super.viewWillLayoutSubviews()
 
         let layout = iconsCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        let width: CGFloat = (iconsCollectionView.bounds.width - 20) - Constants.itemSize * Constants.rowsCount
+        let width: CGFloat = (iconsCollectionView.bounds.width - 20) - Constants.Icons.itemSize * Constants.Icons.rowsCount
         layout.minimumInteritemSpacing = 8
-        layout.minimumLineSpacing = width / (Constants.rowsCount - 1)
+        layout.minimumLineSpacing = width / (Constants.Icons.rowsCount - 1)
     }
 
     override func render(old oldProps: CreateCategoryScreenProps?) {
         textField.text = props.title
         selectedIcon = props.icon
-        
-        if props.title == nil {
-            titleLabel.text = "Новая категория"
-        } else {
-            titleLabel.text = "Редактор категории"
-        }
     }
 
 
     // MARK: - IBActions
 
     @IBAction func save(_ sender: UIButton) {
-        guard let category = createCategory() else {
+        guard let category = buildCategory() else {
             return
         }
 
@@ -98,7 +93,7 @@ final class CreateCategoryScreenComponent: BaseComponent<CreateCategoryScreenCon
         close(sender)
     }
 
-    private func createCategory() -> Category? {
+    private func buildCategory() -> Category? {
         guard let title = textField.text, !title.isEmpty else {
             return nil
         }
@@ -107,8 +102,17 @@ final class CreateCategoryScreenComponent: BaseComponent<CreateCategoryScreenCon
             return nil
         }
 
+        let id: Category.ID
+        
+        switch props.mode {
+        case .add:
+            id = Category.ID(rawValue: UUID())
+        case let .edit(categoryId):
+            id = categoryId
+        }
+        
         return Category(
-            id: props.categoryID ?? Category.ID(rawValue: UUID()),
+            id: id,
             icon: icon,
             title: title
         )
@@ -117,32 +121,39 @@ final class CreateCategoryScreenComponent: BaseComponent<CreateCategoryScreenCon
 
     // MARK: - Private Methods
 
+    private func checkSaveButtonIsEnabled() {
+        saveButton.isEnabled = textField.text?.isEmpty == false && selectedIcon != nil
+    }
+
+}
+
+
+// MARK: - Setup
+
+extension CreateCategoryScreenComponent {
+    
     private func setupTitleLabel() {
         titleLabel.font = Fonts.Rubik.Medium(size: 24)
         titleLabel.textColor = Colors.black
     }
-
+    
     private func setupTextField() {
         textField.font = Fonts.Rubik.Regular(size: 17)
         textField.textColor = Colors.black
         textField.tintColor = Colors.blue
         textField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .editingChanged)
-
+        
         textFieldBottomLine.backgroundColor = Colors.lightGray
     }
-
+    
     private func setupSaveButton() {
-        saveButton.layer.cornerRadius = Constants.cornerRadius
+        saveButton.layer.cornerRadius = 4
         saveButton.setTitleColor(Colors.white, for: .normal)
         saveButton.setTitleColor(Colors.white, for: .highlighted)
         saveButton.titleLabel?.font = Fonts.Rubik.Medium(size: 17)
         saveButton.defaultBackgroundColor = Colors.blue
         saveButton.highlightedBackgroundColor = Colors.darkBlue
         saveButton.isEnabled = false
-    }
-
-    private func checkSaveButtonIsEnabled() {
-        saveButton.isEnabled = textField.text?.isEmpty == false && selectedIcon != nil
     }
 
 }
@@ -167,9 +178,11 @@ extension CreateCategoryScreenComponent: UIGestureRecognizerDelegate {
 // MARK: - UITextField
 
 extension CreateCategoryScreenComponent {
+
     @objc func textFieldDidChange(textField: UITextField) {
         checkSaveButtonIsEnabled()
     }
+
 }
 
 
@@ -187,7 +200,6 @@ extension CreateCategoryScreenComponent: UICollectionViewDataSource {
         cell.configure(with: icon, isSelected: icon == selectedIcon)
         return cell
     }
-
 
 }
 

@@ -51,6 +51,7 @@
 		1961FAE822D4E27D002C094D /* MainScreenUITestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1961FAE722D4E27D002C094D /* MainScreenUITestCase.swift */; };
 		1961FAED22D63A5D002C094D /* MainScreenComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1961FAEC22D63A5D002C094D /* MainScreenComponent.xib */; };
 		19645D4A22D392AA00B0CA29 /* NumberFormatter+Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19645D4922D392AA00B0CA29 /* NumberFormatter+Currency.swift */; };
+		1970674922FDB1E9001D79B4 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1970674822FDB1E9001D79B4 /* Colors.xcassets */; };
 		1973907421FCBC3400D892F4 /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1973906A21FCBC3400D892F4 /* Rubik-MediumItalic.ttf */; };
 		1973907521FCBC3400D892F4 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1973906B21FCBC3400D892F4 /* Rubik-Bold.ttf */; };
 		1973907621FCBC3400D892F4 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1973906C21FCBC3400D892F4 /* Rubik-Light.ttf */; };
@@ -68,10 +69,28 @@
 		1973908821FF472B00D892F4 /* AccountsRepository+UpdateAccountSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973908721FF472B00D892F4 /* AccountsRepository+UpdateAccountSpec.swift */; };
 		1973908A21FF4E7900D892F4 /* AccountsRepository+DeleteAccountSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973908921FF4E7900D892F4 /* AccountsRepository+DeleteAccountSpec.swift */; };
 		1973908D21FF7C1A00D892F4 /* AccountsFeature_ReducerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1973908B21FF7C0800D892F4 /* AccountsFeature_ReducerSpec.swift */; };
+		1974865A22F884C9001CFC13 /* AddHashtagScreenComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1974865922F884C9001CFC13 /* AddHashtagScreenComponent.swift */; };
+		1974865C22F884E3001CFC13 /* AddHashtagScreenComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1974865B22F884E3001CFC13 /* AddHashtagScreenComponent.xib */; };
+		1974865E22F884EF001CFC13 /* AddHashtagScreenComponent+Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1974865D22F884EF001CFC13 /* AddHashtagScreenComponent+Build.swift */; };
+		1974866022F884FD001CFC13 /* AddHashtagScreenConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1974865F22F884FD001CFC13 /* AddHashtagScreenConnector.swift */; };
+		1974866222F88509001CFC13 /* AddHashtagScreenPropsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1974866122F88509001CFC13 /* AddHashtagScreenPropsState.swift */; };
+		1974866422F88573001CFC13 /* Hastag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1974866322F88573001CFC13 /* Hastag.swift */; };
+		1974866722F8883D001CFC13 /* HashtagsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1974866622F8883D001CFC13 /* HashtagsState.swift */; };
+		1974866922F8884F001CFC13 /* HashtagsFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1974866822F8884F001CFC13 /* HashtagsFeature.swift */; };
+		1974866B22F888B2001CFC13 /* HashtagsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1974866A22F888B2001CFC13 /* HashtagsActions.swift */; };
+		1974866D22F88902001CFC13 /* HashtagsCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1974866C22F88902001CFC13 /* HashtagsCommands.swift */; };
+		1974867022F88962001CFC13 /* HashtagsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1974866F22F88962001CFC13 /* HashtagsRepositoryProtocol.swift */; };
+		1974867222F88974001CFC13 /* HashtagsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1974867122F88974001CFC13 /* HashtagsRepository.swift */; };
+		1974867422F88A7F001CFC13 /* HashtagsRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1974867322F88A7F001CFC13 /* HashtagsRepositoryError.swift */; };
+		1974867622F88BF9001CFC13 /* HashtagsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1974867522F88BF9001CFC13 /* HashtagsReducer.swift */; };
+		1974867822F9755F001CFC13 /* HashtagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1974867722F9755F001CFC13 /* HashtagView.swift */; };
+		1974867A22F97569001CFC13 /* HashtagView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1974867922F97569001CFC13 /* HashtagView.xib */; };
+		1974867C22F9D004001CFC13 /* NibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1974867B22F9D004001CFC13 /* NibView.swift */; };
 		197638D022F426BE008DBAFF /* TransactionFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197638CF22F426BE008DBAFF /* TransactionFilter.swift */; };
 		1985296A229D356800B8BCD5 /* Identity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19852969229D356800B8BCD5 /* Identity.swift */; };
 		198A280C22F3219500B70DAF /* AddCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198A280B22F3219500B70DAF /* AddCategoryCell.swift */; };
 		198A280E22F322D500B70DAF /* AddCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 198A280D22F322D500B70DAF /* AddCategoryCell.xib */; };
+		198E06AC22F49AB6009EE1FE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 198E06AB22F49AB6009EE1FE /* GoogleService-Info.plist */; };
 		1994BAF5220A21AF00B494F4 /* TransactionsCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994BAF4220A21AF00B494F4 /* TransactionsCommands.swift */; };
 		1994BAF7220A21B900B494F4 /* TransactionsActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994BAF6220A21B900B494F4 /* TransactionsActions.swift */; };
 		1994BAF9220A21C300B494F4 /* TransactionsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1994BAF8220A21C300B494F4 /* TransactionsReducer.swift */; };
@@ -188,6 +207,7 @@
 		1961FAE722D4E27D002C094D /* MainScreenUITestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenUITestCase.swift; sourceTree = "<group>"; };
 		1961FAEC22D63A5D002C094D /* MainScreenComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainScreenComponent.xib; sourceTree = "<group>"; };
 		19645D4922D392AA00B0CA29 /* NumberFormatter+Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Currency.swift"; sourceTree = "<group>"; };
+		1970674822FDB1E9001D79B4 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		1973906A21FCBC3400D892F4 /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
 		1973906B21FCBC3400D892F4 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
 		1973906C21FCBC3400D892F4 /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
@@ -205,10 +225,28 @@
 		1973908721FF472B00D892F4 /* AccountsRepository+UpdateAccountSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountsRepository+UpdateAccountSpec.swift"; sourceTree = "<group>"; };
 		1973908921FF4E7900D892F4 /* AccountsRepository+DeleteAccountSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountsRepository+DeleteAccountSpec.swift"; sourceTree = "<group>"; };
 		1973908B21FF7C0800D892F4 /* AccountsFeature_ReducerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsFeature_ReducerSpec.swift; sourceTree = "<group>"; };
+		1974865922F884C9001CFC13 /* AddHashtagScreenComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHashtagScreenComponent.swift; sourceTree = "<group>"; };
+		1974865B22F884E3001CFC13 /* AddHashtagScreenComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddHashtagScreenComponent.xib; sourceTree = "<group>"; };
+		1974865D22F884EF001CFC13 /* AddHashtagScreenComponent+Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddHashtagScreenComponent+Build.swift"; sourceTree = "<group>"; };
+		1974865F22F884FD001CFC13 /* AddHashtagScreenConnector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHashtagScreenConnector.swift; sourceTree = "<group>"; };
+		1974866122F88509001CFC13 /* AddHashtagScreenPropsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHashtagScreenPropsState.swift; sourceTree = "<group>"; };
+		1974866322F88573001CFC13 /* Hastag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hastag.swift; sourceTree = "<group>"; };
+		1974866622F8883D001CFC13 /* HashtagsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagsState.swift; sourceTree = "<group>"; };
+		1974866822F8884F001CFC13 /* HashtagsFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagsFeature.swift; sourceTree = "<group>"; };
+		1974866A22F888B2001CFC13 /* HashtagsActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagsActions.swift; sourceTree = "<group>"; };
+		1974866C22F88902001CFC13 /* HashtagsCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagsCommands.swift; sourceTree = "<group>"; };
+		1974866F22F88962001CFC13 /* HashtagsRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagsRepositoryProtocol.swift; sourceTree = "<group>"; };
+		1974867122F88974001CFC13 /* HashtagsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagsRepository.swift; sourceTree = "<group>"; };
+		1974867322F88A7F001CFC13 /* HashtagsRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagsRepositoryError.swift; sourceTree = "<group>"; };
+		1974867522F88BF9001CFC13 /* HashtagsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagsReducer.swift; sourceTree = "<group>"; };
+		1974867722F9755F001CFC13 /* HashtagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashtagView.swift; sourceTree = "<group>"; };
+		1974867922F97569001CFC13 /* HashtagView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HashtagView.xib; sourceTree = "<group>"; };
+		1974867B22F9D004001CFC13 /* NibView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibView.swift; sourceTree = "<group>"; };
 		197638CF22F426BE008DBAFF /* TransactionFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFilter.swift; sourceTree = "<group>"; };
 		19852969229D356800B8BCD5 /* Identity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identity.swift; sourceTree = "<group>"; };
 		198A280B22F3219500B70DAF /* AddCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryCell.swift; sourceTree = "<group>"; };
 		198A280D22F322D500B70DAF /* AddCategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddCategoryCell.xib; sourceTree = "<group>"; };
+		198E06AB22F49AB6009EE1FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1994BAF4220A21AF00B494F4 /* TransactionsCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsCommands.swift; sourceTree = "<group>"; };
 		1994BAF6220A21B900B494F4 /* TransactionsActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsActions.swift; sourceTree = "<group>"; };
 		1994BAF8220A21C300B494F4 /* TransactionsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsReducer.swift; sourceTree = "<group>"; };
@@ -366,6 +404,7 @@
 				19CCEA4A221C54F700C56217 /* BaseComponent.swift */,
 				1943B01421F67F100054119C /* BaseConnector.swift */,
 				1943B01A21F68D9C0054119C /* Scene.swift */,
+				1974867B22F9D004001CFC13 /* NibView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -425,6 +464,7 @@
 		1973906721FCBBB400D892F4 /* Colors */ = {
 			isa = PBXGroup;
 			children = (
+				1970674822FDB1E9001D79B4 /* Colors.xcassets */,
 				1940F4C121FC890A0063DB54 /* Colors.swift */,
 			);
 			path = Colors;
@@ -454,6 +494,50 @@
 				1973907321FCBC3400D892F4 /* Rubik-BoldItalic.ttf */,
 			);
 			path = Rubic;
+			sourceTree = "<group>";
+		};
+		1974865622F8848A001CFC13 /* AddHashtagScreen */ = {
+			isa = PBXGroup;
+			children = (
+				1974865822F884AE001CFC13 /* Views */,
+				1974865922F884C9001CFC13 /* AddHashtagScreenComponent.swift */,
+				1974865B22F884E3001CFC13 /* AddHashtagScreenComponent.xib */,
+				1974865D22F884EF001CFC13 /* AddHashtagScreenComponent+Build.swift */,
+				1974865F22F884FD001CFC13 /* AddHashtagScreenConnector.swift */,
+				1974866122F88509001CFC13 /* AddHashtagScreenPropsState.swift */,
+			);
+			path = AddHashtagScreen;
+			sourceTree = "<group>";
+		};
+		1974865822F884AE001CFC13 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1974867722F9755F001CFC13 /* HashtagView.swift */,
+				1974867922F97569001CFC13 /* HashtagView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1974866522F88826001CFC13 /* Hashtags */ = {
+			isa = PBXGroup;
+			children = (
+				1974866A22F888B2001CFC13 /* HashtagsActions.swift */,
+				1974866C22F88902001CFC13 /* HashtagsCommands.swift */,
+				1974866822F8884F001CFC13 /* HashtagsFeature.swift */,
+				1974867522F88BF9001CFC13 /* HashtagsReducer.swift */,
+				1974866622F8883D001CFC13 /* HashtagsState.swift */,
+			);
+			path = Hashtags;
+			sourceTree = "<group>";
+		};
+		1974866E22F8894C001CFC13 /* Hashtags */ = {
+			isa = PBXGroup;
+			children = (
+				1974866F22F88962001CFC13 /* HashtagsRepositoryProtocol.swift */,
+				1974867122F88974001CFC13 /* HashtagsRepository.swift */,
+				1974867322F88A7F001CFC13 /* HashtagsRepositoryError.swift */,
+			);
+			path = Hashtags;
 			sourceTree = "<group>";
 		};
 		19852967229C772B00B8BCD5 /* Transactions */ = {
@@ -565,6 +649,7 @@
 			children = (
 				19A1B18721F3837C0090F760 /* AppDelegate.swift */,
 				19A1B19321F3837E0090F760 /* Info.plist */,
+				198E06AB22F49AB6009EE1FE /* GoogleService-Info.plist */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -593,6 +678,7 @@
 		19A1B1BC21F384C80090F760 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				1974866E22F8894C001CFC13 /* Hashtags */,
 				19A1B1EE21F4CF580090F760 /* Accounts */,
 				19E0B0B22208BF0500AF56D7 /* Categories */,
 				19A1B1D921F3B4BC0090F760 /* Provider */,
@@ -615,6 +701,7 @@
 		19A1B1BE21F384DC0090F760 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				1974866522F88826001CFC13 /* Hashtags */,
 				19A1B1C421F389200090F760 /* Accounts */,
 				19A1B1C021F385FF0090F760 /* App */,
 				1932F43D2207693B00B2502B /* Categories */,
@@ -632,6 +719,7 @@
 				1943B03321F9EE5D0054119C /* CategoryIcon.swift */,
 				1943B03621F9F46E0054119C /* Transaction.swift */,
 				197638CF22F426BE008DBAFF /* TransactionFilter.swift */,
+				1974866322F88573001CFC13 /* Hastag.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -662,6 +750,7 @@
 		19A1B1D321F3A8A30090F760 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1974865622F8848A001CFC13 /* AddHashtagScreen */,
 				19B4338222E87A1500336BCA /* CreateCategoryScreen */,
 				1943B02B21F9C4F30054119C /* Categories */,
 				1943B02A21F9C4DA0054119C /* Keyboard */,
@@ -990,12 +1079,16 @@
 				19A1B19221F3837E0090F760 /* LaunchScreen.storyboard in Resources */,
 				19E0B0BD2208C76600AF56D7 /* CategoryCell.xib in Resources */,
 				1973907A21FCBC3400D892F4 /* Rubik-LightItalic.ttf in Resources */,
+				1974865C22F884E3001CFC13 /* AddHashtagScreenComponent.xib in Resources */,
 				198A280E22F322D500B70DAF /* AddCategoryCell.xib in Resources */,
 				1973907D21FCBC3400D892F4 /* Rubik-BoldItalic.ttf in Resources */,
 				1973907421FCBC3400D892F4 /* Rubik-MediumItalic.ttf in Resources */,
+				198E06AC22F49AB6009EE1FE /* GoogleService-Info.plist in Resources */,
 				1943B04321FA07930054119C /* KeyboardComponent.xib in Resources */,
 				1973907621FCBC3400D892F4 /* Rubik-Light.ttf in Resources */,
+				1970674922FDB1E9001D79B4 /* Colors.xcassets in Resources */,
 				1973907921FCBC3400D892F4 /* Rubik-Italic.ttf in Resources */,
+				1974867A22F97569001CFC13 /* HashtagView.xib in Resources */,
 				1973907821FCBC3400D892F4 /* Rubik-Black.ttf in Resources */,
 				1973907C21FCBC3400D892F4 /* Rubik-Regular.ttf in Resources */,
 				19AF6E7B22EF873F00F5584A /* CreateCategoryIconCollectionViewCell.xib in Resources */,
@@ -1122,15 +1215,19 @@
 				1932F4412207696500B2502B /* CategoriesActions.swift in Sources */,
 				19A1B1DB21F3B4D30090F760 /* RepositoryProvider.swift in Sources */,
 				19DACDF82225EC2800C2F36C /* MainScreenCommands.swift in Sources */,
+				1974867622F88BF9001CFC13 /* HashtagsReducer.swift in Sources */,
 				1994BAF5220A21AF00B494F4 /* TransactionsCommands.swift in Sources */,
+				1974866722F8883D001CFC13 /* HashtagsState.swift in Sources */,
 				19CA638F22E87CEB00570BD5 /* CreateCategoryScreenPropsState.swift in Sources */,
 				1940F4BC21FB0E4D0063DB54 /* KeyboardActions.swift in Sources */,
+				1974867822F9755F001CFC13 /* HashtagView.swift in Sources */,
 				19A1B1F421F4D8B90090F760 /* AccountsRepositoryError.swift in Sources */,
 				198A280C22F3219500B70DAF /* AddCategoryCell.swift in Sources */,
 				1943B01221F67ED30054119C /* Connector.swift in Sources */,
 				19A1B1C221F3860E0090F760 /* AppState.swift in Sources */,
 				1940F4BA21FB0CB60063DB54 /* KeyboardState.swift in Sources */,
 				1943B04121FA07890054119C /* KeyboardComponent.swift in Sources */,
+				1974866022F884FD001CFC13 /* AddHashtagScreenConnector.swift in Sources */,
 				1940F4C521FC8AB50063DB54 /* UIColor+RGB.swift in Sources */,
 				1994BAF7220A21B900B494F4 /* TransactionsActions.swift in Sources */,
 				1943B03F21FA077D0054119C /* KeyboardConnector.swift in Sources */,
@@ -1138,10 +1235,14 @@
 				1943B01F21F857FA0054119C /* AccountsCommands.swift in Sources */,
 				19DACDEF22247D6A00C2F36C /* HighlightedButton.swift in Sources */,
 				19A1B1F221F4CF8A0090F760 /* AccountsRepository.swift in Sources */,
+				1974867422F88A7F001CFC13 /* HashtagsRepositoryError.swift in Sources */,
 				1940F4B821FB0C9D0063DB54 /* KeyboardFeature.swift in Sources */,
 				1943B01521F67F100054119C /* BaseConnector.swift in Sources */,
+				1974865E22F884EF001CFC13 /* AddHashtagScreenComponent+Build.swift in Sources */,
+				1974867222F88974001CFC13 /* HashtagsRepository.swift in Sources */,
 				19A1B1EA21F3B6200090F760 /* UserPreferencesStorageService.swift in Sources */,
 				1943B01B21F68D9C0054119C /* Scene.swift in Sources */,
+				1974867C22F9D004001CFC13 /* NibView.swift in Sources */,
 				19E0B0B62208BF2500AF56D7 /* CategoriesRepositoryProtocol.swift in Sources */,
 				19A1B1EB21F3B6200090F760 /* StorageServiceKey.swift in Sources */,
 				1932F4452207697E00B2502B /* CategoriesReducer.swift in Sources */,
@@ -1155,6 +1256,7 @@
 				1932F44D22077C0F00B2502B /* CategoriesConnector.swift in Sources */,
 				1985296A229D356800B8BCD5 /* Identity.swift in Sources */,
 				1943B00621F66D3C0054119C /* MainScreenConnector.swift in Sources */,
+				1974866922F8884F001CFC13 /* HashtagsFeature.swift in Sources */,
 				19DACDF42225B02D00C2F36C /* UIViewController+SafeAnchor.swift in Sources */,
 				19A1B1E221F3B5E10090F760 /* ServiceProviderProtocol.swift in Sources */,
 				1994BAF9220A21C300B494F4 /* TransactionsReducer.swift in Sources */,
@@ -1163,9 +1265,11 @@
 				19CA638D22E87CE300570BD5 /* CreateCategoryScreenConnector.swift in Sources */,
 				19A1B1D221F3991D0090F760 /* AppReducer.swift in Sources */,
 				19645D4A22D392AA00B0CA29 /* NumberFormatter+Currency.swift in Sources */,
+				1974865A22F884C9001CFC13 /* AddHashtagScreenComponent.swift in Sources */,
 				1943B03921FA075F0054119C /* KeyboardComponent+Build.swift in Sources */,
 				1932F4432207697000B2502B /* CategoriesCommands.swift in Sources */,
 				1932F4472207698700B2502B /* CategoriesState.swift in Sources */,
+				1974866D22F88902001CFC13 /* HashtagsCommands.swift in Sources */,
 				1973908121FDEC7E00D892F4 /* Images.swift in Sources */,
 				19DACDF22225AFF700C2F36C /* UIView+Margins.swift in Sources */,
 				1943B03121F9EDE20054119C /* Category.swift in Sources */,
@@ -1176,14 +1280,17 @@
 				19CCEA4E221C5C5B00C56217 /* CategoriesDataSource.swift in Sources */,
 				1940F4B521FB04290063DB54 /* TransactionsState.swift in Sources */,
 				19A1B1CE21F395F10090F760 /* AccountsFeature.swift in Sources */,
+				1974866222F88509001CFC13 /* AddHashtagScreenPropsState.swift in Sources */,
 				1932F43F2207695A00B2502B /* CategoriesFeature.swift in Sources */,
 				190F4B71222882A500939A43 /* TransactionRepositoryProtocol.swift in Sources */,
 				19AF6E7922EF872100F5584A /* CreateCategoryIconCollectionViewCell.swift in Sources */,
 				1932F45122077C1F00B2502B /* CategoriesComponent+Build.swift in Sources */,
 				190F4B6F2228829B00939A43 /* TransactionRepository.swift in Sources */,
 				19E0B0B82208BF4500AF56D7 /* CategoriesRepositoryError.swift in Sources */,
+				1974867022F88962001CFC13 /* HashtagsRepositoryProtocol.swift in Sources */,
 				19A1B18821F3837C0090F760 /* AppDelegate.swift in Sources */,
 				19DACDF62225BAC400C2F36C /* UIView+Container.swift in Sources */,
+				1974866422F88573001CFC13 /* Hastag.swift in Sources */,
 				190F4B7322288CE300939A43 /* TransactionRepositoryError.swift in Sources */,
 				19FF844E22E73F1F00276DA0 /* CategoriesComponentCommands.swift in Sources */,
 				19DACDFA2225EFC300C2F36C /* Command+Equitable.swift in Sources */,
@@ -1201,6 +1308,7 @@
 				1940F4C021FB1D8E0063DB54 /* KeyboardReducer.swift in Sources */,
 				19A1B1CA21F389D60090F760 /* AccountsActions.swift in Sources */,
 				19E0B0B42208BF1C00AF56D7 /* CategoriesRepository.swift in Sources */,
+				1974866B22F888B2001CFC13 /* HashtagsActions.swift in Sources */,
 				1940F4B321FB03F50063DB54 /* TransactionsFeature.swift in Sources */,
 				1943B03D21FA07750054119C /* KeyboardProps.swift in Sources */,
 				1943B00A21F66D630054119C /* MainScreenComponent.swift in Sources */,

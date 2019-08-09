@@ -11,6 +11,8 @@ target 'Groshy' do
   pod 'DifferenceKit'
   pod 'PromiseKit'
   pod 'SwifterSwift'
+#  pod 'Firebase/Analytics'
+  pod 'DTButtonMenuController'
 
 
   target 'GroshyTests' do

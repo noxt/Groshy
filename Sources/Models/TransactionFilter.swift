@@ -6,7 +6,7 @@
 import Foundation
 
 
-enum TransactionFilter: Int, Codable {
+enum TransactionFilter: Int, CaseIterable, Codable {
     case perDay
     case perWeek
     case perMonth

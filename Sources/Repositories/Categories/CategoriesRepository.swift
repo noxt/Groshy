@@ -52,10 +52,10 @@ class CategoriesRepository: CategoriesRepositoryProtocol {
             })
     }
 
-    func delete(category: Category) -> Promise<Void> {
+    func delete(categoryId: Category.ID) -> Promise<Void> {
         return loadCategories()
             .then({ [weak self] (categories) -> Promise<Void> in
-                guard let index = categories.firstIndex(where: { $0.id == category.id }) else {
+                guard let index = categories.firstIndex(where: { $0.id == categoryId }) else {
                     throw CategoriesRepositoryError.categoryNotFound
                 }
 

@@ -13,6 +13,7 @@ struct Transaction: Codable, Identifiable {
     let id: ID
     let accountID: Account.ID
     let catagoryID: Category.ID
+    let hashtagID: Hashtag.ID?
     let value: Double
     let date: Date
 

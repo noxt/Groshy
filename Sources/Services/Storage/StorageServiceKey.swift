@@ -10,4 +10,5 @@ enum StorageServiceKey: String {
     case accounts
     case categories
     case transactions
+    case hashtags
 }
