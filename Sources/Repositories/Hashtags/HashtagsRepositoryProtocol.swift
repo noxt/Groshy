@@ -11,8 +11,8 @@ protocol HashtagsRepositoryProtocol {
     
     // CRUD
     func loadHashtags() -> Promise<[Hashtag]>
-    func create(hashtag: Hashtag) -> Promise<Hashtag>
-    func update(hashtag: Hashtag) -> Promise<Hashtag>
-    func delete(hashtagId: Hashtag.ID) -> Promise<Void>
+    func create(hashtag: Hashtag) -> Promise<[Hashtag]>
+    func update(hashtag: Hashtag) -> Promise<[Hashtag]>
+    func delete(hashtagId: Hashtag.ID) -> Promise<[Hashtag]>
     
 }

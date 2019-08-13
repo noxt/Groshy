@@ -30,9 +30,6 @@ extension CategoriesFeature {
                 core.dispatch(Actions.loadingStarted)
 
                 repositories.categoriesRepository.create(category: newCategory)
-                    .then({ (_) -> Promise<[Category]> in
-                        repositories.categoriesRepository.loadCategories()
-                    })
                     .done({ (categories) in
                         core.dispatch(Actions.setCategories(categories))
                     })
@@ -45,9 +42,6 @@ extension CategoriesFeature {
         static func updateCategory(_ repositories: RepositoryProviderProtocol) -> CommandOf<Category> {
             return CommandOf<Category> { category in
                 repositories.categoriesRepository.update(category: category)
-                    .then({ (_) -> Promise<[Category]> in
-                        repositories.categoriesRepository.loadCategories()
-                    })
                     .done({ (categories) in
                         core.dispatch(Actions.setCategories(categories))
                     })
@@ -60,9 +54,6 @@ extension CategoriesFeature {
         static func deleteCategory(_ repositories: RepositoryProviderProtocol) -> CommandOf<Category.ID> {
             return CommandOf { categoryId in
                 repositories.categoriesRepository.delete(categoryId: categoryId)
-                    .then({ (_) -> Promise<[Category]> in
-                        repositories.categoriesRepository.loadCategories()
-                    })
                     .done({ (categories) in
                         core.dispatch(Actions.setCategories(categories))
                     })
@@ -71,9 +62,6 @@ extension CategoriesFeature {
                     })
                 
                 repositories.transactionRepository.deleteTransactions(forCategoryId: categoryId)
-                    .then({ (_) -> Promise<[Transaction]> in
-                        repositories.transactionRepository.loadTransactions()
-                    })
                     .done({ (transactions) in
                         core.dispatch(TransactionsFeature.Actions.setTransactions(transactions))
                     })

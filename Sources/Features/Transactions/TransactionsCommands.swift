@@ -31,9 +31,6 @@ extension TransactionsFeature {
                 core.dispatch(Actions.loadingStarted)
                 
                 repositories.transactionRepository.create(transaction: transaction)
-                    .then({ (_) -> Promise<[Transaction]> in
-                        return repositories.transactionRepository.loadTransactions()
-                    })
                     .done({ (transactions) in
                         core.dispatch(Actions.setTransactions(transactions))
                         core.dispatch(KeyboardFeature.Actions.currentValueUpdated(value: "0"))

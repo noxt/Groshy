@@ -11,8 +11,8 @@ protocol CategoriesRepositoryProtocol {
 
     // CRUD
     func loadCategories() -> Promise<[Category]>
-    func create(category: Category) -> Promise<Category>
-    func update(category: Category) -> Promise<Category>
-    func delete(categoryId: Category.ID) -> Promise<Void>
+    func create(category: Category) -> Promise<[Category]>
+    func update(category: Category) -> Promise<[Category]>
+    func delete(categoryId: Category.ID) -> Promise<[Category]>
 
 }

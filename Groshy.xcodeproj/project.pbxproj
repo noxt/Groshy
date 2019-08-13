@@ -715,10 +715,10 @@
 		19A1B1BE21F384DC0090F760 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				1974866522F88826001CFC13 /* Hashtags */,
 				19A1B1C421F389200090F760 /* Accounts */,
 				19A1B1C021F385FF0090F760 /* App */,
 				1932F43D2207693B00B2502B /* Categories */,
+				1974866522F88826001CFC13 /* Hashtags */,
 				1940F4B621FB0C640063DB54 /* Keyboard */,
 				19852967229C772B00B8BCD5 /* Transactions */,
 			);

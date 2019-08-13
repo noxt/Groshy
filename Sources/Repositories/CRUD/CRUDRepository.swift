@@ -36,17 +36,18 @@ final class CRUDRepository<Item: Identifiable> where Item.RawIdentifier: Equatab
         }
     }
     
-    func create(_ item: Item) -> Promise<Item> {
+    func create(_ item: Item) -> Promise<[Item]> {
         return loadItems()
-            .then({ [unowned self] (items) -> Promise<Item> in
-                try self.storageService.set(value: items + [item], forKey: self.itemsStorageKey)
-                return .value(item)
+            .then({ [unowned self] (items) -> Promise<[Item]> in
+                let newItems = items + [item]
+                try self.storageService.set(value: newItems, forKey: self.itemsStorageKey)
+                return .value(newItems)
             })
     }
     
-    func update(_ item: Item) -> Promise<Item> {
+    func update(_ item: Item) -> Promise<[Item]> {
         return loadItems()
-            .then({ [unowned self] (items) -> Promise<Item> in
+            .then({ [unowned self] (items) -> Promise<[Item]> in
                 guard let index = items.firstIndex(where: { $0.id == item.id }) else {
                     throw CRUDRepositoryError.itemNotFound
                 }
@@ -56,26 +57,26 @@ final class CRUDRepository<Item: Identifiable> where Item.RawIdentifier: Equatab
                 
                 try self.storageService.set(value: newItems, forKey: self.itemsStorageKey)
                 
-                return .value(item)
+                return .value(newItems)
             })
     }
     
-    func delete(_ id: Item.ID) -> Promise<Void> {
+    func delete(_ id: Item.ID) -> Promise<[Item]> {
         return delete(where: { (item) -> Bool in
             return item.id == id
         })
     }
     
-    func delete(where condition: @escaping ((Item) -> Bool)) -> Promise<Void> {
+    func delete(where condition: @escaping ((Item) -> Bool)) -> Promise<[Item]> {
         return loadItems()
             .then({ (items) -> Promise<[Item]> in
                 return .value(items.filter({ item in
                     return !condition(item)
                 }))
             })
-            .then({ [unowned self] (items) -> Promise<Void> in
+            .then({ [unowned self] (items) -> Promise<[Item]> in
                 try self.storageService.set(value: items, forKey: self.itemsStorageKey)
-                return Promise()
+                return .value(items)
             })
     }
     

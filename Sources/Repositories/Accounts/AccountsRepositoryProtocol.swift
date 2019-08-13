@@ -11,8 +11,8 @@ protocol AccountsRepositoryProtocol {
 
     // CRUD
     func loadAccounts() -> Promise<[Account]>
-    func create(account: Account) -> Promise<Account>
-    func update(account: Account) -> Promise<Account>
-    func delete(accountId: Account.ID) -> Promise<Void>
+    func create(account: Account) -> Promise<[Account]>
+    func update(account: Account) -> Promise<[Account]>
+    func delete(accountId: Account.ID) -> Promise<[Account]>
 
 }

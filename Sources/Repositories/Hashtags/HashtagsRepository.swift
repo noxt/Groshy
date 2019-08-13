@@ -27,15 +27,15 @@ extension HashtagsRepository {
         return crudRepository.loadItems()
     }
     
-    func create(hashtag: Hashtag) -> Promise<Hashtag> {
+    func create(hashtag: Hashtag) -> Promise<[Hashtag]> {
         return crudRepository.create(hashtag)
     }
     
-    func update(hashtag: Hashtag) -> Promise<Hashtag> {
+    func update(hashtag: Hashtag) -> Promise<[Hashtag]> {
         return crudRepository.update(hashtag)
     }
     
-    func delete(hashtagId: Hashtag.ID) -> Promise<Void> {
+    func delete(hashtagId: Hashtag.ID) -> Promise<[Hashtag]> {
         return crudRepository.delete(hashtagId)
     }
     

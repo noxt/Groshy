@@ -27,19 +27,19 @@ extension TransactionRepository {
         return crudRepository.loadItems()
     }
 
-    func create(transaction: Transaction) -> Promise<Transaction> {
+    func create(transaction: Transaction) -> Promise<[Transaction]> {
         return crudRepository.create(transaction)
     }
 
-    func update(transaction: Transaction) -> Promise<Transaction> {
+    func update(transaction: Transaction) -> Promise<[Transaction]> {
         return crudRepository.update(transaction)
     }
 
-    func delete(transactionId: Transaction.ID) -> Promise<Void> {
+    func delete(transactionId: Transaction.ID) -> Promise<[Transaction]> {
         return crudRepository.delete(transactionId)
     }
     
-    func deleteTransactions(forCategoryId categoryId: Category.ID) -> Promise<Void> {
+    func deleteTransactions(forCategoryId categoryId: Category.ID) -> Promise<[Transaction]> {
         return crudRepository.delete(where: { (transaction) -> Bool in
             return transaction.catagoryID == categoryId
         })

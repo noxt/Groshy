@@ -27,15 +27,15 @@ extension CategoriesRepository {
         return crudRepository.loadItems()
     }
     
-    func create(category: Category) -> Promise<Category> {
+    func create(category: Category) -> Promise<[Category]> {
         return crudRepository.create(category)
     }
     
-    func update(category: Category) -> Promise<Category> {
+    func update(category: Category) -> Promise<[Category]> {
         return crudRepository.update(category)
     }
     
-    func delete(categoryId: Category.ID) -> Promise<Void> {
+    func delete(categoryId: Category.ID) -> Promise<[Category]> {
         return crudRepository.delete(categoryId)
     }
 

@@ -11,10 +11,10 @@ protocol TransactionRepositoryProtocol {
 
     // CRUD
     func loadTransactions() -> Promise<[Transaction]>
-    func create(transaction: Transaction) -> Promise<Transaction>
-    func update(transaction: Transaction) -> Promise<Transaction>
-    func delete(transactionId: Transaction.ID) -> Promise<Void>
-    func deleteTransactions(forCategoryId categoryId: Category.ID) -> Promise<Void>
+    func create(transaction: Transaction) -> Promise<[Transaction]>
+    func update(transaction: Transaction) -> Promise<[Transaction]>
+    func delete(transactionId: Transaction.ID) -> Promise<[Transaction]>
+    func deleteTransactions(forCategoryId categoryId: Category.ID) -> Promise<[Transaction]>
 
     // Filters
     func filterTransactions(_ transactions: [Transaction.ID: Transaction], filter: TransactionFilter) -> [Transaction.ID: Transaction]

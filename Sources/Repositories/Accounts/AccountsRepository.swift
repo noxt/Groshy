@@ -27,15 +27,15 @@ extension AccountsRepository {
         return crudRepository.loadItems()
     }
     
-    func create(account: Account) -> Promise<Account> {
+    func create(account: Account) -> Promise<[Account]> {
         return crudRepository.create(account)
     }
     
-    func update(account: Account) -> Promise<Account> {
+    func update(account: Account) -> Promise<[Account]> {
         return crudRepository.update(account)
     }
     
-    func delete(accountId: Account.ID) -> Promise<Void> {
+    func delete(accountId: Account.ID) -> Promise<[Account]> {
         return crudRepository.delete(accountId)
     }
 

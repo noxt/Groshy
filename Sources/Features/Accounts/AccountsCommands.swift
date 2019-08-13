@@ -34,9 +34,6 @@ extension AccountsFeature {
                 core.dispatch(Actions.loadingStarted)
 
                 repositories.accountsRepository.create(account: newAccount)
-                    .then({ (_) -> Promise<[Account]> in
-                        return repositories.accountsRepository.loadAccounts()
-                    })
                     .done({ (accounts) in
                         core.dispatch(Actions.setAccounts(accounts))
                         core.dispatch(Actions.selectAccount(newAccount))

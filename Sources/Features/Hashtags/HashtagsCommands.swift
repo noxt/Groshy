@@ -31,9 +31,6 @@ extension HashtagsFeature {
                 core.dispatch(Actions.loadingStarted)
                 
                 repositories.hashtagsRepository.create(hashtag: hashtag)
-                    .then({ (_) -> Promise<[Hashtag]> in
-                        return repositories.hashtagsRepository.loadHashtags()
-                    })
                     .done({ (hashtags) in
                         core.dispatch(Actions.setHashtags(hashtags))
                         core.dispatch(Actions.selectHashtag(hashtag))
