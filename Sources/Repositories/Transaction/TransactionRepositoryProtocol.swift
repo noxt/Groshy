@@ -13,7 +13,7 @@ protocol TransactionRepositoryProtocol {
     func loadTransactions() -> Promise<[Transaction]>
     func create(transaction: Transaction) -> Promise<Transaction>
     func update(transaction: Transaction) -> Promise<Transaction>
-    func delete(transaction: Transaction) -> Promise<Void>
+    func delete(transactionId: Transaction.ID) -> Promise<Void>
     func deleteTransactions(forCategoryId categoryId: Category.ID) -> Promise<Void>
 
     // Filters

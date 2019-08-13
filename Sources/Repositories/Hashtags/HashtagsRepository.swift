@@ -9,11 +9,11 @@ import PromiseKit
 
 final class HashtagsRepository: HashtagsRepositoryProtocol {
     
-    private let storageService: StorageServiceProtocol
+    private let crudRepository: CRUDRepository<Hashtag>
     
     
-    init(storageService: StorageServiceProtocol) {
-        self.storageService = storageService
+    init(crudRepository: CRUDRepository<Hashtag>) {
+        self.crudRepository = crudRepository
     }
     
 }
@@ -24,59 +24,19 @@ final class HashtagsRepository: HashtagsRepositoryProtocol {
 extension HashtagsRepository {
     
     func loadHashtags() -> Promise<[Hashtag]> {
-        return Promise { seal in
-            do {
-                seal.fulfill(try storageService.getValue(forKey: .hashtags))
-            } catch StorageServiceError.gettingError {
-                try storageService.set(value: [Hashtag](), forKey: .hashtags)
-                seal.fulfill([])
-            }
-        }
+        return crudRepository.loadItems()
     }
     
     func create(hashtag: Hashtag) -> Promise<Hashtag> {
-        return loadHashtags()
-            .then({ (hashtags) -> Promise<[Hashtag]> in
-                return .value(hashtags + [hashtag])
-            })
-            .then({ [weak self] (hashtags) -> Promise<Hashtag> in
-                try self?.storageService.set(value: hashtags, forKey: .hashtags)
-                return .value(hashtag)
-            })
+        return crudRepository.create(hashtag)
     }
     
     func update(hashtag: Hashtag) -> Promise<Hashtag> {
-        return loadHashtags()
-            .then({ (hashtags) -> Promise<[Hashtag]> in
-                guard let index = hashtags.firstIndex(where: { $0.id == hashtag.id }) else {
-                    throw HashtagsRepositoryError.hashtagNotFound
-                }
-                
-                var newHashtags = hashtags
-                newHashtags[index] = hashtag
-                return .value(newHashtags)
-            })
-            .then({ [weak self] (hashtags) -> Promise<Hashtag> in
-                try self?.storageService.set(value: hashtags, forKey: .hashtags)
-                return .value(hashtag)
-            })
+        return crudRepository.update(hashtag)
     }
     
-    func delete(hashtag: Hashtag) -> Promise<Void> {
-        return loadHashtags()
-            .then({ (hashtags) -> Promise<[Hashtag]> in
-                guard let index = hashtags.firstIndex(where: { $0.id == hashtag.id }) else {
-                    throw HashtagsRepositoryError.hashtagNotFound
-                }
-                
-                var newHashtags = hashtags
-                newHashtags.remove(at: index)
-                return .value(newHashtags)
-            })
-            .then({ [weak self] (hashtags) -> Promise<Void> in
-                try self?.storageService.set(value: hashtags, forKey: .hashtags)
-                return Promise()
-            })
+    func delete(hashtagId: Hashtag.ID) -> Promise<Void> {
+        return crudRepository.delete(hashtagId)
     }
     
 }

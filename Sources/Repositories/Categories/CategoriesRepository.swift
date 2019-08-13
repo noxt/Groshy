@@ -7,65 +7,36 @@ import Foundation
 import PromiseKit
 
 
-class CategoriesRepository: CategoriesRepositoryProtocol {
+final class CategoriesRepository: CategoriesRepositoryProtocol {
 
-    private let storageService: StorageServiceProtocol
+    private let crudRepository: CRUDRepository<Category>
 
 
-    init(storageService: StorageServiceProtocol) {
-        self.storageService = storageService
+    init(crudRepository: CRUDRepository<Category>) {
+        self.crudRepository = crudRepository
     }
 
+}
+
+
+// MARK: - CRUD
+
+extension CategoriesRepository {
 
     func loadCategories() -> Promise<[Category]> {
-        return Promise { seal in
-            do {
-                seal.fulfill(try storageService.getValue(forKey: .categories))
-            } catch StorageServiceError.gettingError {
-                try storageService.set(value: [Category](), forKey: .categories)
-                seal.fulfill([])
-            }
-        }
+        return crudRepository.loadItems()
     }
-
+    
     func create(category: Category) -> Promise<Category> {
-        return loadCategories()
-            .then({ [weak self] (categories) -> Promise<Category> in
-                try self?.storageService.set(value: categories + [category], forKey: .categories)
-                return .value(category)
-            })
+        return crudRepository.create(category)
     }
-
+    
     func update(category: Category) -> Promise<Category> {
-        return loadCategories()
-            .then({ [weak self] (categories) -> Promise<Category> in
-                guard let index = categories.firstIndex(where: { $0.id == category.id }) else {
-                    throw CategoriesRepositoryError.categoryNotFound
-                }
-                
-                var newCategories = categories
-                newCategories[index] = category
-                
-                try self?.storageService.set(value: newCategories, forKey: .categories)
-                
-                return .value(category)
-            })
+        return crudRepository.update(category)
     }
-
+    
     func delete(categoryId: Category.ID) -> Promise<Void> {
-        return loadCategories()
-            .then({ [weak self] (categories) -> Promise<Void> in
-                guard let index = categories.firstIndex(where: { $0.id == categoryId }) else {
-                    throw CategoriesRepositoryError.categoryNotFound
-                }
-
-                var newCategories = categories
-                newCategories.remove(at: index)
-
-                try self?.storageService.set(value: newCategories, forKey: .categories)
-
-                return .value(Void())
-            })
+        return crudRepository.delete(categoryId)
     }
 
 }

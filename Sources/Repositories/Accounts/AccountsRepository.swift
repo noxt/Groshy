@@ -7,70 +7,36 @@ import Foundation
 import PromiseKit
 
 
-class AccountsRepository: AccountsRepositoryProtocol {
+final class AccountsRepository: AccountsRepositoryProtocol {
 
-    private let storageService: StorageServiceProtocol
+    private let crudRepository: CRUDRepository<Account>
 
 
-    init(storageService: StorageServiceProtocol) {
-        self.storageService = storageService
+    init(crudRepository: CRUDRepository<Account>) {
+        self.crudRepository = crudRepository
     }
 
+}
 
+
+// MARK: - CRUD
+
+extension AccountsRepository {
+    
     func loadAccounts() -> Promise<[Account]> {
-        return Promise { seal in
-            do {
-                seal.fulfill(try storageService.getValue(forKey: .accounts))
-            } catch StorageServiceError.gettingError {
-                try storageService.set(value: [Account](), forKey: .accounts)
-                seal.fulfill([])
-            }
-        }
+        return crudRepository.loadItems()
     }
-
+    
     func create(account: Account) -> Promise<Account> {
-        return loadAccounts()
-            .then({ (accounts) -> Promise<[Account]> in
-                return .value(accounts + [account])
-            })
-            .then({ [weak self] (accounts) -> Promise<Account> in
-                try self?.storageService.set(value: accounts, forKey: .accounts)
-                return .value(account)
-            })
+        return crudRepository.create(account)
     }
-
+    
     func update(account: Account) -> Promise<Account> {
-        return loadAccounts()
-            .then({ (accounts) -> Promise<[Account]> in
-                guard let index = accounts.firstIndex(where: { $0.id == account.id }) else {
-                    throw AccountsRepositoryError.accountNotFound
-                }
-
-                var newAccounts = accounts
-                newAccounts[index] = account
-                return .value(newAccounts)
-            })
-            .then({ [weak self] (accounts) -> Promise<Account> in
-                try self?.storageService.set(value: accounts, forKey: .accounts)
-                return .value(account)
-            })
+        return crudRepository.update(account)
     }
-
-    func delete(account: Account) -> Promise<Void> {
-        return loadAccounts()
-            .then({ (accounts) -> Promise<[Account]> in
-                guard let index = accounts.firstIndex(where: { $0.id == account.id }) else {
-                    throw AccountsRepositoryError.accountNotFound
-                }
-
-                var newAccounts = accounts
-                newAccounts.remove(at: index)
-                return .value(newAccounts)
-            })
-            .then({ [weak self] (accounts) -> Promise<Void> in
-                try self?.storageService.set(value: accounts, forKey: .accounts)
-                return Promise()
-            })
+    
+    func delete(accountId: Account.ID) -> Promise<Void> {
+        return crudRepository.delete(accountId)
     }
 
 }

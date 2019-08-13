@@ -9,9 +9,10 @@ import PromiseKit
 
 protocol AccountsRepositoryProtocol {
 
+    // CRUD
     func loadAccounts() -> Promise<[Account]>
     func create(account: Account) -> Promise<Account>
     func update(account: Account) -> Promise<Account>
-    func delete(account: Account) -> Promise<Void>
+    func delete(accountId: Account.ID) -> Promise<Void>
 
 }

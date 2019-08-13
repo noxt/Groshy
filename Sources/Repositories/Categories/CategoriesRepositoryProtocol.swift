@@ -9,6 +9,7 @@ import PromiseKit
 
 protocol CategoriesRepositoryProtocol {
 
+    // CRUD
     func loadCategories() -> Promise<[Category]>
     func create(category: Category) -> Promise<Category>
     func update(category: Category) -> Promise<Category>

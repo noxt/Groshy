@@ -11,6 +11,8 @@
 		190F4B6F2228829B00939A43 /* TransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190F4B6E2228829B00939A43 /* TransactionRepository.swift */; };
 		190F4B71222882A500939A43 /* TransactionRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190F4B70222882A500939A43 /* TransactionRepositoryProtocol.swift */; };
 		190F4B7322288CE300939A43 /* TransactionRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190F4B7222288CE200939A43 /* TransactionRepositoryError.swift */; };
+		191EBC932302E53E00185691 /* CRUDRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191EBC922302E53E00185691 /* CRUDRepositoryError.swift */; };
+		191EBC952302E65500185691 /* CRUDRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 191EBC942302E65500185691 /* CRUDRepository.swift */; };
 		1932F43F2207695A00B2502B /* CategoriesFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1932F43E2207695A00B2502B /* CategoriesFeature.swift */; };
 		1932F4412207696500B2502B /* CategoriesActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1932F4402207696500B2502B /* CategoriesActions.swift */; };
 		1932F4432207697000B2502B /* CategoriesCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1932F4422207697000B2502B /* CategoriesCommands.swift */; };
@@ -167,6 +169,8 @@
 		190F4B6E2228829B00939A43 /* TransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepository.swift; sourceTree = "<group>"; };
 		190F4B70222882A500939A43 /* TransactionRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepositoryProtocol.swift; sourceTree = "<group>"; };
 		190F4B7222288CE200939A43 /* TransactionRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepositoryError.swift; sourceTree = "<group>"; };
+		191EBC922302E53E00185691 /* CRUDRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDRepositoryError.swift; sourceTree = "<group>"; };
+		191EBC942302E65500185691 /* CRUDRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDRepository.swift; sourceTree = "<group>"; };
 		1932F43E2207695A00B2502B /* CategoriesFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesFeature.swift; sourceTree = "<group>"; };
 		1932F4402207696500B2502B /* CategoriesActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesActions.swift; sourceTree = "<group>"; };
 		1932F4422207697000B2502B /* CategoriesCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesCommands.swift; sourceTree = "<group>"; };
@@ -353,6 +357,15 @@
 			path = Transaction;
 			sourceTree = "<group>";
 		};
+		191EBC8F2302DDBB00185691 /* CRUD */ = {
+			isa = PBXGroup;
+			children = (
+				191EBC942302E65500185691 /* CRUDRepository.swift */,
+				191EBC922302E53E00185691 /* CRUDRepositoryError.swift */,
+			);
+			path = CRUD;
+			sourceTree = "<group>";
+		};
 		1932F43D2207693B00B2502B /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -533,9 +546,9 @@
 		1974866E22F8894C001CFC13 /* Hashtags */ = {
 			isa = PBXGroup;
 			children = (
-				1974866F22F88962001CFC13 /* HashtagsRepositoryProtocol.swift */,
 				1974867122F88974001CFC13 /* HashtagsRepository.swift */,
 				1974867322F88A7F001CFC13 /* HashtagsRepositoryError.swift */,
+				1974866F22F88962001CFC13 /* HashtagsRepositoryProtocol.swift */,
 			);
 			path = Hashtags;
 			sourceTree = "<group>";
@@ -678,9 +691,10 @@
 		19A1B1BC21F384C80090F760 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				1974866E22F8894C001CFC13 /* Hashtags */,
 				19A1B1EE21F4CF580090F760 /* Accounts */,
 				19E0B0B22208BF0500AF56D7 /* Categories */,
+				191EBC8F2302DDBB00185691 /* CRUD */,
+				1974866E22F8894C001CFC13 /* Hashtags */,
 				19A1B1D921F3B4BC0090F760 /* Provider */,
 				190F4B6D2228826E00939A43 /* Transaction */,
 			);
@@ -1246,6 +1260,7 @@
 				19E0B0B62208BF2500AF56D7 /* CategoriesRepositoryProtocol.swift in Sources */,
 				19A1B1EB21F3B6200090F760 /* StorageServiceKey.swift in Sources */,
 				1932F4452207697E00B2502B /* CategoriesReducer.swift in Sources */,
+				191EBC932302E53E00185691 /* CRUDRepositoryError.swift in Sources */,
 				197638D022F426BE008DBAFF /* TransactionFilter.swift in Sources */,
 				19A1B1D521F3B1740090F760 /* AppAction.swift in Sources */,
 				1943B01021F66FDC0054119C /* MainScreenComponent+Build.swift in Sources */,
@@ -1260,6 +1275,7 @@
 				19DACDF42225B02D00C2F36C /* UIViewController+SafeAnchor.swift in Sources */,
 				19A1B1E221F3B5E10090F760 /* ServiceProviderProtocol.swift in Sources */,
 				1994BAF9220A21C300B494F4 /* TransactionsReducer.swift in Sources */,
+				191EBC952302E65500185691 /* CRUDRepository.swift in Sources */,
 				19E0B0BB2208C75B00AF56D7 /* CategoryCell.swift in Sources */,
 				19A1B1E021F3B5A90090F760 /* ServiceProvider.swift in Sources */,
 				19CA638D22E87CE300570BD5 /* CreateCategoryScreenConnector.swift in Sources */,

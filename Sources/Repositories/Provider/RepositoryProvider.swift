@@ -16,16 +16,28 @@ class RepositoryProvider: RepositoryProviderProtocol {
 
     init(serviceProvider: ServiceProviderProtocol = ServiceProvider()) {
         accountsRepository = AccountsRepository(
-            storageService: serviceProvider.securityStorageService
+            crudRepository: CRUDRepository<Account>(
+                storageService: serviceProvider.securityStorageService,
+                itemsStorageKey: .accounts
+            )
         )
         categoriesRepository = CategoriesRepository(
-            storageService: serviceProvider.securityStorageService
+            crudRepository: CRUDRepository<Category>(
+                storageService: serviceProvider.securityStorageService,
+                itemsStorageKey: .categories
+            )
         )
         transactionRepository = TransactionRepository(
-            storageService: serviceProvider.securityStorageService
+            crudRepository: CRUDRepository<Transaction>(
+                storageService: serviceProvider.securityStorageService,
+                itemsStorageKey: .transactions
+            )
         )
         hashtagsRepository = HashtagsRepository(
-            storageService: serviceProvider.securityStorageService
+            crudRepository: CRUDRepository(
+                storageService: serviceProvider.securityStorageService,
+                itemsStorageKey: .hashtags
+            )
         )
     }
 

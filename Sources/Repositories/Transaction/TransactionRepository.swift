@@ -9,11 +9,11 @@ import PromiseKit
 
 final class TransactionRepository: TransactionRepositoryProtocol {
 
-    private let storageService: StorageServiceProtocol
+    private let crudRepository: CRUDRepository<Transaction>
 
 
-    init(storageService: StorageServiceProtocol) {
-        self.storageService = storageService
+    init(crudRepository: CRUDRepository<Transaction>) {
+        self.crudRepository = crudRepository
     }
 
 }
@@ -24,73 +24,25 @@ final class TransactionRepository: TransactionRepositoryProtocol {
 extension TransactionRepository {
 
     func loadTransactions() -> Promise<[Transaction]> {
-        return Promise { seal in
-            do {
-                seal.fulfill(try storageService.getValue(forKey: .transactions))
-            } catch StorageServiceError.gettingError {
-                try storageService.set(value: [Transaction](), forKey: .transactions)
-                seal.fulfill([])
-            }
-        }
+        return crudRepository.loadItems()
     }
 
     func create(transaction: Transaction) -> Promise<Transaction> {
-        return loadTransactions()
-            .then({ (transactions) -> Promise<[Transaction]> in
-                return .value(transactions + [transaction])
-            })
-            .then({ [weak self] (transactions) -> Promise<Transaction> in
-                try self?.storageService.set(value: transactions, forKey: .transactions)
-                return .value(transaction)
-            })
+        return crudRepository.create(transaction)
     }
 
     func update(transaction: Transaction) -> Promise<Transaction> {
-        return loadTransactions()
-            .then({ (transactions) -> Promise<[Transaction]> in
-                guard let index = transactions.firstIndex(where: { $0.id == transaction.id }) else {
-                    throw TransactionRepositoryError.transactionNotFound
-                }
-
-                var newTransactions = transactions
-                newTransactions[index] = transaction
-                return .value(newTransactions)
-            })
-            .then({ [weak self] (transactions) -> Promise<Transaction> in
-                try self?.storageService.set(value: transactions, forKey: .transactions)
-                return .value(transaction)
-            })
+        return crudRepository.update(transaction)
     }
 
-    func delete(transaction: Transaction) -> Promise<Void> {
-        return loadTransactions()
-            .then({ (transactions) -> Promise<[Transaction]> in
-                guard let index = transactions.firstIndex(where: { $0.id == transaction.id }) else {
-                    throw TransactionRepositoryError.transactionNotFound
-                }
-
-                var newTransactions = transactions
-                newTransactions.remove(at: index)
-                return .value(newTransactions)
-            })
-            .then({ [weak self] (transactions) -> Promise<Void> in
-                try self?.storageService.set(value: transactions, forKey: .transactions)
-                return Promise()
-            })
+    func delete(transactionId: Transaction.ID) -> Promise<Void> {
+        return crudRepository.delete(transactionId)
     }
     
     func deleteTransactions(forCategoryId categoryId: Category.ID) -> Promise<Void> {
-        return loadTransactions()
-            .then({ (transactions) -> Promise<[Transaction]> in
-                let updatedTransactions = transactions.filter({ (transaction) -> Bool in
-                    return transaction.catagoryID != categoryId
-                })
-                return .value(updatedTransactions)
-            })
-            .then({ [weak self] (transactions) -> Promise<Void> in
-                try self?.storageService.set(value: transactions, forKey: .transactions)
-                return Promise()
-            })
+        return crudRepository.delete(where: { (transaction) -> Bool in
+            return transaction.catagoryID == categoryId
+        })
     }
 
 }
