@@ -12,6 +12,7 @@ struct CreateCategoryScreenProps: Equatable {
     let icon: Category.Icon?
     let onSave: CommandOf<Category>
     let mode: CreateCategoryScreenMode
+    let dismissCommand: CommandOf<UIViewController>
 }
 
 

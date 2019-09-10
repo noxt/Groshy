@@ -11,13 +11,12 @@ extension HashtagsFeature {
     
     static func reduce(_ old: State, with action: Action) -> State {
         var state = old
+        state.isLoading = false
+        state.error = nil
         
         switch action {
-            
         case let Actions.setHashtags(hashtags):
-            state.hashtags = normalize(hashtags: hashtags)
-            state.isLoading = false
-            state.error = nil
+            state.hashtags = hashtags.normalized
             
         case let Actions.selectHashtag(hashtag):
             state.selectedHashtag = hashtag.id
@@ -27,10 +26,8 @@ extension HashtagsFeature {
             
         case Actions.loadingStarted:
             state.isLoading = true
-            state.error = nil
             
         case let Actions.error(message: msg):
-            state.isLoading = false
             state.error = msg
 
         default:
@@ -38,14 +35,6 @@ extension HashtagsFeature {
         }
         
         return state
-    }
-    
-    private static func normalize(hashtags: [Hashtag]) -> [Hashtag.ID: Hashtag] {
-        var dict: [Hashtag.ID: Hashtag] = [:]
-        for hashtag in hashtags {
-            dict[hashtag.id] = hashtag
-        }
-        return dict
     }
     
 }

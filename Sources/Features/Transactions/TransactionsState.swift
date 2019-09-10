@@ -9,10 +9,10 @@ import Foundation
 extension TransactionsFeature {
     struct State: Codable {
 
-        let transactions: [Transaction.ID: Transaction]
-        let filter: TransactionFilter
-        let isLoading: Bool
-        let error: String?
+        var transactions: [Transaction.ID: Transaction]
+        var filter: TransactionFilter
+        var isLoading: Bool
+        var error: String?
 
         
         static let initial = State(

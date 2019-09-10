@@ -36,7 +36,6 @@ final class MainScreenComponent: BaseComponent<MainScreenConnector> {
     private let categoriesComponent: CategoriesComponent
     private let keyboardComponent: KeyboardComponent
 
-    private var accountSelectorComponentConfigured = false
     private var categoriesComponentConfigured = false
     private var keyboardComponentConfigured = false
 

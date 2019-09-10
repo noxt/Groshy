@@ -10,52 +10,28 @@ import Unicore
 extension TransactionsFeature {
 
     static func reduce(_ old: State, with action: Action) -> State {
+        var state = old
+        state.isLoading = false
+        state.error = nil
+        
         switch action {
-
         case let Actions.setTransactions(transactions):
-            return State(
-                transactions: normalize(transactions: transactions),
-                filter: old.filter,
-                isLoading: false,
-                error: nil
-            )
+            state.transactions = transactions.normalized
             
         case let Actions.setFilter(filter):
-            return State(
-                transactions: old.transactions,
-                filter: filter,
-                isLoading: old.isLoading,
-                error: old.error
-            )
+            state.filter = filter
 
         case Actions.loadingStarted:
-            return State(
-                transactions: old.transactions,
-                filter: old.filter,
-                isLoading: true,
-                error: nil
-            )
+            state.isLoading = true
             
         case let Actions.error(message: message):
-            return State(
-                transactions: old.transactions,
-                filter: old.filter,
-                isLoading: false,
-                error: message
-            )
+            state.error = message
 
         default:
-            return old
-
+            break
         }
-    }
-    
-    private static func normalize(transactions: [Transaction]) -> [Transaction.ID: Transaction] {
-        var dict: [Transaction.ID: Transaction] = [:]
-        for transaction in transactions {
-            dict[transaction.id] = transaction
-        }
-        return dict
+        
+        return state
     }
 
 }

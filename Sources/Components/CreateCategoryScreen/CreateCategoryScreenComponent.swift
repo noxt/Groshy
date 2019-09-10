@@ -169,7 +169,7 @@ extension CreateCategoryScreenComponent: UIGestureRecognizerDelegate {
 
     @objc func close(_ sender: Any) {
         textField.resignFirstResponder()
-        dismiss(animated: true, completion: nil)
+        props.dismissCommand.execute(with: self)
     }
 
 }

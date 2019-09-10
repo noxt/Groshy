@@ -46,8 +46,21 @@ final class CreateCategoryScreenConnector: BaseConnector<CreateCategoryScreenPro
             title: selectedCategory?.title,
             icon: selectedCategory?.icon,
             onSave: onSave,
-            mode: mode
+            mode: mode,
+            dismissCommand: dismissCommand()
         )
     }
 
 }
+
+
+// MARK: - Commands
+
+private extension CreateCategoryScreenConnector {
+    func dismissCommand() -> CommandOf<UIViewController> {
+        return CommandOf { vc in
+            vc.dismiss(animated: true, completion: nil)
+        }
+    }
+}
+

@@ -11,14 +11,14 @@ extension CategoriesFeature {
     
     static func reduce(_ old: State, with action: Action) -> State {
         var state = old
+        state.isLoading = false
+        state.error = nil
 
         switch action {
 
         case let Actions.setCategories(categories):
-            state.categories = normalize(categories: categories)
+            state.categories = categories.normalized
             state.sortOrder = categories.map({ $0.id })
-            state.isLoading = false
-            state.error = nil
 
         case let Actions.selectCategory(category):
             state.selectedCategory = category.id
@@ -28,10 +28,8 @@ extension CategoriesFeature {
 
         case Actions.loadingStarted:
             state.isLoading = true
-            state.error = nil
 
         case let Actions.error(message: message):
-            state.isLoading = false
             state.error = message
             
         case let Actions.moveCategory(categoryID, toPosition: position):
@@ -49,14 +47,6 @@ extension CategoriesFeature {
         }
 
         return state
-    }
-    
-    private static func normalize(categories: [Category]) -> [Category.ID: Category] {
-        var dict: [Category.ID: Category] = [:]
-        for category in categories {
-            dict[category.id] = category
-        }
-        return dict
     }
     
 }

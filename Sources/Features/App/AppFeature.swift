@@ -6,4 +6,4 @@
 import Foundation
 
 
-struct AppFeature { }
+enum AppFeature { }

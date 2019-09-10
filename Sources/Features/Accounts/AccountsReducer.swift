@@ -10,52 +10,28 @@ import Unicore
 extension AccountsFeature {
 
     static func reduce(_ old: State, with action: Action) -> State {
-        switch action {
+        var state = old
+        state.isLoading = false
+        state.error = nil
 
+        switch action {
         case let Actions.selectAccount(account):
-            return State(
-                currentAccountID: account.id,
-                accounts: old.accounts,
-                isLoading: false,
-                error: nil
-            )
+            state.currentAccountID = account.id
 
         case let Actions.setAccounts(accounts):
-            return State(
-                currentAccountID: old.currentAccountID,
-                accounts: normalize(accounts: accounts),
-                isLoading: false,
-                error: nil
-            )
+            state.accounts = accounts.normalized
 
         case Actions.loadingStarted:
-            return State(
-                currentAccountID: old.currentAccountID,
-                accounts: old.accounts,
-                isLoading: true,
-                error: nil
-            )
+            state.isLoading = true
 
         case let Actions.error(message: message):
-            return State(
-                currentAccountID: old.currentAccountID,
-                accounts: old.accounts,
-                isLoading: false,
-                error: message
-            )
+            state.error = message
 
         default:
-            return old
+            break
+        }
+        
+        return state
+    }
 
-        }
-    }
-    
-    private static func normalize(accounts: [Account]) -> [Account.ID : Account] {
-        var dict: [Account.ID: Account] = [:]
-        for account in accounts {
-            dict[account.id] = account
-        }
-        return dict
-    }
-    
 }

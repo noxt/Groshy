@@ -8,10 +8,10 @@ import Foundation
 extension AccountsFeature {
     struct State: Codable {
 
-        let currentAccountID: Account.ID?
-        let accounts: [Account.ID : Account]
-        let isLoading: Bool
-        let error: String?
+        var currentAccountID: Account.ID?
+        var accounts: [Account.ID : Account]
+        var isLoading: Bool
+        var error: String?
 
 
         static let initial = State(

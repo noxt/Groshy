@@ -6,7 +6,7 @@
 import Foundation
 
 
-struct KeyboardFeature {
+enum KeyboardFeature {
 
     typealias Digit = Int
 

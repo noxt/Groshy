@@ -72,7 +72,7 @@ final class AddHashtagScreenComponent: BaseComponent<AddHashtagScreenConnector> 
     
     @IBAction func close(_ sender: Any) {
         textField.resignFirstResponder()
-        dismiss(animated: true, completion: nil)
+        props.dismissCommand.execute(with: self)
     }
     
     @IBAction func save(_ sender: Any) {

@@ -10,4 +10,5 @@ import Command
 struct AddHashtagScreenPropsState: Equatable {
     let hashtags: [Hashtag]
     let saveCommand: CommandOf<Hashtag>
+    let dismissCommand: CommandOf<UIViewController>
 }

@@ -125,6 +125,7 @@
 		19A1B1FF21F4DD230090F760 /* MockStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A1B1FE21F4DD230090F760 /* MockStorageService.swift */; };
 		19AF6E7922EF872100F5584A /* CreateCategoryIconCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19AF6E7822EF872100F5584A /* CreateCategoryIconCollectionViewCell.swift */; };
 		19AF6E7B22EF873F00F5584A /* CreateCategoryIconCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19AF6E7A22EF873F00F5584A /* CreateCategoryIconCollectionViewCell.xib */; };
+		19BF8B3D2327A3380052E811 /* Array+Normalization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BF8B3C2327A3380052E811 /* Array+Normalization.swift */; };
 		19CA638722E87CB800570BD5 /* CreateCategoryScreenComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA638622E87CB800570BD5 /* CreateCategoryScreenComponent.swift */; };
 		19CA638922E87CC500570BD5 /* CreateCategoryScreenComponent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19CA638822E87CC500570BD5 /* CreateCategoryScreenComponent.xib */; };
 		19CA638B22E87CDC00570BD5 /* CreateCategoryScreenComponent+Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CA638A22E87CDC00570BD5 /* CreateCategoryScreenComponent+Build.swift */; };
@@ -136,14 +137,12 @@
 		19DACDF22225AFF700C2F36C /* UIView+Margins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DACDF12225AFF700C2F36C /* UIView+Margins.swift */; };
 		19DACDF42225B02D00C2F36C /* UIViewController+SafeAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DACDF32225B02D00C2F36C /* UIViewController+SafeAnchor.swift */; };
 		19DACDF62225BAC400C2F36C /* UIView+Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DACDF52225BAC400C2F36C /* UIView+Container.swift */; };
-		19DACDF82225EC2800C2F36C /* MainScreenCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DACDF72225EC2700C2F36C /* MainScreenCommands.swift */; };
 		19DACDFA2225EFC300C2F36C /* Command+Equitable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DACDF92225EFC300C2F36C /* Command+Equitable.swift */; };
 		19E0B0B42208BF1C00AF56D7 /* CategoriesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E0B0B32208BF1C00AF56D7 /* CategoriesRepository.swift */; };
 		19E0B0B62208BF2500AF56D7 /* CategoriesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E0B0B52208BF2500AF56D7 /* CategoriesRepositoryProtocol.swift */; };
 		19E0B0B82208BF4500AF56D7 /* CategoriesRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E0B0B72208BF4500AF56D7 /* CategoriesRepositoryError.swift */; };
 		19E0B0BB2208C75B00AF56D7 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E0B0BA2208C75B00AF56D7 /* CategoryCell.swift */; };
 		19E0B0BD2208C76600AF56D7 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19E0B0BC2208C76600AF56D7 /* CategoryCell.xib */; };
-		19FF844E22E73F1F00276DA0 /* CategoriesComponentCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FF844D22E73F1F00276DA0 /* CategoriesComponentCommands.swift */; };
 		4522FF75E83E63105C8715E5 /* Pods_Groshy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCFE9A34AC7BEF732228E37F /* Pods_Groshy.framework */; };
 		A2275B6857F2855A42DA91C0 /* Pods_GroshyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E636AA3A772C8C69D136450B /* Pods_GroshyTests.framework */; };
 /* End PBXBuildFile section */
@@ -289,6 +288,7 @@
 		19A1B1FE21F4DD230090F760 /* MockStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStorageService.swift; sourceTree = "<group>"; };
 		19AF6E7822EF872100F5584A /* CreateCategoryIconCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryIconCollectionViewCell.swift; sourceTree = "<group>"; };
 		19AF6E7A22EF873F00F5584A /* CreateCategoryIconCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCategoryIconCollectionViewCell.xib; sourceTree = "<group>"; };
+		19BF8B3C2327A3380052E811 /* Array+Normalization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Normalization.swift"; sourceTree = "<group>"; };
 		19CA638622E87CB800570BD5 /* CreateCategoryScreenComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCategoryScreenComponent.swift; sourceTree = "<group>"; };
 		19CA638822E87CC500570BD5 /* CreateCategoryScreenComponent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCategoryScreenComponent.xib; sourceTree = "<group>"; };
 		19CA638A22E87CDC00570BD5 /* CreateCategoryScreenComponent+Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateCategoryScreenComponent+Build.swift"; sourceTree = "<group>"; };
@@ -300,14 +300,12 @@
 		19DACDF12225AFF700C2F36C /* UIView+Margins.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Margins.swift"; sourceTree = "<group>"; };
 		19DACDF32225B02D00C2F36C /* UIViewController+SafeAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+SafeAnchor.swift"; sourceTree = "<group>"; };
 		19DACDF52225BAC400C2F36C /* UIView+Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Container.swift"; sourceTree = "<group>"; };
-		19DACDF72225EC2700C2F36C /* MainScreenCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenCommands.swift; sourceTree = "<group>"; };
 		19DACDF92225EFC300C2F36C /* Command+Equitable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Command+Equitable.swift"; sourceTree = "<group>"; };
 		19E0B0B32208BF1C00AF56D7 /* CategoriesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepository.swift; sourceTree = "<group>"; };
 		19E0B0B52208BF2500AF56D7 /* CategoriesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepositoryProtocol.swift; sourceTree = "<group>"; };
 		19E0B0B72208BF4500AF56D7 /* CategoriesRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesRepositoryError.swift; sourceTree = "<group>"; };
 		19E0B0BA2208C75B00AF56D7 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		19E0B0BC2208C76600AF56D7 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
-		19FF844D22E73F1F00276DA0 /* CategoriesComponentCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesComponentCommands.swift; sourceTree = "<group>"; };
 		816DF7E53140969F2A2A7654 /* Pods-Groshy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Groshy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Groshy/Pods-Groshy.debug.xcconfig"; sourceTree = "<group>"; };
 		884E6ED1DE1C85D9FA2C1A82 /* Pods-GroshyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroshyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GroshyUITests/Pods-GroshyUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8C424832E1D666D694D8562B /* Pods-GroshyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GroshyUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GroshyUITests/Pods-GroshyUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -401,7 +399,6 @@
 		1943B00421F66C370054119C /* MainScreen */ = {
 			isa = PBXGroup;
 			children = (
-				19DACDF72225EC2700C2F36C /* MainScreenCommands.swift */,
 				1943B00921F66D630054119C /* MainScreenComponent.swift */,
 				1961FAEC22D63A5D002C094D /* MainScreenComponent.xib */,
 				1943B00F21F66FDC0054119C /* MainScreenComponent+Build.swift */,
@@ -460,7 +457,6 @@
 				1932F45022077C1F00B2502B /* CategoriesComponent+Build.swift */,
 				1932F44C22077C0F00B2502B /* CategoriesConnector.swift */,
 				1932F44E22077C1600B2502B /* CategoriesPropsState.swift */,
-				19FF844D22E73F1F00276DA0 /* CategoriesComponentCommands.swift */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -925,11 +921,12 @@
 		19DACDF02225AFBF00C2F36C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				19BF8B3C2327A3380052E811 /* Array+Normalization.swift */,
 				19DACDF92225EFC300C2F36C /* Command+Equitable.swift */,
+				19645D4922D392AA00B0CA29 /* NumberFormatter+Currency.swift */,
 				19DACDF52225BAC400C2F36C /* UIView+Container.swift */,
 				19DACDF12225AFF700C2F36C /* UIView+Margins.swift */,
 				19DACDF32225B02D00C2F36C /* UIViewController+SafeAnchor.swift */,
-				19645D4922D392AA00B0CA29 /* NumberFormatter+Currency.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1228,7 +1225,7 @@
 				1932F44922077BFA00B2502B /* CategoriesComponent.swift in Sources */,
 				1932F4412207696500B2502B /* CategoriesActions.swift in Sources */,
 				19A1B1DB21F3B4D30090F760 /* RepositoryProvider.swift in Sources */,
-				19DACDF82225EC2800C2F36C /* MainScreenCommands.swift in Sources */,
+				19BF8B3D2327A3380052E811 /* Array+Normalization.swift in Sources */,
 				1974867622F88BF9001CFC13 /* HashtagsReducer.swift in Sources */,
 				1994BAF5220A21AF00B494F4 /* TransactionsCommands.swift in Sources */,
 				1974866722F8883D001CFC13 /* HashtagsState.swift in Sources */,
@@ -1308,7 +1305,6 @@
 				19DACDF62225BAC400C2F36C /* UIView+Container.swift in Sources */,
 				1974866422F88573001CFC13 /* Hastag.swift in Sources */,
 				190F4B7322288CE300939A43 /* TransactionRepositoryError.swift in Sources */,
-				19FF844E22E73F1F00276DA0 /* CategoriesComponentCommands.swift in Sources */,
 				19DACDFA2225EFC300C2F36C /* Command+Equitable.swift in Sources */,
 				19A1B1D721F3B3080090F760 /* NibIdentifiable.swift in Sources */,
 				19A1B1E921F3B6200090F760 /* KeychainStorageService.swift in Sources */,

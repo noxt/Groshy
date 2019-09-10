@@ -17,8 +17,20 @@ final class AddHashtagScreenConnector: BaseConnector<AddHashtagScreenPropsState>
     override func mapToProps(state: AppFeature.State) -> AddHashtagScreenPropsState {
         return AddHashtagScreenPropsState(
             hashtags: Array(state.hashtagsState.hashtags.values.prefix(10)),
-            saveCommand: HashtagsFeature.Commands.createHashtag(repositories)
+            saveCommand: HashtagsFeature.Commands.createHashtag(repositories),
+            dismissCommand: dismissCommand()
         )
     }
 
+}
+
+
+// MARK: - Commands
+
+private extension AddHashtagScreenConnector {
+    func dismissCommand() -> CommandOf<UIViewController> {
+        return CommandOf { vc in
+            vc.dismiss(animated: true, completion: nil)
+        }
+    }
 }
