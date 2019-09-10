@@ -109,4 +109,14 @@ iOSInjectionProject/
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
 
+### SwiftPM ###
+Packages
+.build/
+xcuserdata
+DerivedData/
+*.xcodeproj
+
+### Firebase ###
+GoogleService-Info.plist
+
 # End of https://www.gitignore.io/api/xcode,swift,cocoapods
